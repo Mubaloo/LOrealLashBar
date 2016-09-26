@@ -52,25 +52,28 @@ extension BaseService {
     
     func parseJSON(json: JSON) throws {
         
-        if let productJSON = json["products"].array {
-            let products = try productJSON.map({
-                try Product.new($0) as Product
-            })
-            print("\(products.count) products parsed")
-        }
-        
-        guard let categoryJSON = json["brushes"].array else {
-            throw ParseError.InvalidContent(itemName: "Brush Category List")
+        guard let categoryJSON = json["categories"].array else {
+            throw ParseError.InvalidContent(itemName: "Lash Category List")
         }
         
         let categories = try categoryJSON.enumerate().map({
             let newCat = try LashCategory.new($0.1) as LashCategory
             newCat.ordinal = Int16($0.0)
         })
-        
+        print("\(categories.count) categories parsed")
         CoreDataStack.shared.saveContext()
         
-        print("\(categories.count) categories parsed")
+        guard let lashesJSON = json["lashes"].array else {
+            throw ParseError.InvalidContent(itemName: "Lashes List")
+        }
+        
+        let lashes = try lashesJSON.enumerate().map({
+            let newLash = try Lash.new($0.1) as Lash
+            newLash.ordinal = Int16($0.0)
+        })
+
+        
+        print("\(lashes.count) lashes parsed")
         
         guard let techniqueJSON = json["techniques"].array else {
             throw ParseError.InvalidContent(itemName: "Technique List")
@@ -81,6 +84,7 @@ extension BaseService {
             newTechnique.ordinal = Int16($0.0)
         })
         
+         CoreDataStack.shared.saveContext()
         print("\(techniques.count) techniques parsed")
     }
     

@@ -23,7 +23,7 @@ struct EntryEventRequest : WebServiceRequest {
     
     let emailAddress: String
     let videoURLs: [String]
-    let eventDefinitionKey = "NYX_Brush_Bar-EntryEvent"
+    let eventDefinitionKey = "NYX_Lash_Bar-EntryEvent"
     let source = "Retail"
     
     var requestBody: AnyObject? {

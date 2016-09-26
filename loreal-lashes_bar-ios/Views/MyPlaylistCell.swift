@@ -43,9 +43,9 @@ class MyPlaylistCell: UICollectionViewCell {
             guard let item = item else { return }
             nameLabel.text = item.name
             
-            if let brush = item as? Lash {
-                numberLabel.text = brush.numberString
-                categoryLabel.text = brush.category?.name
+            if let lash = item as? Lash {
+                numberLabel.text = lash.numberString
+//                categoryLabel.text = brush.category?.name
                 zigzag.hidden = false
             } else {
                 numberLabel.text = "Technique"

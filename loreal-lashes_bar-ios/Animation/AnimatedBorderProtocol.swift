@@ -1,6 +1,6 @@
 //
 //  AnimatedBorderProtocol.swift
-//  loreal-brush_bar-ios
+//  loreal-lash_bar-ios
 //
 //  Created by Jonathan Gwilliams on 30/08/2016.
 //  Copyright © 2016 Sane Mubaloo. All rights reserved.

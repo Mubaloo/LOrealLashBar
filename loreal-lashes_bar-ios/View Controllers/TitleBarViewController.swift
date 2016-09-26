@@ -17,7 +17,7 @@ enum BrowserType: String {
 /**
  This view controller acts as the basic parent of the user interface, once the attract screen
  has been dismissed. It encapsulates a tab bar controller for switching back and forth between
- brushes and techniques, as well as the bar at the top of the screen containing a button to
+ lashes and techniques, as well as the bar at the top of the screen containing a button to
  perform this action, plus a button to present the user's current playlist.
  */
 
@@ -31,10 +31,10 @@ class TitleBarViewController: BaseViewController {
     private var childTabBarController: UITabBarController?
     private var browserType = BrowserType.Lashes
     
-    /** Fetch controller used solely for handling the number tag in the Playlist button. This one fetches brushes. */
-    private var brushFetch: NSFetchedResultsController = {
+    /** Fetch controller used solely for handling the number tag in the Playlist button. This one fetches lashes. */
+    private var lashFetch: NSFetchedResultsController = {
         let context = CoreDataStack.shared.managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName: "Brush")
+        let fetchRequest = NSFetchRequest(entityName: "Lash")
         fetchRequest.predicate = NSPredicate(format: "inPlaylist == YES")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "number", ascending: true)]
         return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -61,9 +61,9 @@ class TitleBarViewController: BaseViewController {
         setBrowserType(browserType, animated: false)
         
         // Prepare the two fetch controllers.
-        brushFetch.delegate = self
+        lashFetch.delegate = self
         techniqueFetch.delegate = self
-        try! brushFetch.performFetch()
+        try! lashFetch.performFetch()
         try! techniqueFetch.performFetch()
     }
 
@@ -166,9 +166,9 @@ extension TitleBarViewController: NSFetchedResultsControllerDelegate {
     
     // Updates the number in the My Playlists button when something is added or removed.
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
-        let brushCount = brushFetch.fetchedObjects?.count ?? 0
+        let lashCount = lashFetch.fetchedObjects?.count ?? 0
         let techniqueCount = techniqueFetch.fetchedObjects?.count ?? 0
-        let total = brushCount + techniqueCount
+        let total = lashCount + techniqueCount
         
         if total == 0 {
             playlistButton.setTitle("MY PLAYLIST", forState: .Normal)

@@ -6,11 +6,21 @@
 //  Copyright © 2016 Sane Mubaloo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 import SwiftyJSON
 
 class LashCategory: NSManagedObject {
+    
+    var defaultImageName: String { get { return "product_default" } }
+    
+    var image: UIImage {
+        get {
+            // TODO: when a web service is implemented, this will change (hence 'imagePath' rather than 'imageName')
+            if let name = imagePath, image = UIImage(named: name) { return image }
+            return UIImage(named: defaultImageName)!
+        }
+    }
 
     /** Returns all LashCategory objects in the correct order. */
     class func orderedCategories(context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) -> [LashCategory] {
@@ -20,21 +30,26 @@ class LashCategory: NSManagedObject {
         catch { return [] }
     }
     
-    /** Returns all brushes belonging to the receiver, in the correct order. */
-    func orderedBrushes() -> [Lash] {
+    /** Returns all lashes belonging to the receiver, in the correct order. */
+    func orderedLashes() -> [Lash] {
         guard let unorderedSet = lashes else { return [] }
         return unorderedSet.sort({ $0.0.ordinal < $0.1.ordinal })
     }
 
+    /** Returns an array of categories whose names appear in the passed list. */
+    class func categoriesWithNames(identifiers: [String], context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) -> [LashCategory] {
+        let fetch = NSFetchRequest(entityName: LashCategory.entityName)
+        fetch.predicate = NSPredicate(format: "%@ CONTAINS name", identifiers)
+        guard let results = try? context.executeFetchRequest(fetch) as? [LashCategory] else { return [] }
+        return results ?? []
+    }
 }
 
 extension LashCategory: JSONConfigurable {
     
     func configure(json: JSON) throws {
-        name = try json["category"].string.unwrap("Category Name")
-        let brushJSON = try json["lashes"].array.unwrap("Category Lash List")
-        lashes = Set(try brushJSON.map({ try Lash.new($0) as Lash }))
-        print("\(lashes!.count) brushes in category \(name)")
+        name = try json["name"].string.unwrap("Category Name")
+        detail = try json["detail"].string.unwrap("Category Detail")
+        imagePath = json["image"].string // No need to unwrap, this can be nil
     }
-    
 }

@@ -7,30 +7,29 @@
         <relationship name="technique" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Technique" inverseName="chapters" inverseEntity="Technique" syncable="YES"/>
     </entity>
     <entity name="Lash" representedClassName=".Lash" parentEntity="Product" syncable="YES">
-        <attribute name="bestSeller" attributeType="Boolean" syncable="YES"/>
         <attribute name="detail" attributeType="String" syncable="YES"/>
         <attribute name="hotTips" attributeType="String" syncable="YES"/>
         <attribute name="inPlaylist" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="length" attributeType="String" syncable="YES"/>
         <attribute name="localMediaPath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="ordinal" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="remoteMediaPath" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="summary" attributeType="String" syncable="YES"/>
         <attribute name="thumbPath" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LashCategory" inverseName="lashes" inverseEntity="LashCategory" syncable="YES"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LashCategory" inverseName="lashes" inverseEntity="LashCategory" syncable="YES"/>
         <relationship name="chapters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chapter" inverseName="lash" inverseEntity="Chapter" syncable="YES"/>
     </entity>
     <entity name="LashCategory" representedClassName=".LashCategory" syncable="YES">
-        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="detail" attributeType="String" syncable="YES"/>
+        <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="ordinal" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="lashes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Lash" inverseName="category" inverseEntity="Lash" syncable="YES"/>
+        <relationship name="lashes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Lash" inverseName="categories" inverseEntity="Lash" syncable="YES"/>
     </entity>
     <entity name="Product" representedClassName=".Product" syncable="YES">
         <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="productID" attributeType="String" syncable="YES"/>
-        <relationship name="associatedProducts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="associatedProducts" inverseEntity="Product" syncable="YES"/>
     </entity>
     <entity name="Technique" representedClassName=".Technique" syncable="YES">
         <attribute name="detail" attributeType="String" syncable="YES"/>
@@ -44,10 +43,10 @@
         <relationship name="chapters" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Chapter" inverseName="technique" inverseEntity="Chapter" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Lash" positionX="-56" positionY="-9" width="128" height="223"/>
-        <element name="LashCategory" positionX="214" positionY="-25" width="128" height="103"/>
         <element name="Chapter" positionX="-261" positionY="180" width="128" height="103"/>
-        <element name="Product" positionX="-65" positionY="279" width="128" height="103"/>
+        <element name="Lash" positionX="-56" positionY="-9" width="128" height="208"/>
+        <element name="LashCategory" positionX="214" positionY="-25" width="128" height="118"/>
+        <element name="Product" positionX="-65" positionY="279" width="128" height="88"/>
         <element name="Technique" positionX="-549" positionY="-45" width="128" height="178"/>
     </elements>
 </model>

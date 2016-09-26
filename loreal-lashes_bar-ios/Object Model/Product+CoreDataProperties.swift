@@ -17,6 +17,5 @@ extension Product {
     @NSManaged var name:        String
     @NSManaged var productID:   String
     @NSManaged var imagePath:   String?
-    @NSManaged var brushes:     Set<Lash>?
 
 }

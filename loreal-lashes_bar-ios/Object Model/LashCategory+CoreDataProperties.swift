@@ -17,6 +17,7 @@ extension LashCategory {
     @NSManaged var name: String
     @NSManaged var ordinal: Int16
     @NSManaged var detail: String
+    @NSManaged var imagePath: String?
     @NSManaged var lashes: Set<Lash>?
 
 }

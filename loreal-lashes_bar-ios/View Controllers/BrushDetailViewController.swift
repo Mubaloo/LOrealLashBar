@@ -35,8 +35,8 @@ class BrushDetailViewController: BaseViewController {
     
     var lash: Lash? {
         didSet {
-            associates = lash?.orderedAssociates()
-            updateBrushData()
+//            associates = lash?.orderedAssociates()
+            updateLashData()
             updateButtons()
         }
     }
@@ -73,7 +73,7 @@ class BrushDetailViewController: BaseViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         // Prepare default brush data
-        updateBrushData()
+        updateLashData()
         updateButtons()
     }
     
@@ -82,28 +82,28 @@ class BrushDetailViewController: BaseViewController {
         videoView?.pause()
     }
     
-    private func updateBrushData() {
+    private func updateLashData() {
         if isViewLoaded() == false { return }
-        guard let brush = lash else { return }
+        guard let lash = lash else { return }
         
-        videoView.loadPlaylistItem(brush)
-        numberLabel.text = brush.numberString
-        categoryLabel.text = brush.category?.name
-        nameLabel.text = brush.name
-        detailLabel.text = brush.detail
-        hotTipLabel.text = brush.hotTips
+        videoView.loadPlaylistItem(lash)
+        numberLabel.text = lash.numberString
+//        categoryLabel.text = brush.category?.name
+        nameLabel.text = lash.name
+        detailLabel.text = lash.detail
+        hotTipLabel.text = lash.hotTips
         
-        for view in bestSellerViews {
-            view.hidden = (brush.bestSeller == false)
-        }
+//        for view in bestSellerViews {
+//            view.hidden = (brush.bestSeller == false)
+//        }
         
-        brushImage.image = brush.image.rotate()
+        brushImage.image = lash.image.rotate()
     }
     
     private func updateButtons() {
-        guard let brush = lash where isViewLoaded() else { return }
-        addToPlaylistButton.userInteractionEnabled = !brush.inPlaylist
-        if brush.inPlaylist {
+        guard let lash = lash where isViewLoaded() else { return }
+        addToPlaylistButton.userInteractionEnabled = !lash.inPlaylist
+        if lash.inPlaylist {
             addToPlaylistButton.setTitle("ADDED!", forState: .Normal)
             addToPlaylistButton.enabled = false
         } else {

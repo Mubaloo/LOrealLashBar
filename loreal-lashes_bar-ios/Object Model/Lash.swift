@@ -79,10 +79,10 @@ class Lash: Product, PlaylistItem {
     }
     
     /** Returns all products associated with this lash, in the correct order. */
-    func orderedAssociates() -> [Product] {
-        guard let associatedProducts = associatedProducts else { return [] }
-        return associatedProducts.sort({ $0.name < $1.name })
-    }
+//    func orderedAssociates() -> [Product] {
+//        guard let associatedProducts = associatedProducts else { return [] }
+//        return associatedProducts.sort({ $0.name < $1.name })
+//    }
     
     func precache() {
         if let data = NSData(contentsOfURL: thumbURL) {
@@ -123,19 +123,19 @@ class Lash: Product, PlaylistItem {
     override func configure(json: JSON) throws {
         try super.configure(json)
         number = try json["number"].int16.unwrap("Lash Number")
-        summary = try json["summary"].string.unwrap("Lash Summary")
         detail = try json["detail"].string.unwrap("Lash Detail Text")
         hotTips = try json["hot_tip"].string.unwrap("Lash Alternative Uses")
-        bestSeller = try json["best_seller"].bool.unwrap("Lash Best Seller Status")
+        length = try json["length"].string.unwrap("Lash Length")
+        
         ordinal = number // This may be necessary if lash number changes to a string
         
         remoteMediaPath = json["remote_path"].string
         localMediaPath = json["local_path"].string
         thumbPath = json["thumb_path"].string
         
-        if let associatedJSON = json["related_products"].array {
-            let identifiers = try associatedJSON.map({ try $0.string.unwrap("Related Product Relationship") })
-            associatedProducts = Set(Product.productsWithIdentifiers(identifiers))
+        if let categoriesJSON = json["categories"].array {
+            let identifiers = try categoriesJSON.map({ try $0.string.unwrap("Related Categories Relationship") })
+            categories = Set(LashCategory.categoriesWithNames(identifiers))
         }
     }
 }

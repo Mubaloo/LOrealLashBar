@@ -13,8 +13,7 @@ import Foundation
 import CoreData
 
 extension Lash {
-
-    @NSManaged var bestSeller: Bool
+    
     @NSManaged var detail: String
     @NSManaged var hotTips: String
     @NSManaged var inPlaylist: Bool
@@ -22,10 +21,8 @@ extension Lash {
     @NSManaged var number: Int16
     @NSManaged var ordinal: Int16
     @NSManaged var remoteMediaPath: String?
-    @NSManaged var summary: String
     @NSManaged var thumbPath: String?
-    @NSManaged var category: LashCategory?
+    @NSManaged var length: String
+    @NSManaged var categories: Set<LashCategory>?
     @NSManaged var chapters: Set<Chapter>?
-    @NSManaged var associatedProducts:  Set<Product>?
-
 }

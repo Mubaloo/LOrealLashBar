@@ -1,602 +1,355 @@
 {
-    "brushes":[
-               {
-               "category":"FACE",
-               "brushes":[
-                          {
-                          "name":"KABUKI",
-                          "product_id":"NYX_204",
-                          "number":1,
-                          "summary":"A DOME SHAPED BRUSH THAT IS IDEAL FOR SMOOTH AND EVEN POWDER COVERAGE.",
-                          "detail":"A luxurious, dome shaped brush that is ideal for smooth and even powder coverage. Buff in a circular motion for a flawless, airbrushed finish.",
-                          "hot_tip":"BUFF IN A CIRCULAR MOTION FOR AN AIRBRUSHED FINISH.",
-                          "image":"01-Brush",
-                          "related_products":["NYX_079", "NYX_186", "NYX_081"],
-                          "best_seller":false
-                          },
-                          {
-                          "name":"POWDER",
-                          "product_id":"NYX_205",
-                          "number":2,
-                          "summary":"A SOFT AND FULL BRUSH THAT IS PERFECT FOR EASILY APPLYING LOOSE OR PRESSED POWDER.",
-                          "detail":"A soft, full brush perfect for an easy application of loose or pressed powders. Lightly sweep and blend for nice, even coverage.",
-                          "hot_tip":"LIGHTLY SWEEP AND BLEND FOR EVEN COVERAGE.",
-                          "image":"02-Brush",
-                          "related_products":["NYX_229", "NYX_002", "NYX_172"],
-                          "best_seller":false
-                          },
-                          {
-                          "name":"MULTI-PURPOSE BUFFER",
-                          "product_id":"NYX_206",
-                          "number":3,
-                          "summary":"BLEND OUT CREAMS OR POWDERS FOR A SEAMLESS AND SMOOTH FINISH.",
-                          "detail":"The perfect brush to blend and buff cream or powder for a seamless and smooth finish.",
-                          "hot_tip":"APPLY THE CREAM OR POWDER PRODUCT OF YOUR CHOICE AND BUFF IN A CIRCULAR MOTION.",
-                          "image":"03-Brush",
-                          "related_products":["NYX_150", "NYX_323", "NYX_309"],
-                          "best_seller":true
-                          },
-                          {
-                          "name":"DUAL FIBER FOUNDATION",
-                          "product_id":"NYX_207",
-                          "number":4,
-                          "summary":"A SOFT, FULL BRUSH PERFECT FOR EASILY APPLYING LIQUID FOUNDATIONS.",
-                          "detail":"A soft, full brush perfect for easily applying liquid foundations and creating an airbrushed finish. This multipurpose brush can also be used with loose or pressed powders!",
-                          "hot_tip":"USING LIGHT STROKES, SMOOTH OUT FOR EVEN COVERAGE.",
-                           "image":"04-Brush",
-                          "related_products":["NYX_067", "NYX_140", "NYX_320"],
-                          "best_seller":true
-                          },
-                          {
-                          "name":"CONTOUR",
-                          "product_id":"NYX_208",
-                          "number":5,
-                          "summary":"A ROUND AND TAPERED BRUSH USED FOR SCULPTING THE CHEEKS, FOREHEAD AND JAWLINE.",
-                          "detail":"A tapered round brush for contouring the cheeks, forehead and jawline for a perfectly sculpted finish.",
-                          "hot_tip":"CONTOUR AREAS YOU WANT TO DEFINE, AND BLEND OUT FOR A FLAWLESS FINISH.",
-                          "image":"05-Brush",
-                          "related_products":["NYX_168", "NYX_192", "NYX_310"],
-                          "best_seller":true
-                          },
-                          {
-                          "name":"FAN",
-                          "product_id":"NYX_209",
-                          "number":6,
-                          "summary":"A DENSE, VELVETY BRUSH FOR CREATING A FULL COVERAGE FINISH.",
-                          "detail":"This versatile velvety brush creates a smooth full coverage finish with no streaks. Also amazing for highlighting using powders for a seamless glow!",
-                          "hot_tip":"BRUSH A HIGHLIGHTING OR ILLUMINATING POWDER ACROSS THE HIGHEST POINTS OF THE FACE.",
-                          "image":"06-Brush",
-                          "related_products":["NYX_062", "NYX_325", "NYX_347"],
-                          "best_seller":true
-                          },
-                          {
-                          "name":"FLAT FOUNDATION",
-                          "product_id":"NYX_210",
-                          "number":7,
-                          "summary":"A FLAT, TAPERED BRUSH MEANT FOR APPLYING CREAM OR LIQUID FORMULAS.",
-                          "detail":"A tapered brush great for liquid or cream formulas for an even, streakfree application.",
-                          "hot_tip":"WORK FOUNDATION INTO THE SKIN WITH EVEN STROKES TO ACHIEVE A STREAK-FREE FINISH.",
-                          "image":"07-Brush",
-                          "related_products":["NYX_185", "NYX_067", "NYX_130"],
-                          "best_seller":false
-                          }
-                          ]
-               },
-               {
-               "category":"BLUSH",
-               "brushes":[
-                          {
-                          "name":"DUAL FIBER POWDER",
-                          "product_id":"NYX_211",
-                          "number":8,
-                          "summary":"A UNIQUE BRUSH MADE OF USED FOR APPLYING BLUSH OR POWDER FOUNDATIONS.",
-                          "detail":"A unique, dual fiber brush perfect for applying blush or powder for a flawless finish.",
-                          "hot_tip":"SWEEP ACROSS THE APPLES OF YOUR CHEEKS AND SMOOTH OUT FOR NICE, EVEN COVERAGE.",
-                          "image":"08-Brush",
-                          "related_products":["NYX_178", "NYX_318", "NYX_254"],
-                          "best_seller":false
-                          }
-                          ]
-               },
-               {
-               "category":"EYES",
-               "brushes":[
-                          {
-                          "name":"DUAL FIBER PRECISION",
-                          "product_id":"NYX_212",
-                          "number":9,
-                          "summary":"A DUAL FIBER BRUSH USED TO HELP TO BLUR IMPERFECTIONS. ALSO DOUBLES AS A SHADOW BLENDING BRUSH.",
-                          "detail":"A dual fiber precision brush that works wonders on camouflaging and helps blur imperfections under the eye and any hard to reach areas. Also doubles as a blending shadow brush.",
-                          "hot_tip":"USE WITH YOUR FAVORITE CONCEALER TO PRECISELY CAMOUFLAGE UNDER THE EYE.",
-                          "image":"09-Brush",
-                          "related_products":["NYX_133", "NYX_170", "NYX_346"],
-                          "best_seller":false
-                          },
-                          {
-                          "name":"SPOT CONCEALER",
-                          "product_id":"NYX_213",
-                          "number":10,
-                          "summary":"A STIFF, FLAT BRUSH MADE FOR SPOT CONCEALING BLEMISHES AND IMPERFECTIONS.",
-                          "detail":"A stiff, flat brush ideal for spot concealing blemishes and imperfections. Also doubles as a flat eyeliner brush.",
-                          "hot_tip":"PAT CONCEALER ONTO THE PREFERRED AREA AND BLEND WELL.",
-                          "image":"10-Brush",
-                          "related_products":["NYX_171", "NYX_012", "NYX_013"],
-                          "best_seller":true
-                          },
-                          {
-                          "name":"ANGLED LINER",
-                          "product_id":"NYX_214",
-                          "number":11,
-                          "summary":"AN INNOVATIVE LINER BRUSH WITH AN ANGLED HANDLE DESIGNED FOR ULTIMATE CONTROL AND PRECISION.",
-                          "detail":"An innovative eyeliner brush with an angled handle for ultimate control and precision.",
-                          "hot_tip":"DIP THE BRUSH INTO THE EYELINER AND APPLY ALONG THE LASH LINE TO DESIRED THICKNESS.",
-                          "image":"11-Brush",
-                          "related_products":["NYX_080", "NYX_158", "NYX_335"],
-                          "best_seller":false
-                          },
-                          {
-                          "name":"ALL OVER SHADOW",
-                          "product_id":"NYX_215",
-                          "number":12,
-                          "summary":"A MEDIUM EYESHADOW BRUSH MEANT FOR APPLYING SHEER COLOR OR LAYERING SHADOW.",
-                          "detail":"A medium eye shadow brush great for applying sheer color or layering eye shadow to the lid.",
-                          "hot_tip":"SWEEP THE SHADE OF YOUR CHOICE ACROSS THE EYELID.",
-                          "image":"12-Brush",
-                          "related_products":["NYX_337", "NYX_069", "NYX_194"],
-                          "best_seller":false
-                          },
-                          {
-                          "name":"SHADING",
-                          "product_id":"NYX_216",
-                          "number":13,
-                          "summary":"A DENSE, ROUNDED BRUSH YOU CAN USE FOR ANY SHADOW APPLICATION.",
-                          "detail":"A dense rounded brush that is perfect for applying, smudging and blending product on the eyes.",
-                          "hot_tip":"FLAWLESSLY APPLY, SMUDGE AND BLEND EYESHADOWS.",
-                          "image":"13-Brush",
-                          "related_products":["NYX_121", "NYX_313", "NYX_259"],
-                          "best_seller":false
-                          },
-                          {
-                          "name":"FLAT DETAIL",
-                          "product_id":"NYX_217",
-                          "number":14,
-                          "summary":"A MULTIPURPOSE, FLAT BRUSH USED FOR DETAILED SHADING.",
-                          "detail":"A multipurpose, flat shading brush that is perfect for any application on the lid. Great for packing on metallic shadows and glitters.",
-                          "hot_tip":"ADD A POP OF COLOR TO THE INNER CORNER OF THE EYE.",
-                          "image":"14-Brush",
-                          "related_products":["NYX_176", "NYX_193", "NYX_340"],
-                          "best_seller":false
-                          },
-                          {
-                          "name":"SMUDGER",
-                          "product_id":"NYX_218",
-                          "number":15,
-                          "summary":"A SMUDGER BRUSH MADE FOR EXPERTLY BLURRING LINES.",
-                          "detail":"This ultimate smudger brush blurs lines seamlessly along the lash line and in the crease for that perfect sexy smokey eye.",
-                          "hot_tip":"SMUDGE ALONG THE LASH LINE AND IN THE CREASE TO CREATE THE ULTIMATE SMOKEY EYE.",
-                          "image":"15-Brush",
-                          "related_products":["NYX_092", "NYX_232", "NYX_331"],
-                          "best_seller":false
-                          },
-                          {
-                          "name":"BLENDING",
-                          "product_id":"NYX_219",
-                          "number":16,
-                          "summary":"A LONG AND ROUNDED BRUSH USED FOR SEAMLESS EYESHADOW APPLICATION.",
-                          "detail":"A long, rounded brush that is perfect for effortlessly blending bold, shimmery shadows for a soft focus effect.",
-                          "hot_tip":"EFFORTLESSLY BLEND BOLD, SHIMMERY SHADOWS FOR A SOFT FOCUS EFFECT.",
-                          "image":"16-Brush",
-                          "related_products":["NYX_004", "NYX_349", "NYX_045"],
-                          "best_seller":true
-                          },
-                          {
-                          "name":"CREASE",
-                          "product_id":"NYX_220",
-                          "number":17,
-                          "summary":"A DOME SHAPED BRUSH FOR APPLYING SHADOW TO THE CREASE OF THE EYE.",
-                          "detail":"A round-domed brush that blends flawlessly into the crease for a depth defying effect.Helps diffuse any harsh lines.",
-                          "hot_tip":"BLEND COLOR INTO THE CREASE FOR A DEPTH DEFYING EFFECT.",
-                          "image":"17-Brush",
-                          "related_products":["NYX_069", "NYX_313", "NYX_194"],
-                          "best_seller":false
-                          }
-                          ]
-               },
-               {
-               "category":"BROWS",
-               "brushes":[
-                          {
-                          "name":"DUAL BROW",
-                          "product_id":"NYX_221",
-                          "number":18,
-                          "summary":"A DUAL-ENDED BROW BRUSH THAT INCLUDES AN ANGLED CUT BRUSH PLUS A SPOOLIE BRUSH.",
-                          "detail":"A dual-ended brow brush that features an angled cut brush for precision application with cream or powder products and a spoolie brush for blending and shaping. Also doubles as an angled eye liner brush.",
-                          "hot_tip":"PRECISELY APPLY CREAMS OR POWDERS USING THE ANGLED SIDE, THEN BLEND AND SHADE USING THE SPOOLIE.",
-                          "image":"18-Brush",
-                          "related_products":["NYX_173", "NYX_159", "NYX_158"],
-                          "best_seller":true
-                          },
-                          {
-                          "name":"ANGLED",
-                          "product_id":"NYX_222",
-                          "number":19,
-                          "summary":"A STIFF, ANGLED BRUSH MADE FOR DEFINING THE EYEBROWS. IT CAN ALSO DOUBLE AS A LINER BRUSH.",
-                          "detail":"A stiff, angled brush that is ideal for outlining, shading and correcting the shape of brows.",
-                          "hot_tip":"OUTLINE, SHADE AND CORRECT THE SHAPE OF BROWS.",
-                          "image":"19-Brush",
-                          "related_products":["NYX_032", "NYX_173", "NYX_159"],
-                          "best_seller":true
-                          }
-                          ]
-               },
-               {
-               "category":"LIPS",
-               "brushes":[
-                          {
-                          "name":"LIP",
-                          "product_id":"NYX_223",
-                          "number":20,
-                          "summary":"A POINTED BRUSH USED FOR PRECISE AND FLAWLESS LIP COLOR APPLICATION.",
-                          "detail":"A pointed lip brush for the most precise and flawless lip color application.",
-                          "hot_tip":"FILL IN LIPS WITH STROKES OF RICH COLOR.",
-                          "image":"20-Brush",
-                          "related_products":["NYX_201", "NYX_005", "NYX_348"],
-                          "best_seller":false
-                          }
-                          ]
-               }
+    "categories":[
+                  {
+                  "name":"ROUND",
+                  "number":1,
+                  "detail":"Round shape, whites around the iris are visible",
+                  "image":"ROUND"
+                  },
+                  {
+                  "name":"ALMOND",
+                  "number":2,
+                  "detail":"Almond shape, whites around the iris are not visible",
+                  "image":"ALMOND"
+                  },
+                  {
+                  "name":"HOODED",
+                  "number":3,
+                  "detail":"Crease is not visible due to extra fold of skin",
+                  "image":"HOODED"
+                  },
+                  {
+                  "name":"MONOLID",
+                  "number":4,
+                  "detail":"Flat with no crease, the brow bone is less defined",
+                  "image":"MONOLID"
+                  },
+                  {
+                  "name":"DEEP SET",
+                  "number":5,
+                  "detail":"Set deeper into the skull, creating the illusion of a more prominent brown bone",
+                  "image":"DEEP SET"
+                  }
+              ],
+    "lashes":[
+              {
+              "name":"FATALE",
+              "product_id":"WL01",
+              "number":1,
+              "detail":"Glamour Pixie full",
+              "hot_tip":"LIGHTLY SWEEP AND BLEND FOR EVEN COVERAGE.",
+              "image":"WL01",
+              "categories":["ROUND", "ALMOND", "MONOLID", "DEEP SET"],
+              "length":"Long"
+              },
+              {
+              "name":"FLIRT",
+              "product_id":"WL02",
+              "number":2,
+              "detail":"Natural",
+              "hot_tip":"",
+              "image":"WL02",
+              "categories":["ROUND", "ALMOND", "MONOLID"],
+              "length":"Extra Short"
+              },
+              {
+              "name":"TEASE",
+              "product_id":"WL03",
+              "number":3,
+              "detail":"Natural Glamour full",
+              "hot_tip":"",
+              "image":"WL03",
+              "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "length":"Medium"
+              },
+              {
+              "name":"MALEVOLENT",
+              "product_id":"WL04",
+              "number":4,
+              "detail":"Glamour Pixie full",
+              "hot_tip":"",
+              "image":"WL04",
+              "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "length":"Medium"
+              },
+              {
+              "name":"CORRUPT",
+              "product_id":"WL05",
+              "number":5,
+              "detail":"Natural Pixie",
+              "hot_tip":"",
+              "image":"WL05",
+              "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "length":"Medium"
+              },
+              {
+              "name":"SINFUL",
+              "product_id":"WL06",
+              "number":6,
+              "detail":"Glamour Pixie full",
+              "hot_tip":"",
+              "image":"WL06",
+              "categories":["ROUND", "ALMOND", "MONOLID", "DEEP SET"],
+              "length":"Medium"
+              },
+              {
+              "name":"SCANDAL",
+              "product_id":"WL07",
+              "number":7,
+              "detail":"Glamour Full",
+              "hot_tip":"",
+              "image":"WL07",
+              "categories":["ROUND", "ALMOND", "MONOLID", "DEEP SET"],
+              "length":"Medium"
+              },
+              {
+              "name":"BASHFUL",
+              "product_id":"WL08",
+              "number":8,
+              "detail":"Natural Pixie",
+              "hot_tip":"",
+              "image":"WL08",
+              "categories":["ALMOND", "HOODED", "MONOLID"],
+              "length":"Short"
+              },
+              {
+              "name":"JEZEBEL",
+              "product_id":"WL09",
+              "number":9,
+              "detail":"Natural flare",
+              "hot_tip":"",
+              "image":"WL09",
+              "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "length":"Medium"
+              },
+              {
+              "name":"FRISKY",
+              "product_id":"WL10",
+              "number":10,
+              "detail":"Natural Pixie",
+              "hot_tip":"",
+              "image":"WL10",
+              "categories":["ALMOND", "HOODED", "MONOLID"],
+              "length":"Medium"
+              },
+              {
+              "name":"RISQUE",
+              "product_id":"WL11",
+              "number":11,
+              "detail":"Natural flare",
+              "hot_tip":"",
+              "image":"WL11",
+              "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "length":"Short"
+              },
+              {
+              "name":"VIXEN",
+              "product_id":"WL12",
+              "number":12,
+              "detail":"Natural whispy",
+              "hot_tip":"",
+              "image":"WL12",
+              "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "length":"Short"
+              },
+              {
+              "name":"JUXTAPOSE",
+              "product_id":"WL13",
+              "number":13,
+              "detail":"Natural & full",
+              "hot_tip":"",
+              "image":"WL13",
+              "categories":["ROUND", "ALMOND", "HOODED", "MONOLID"],
+              "length":"Short"
+              },
+              {
+              "name":"EXAGGERATED",
+              "product_id":"WL14",
+              "number":14,
+              "detail":"Double Stack Glamour full",
+              "hot_tip":"",
+              "image":"WL14",
+              "categories":["ROUND", "HOODED", "MONOLID"],
+              "length":"Medium"
+              },
+              {
+              "name":"EXPOSED",
+              "product_id":"WL15",
+              "number":15,
+              "detail":"Natural & whispy",
+              "hot_tip":"",
+              "image":"WL15",
+              "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "length":"Medium"
+              },
+              {
+              "name":"OVERDONE",
+              "product_id":"WL16",
+              "number":16,
+              "detail":"Double Stack Glamour full dramatic",
+              "hot_tip":"",
+              "image":"WL16",
+              "categories":["ROUND", "MONOLID", "DEEP SET"],
+              "length":"Medium"
+              },
+              {
+              "name":"AMPLIFIED",
+              "product_id":"WL17",
+              "number":17,
+              "detail":"Double Stack Glamour",
+              "hot_tip":"",
+              "image":"WL17",
+              "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "length":"Medium"
+              },
+              {
+              "name":"OVERRATED",
+              "product_id":"WL18",
+              "number":18,
+              "detail":"Natural & full",
+              "hot_tip":"",
+              "image":"WL18",
+              "categories":["ROUND", "ALMOND", "MONOLID", "DEEP SET"],
+              "length":"Medium"
+              },
+              {
+              "name":"ON ANOTHER LEVEL",
+              "product_id":"WL19",
+              "number":19,
+              "detail":"Double Stack Glamour flare",
+              "hot_tip":"",
+              "image":"WL19",
+              "categories":["ALMOND", "DEEP SET"],
+              "length":"Long"
+              },
+              {
+              "name":"DOE EYES",
+              "product_id":"WL20",
+              "number":20,
+              "detail":"Glamour Cluster Flare",
+              "hot_tip":"",
+              "image":"WL20",
+              "categories":["ROUND", "ALMOND", "MONOLID", "DEEP SET"],
+              "length":"Medium"
+              },
+              {
+              "name":"ON THE FRINGE",
+              "product_id":"WL21",
+              "number":21,
+              "detail":"Double Stack Glamour whispy",
+              "hot_tip":"",
+              "image":"WL21",
+              "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "length":"Medium"
+              },
+              {
+              "name":"POPULAR",
+              "product_id":"WL22",
+              "number":22,
+              "detail":"Double Stack Glamour whispy",
+              "hot_tip":"",
+              "image":"WL22",
+              "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "length":"Medium"
+              },
+              {
+              "name":"DRAMA QUEEN",
+              "product_id":"WL23",
+              "number":23,
+              "detail":"Double Stack Glamour full",
+              "hot_tip":"",
+              "image":"WL23",
+              "categories":["ROUND", "ALMOND", "MONOLID"],
+              "length":"Medium"
+              },
+              {
+              "name":"LAY EM ON ME",
+              "product_id":"WL24",
+              "number":24,
+              "detail":"Glamour flare full",
+              "hot_tip":"",
+              "image":"WL24",
+              "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "length":"Short"
+              }
                ],
     "techniques":[
                   {
-                  "name":"Highlight & Contour - Cream",
-                  "detail":"Highlight and contour using brushes designed for cream based products",
+                  "name":"CUSTOM FITTING",
+                  "detail":"learn how to custom fit your lashes based on your eye width",
                   "local_path":"HIGHLIGHT & CONTOUR - CREAM.mov",
                   "local_path_thumb":"HIGHLIGHT & CONTOUR - CREAM THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png",
+                  "thumb_path":"Cut Crease Test.png"
                   },
                   {
-                  "name":"Highlight & Contour - Powder",
-                  "detail":"Highlight and contour using brushes designed for powder based products",
+                  "name":"POP UP LASH PREVENTION",
+                  "detail":"learn how to help prevent your lashes from popping up from the corners",
                   "local_path":"HIGHLIGHT & CONTOUR - POWDER.mov",
                   "local_path_thumb":"HIGHLIGHT & CONTOUR - POWDER THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png",
+                  "thumb_path":"Cut Crease Test.png"
                   },
                   {
-                  "name":"Perfect Arch Brow",
-                  "detail":"Create a striking arch brow and clean up any imperfections",
+                  "name":"LASH APPLICATION",
+                  "detail":"learn how to quickly apply your strip lashes",
                   "local_path":"PERFECT ARCH BROW.mov",
                   "local_path_thumb":"PERFECT ARCH BROW THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png",
+                  "thumb_path":"Cut Crease Test.png"
                   },
                   {
-                  "name":"Smoky Cat Eye",
-                  "detail":"Everything you need to achieve a smoky cat eye - perfect for beginners",
+                  "name":"TRIO LASH APPLICATION",
+                  "detail":"learn how to apply your strip lashes in 3 smaller pieces for easy application",
                   "local_path":"SMOKEY CAT EYE.mov",
                   "local_path_thumb":"SMOKEY CAT EYE THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png",
+                  "thumb_path":"Cut Crease Test.png"
                   },
                   {
-                  "name":"Feathered Brow",
-                  "detail":"Get a natural, full looking feathered brow that looks effortless",
+                  "name":"ELONGATED LASH APPLICATION",
+                  "detail":"learn how to create the illusion of an elongated, sultry eye with your lashes",
                   "local_path":"FEATHERED BROW.mov",
                   "local_path_thumb":"FEATHERED BROW THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png",
+                  "thumb_path":"Cut Crease Test.png"
                   },
                   {
-                  "name":"Cut Crease",
-                  "detail":"Create an everyday, neutral cut crease look using these brushes",
+                  "name":"WICKED FLARE APPLICATION",
+                  "detail":"learn how to create an extra flare to outer corners of your eyes",
                   "local_path":"CUT CREASE.mov",
                   "local_path_thumb":"CUT CREASE THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png",
+                  "thumb_path":"Cut Crease Test.png"
                   },
                   {
-                  "name":"Blending with Color",
-                  "detail":"Achieve a flawless blend using these brushes to transition contrasting bright colors",
+                  "name":"DOUBLE STACKING LASHES",
+                  "detail":"learn how to double stack lashes in 2 ways for a more dramatic look",
                   "local_path":"BLENDING WITH COLOR.mov",
                   "local_path_thumb":"BLENDING WITH COLOR THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png",
+                  "thumb_path":"Cut Crease Test.png"
                   },
                   {
-                  "name":"Winged Liner",
-                  "detail":"Go for drama and precision with a classic winged liner",
+                  "name":"CREATING INDIVIDUAL LASHES",
+                  "detail":"learn how to create individual lashes from strips",
                   "local_path":"WINGED LINER.mov",
                   "local_path_thumb":"WINGED LINER THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png",
+                  "thumb_path":"Cut Crease Test.png"
                   },
                   {
-                  "name":"Lip Application",
-                  "detail":"Take your lip game to the next level by using these brushes to apply your favorite colors and textures",
+                  "name":"LASH BLENDING",
+                  "detail":"learn how to blend your real lashes with your falsies",
                   "local_path":"LIP APPLICATION.mov",
                   "local_path_thumb":"LIP APPLICATION THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png",
+                  "thumb_path":"Cut Crease Test.png"
                   },
                   {
-                  "name":"Blending Shadow",
-                  "detail":"Blend shadows into your crease seamlessly to create a soft, neutral eye.",
+                  "name":"INVISIBLE LASH APPLICATION",
+                  "detail":"learn how to hide the band of your lashes for a more natural look",
                   "local_path":"BLENDING SHADOW.mov",
                   "local_path_thumb":"BLENDING SHADOW THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png",
+                  "thumb_path":"Cut Crease Test.png"
                   },
                   {
-                  "name":"Perfect Base",
-                  "detail":"Apply the perfect flawless base using concealer and foundation",
+                  "name":"INVISIBLE LASH APPLICATION (PRO)",
+                  "detail":"learn how to do an under lash application",
                   "local_path":"",
                   "local_path_thumb":"",
-                  "thumb_path":"Cut Crease Test.png",
-                  },
-                  {
-                  "name":"Color Correcting",
-                  "detail":"Cover any discoloration, even out skin tone, and prep for the perfect base",
-                  "local_path":"",
-                  "local_path_thumb":"",
-                  "thumb_path":"Cut Crease Test.png",
+                  "thumb_path":"Cut Crease Test.png"
                   }
-                  ],
-    "products":[
-                {
-                "name":"Stay Matte but Not Flat Powder Foundation",
-                "product_id":"NYX_002",
-                "image":"NYX_002"
-                },
-                {
-                "name":"Loose Pearl Shadows",
-                "product_id":"NYX_004",
-                "image":"NYX_004"
-                },
-                {
-                "name":"Pro Lip Cream Palette",
-                "product_id":"NYX_005",
-                "image":"NYX_005"
-                },
-                {
-                "name":"Concealer Stick",
-                "product_id":"NYX_012",
-                "image":"NYX_012"
-                },
-                {
-                "name":"Concealer Wand",
-                "product_id":"NYX_013",
-                "image":"NYX_013"
-                },
-                {
-                "name":"Eyebrow Cake Powder",
-                "product_id":"NYX_032",
-                "image":"NYX_032"
-                },
-                {
-                "name":"Butt Naked Palette",
-                "product_id":"NYX_045",
-                "image":"NYX_045"
-                },
-                {
-                "name":"Illuminator",
-                "product_id":"NYX_062",
-                "image":"NYX_062"
-                },
-                {
-                "name":"Stay Matte but Not Flat Liquid Foundation",
-                "product_id":"NYX_067",
-                "image":"NYX_067"
-                },
-                {
-                "name":"Nude Matte Shadow",
-                "product_id":"NYX_069",
-                "image":"NYX_069"
-                },
-                {
-                "name":"Studio Finishing Powder",
-                "product_id":"NYX_079",
-                "image":"NYX_079"
-                },
-                {
-                "name":"Gel Liner and Smudger",
-                "product_id":"NYX_080",
-                "image":"NYX_080"
-                },
-                {
-                "name":"Mineral Finishing Powder",
-                "product_id":"NYX_081",
-                "image":"NYX_081"
-                },
-                {
-                "name":"Smokey Shadow Palette",
-                "product_id":"NYX_092",
-                "image":"NYX_092"
-                },
-                {
-                "name":"Hot Singles",
-                "product_id":"NYX_121",
-                "image":"NYX_121"
-                },
-                {
-                "name":"Mineral Stick Foundation",
-                "product_id":"NYX_130",
-                "image":"NYX_130"
-                },
-                {
-                "name":"Dark Circle Concealer",
-                "product_id":"NYX_133",
-                "image":"NYX_133"
-                },
-                {
-                "name":"Invincible Fullest Coverage Foundation",
-                "product_id":"NYX_140",
-                "image":"NYX_140"
-                },
-                {
-                "name":"Wonder Stick",
-                "product_id":"NYX_150",
-                "image":"NYX_150"
-                },
-                {
-                "name":"Epic Mousse Liner",
-                "product_id":"NYX_158",
-                "image":"NYX_158"
-                },
-                {
-                "name":"Eyebrow Gel",
-                "product_id":"NYX_159",
-                "image":"NYX_159"
-                },
-                {
-                "name":"Highlight & Contour Pro Palette",
-                "product_id":"NYX_168",
-                "image":"NYX_168"
-                },
-                {
-                "name":"Conceal, Correct, Contour Palette",
-                "product_id":"NYX_170",
-                "image":"NYX_170"
-                },
-                {
-                "name":"Color Correcting Concealer Palette",
-                "product_id":"NYX_171",
-                "image":"NYX_171"
-                },
-                {
-                "name":"Define and Refine Powder Foundation",
-                "product_id":"NYX_172",
-                "image":"NYX_172"
-                },
-                {
-                "name":"Tame & Frame Brow Pomade",
-                "product_id":"NYX_173",
-                "image":"NYX_173"
-                },
-                {
-                "name":"Prismatic Shadows",
-                "product_id":"NYX_176",
-                "image":"NYX_176"
-                },
-                {
-                "name":"High Definition Blush",
-                "product_id":"NYX_178",
-                "image":"NYX_178"
-                },
-                {
-                "name":"High Definition Foundation",
-                "product_id":"NYX_185",
-                "image":"NYX_185"
-                },
-                {
-                "name":"High Definition Finishing Powder",
-                "product_id":"NYX_186",
-                "image":"NYX_186"
-                },
-                {
-                "name":"Highlight and Contour Pro Singles",
-                "product_id":"NYX_192",
-                "image":"NYX_192"
-                },
-                {
-                "name":"Avant Pop Shadow Palette",
-                "product_id":"NYX_193",
-                "image":"NYX_193"
-                },
-                {
-                "name":"Go-To Palette",
-                "product_id":"NYX_194",
-                "image":"NYX_194"
-                },
-                {
-                "name":"Liquid Suede Cream Lipstick",
-                "product_id":"NYX_201",
-                "image":"NYX_201"
-                },
-                {
-                "name":"Hydra Touch Powder Foundation",
-                "product_id":"NYX_229",
-                "image":"NYX_229"
-                },
-                {
-                "name":"Beauty School Dropout Palette - Freshman",
-                "product_id":"NYX_232",
-                "image":"NYX_232"
-                },
-                {
-                "name":"High Definition Blush Pro Refills",
-                "product_id":"NYX_254",
-                "image":"NYX_254"
-                },
-                {
-                "name":"Rocker Chic Palette",
-                "product_id":"NYX_259",
-                "image":"NYX_259"
-                },
-                {
-                "name":"Cheek Contour Duo Palette",
-                "product_id":"NYX_309",
-                "image":"NYX_309"
-                },
-                {
-                "name":"Cream Highlight and Contour Palette",
-                "product_id":"NYX_310",
-                "image":"NYX_310"
-                },
-                {
-                "name":"Full Throttle Shadow Palette",
-                "product_id":"NYX_313",
-                "image":"NYX_313"
-                },
-                {
-                "name":"Ombre Blush",
-                "product_id":"NYX_318",
-                "image":"NYX_318"
-                },
-                {
-                "name":"Pro Foundation Mixer",
-                "product_id":"NYX_320",
-                "image":"NYX_320"
-                },
-                {
-                "name":"Sculpt and Highlight Face Duo",
-                "product_id":"NYX_323",
-                "image":"NYX_323"
-                },
-                {
-                "name":"Strobe of Genius Illuminating Palette",
-                "product_id":"NYX_325",
-                "image":"NYX_325"
-                },
-                {
-                "name":"Full Throttle Shadow Stick",
-                "product_id":"NYX_331",
-                "image":"NYX_331"
-                },
-                {
-                "name":"Cosmic Gel Liner",
-                "product_id":"NYX_335",
-                "image":"NYX_335"
-                },
-                {
-                "name":"Ultimate Shadow Palette",
-                "product_id":"NYX_337",
-                "image":"NYX_337"
-                },
-                {
-                "name":"Lid Lingerie",
-                "product_id":"NYX_340",
-                "image":"NYX_340"
-                },
-                {
-                "name":"Gotcha Covered Concealer Pencil",
-                "product_id":"NYX_346",
-                "image":"NYX_346"
-                },
-                {
-                "name":"Bright Idea Illuminating Stick",
-                "product_id":"NYX_347",
-                "image":"NYX_347"
-                },
-                {
-                "name":"Velvet Matte Lipstick",
-                "product_id":"NYX_348",
-                "image":"NYX_348"
-                },
-                {
-                "name":"Pigments",
-                "product_id":"NYX_349",
-                "image":"NYX_349"
-                }
-    ]
+            ]
 }

@@ -20,6 +20,7 @@
 		B2C5B5981D9410660077F941 /* LashCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5B5941D9410660077F941 /* LashCategory.swift */; };
 		B2C5B5991D9410660077F941 /* Lash+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5B5951D9410660077F941 /* Lash+CoreDataProperties.swift */; };
 		B2C5B59A1D9410660077F941 /* Lash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5B5961D9410660077F941 /* Lash.swift */; };
+		B2D0A4E51D9914840006450B /* LashCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D0A4E31D9912CE0006450B /* LashCell.swift */; };
 		B2DB08941D93ECD10063A25E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08911D93ECD10063A25E /* AppDelegate.swift */; };
 		B2DB08951D93ECD10063A25E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08921D93ECD10063A25E /* main.swift */; };
 		B2DB08961D93ECD10063A25E /* TimeOutApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08931D93ECD10063A25E /* TimeOutApplication.swift */; };
@@ -48,7 +49,6 @@
 		B2DB08C41D93ED2A0063A25E /* DividerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2DB08C21D93ED2A0063A25E /* DividerView.xib */; };
 		B2DB08C61D93ED340063A25E /* TintedBorderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08C51D93ED340063A25E /* TintedBorderLayer.swift */; };
 		B2DB08CE1D93ED470063A25E /* AutoWidthLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08C71D93ED470063A25E /* AutoWidthLabel.swift */; };
-		B2DB08CF1D93ED470063A25E /* BrushCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08C81D93ED470063A25E /* BrushCarouselCell.swift */; };
 		B2DB08D01D93ED470063A25E /* CategoryCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08C91D93ED470063A25E /* CategoryCarouselCell.swift */; };
 		B2DB08D11D93ED470063A25E /* MyPlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08CA1D93ED470063A25E /* MyPlaylistCell.swift */; };
 		B2DB08D21D93ED470063A25E /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08CB1D93ED470063A25E /* ProductCell.swift */; };
@@ -79,8 +79,6 @@
 		B2DB090E1D93F0490063A25E /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B2DB090D1D93F0490063A25E /* data.json */; };
 		B2DB09101D93F08C0063A25E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2DB090F1D93F08C0063A25E /* Info.plist */; };
 		B2DB09121D93F0960063A25E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DB09111D93F0960063A25E /* Main.storyboard */; };
-		B2DB09171D93F0A10063A25E /* HelveNeuLigCon in Resources */ = {isa = PBXBuildFile; fileRef = B2DB09131D93F0A10063A25E /* HelveNeuLigCon */; };
-		B2DB09181D93F0A10063A25E /* HelveNeuMedCon in Resources */ = {isa = PBXBuildFile; fileRef = B2DB09141D93F0A10063A25E /* HelveNeuMedCon */; };
 		B2DB09191D93F0A10063A25E /* HelveticaNeue-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B2DB09151D93F0A10063A25E /* HelveticaNeue-Light.otf */; };
 		B2DB091A1D93F0A10063A25E /* HelveticaNeueCond.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2DB09161D93F0A10063A25E /* HelveticaNeueCond.ttf */; };
 		B2DB09261D93F0AF0063A25E /* BLENDING SHADOW.mov in Resources */ = {isa = PBXBuildFile; fileRef = B2DB091B1D93F0AF0063A25E /* BLENDING SHADOW.mov */; };
@@ -107,6 +105,8 @@
 		B2DB09471D93F0C70063A25E /* SMOKEY CAT EYE THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B2DB093D1D93F0C70063A25E /* SMOKEY CAT EYE THUMB.mov */; };
 		B2DB09481D93F0C70063A25E /* WINGED LINER THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B2DB093E1D93F0C70063A25E /* WINGED LINER THUMB.mov */; };
 		B2DB094B1D93F13A0063A25E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DB09491D93F13A0063A25E /* LaunchScreen.storyboard */; };
+		B2F131E91D957DA000A83F16 /* LashCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F131E81D957DA000A83F16 /* LashCategoryCell.swift */; };
+		B2F131F31D958BD000A83F16 /* LashesCategoryBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F131F21D958BD000A83F16 /* LashesCategoryBrowserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -137,6 +137,7 @@
 		B2C5B5941D9410660077F941 /* LashCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LashCategory.swift; path = "loreal-lashes_bar-ios/Object Model/LashCategory.swift"; sourceTree = SOURCE_ROOT; };
 		B2C5B5951D9410660077F941 /* Lash+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Lash+CoreDataProperties.swift"; path = "loreal-lashes_bar-ios/Object Model/Lash+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		B2C5B5961D9410660077F941 /* Lash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lash.swift; path = "loreal-lashes_bar-ios/Object Model/Lash.swift"; sourceTree = SOURCE_ROOT; };
+		B2D0A4E31D9912CE0006450B /* LashCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LashCell.swift; path = "loreal-lashes_bar-ios/View Controllers/LashCell.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08911D93ECD10063A25E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "loreal-lashes_bar-ios/Application Core/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08921D93ECD10063A25E /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = "loreal-lashes_bar-ios/Application Core/main.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08931D93ECD10063A25E /* TimeOutApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeOutApplication.swift; path = "loreal-lashes_bar-ios/Application Core/TimeOutApplication.swift"; sourceTree = SOURCE_ROOT; };
@@ -165,7 +166,6 @@
 		B2DB08C21D93ED2A0063A25E /* DividerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DividerView.xib; path = "loreal-lashes_bar-ios/Views/Nibs/DividerView.xib"; sourceTree = SOURCE_ROOT; };
 		B2DB08C51D93ED340063A25E /* TintedBorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TintedBorderLayer.swift; path = "loreal-lashes_bar-ios/Views/Layers/TintedBorderLayer.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08C71D93ED470063A25E /* AutoWidthLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoWidthLabel.swift; path = "loreal-lashes_bar-ios/Views/AutoWidthLabel.swift"; sourceTree = SOURCE_ROOT; };
-		B2DB08C81D93ED470063A25E /* BrushCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrushCarouselCell.swift; path = "loreal-lashes_bar-ios/Views/BrushCarouselCell.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08C91D93ED470063A25E /* CategoryCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryCarouselCell.swift; path = "loreal-lashes_bar-ios/Views/CategoryCarouselCell.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08CA1D93ED470063A25E /* MyPlaylistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyPlaylistCell.swift; path = "loreal-lashes_bar-ios/Views/MyPlaylistCell.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08CB1D93ED470063A25E /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductCell.swift; path = "loreal-lashes_bar-ios/Views/ProductCell.swift"; sourceTree = SOURCE_ROOT; };
@@ -196,8 +196,6 @@
 		B2DB090D1D93F0490063A25E /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = "loreal-lashes_bar-ios/Resources/data.json"; sourceTree = SOURCE_ROOT; };
 		B2DB090F1D93F08C0063A25E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "loreal-lashes_bar-ios/Resources/Info.plist"; sourceTree = SOURCE_ROOT; };
 		B2DB09111D93F0960063A25E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "loreal-lashes_bar-ios/Resources/Main.storyboard"; sourceTree = SOURCE_ROOT; };
-		B2DB09131D93F0A10063A25E /* HelveNeuLigCon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HelveNeuLigCon; path = "loreal-lashes_bar-ios/Resources/Fonts/HelveNeuLigCon"; sourceTree = SOURCE_ROOT; };
-		B2DB09141D93F0A10063A25E /* HelveNeuMedCon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HelveNeuMedCon; path = "loreal-lashes_bar-ios/Resources/Fonts/HelveNeuMedCon"; sourceTree = SOURCE_ROOT; };
 		B2DB09151D93F0A10063A25E /* HelveticaNeue-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "HelveticaNeue-Light.otf"; path = "loreal-lashes_bar-ios/Resources/Fonts/HelveticaNeue-Light.otf"; sourceTree = SOURCE_ROOT; };
 		B2DB09161D93F0A10063A25E /* HelveticaNeueCond.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = HelveticaNeueCond.ttf; path = "loreal-lashes_bar-ios/Resources/Fonts/HelveticaNeueCond.ttf"; sourceTree = SOURCE_ROOT; };
 		B2DB091B1D93F0AF0063A25E /* BLENDING SHADOW.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "BLENDING SHADOW.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/BLENDING SHADOW.mov"; sourceTree = SOURCE_ROOT; };
@@ -224,6 +222,8 @@
 		B2DB093D1D93F0C70063A25E /* SMOKEY CAT EYE THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "SMOKEY CAT EYE THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/ThumbnailVideos/SMOKEY CAT EYE THUMB.mov"; sourceTree = SOURCE_ROOT; };
 		B2DB093E1D93F0C70063A25E /* WINGED LINER THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WINGED LINER THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/ThumbnailVideos/WINGED LINER THUMB.mov"; sourceTree = SOURCE_ROOT; };
 		B2DB094A1D93F13A0063A25E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "loreal-lashes_bar-ios/Base.lproj/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
+		B2F131E81D957DA000A83F16 /* LashCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LashCategoryCell.swift; path = "loreal-lashes_bar-ios/Views/LashCategoryCell.swift"; sourceTree = SOURCE_ROOT; };
+		B2F131F21D958BD000A83F16 /* LashesCategoryBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LashesCategoryBrowserViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/LashesCategoryBrowserViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +317,7 @@
 			children = (
 				B2DB08D51D93EFD10063A25E /* AttractModeViewController.swift */,
 				B2DB08D61D93EFD10063A25E /* BaseViewController.swift */,
+				B2F131F21D958BD000A83F16 /* LashesCategoryBrowserViewController.swift */,
 				B2C5B5831D93F87E0077F941 /* LashesBrowserViewController.swift */,
 				B2DB08D81D93EFD10063A25E /* BrushDetailViewController.swift */,
 				B2DB08D91D93EFD10063A25E /* PlaylistViewController.swift */,
@@ -339,8 +340,6 @@
 		182838261D65E83C0007E544 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				B2DB09131D93F0A10063A25E /* HelveNeuLigCon */,
-				B2DB09141D93F0A10063A25E /* HelveNeuMedCon */,
 				B2DB09151D93F0A10063A25E /* HelveticaNeue-Light.otf */,
 				B2DB09161D93F0A10063A25E /* HelveticaNeueCond.ttf */,
 			);
@@ -401,8 +400,9 @@
 			isa = PBXGroup;
 			children = (
 				B2DB08C71D93ED470063A25E /* AutoWidthLabel.swift */,
-				B2DB08C81D93ED470063A25E /* BrushCarouselCell.swift */,
 				B2DB08C91D93ED470063A25E /* CategoryCarouselCell.swift */,
+				B2D0A4E31D9912CE0006450B /* LashCell.swift */,
+				B2F131E81D957DA000A83F16 /* LashCategoryCell.swift */,
 				B2DB08CA1D93ED470063A25E /* MyPlaylistCell.swift */,
 				B2DB08CB1D93ED470063A25E /* ProductCell.swift */,
 				B2DB08CC1D93ED470063A25E /* TechniqueCell.swift */,
@@ -438,9 +438,9 @@
 		1850B26A1D64738A00504FDD /* Functional */ = {
 			isa = PBXGroup;
 			children = (
+				B2DB08E91D93EFFC0063A25E /* Chapter.swift */,
 				B2C5B5961D9410660077F941 /* Lash.swift */,
 				B2C5B5941D9410660077F941 /* LashCategory.swift */,
-				B2DB08E91D93EFFC0063A25E /* Chapter.swift */,
 				B2DB08EB1D93EFFC0063A25E /* Product.swift */,
 				B2DB08EC1D93EFFC0063A25E /* Technique.swift */,
 			);
@@ -595,7 +595,6 @@
 				B2DB09451D93F0C70063A25E /* LIP APPLICATION THUMB.mov in Resources */,
 				B2DB094B1D93F13A0063A25E /* LaunchScreen.storyboard in Resources */,
 				B2DB09291D93F0AF0063A25E /* default_movie.mov in Resources */,
-				B2DB09171D93F0A10063A25E /* HelveNeuLigCon in Resources */,
 				183E40061D63736600AA3E08 /* Cartfile in Resources */,
 				B2DB09271D93F0AF0063A25E /* BLENDING WITH COLOR.mov in Resources */,
 				B2DB091A1D93F0A10063A25E /* HelveticaNeueCond.ttf in Resources */,
@@ -614,7 +613,6 @@
 				1816A4D81D63714C00FB6EB1 /* build_info.json in Resources */,
 				B2DB09461D93F0C70063A25E /* PERFECT ARCH BROW THUMB.mov in Resources */,
 				B2DB09331D93F0BD0063A25E /* Cut Crease Test.png in Resources */,
-				B2DB09181D93F0A10063A25E /* HelveNeuMedCon in Resources */,
 				B2DB09471D93F0C70063A25E /* SMOKEY CAT EYE THUMB.mov in Resources */,
 				B2DB08C41D93ED2A0063A25E /* DividerView.xib in Resources */,
 				B2DB09411D93F0C70063A25E /* CUT CREASE THUMB.mov in Resources */,
@@ -673,6 +671,7 @@
 				B2DB08E01D93EFD10063A25E /* BrushDetailViewController.swift in Sources */,
 				B2DB08D11D93ED470063A25E /* MyPlaylistCell.swift in Sources */,
 				B2DB08AA1D93ECF70063A25E /* Errors.swift in Sources */,
+				B2F131F31D958BD000A83F16 /* LashesCategoryBrowserViewController.swift in Sources */,
 				B2DB089F1D93ECDD0063A25E /* CoreData+Utilities.swift in Sources */,
 				B2DB08D01D93ED470063A25E /* CategoryCarouselCell.swift in Sources */,
 				B2DB08BC1D93ED1A0063A25E /* AnimatedBorderProtocol.swift in Sources */,
@@ -687,11 +686,13 @@
 				B2C5B5841D93F87F0077F941 /* LashesBrowserViewController.swift in Sources */,
 				B2DB08BE1D93ED1A0063A25E /* AVPlayerView.swift in Sources */,
 				B2C5B5991D9410660077F941 /* Lash+CoreDataProperties.swift in Sources */,
+				B2F131E91D957DA000A83F16 /* LashCategoryCell.swift in Sources */,
 				B2DB09081D93F0280063A25E /* HTTPStatusCodes.swift in Sources */,
 				B2DB08E21D93EFD10063A25E /* TechniqueBrowserViewController.swift in Sources */,
 				B2C5B59A1D9410660077F941 /* Lash.swift in Sources */,
 				B2DB08C61D93ED340063A25E /* TintedBorderLayer.swift in Sources */,
 				B2C5B5971D9410660077F941 /* LashCategory+CoreDataProperties.swift in Sources */,
+				B2D0A4E51D9914840006450B /* LashCell.swift in Sources */,
 				B2DB08F21D93EFFC0063A25E /* Technique.swift in Sources */,
 				B2DB08A21D93ECDD0063A25E /* UIColor+Branding.swift in Sources */,
 				B2DB08941D93ECD10063A25E /* AppDelegate.swift in Sources */,
@@ -704,7 +705,6 @@
 				B2DB09001D93F0210063A25E /* TextFileService.swift in Sources */,
 				B2DB08D31D93ED470063A25E /* TechniqueCell.swift in Sources */,
 				B2DB090A1D93F0280063A25E /* Responsables.swift in Sources */,
-				B2DB08CF1D93ED470063A25E /* BrushCarouselCell.swift in Sources */,
 				B2DB08AB1D93ECF70063A25E /* GeneralProtocols.swift in Sources */,
 				B2DB09071D93F0280063A25E /* EntryEvent.swift in Sources */,
 			);

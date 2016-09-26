@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var navigator: UINavigationController!
     private var transitions = SelfDrivenTransition()
     
-    private static let HockeyAppID = "1289a0d26ace411b8728c6b74956206b"
+    private static let HockeyAppID = "06c9bf1f7d044616861bc3e8b17c95ab"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
