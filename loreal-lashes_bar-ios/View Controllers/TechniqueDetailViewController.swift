@@ -12,7 +12,6 @@ class TechniqueDetailViewController: BaseViewController {
     
     @IBOutlet var videoContainer: AVPlayerView!
     
-    @IBOutlet var techniqueNameLabel: UILabel!
     @IBOutlet var techniqueDetailLabel: UILabel!
     @IBOutlet var brushNameLabel: UILabel!
     @IBOutlet var dataStack: UIStackView!
@@ -21,14 +20,8 @@ class TechniqueDetailViewController: BaseViewController {
     @IBOutlet var rightChevron: UIButton!
     @IBOutlet var addToPlaylistButton: UIButton!
     @IBOutlet var brushDetailsButton: UIButton!
-    
-    @IBOutlet var triangle: TriangleView!
-    @IBOutlet var triangleCenterConstraint: NSLayoutConstraint!
-    @IBOutlet var trianglePointConstraint: NSLayoutConstraint!
-    @IBOutlet var brushStroke: UIImageView!
+
     @IBOutlet var brushStack: UIStackView!
-    
-    private var strokeMask: UIView!
     
     var allTechniques = Technique.orderedTechniques()
     var technique: Technique? {
@@ -39,7 +32,6 @@ class TechniqueDetailViewController: BaseViewController {
                 updateButtons()
                 
                 updateChapterPopover(nil)
-                updateChapterButtons(nil)
                 dataStack.crossfadeUpdate(0.5, updates: {
                     self.updateBasicData()
                 })
@@ -51,7 +43,6 @@ class TechniqueDetailViewController: BaseViewController {
         didSet {
             if isViewLoaded(){
                 updateChapterPopover(oldValue)
-                updateChapterButtons(oldValue)
             }
         }
     }
@@ -61,7 +52,6 @@ class TechniqueDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.lightBG
-        triangle.triangleColor = UIColor.lightBG
         videoContainer.shouldInterruptTimeout = true
         
         // Set text with kerning
@@ -75,11 +65,7 @@ class TechniqueDetailViewController: BaseViewController {
         brushDetailsButton.setAttributedTitle(title, forState: .Normal)
         
         videoContainer.delegate = self
-        
-        strokeMask = UIView(frame: brushStroke.bounds)
-        strokeMask.backgroundColor = UIColor.blackColor()
-        brushStroke.maskView = strokeMask
-
+    
         updateBasicData()
         updateChapters()
         updateTechniqueVideo()
@@ -91,11 +77,6 @@ class TechniqueDetailViewController: BaseViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.updateButtons()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        strokeMask.frame = brushStroke.bounds
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -116,13 +97,7 @@ class TechniqueDetailViewController: BaseViewController {
     private func updateBasicData() {
         guard let technique = technique else { return }
         
-        techniqueNameLabel.text = technique.name
-        let orderedChapters = technique.orderedChapters()
-        if orderedChapters.count > 0, let brushName = orderedChapters[0].lash?.name {
-            brushNameLabel.text = brushName
-        }else{
-            brushNameLabel.text = technique.name
-        }
+        brushNameLabel.text = technique.name
         techniqueDetailLabel.text = technique.detail
     }
     
@@ -172,51 +147,6 @@ class TechniqueDetailViewController: BaseViewController {
     private func updateChapterPopover(oldValue: Chapter?) {
         let title = currentChapter?.lash?.name ?? technique?.name ?? "Error"
         brushNameLabel.crossfadeUpdate(0.25, updates: { self.brushNameLabel.text = title })
-    }
-    
-    private func updateChapterButtons(oldValue: Chapter?) {
-        guard let chapters = technique?.orderedChapters(),
-            stackViews = brushStack.arrangedSubviews as? [UIStackView]
-            where oldValue != currentChapter
-            else { return }
-        
-        let toIndex = (currentChapter == nil) ? nil : chapters.indexOf(currentChapter!)
-        
-        if let index = toIndex where oldValue == nil {
-            let target = brushStack.arrangedSubviews[index]
-            let converted = target.convertRect(target.bounds, toView: view)
-            triangleCenterConstraint.constant = converted.midX
-        }
-        
-        UIView.animateWithDuration(0.25) {
-            
-            self.trianglePointConstraint.constant = (self.currentChapter == nil) ? 0 : -12
-            
-            for (index, stackView) in stackViews.enumerate() {
-                let title = stackView.arrangedSubviews[0] as! UILabel
-                let isPink = (index == toIndex)
-                title.textColor = isPink ? UIColor.hotPink : UIColor.whiteColor()
-                title.font = isPink ?
-                    UIFont(name: "HelveticaNeue-CondensedBold", size: 40) :
-                    UIFont(name: "HelveticaNeueCond", size: 25)
-                
-                let image = stackView.arrangedSubviews[1] as! UIImageView
-                let isHigh = (index == toIndex)
-                let isLit = (isHigh || toIndex == nil)
-                
-                image.alpha = isLit ? 1 : 0.3
-                image.transform = isHigh ?
-                    CGAffineTransformMakeTranslation(0, -20) :
-                CGAffineTransformIdentity
-                
-                if isLit && oldValue != nil {
-                    let converted = stackView.convertRect(stackView.bounds, toView: self.view)
-                    self.triangleCenterConstraint.constant = converted.midX
-                }
-            }
-            
-            self.view.layoutIfNeeded()
-        }
     }
     
     private func updateButtons() {
@@ -322,7 +252,7 @@ extension TechniqueDetailViewController: AVPlayerViewDelegate {
 extension TechniqueDetailViewController: TransitionAnimationDataSource {
     
     func transitionableViews(direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
-        var views: [UIView] = [dataStack, brushDetailsButton, addToPlaylistButton, strokeMask]
+        var views: [UIView] = [dataStack, brushDetailsButton, addToPlaylistButton]
         for stackView in brushStack.arrangedSubviews as! [UIStackView] {
             views.append(stackView.arrangedSubviews[0])
             views.append(stackView.arrangedSubviews[1])
@@ -340,8 +270,6 @@ extension TechniqueDetailViewController: TransitionAnimationDataSource {
             return [TransitionAnimationItem(mode: .SlideRight, delay: 0.2, duration:  0.5)]
         case addToPlaylistButton :
             return [TransitionAnimationItem(mode: .SlideRight, delay: 0.1, duration: 0.5)]
-        case strokeMask :
-            return [TransitionAnimationItem(mode: .SlideLeft, duration: 0.5)]
         case videoContainer :
             return [TransitionAnimationItem(mode: .Fade)]
         default : break
