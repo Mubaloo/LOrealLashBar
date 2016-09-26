@@ -61,7 +61,6 @@ extension LashesCategoryBrowserViewController: UITableViewDataSource {
 extension LashesCategoryBrowserViewController: TransitionAnimationDataSource {
 
     private func viewEquivalent(otherVC: UIViewController) -> UIView? {
-        // coming back from the detail
         guard let detailVC = otherVC as? LashesBrowserViewController,
             category = detailVC.selectedCategory,
             itemNumber = categories.indexOf(category)

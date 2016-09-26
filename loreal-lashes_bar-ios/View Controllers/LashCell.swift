@@ -13,6 +13,8 @@ class LashCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var leftLashImageView: UIImageView!
     @IBOutlet weak var rightLashImageView: UIImageView!
+    @IBOutlet weak var lashesImagesContainer: UIView!
+    @IBOutlet weak var infoButton: UIButton!
     
     var lash: Lash? {
         didSet {

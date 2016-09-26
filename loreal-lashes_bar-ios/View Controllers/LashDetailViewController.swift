@@ -11,12 +11,11 @@ import UIKit
 class LashDetailViewController: BaseViewController {
     
     @IBOutlet var videoView: AVPlayerView!
-    @IBOutlet var basicDataStack: UIStackView!
     
-    @IBOutlet var numberLabel: UILabel!
-    @IBOutlet var categoryLabel: UILabel!
+    @IBOutlet weak var lengthTitleLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var detailLabel: UILabel!
+    @IBOutlet weak var typeContainer: UIView!
     
     @IBOutlet var hotTipStackView: UIStackView!
     @IBOutlet var hotTipLabel: UILabel!
@@ -24,30 +23,18 @@ class LashDetailViewController: BaseViewController {
     @IBOutlet var hotTipHeart: UIImageView!
     @IBOutlet var hotTipBorder: AnimatedBorderView!
     
-    @IBOutlet var brushImage: UIImageView!
-    @IBOutlet var bestSellerViews: [UIView]!
+    @IBOutlet weak var leftLashImageView: UIImageView!
+    @IBOutlet weak var rightLashImageView: UIImageView!
     @IBOutlet var addToPlaylistButton: UIButton!
-    @IBOutlet var viewPlaylistButton: UIButton!
-    
-    @IBOutlet var productMessage: UILabel!
-    @IBOutlet var productContainer: UIView!
-    @IBOutlet var productCollection: UICollectionView!
-    
+    @IBOutlet weak var lashesImagesContainerView: UIView!
+
     var lash: Lash? {
         didSet {
-//            associates = lash?.orderedAssociates()
             updateLashData()
             updateButtons()
         }
     }
     
-    var associates: [Product]? {
-        didSet {
-            if !isViewLoaded() { return }
-            productCollection.reloadData()
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,17 +44,7 @@ class LashDetailViewController: BaseViewController {
         
         // Colour scheme setup
         view.backgroundColor = UIColor.lightBG
-        numberLabel.textColor = UIColor.hotPink
-        categoryLabel.textColor = UIColor.hotPink
         hotTipTitle.textColor = UIColor.hotPink
-        productMessage.textColor = UIColor.hotPink
-        
-        for view in bestSellerViews {
-            if let label = view as? UILabel {
-                label.textColor = UIColor.hotPink
-            }
-        }
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -87,17 +64,13 @@ class LashDetailViewController: BaseViewController {
         guard let lash = lash else { return }
         
         videoView.loadPlaylistItem(lash)
-        numberLabel.text = lash.numberString
-//        categoryLabel.text = brush.category?.name
+        lengthTitleLabel.text = lash.length
         nameLabel.text = lash.name
         detailLabel.text = lash.detail
         hotTipLabel.text = lash.hotTips
         
-//        for view in bestSellerViews {
-//            view.hidden = (brush.bestSeller == false)
-//        }
-        
-        brushImage.image = lash.image.rotate()
+        leftLashImageView.image = lash.image
+        rightLashImageView.image = lash.image
     }
     
     private func updateButtons() {
@@ -131,7 +104,7 @@ class LashDetailViewController: BaseViewController {
 extension LashDetailViewController: TransitionAnimationDataSource {
     
     func transitionableViews(direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
-        return [videoView, basicDataStack, detailLabel, brushImage, addToPlaylistButton, viewPlaylistButton, hotTipStackView, hotTipHeart, hotTipBorder, productContainer]
+        return [videoView, nameLabel, detailLabel, typeContainer, addToPlaylistButton, hotTipStackView, hotTipHeart, hotTipBorder]
     }
     
     func transitionAnimationItemsForView(view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
@@ -141,22 +114,12 @@ extension LashDetailViewController: TransitionAnimationDataSource {
             let scale = TransitionAnimationItem(mode: .Scale, duration: 0.4, quantity: 1.3)
             return [fade, scale]
             
-        case basicDataStack, detailLabel :
+        case nameLabel, detailLabel, typeContainer :
             return [TransitionAnimationItem(mode: .SlideLeft, delay: 0.6, duration: 0.3)]
-            
-        case brushImage :
-            let fade = TransitionAnimationItem(mode: .Fade, delay: 0.5, duration: 0.3)
-            let slide = TransitionAnimationItem(mode: .SlideLeft, delay: 0.5, duration: 0.3)
-            return [fade, slide]
             
         case addToPlaylistButton :
             let fade = TransitionAnimationItem(mode: .Fade, delay: 0.7, duration: 0.3)
             let slide = TransitionAnimationItem(mode: .SlideLeft, delay: 0.7, duration: 0.3)
-            return [fade, slide]
-            
-        case viewPlaylistButton :
-            let fade = TransitionAnimationItem(mode: .Fade, delay: 0.65, duration: 0.3)
-            let slide = TransitionAnimationItem(mode: .SlideLeft, delay: 0.65, duration: 0.3)
             return [fade, slide]
             
         case hotTipStackView, hotTipHeart :
@@ -165,29 +128,16 @@ extension LashDetailViewController: TransitionAnimationDataSource {
         case hotTipBorder :
             return [TransitionAnimationItem(mode: .Native, delay: 0.5, duration: 0.5)]
             
-        case productContainer :
-            return [TransitionAnimationItem(mode: .SlideBottom, delay: 0.5, duration: 0.5, quantity: view.frame.height)]
-            
         default: return nil
         }
     }
     
-}
-
-extension LashDetailViewController: UICollectionViewDataSource {
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return associates?.count ?? 0
+    func viewsWithEquivalents(otherVC: UIViewController) -> [UIView]? {
+        if otherVC is LashesBrowserViewController { return [lashesImagesContainerView] }
+        return nil
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ProductCell", forIndexPath: indexPath)
-        if let productCell = cell as? ProductCell,
-            product = associates?[indexPath.item] {
-            productCell.nameLabel.text = product.name
-            productCell.imageView.image = product.image
-        }
-        return cell
+    func equivalentViewForView(view: UIView, otherVC: UIViewController) -> UIView? {
+        return lashesImagesContainerView
     }
-    
 }

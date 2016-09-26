@@ -16,7 +16,13 @@ class LashesBrowserViewController: BaseViewController {
     @IBOutlet weak var headerSubtitleLabel: UILabel!
     @IBOutlet weak var headerContainer: UIView!
     
-    var selectedCategory: LashCategory?
+    var selectedCategory: LashCategory? {
+        didSet {
+            lashes = selectedCategory?.orderedLashes()
+        }
+    }
+    
+    var lashes: [Lash]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +37,15 @@ class LashesBrowserViewController: BaseViewController {
         tableView.reloadData()
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if let detailVC = segue.destinationViewController as? BrushDetailViewController {
-//            guard let centralIndex = centralIndex else { return }
-//            detailVC.brush = brushes[centralIndex.section][centralIndex.item]
-//        }
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let detailVC = segue.destinationViewController as? LashDetailViewController, let button = sender as? UIButton, let lash = lashes?[button.tag] {
+            detailVC.lash = lash
+        }
+    }
     
-//    @IBAction func unwindToBrushBrowser(sender: UIStoryboardSegue) {
-//        // Nothing to do; just an unwind target
-//    }
+    @IBAction func unwindToLashesBrowser(sender: UIStoryboardSegue) {
+        // Nothing to do; just an unwind target
+    }
     
     func updateHeader () {
         headerImageView.image = selectedCategory?.image
@@ -63,11 +68,12 @@ extension LashesBrowserViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("LashCell", forIndexPath: indexPath)
         
-        guard let lash = selectedCategory?.orderedLashes()[indexPath.row], let lashCell = cell as? LashCell else {
+        guard let lashCell = cell as? LashCell, let lash = lashes?[indexPath.row] else {
             return cell
         }
         
         lashCell.lash = lash
+        lashCell.infoButton.tag = indexPath.row
         cell.backgroundColor = UIColor.lightBG
         return cell
     }
@@ -75,6 +81,19 @@ extension LashesBrowserViewController: UITableViewDataSource {
 
 
 extension LashesBrowserViewController: TransitionAnimationDataSource {
+    private func viewEquivalent(otherVC: UIViewController) -> UIView? {
+        if otherVC is LashesCategoryBrowserViewController { return headerContainer }
+        
+        guard let detailVC = otherVC as? LashDetailViewController,
+            lash = detailVC.lash,
+            itemNumber = lashes?.indexOf(lash)
+            else { return nil }
+        
+        let indexPath = NSIndexPath(forItem: itemNumber, inSection: 0)
+        guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? LashCell else { return nil }
+        return cell.lashesImagesContainer
+    }
+    
     func transitionableViews(direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
         var views: [UIView] = tableView.visibleCells
         views.append(headerContainer)
@@ -97,11 +116,11 @@ extension LashesBrowserViewController: TransitionAnimationDataSource {
     }
     
     func viewsWithEquivalents(otherVC: UIViewController) -> [UIView]? {
-        if otherVC is LashesCategoryBrowserViewController { return [headerContainer] }
+        if let equivalent = viewEquivalent(otherVC) { return [equivalent] }
         return nil
     }
     
     func equivalentViewForView(view: UIView, otherVC: UIViewController) -> UIView? {
-        return headerContainer
+        return viewEquivalent(otherVC)
     }
 }
