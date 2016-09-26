@@ -14,6 +14,7 @@ class LashesBrowserViewController: BaseViewController {
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var headerTitleLabel: UILabel!
     @IBOutlet weak var headerSubtitleLabel: UILabel!
+    @IBOutlet weak var headerContainer: UIView!
     
     var selectedCategory: LashCategory?
 
@@ -67,46 +68,40 @@ extension LashesBrowserViewController: UITableViewDataSource {
         }
         
         lashCell.lash = lash
-        
+        cell.backgroundColor = UIColor.lightBG
         return cell
     }
 }
 
 
-//extension LashesBrowserViewController: TransitionAnimationDataSource {
-//    
-//    private func viewEquivalent(otherVC: UIViewController) -> UIView? {
-//        guard let detailVC = otherVC as? TechniqueDetailViewController,
-//            technique = detailVC.technique,
-//            itemNumber = techniques.indexOf(technique)
-//            else { return nil }
-//        
-//        let indexPath = NSIndexPath(forItem: itemNumber, inSection: 0)
-//        guard let cell = techniqueCollection.cellForItemAtIndexPath(indexPath) as? TechniqueCell else { return nil }
-//        return cell.videoPreview
-//    }
-//    
-//    func transitionableViews(direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
-//        return techniqueCollection.subviews.filter({ $0 is TechniqueCell || $0 is UICollectionReusableView })
-//    }
-//    
-//    func transitionAnimationItemsForView(view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
-//        guard let cell = view as? TechniqueCell,
-//            indexPath = techniqueCollection.indexPathForCell(cell)
-//            else { return [TransitionAnimationItem(mode: .Fade)] }
-//        
-//        let count = techniqueCollection.visibleCells().count
-//        let mode: TransitionAnimationMode = (indexPath.item % 2 == 1) ? .SlideLeft : .SlideRight
-//        let delay = 0.5 / Double(count-1) * Double(indexPath.row)
-//        return [TransitionAnimationItem(mode: mode, delay: delay, duration: 0.5)]
-//    }
-//    
-//    func viewsWithEquivalents(otherVC: UIViewController) -> [UIView]? {
-//        if let equivalent = viewEquivalent(otherVC) { return [equivalent] }
-//        return nil
-//    }
-//    
-//    func equivalentViewForView(view: UIView, otherVC: UIViewController) -> UIView? {
-//        return viewEquivalent(otherVC)
-//    }
-//}
+extension LashesBrowserViewController: TransitionAnimationDataSource {
+    func transitionableViews(direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
+        var views: [UIView] = tableView.visibleCells
+        views.append(headerContainer)
+        return tableView.visibleCells
+    }
+    
+    func transitionAnimationItemsForView(view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
+        guard let cell = view as? LashCell,
+            indexPath = tableView.indexPathForCell(cell)
+            else { return [TransitionAnimationItem(mode: .Fade)] }
+        
+        if otherVC is LashDetailViewController {
+            return [TransitionAnimationItem(mode: .Fade)]
+        }else{
+            let count = tableView.visibleCells.count
+            let mode: TransitionAnimationMode = .SlideTop
+            let delay = 0.5 / Double(count-1) * Double(indexPath.row)
+            return [TransitionAnimationItem(mode: mode, delay: delay, duration: 0.5)]
+        }
+    }
+    
+    func viewsWithEquivalents(otherVC: UIViewController) -> [UIView]? {
+        if otherVC is LashesCategoryBrowserViewController { return [headerContainer] }
+        return nil
+    }
+    
+    func equivalentViewForView(view: UIView, otherVC: UIViewController) -> UIView? {
+        return headerContainer
+    }
+}

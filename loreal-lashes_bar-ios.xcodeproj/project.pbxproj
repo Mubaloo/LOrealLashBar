@@ -56,7 +56,7 @@
 		B2DB08D41D93ED470063A25E /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08CD1D93ED470063A25E /* TriangleView.swift */; };
 		B2DB08DD1D93EFD10063A25E /* AttractModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08D51D93EFD10063A25E /* AttractModeViewController.swift */; };
 		B2DB08DE1D93EFD10063A25E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08D61D93EFD10063A25E /* BaseViewController.swift */; };
-		B2DB08E01D93EFD10063A25E /* BrushDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08D81D93EFD10063A25E /* BrushDetailViewController.swift */; };
+		B2DB08E01D93EFD10063A25E /* LashDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08D81D93EFD10063A25E /* LashDetailViewController.swift */; };
 		B2DB08E11D93EFD10063A25E /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08D91D93EFD10063A25E /* PlaylistViewController.swift */; };
 		B2DB08E21D93EFD10063A25E /* TechniqueBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08DA1D93EFD10063A25E /* TechniqueBrowserViewController.swift */; };
 		B2DB08E31D93EFD10063A25E /* TechniqueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08DB1D93EFD10063A25E /* TechniqueDetailViewController.swift */; };
@@ -173,7 +173,7 @@
 		B2DB08CD1D93ED470063A25E /* TriangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TriangleView.swift; path = "loreal-lashes_bar-ios/Views/TriangleView.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08D51D93EFD10063A25E /* AttractModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttractModeViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/AttractModeViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08D61D93EFD10063A25E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/BaseViewController.swift"; sourceTree = SOURCE_ROOT; };
-		B2DB08D81D93EFD10063A25E /* BrushDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrushDetailViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/BrushDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B2DB08D81D93EFD10063A25E /* LashDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LashDetailViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/LashDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08D91D93EFD10063A25E /* PlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaylistViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/PlaylistViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08DA1D93EFD10063A25E /* TechniqueBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TechniqueBrowserViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/TechniqueBrowserViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08DB1D93EFD10063A25E /* TechniqueDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TechniqueDetailViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/TechniqueDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -319,7 +319,7 @@
 				B2DB08D61D93EFD10063A25E /* BaseViewController.swift */,
 				B2F131F21D958BD000A83F16 /* LashesCategoryBrowserViewController.swift */,
 				B2C5B5831D93F87E0077F941 /* LashesBrowserViewController.swift */,
-				B2DB08D81D93EFD10063A25E /* BrushDetailViewController.swift */,
+				B2DB08D81D93EFD10063A25E /* LashDetailViewController.swift */,
 				B2DB08D91D93EFD10063A25E /* PlaylistViewController.swift */,
 				B2DB08DA1D93EFD10063A25E /* TechniqueBrowserViewController.swift */,
 				B2DB08DB1D93EFD10063A25E /* TechniqueDetailViewController.swift */,
@@ -668,7 +668,7 @@
 				B2DB08EF1D93EFFC0063A25E /* Chapter.swift in Sources */,
 				B2DB08CE1D93ED470063A25E /* AutoWidthLabel.swift in Sources */,
 				B2DB08FF1D93F0210063A25E /* BaseService.swift in Sources */,
-				B2DB08E01D93EFD10063A25E /* BrushDetailViewController.swift in Sources */,
+				B2DB08E01D93EFD10063A25E /* LashDetailViewController.swift in Sources */,
 				B2DB08D11D93ED470063A25E /* MyPlaylistCell.swift in Sources */,
 				B2DB08AA1D93ECF70063A25E /* Errors.swift in Sources */,
 				B2F131F31D958BD000A83F16 /* LashesCategoryBrowserViewController.swift in Sources */,

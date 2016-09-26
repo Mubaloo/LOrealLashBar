@@ -18,6 +18,8 @@ class LashCell: UITableViewCell {
         didSet {
             lengthTitleLabel.text = lash?.length
             nameLabel.text = lash?.name
+            leftLashImageView.image = lash?.image
+            rightLashImageView.image = lash?.image
         }
     }
 }

@@ -99,7 +99,7 @@ class TechniqueDetailViewController: BaseViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let brushDetailVC = segue.destinationViewController as? BrushDetailViewController,
+        if let brushDetailVC = segue.destinationViewController as? LashDetailViewController,
             chapter = currentChapter ?? technique?.orderedChapters().first {
             brushDetailVC.lash = chapter.lash
         }
