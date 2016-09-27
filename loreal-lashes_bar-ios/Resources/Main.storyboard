@@ -967,12 +967,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="924"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="185" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="14F-CV-J59">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="185" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="14F-CV-J59">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="924"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LashCategoryCell" id="v8X-nO-0PA" customClass="LashCategoryCell" customModule="loreal_lashes_bar_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="768" height="185"/>
+                                        <rect key="frame" x="0.0" y="1" width="768" height="185"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v8X-nO-0PA" id="s2b-Rn-QAw">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="185"/>

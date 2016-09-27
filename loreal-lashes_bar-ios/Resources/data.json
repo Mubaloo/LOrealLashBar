@@ -4,31 +4,31 @@
                   "name":"ROUND",
                   "number":1,
                   "detail":"Round shape, whites around the iris are visible",
-                  "image":"ROUND"
+                  "image":"round"
                   },
                   {
                   "name":"ALMOND",
                   "number":2,
                   "detail":"Almond shape, whites around the iris are not visible",
-                  "image":"ALMOND"
+                  "image":"almond"
                   },
                   {
                   "name":"HOODED",
                   "number":3,
                   "detail":"Crease is not visible due to extra fold of skin",
-                  "image":"HOODED"
+                  "image":"hooded"
                   },
                   {
                   "name":"MONOLID",
                   "number":4,
                   "detail":"Flat with no crease, the brow bone is less defined",
-                  "image":"MONOLID"
+                  "image":"monolid"
                   },
                   {
                   "name":"DEEP SET",
                   "number":5,
                   "detail":"Set deeper into the skull, creating the illusion of a more prominent brown bone",
-                  "image":"DEEP SET"
+                  "image":"deepset"
                   }
               ],
     "lashes":[
