@@ -74,6 +74,7 @@
 		B22812A11D9BCFCB00B091E1 /* WL22 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812891D9BCFCB00B091E1 /* WL22 THUMB.mov */; };
 		B22812A21D9BCFCB00B091E1 /* WL23 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228128A1D9BCFCB00B091E1 /* WL23 THUMB.mov */; };
 		B22812A31D9BCFCB00B091E1 /* WL24 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228128B1D9BCFCB00B091E1 /* WL24 THUMB.mov */; };
+		B22812A51D9BEDB300B091E1 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22812A41D9BEDB300B091E1 /* PrivacyViewController.swift */; };
 		B2C5B5841D93F87F0077F941 /* LashesBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5B5831D93F87E0077F941 /* LashesBrowserViewController.swift */; };
 		B2C5B5861D93FC660077F941 /* loreal_lashes_bar_ios.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B2C5B5851D93FC660077F941 /* loreal_lashes_bar_ios.xcdatamodel */; };
 		B2C5B5971D9410660077F941 /* LashCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5B5931D9410660077F941 /* LashCategory+CoreDataProperties.swift */; };
@@ -248,6 +249,7 @@
 		B22812891D9BCFCB00B091E1 /* WL22 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL22 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL22 THUMB.mov"; sourceTree = SOURCE_ROOT; };
 		B228128A1D9BCFCB00B091E1 /* WL23 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL23 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL23 THUMB.mov"; sourceTree = SOURCE_ROOT; };
 		B228128B1D9BCFCB00B091E1 /* WL24 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL24 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL24 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812A41D9BEDB300B091E1 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrivacyViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/PrivacyViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B2C5B5831D93F87E0077F941 /* LashesBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LashesBrowserViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/LashesBrowserViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B2C5B5851D93FC660077F941 /* loreal_lashes_bar_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = loreal_lashes_bar_ios.xcdatamodel; path = "loreal-lashes_bar-ios/Object Model/loreal_lashes_bar_ios.xcdatamodel"; sourceTree = SOURCE_ROOT; };
 		B2C5B5931D9410660077F941 /* LashCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LashCategory+CoreDataProperties.swift"; path = "loreal-lashes_bar-ios/Object Model/LashCategory+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -435,6 +437,7 @@
 				B2C5B5831D93F87E0077F941 /* LashesBrowserViewController.swift */,
 				B2DB08D81D93EFD10063A25E /* LashDetailViewController.swift */,
 				B2DB08D91D93EFD10063A25E /* PlaylistViewController.swift */,
+				B22812A41D9BEDB300B091E1 /* PrivacyViewController.swift */,
 				B2DB08DA1D93EFD10063A25E /* TechniqueBrowserViewController.swift */,
 				B2DB08DB1D93EFD10063A25E /* TechniqueDetailViewController.swift */,
 				B2DB08DC1D93EFD10063A25E /* TitleBarViewController.swift */,
@@ -909,6 +912,7 @@
 				B2DB08A31D93ECDD0063A25E /* UIFont+Utilities.swift in Sources */,
 				B2DB08E61D93EFEA0063A25E /* CoreDataStack.swift in Sources */,
 				B2DB08D21D93ED470063A25E /* ProductCell.swift in Sources */,
+				B22812A51D9BEDB300B091E1 /* PrivacyViewController.swift in Sources */,
 				B2DB08EF1D93EFFC0063A25E /* Chapter.swift in Sources */,
 				B2DB08CE1D93ED470063A25E /* AutoWidthLabel.swift in Sources */,
 				B2DB08FF1D93F0210063A25E /* BaseService.swift in Sources */,

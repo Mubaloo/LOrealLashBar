@@ -15,11 +15,13 @@ class PlaylistViewController: BaseViewController {
     @IBOutlet var playlistCollection: UICollectionView!
     @IBOutlet var closeButton: UIButton!
     
-    @IBOutlet var unsentStack: UIStackView!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var emailContainer: UIView!
     @IBOutlet var sendButton: UIButton!
     @IBOutlet var interfaceBottom: NSLayoutConstraint!
+    
+    @IBOutlet weak var tickMarkBackground: UIView!
+    @IBOutlet weak var tickMarkImageView: UIImageView!
     
     var playlistItems: [PlaylistItem] = {
         var allItems = Lash.playlist().map({ $0 as PlaylistItem })
@@ -33,6 +35,7 @@ class PlaylistViewController: BaseViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.lightBG
         titleBar.backgroundColor = UIColor.lightBG
+        tickMarkBackground.layer.cornerRadius = 3
         playlistCollection.collectionViewLayout = PagedGridLayout()
         playlistCollection.reloadData()
         sendButton.enabled = playlistItems.count > 0
@@ -54,6 +57,9 @@ class PlaylistViewController: BaseViewController {
     }
     
     // TODO: test full implementation when web service is in place on the back end.
+    @IBAction func unwindToPlaylistVC(segue: UIStoryboardSegue) {
+        // No need to do anything here yet
+    }
     
     @IBAction func sendButtonTouched (sender: UIButton) {
         if emailIsValid(), let emailAddress = emailField.text {
@@ -81,6 +87,14 @@ class PlaylistViewController: BaseViewController {
     
     @IBAction func closeButtonTouched(sender: UIButton) {
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func tickContainerTouched(sender: AnyObject) {
+        if tickMarkImageView.hidden == true {
+            tickMarkImageView.hidden = false
+        }else{
+            tickMarkImageView.hidden = true
+        }
     }
     
     func updateKeyboard(notif: NSNotification) {
