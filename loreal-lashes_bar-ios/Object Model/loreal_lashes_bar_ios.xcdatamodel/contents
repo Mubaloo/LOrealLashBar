@@ -12,6 +12,7 @@
         <attribute name="inPlaylist" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="length" attributeType="String" syncable="YES"/>
         <attribute name="localMediaPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="localMediaThumbPath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="ordinal" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="remoteMediaPath" optional="YES" attributeType="String" syncable="YES"/>
@@ -44,7 +45,7 @@
     </entity>
     <elements>
         <element name="Chapter" positionX="-261" positionY="180" width="128" height="103"/>
-        <element name="Lash" positionX="-56" positionY="-9" width="128" height="208"/>
+        <element name="Lash" positionX="-56" positionY="-9" width="128" height="223"/>
         <element name="LashCategory" positionX="214" positionY="-25" width="128" height="118"/>
         <element name="Product" positionX="-65" positionY="279" width="128" height="88"/>
         <element name="Technique" positionX="-549" positionY="-45" width="128" height="178"/>

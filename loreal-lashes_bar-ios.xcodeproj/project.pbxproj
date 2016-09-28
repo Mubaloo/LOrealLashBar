@@ -26,6 +26,54 @@
 		B228123E1D9BB62E00B091E1 /* 09. LASH BLENDING.png in Resources */ = {isa = PBXBuildFile; fileRef = B22812341D9BB62E00B091E1 /* 09. LASH BLENDING.png */; };
 		B228123F1D9BB62E00B091E1 /* 10. INVISIBLE LASHES.png in Resources */ = {isa = PBXBuildFile; fileRef = B22812351D9BB62E00B091E1 /* 10. INVISIBLE LASHES.png */; };
 		B22812411D9BBD5600B091E1 /* default_movie.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812401D9BBD5600B091E1 /* default_movie.mov */; };
+		B228125B1D9BC34900B091E1 /* WL01.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812431D9BC34900B091E1 /* WL01.mov */; };
+		B228125C1D9BC34900B091E1 /* WL02.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812441D9BC34900B091E1 /* WL02.mov */; };
+		B228125D1D9BC34900B091E1 /* WL03.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812451D9BC34900B091E1 /* WL03.mov */; };
+		B228125E1D9BC34900B091E1 /* WL04.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812461D9BC34900B091E1 /* WL04.mov */; };
+		B228125F1D9BC34900B091E1 /* WL05.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812471D9BC34900B091E1 /* WL05.mov */; };
+		B22812601D9BC34900B091E1 /* WL06.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812481D9BC34900B091E1 /* WL06.mov */; };
+		B22812611D9BC34900B091E1 /* WL07.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812491D9BC34900B091E1 /* WL07.mov */; };
+		B22812621D9BC34900B091E1 /* WL08.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228124A1D9BC34900B091E1 /* WL08.mov */; };
+		B22812631D9BC34900B091E1 /* WL09.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228124B1D9BC34900B091E1 /* WL09.mov */; };
+		B22812641D9BC34900B091E1 /* WL10.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228124C1D9BC34900B091E1 /* WL10.mov */; };
+		B22812651D9BC34900B091E1 /* WL11.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228124D1D9BC34900B091E1 /* WL11.mov */; };
+		B22812661D9BC34900B091E1 /* WL12.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228124E1D9BC34900B091E1 /* WL12.mov */; };
+		B22812671D9BC34900B091E1 /* WL13.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228124F1D9BC34900B091E1 /* WL13.mov */; };
+		B22812681D9BC34900B091E1 /* WL14.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812501D9BC34900B091E1 /* WL14.mov */; };
+		B22812691D9BC34900B091E1 /* WL15.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812511D9BC34900B091E1 /* WL15.mov */; };
+		B228126A1D9BC34900B091E1 /* WL16.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812521D9BC34900B091E1 /* WL16.mov */; };
+		B228126B1D9BC34900B091E1 /* WL17.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812531D9BC34900B091E1 /* WL17.mov */; };
+		B228126C1D9BC34900B091E1 /* WL18.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812541D9BC34900B091E1 /* WL18.mov */; };
+		B228126D1D9BC34900B091E1 /* WL19.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812551D9BC34900B091E1 /* WL19.mov */; };
+		B228126E1D9BC34900B091E1 /* WL20.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812561D9BC34900B091E1 /* WL20.mov */; };
+		B228126F1D9BC34900B091E1 /* WL21.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812571D9BC34900B091E1 /* WL21.mov */; };
+		B22812701D9BC34900B091E1 /* WL22.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812581D9BC34900B091E1 /* WL22.mov */; };
+		B22812711D9BC34900B091E1 /* WL23.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812591D9BC34900B091E1 /* WL23.mov */; };
+		B22812721D9BC34900B091E1 /* WL24.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228125A1D9BC34900B091E1 /* WL24.mov */; };
+		B228128C1D9BCFCB00B091E1 /* WL01 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812741D9BCFCB00B091E1 /* WL01 THUMB.mov */; };
+		B228128D1D9BCFCB00B091E1 /* WL02 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812751D9BCFCB00B091E1 /* WL02 THUMB.mov */; };
+		B228128E1D9BCFCB00B091E1 /* WL03 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812761D9BCFCB00B091E1 /* WL03 THUMB.mov */; };
+		B228128F1D9BCFCB00B091E1 /* WL04 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812771D9BCFCB00B091E1 /* WL04 THUMB.mov */; };
+		B22812901D9BCFCB00B091E1 /* WL05 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812781D9BCFCB00B091E1 /* WL05 THUMB.mov */; };
+		B22812911D9BCFCB00B091E1 /* WL06 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812791D9BCFCB00B091E1 /* WL06 THUMB.mov */; };
+		B22812921D9BCFCB00B091E1 /* WL07 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228127A1D9BCFCB00B091E1 /* WL07 THUMB.mov */; };
+		B22812931D9BCFCB00B091E1 /* WL08 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228127B1D9BCFCB00B091E1 /* WL08 THUMB.mov */; };
+		B22812941D9BCFCB00B091E1 /* WL09 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228127C1D9BCFCB00B091E1 /* WL09 THUMB.mov */; };
+		B22812951D9BCFCB00B091E1 /* WL10 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228127D1D9BCFCB00B091E1 /* WL10 THUMB.mov */; };
+		B22812961D9BCFCB00B091E1 /* WL11 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228127E1D9BCFCB00B091E1 /* WL11 THUMB.mov */; };
+		B22812971D9BCFCB00B091E1 /* WL12 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228127F1D9BCFCB00B091E1 /* WL12 THUMB.mov */; };
+		B22812981D9BCFCB00B091E1 /* WL13 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812801D9BCFCB00B091E1 /* WL13 THUMB.mov */; };
+		B22812991D9BCFCB00B091E1 /* WL14 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812811D9BCFCB00B091E1 /* WL14 THUMB.mov */; };
+		B228129A1D9BCFCB00B091E1 /* WL15 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812821D9BCFCB00B091E1 /* WL15 THUMB.mov */; };
+		B228129B1D9BCFCB00B091E1 /* WL16 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812831D9BCFCB00B091E1 /* WL16 THUMB.mov */; };
+		B228129C1D9BCFCB00B091E1 /* WL17 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812841D9BCFCB00B091E1 /* WL17 THUMB.mov */; };
+		B228129D1D9BCFCB00B091E1 /* WL18 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812851D9BCFCB00B091E1 /* WL18 THUMB.mov */; };
+		B228129E1D9BCFCB00B091E1 /* WL19 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812861D9BCFCB00B091E1 /* WL19 THUMB.mov */; };
+		B228129F1D9BCFCB00B091E1 /* WL20 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812871D9BCFCB00B091E1 /* WL20 THUMB.mov */; };
+		B22812A01D9BCFCB00B091E1 /* WL21 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812881D9BCFCB00B091E1 /* WL21 THUMB.mov */; };
+		B22812A11D9BCFCB00B091E1 /* WL22 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B22812891D9BCFCB00B091E1 /* WL22 THUMB.mov */; };
+		B22812A21D9BCFCB00B091E1 /* WL23 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228128A1D9BCFCB00B091E1 /* WL23 THUMB.mov */; };
+		B22812A31D9BCFCB00B091E1 /* WL24 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228128B1D9BCFCB00B091E1 /* WL24 THUMB.mov */; };
 		B2C5B5841D93F87F0077F941 /* LashesBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5B5831D93F87E0077F941 /* LashesBrowserViewController.swift */; };
 		B2C5B5861D93FC660077F941 /* loreal_lashes_bar_ios.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B2C5B5851D93FC660077F941 /* loreal_lashes_bar_ios.xcdatamodel */; };
 		B2C5B5971D9410660077F941 /* LashCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5B5931D9410660077F941 /* LashCategory+CoreDataProperties.swift */; };
@@ -152,6 +200,54 @@
 		B22812341D9BB62E00B091E1 /* 09. LASH BLENDING.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "09. LASH BLENDING.png"; path = "loreal-lashes_bar-ios/Resources/Videos/Thumbnails/09. LASH BLENDING.png"; sourceTree = SOURCE_ROOT; };
 		B22812351D9BB62E00B091E1 /* 10. INVISIBLE LASHES.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "10. INVISIBLE LASHES.png"; path = "loreal-lashes_bar-ios/Resources/Videos/Thumbnails/10. INVISIBLE LASHES.png"; sourceTree = SOURCE_ROOT; };
 		B22812401D9BBD5600B091E1 /* default_movie.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = default_movie.mov; path = "loreal-lashes_bar-ios/Resources/Videos/default_movie.mov"; sourceTree = SOURCE_ROOT; };
+		B22812431D9BC34900B091E1 /* WL01.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL01.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL01.mov"; sourceTree = SOURCE_ROOT; };
+		B22812441D9BC34900B091E1 /* WL02.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL02.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL02.mov"; sourceTree = SOURCE_ROOT; };
+		B22812451D9BC34900B091E1 /* WL03.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL03.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL03.mov"; sourceTree = SOURCE_ROOT; };
+		B22812461D9BC34900B091E1 /* WL04.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL04.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL04.mov"; sourceTree = SOURCE_ROOT; };
+		B22812471D9BC34900B091E1 /* WL05.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL05.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL05.mov"; sourceTree = SOURCE_ROOT; };
+		B22812481D9BC34900B091E1 /* WL06.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL06.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL06.mov"; sourceTree = SOURCE_ROOT; };
+		B22812491D9BC34900B091E1 /* WL07.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL07.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL07.mov"; sourceTree = SOURCE_ROOT; };
+		B228124A1D9BC34900B091E1 /* WL08.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL08.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL08.mov"; sourceTree = SOURCE_ROOT; };
+		B228124B1D9BC34900B091E1 /* WL09.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL09.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL09.mov"; sourceTree = SOURCE_ROOT; };
+		B228124C1D9BC34900B091E1 /* WL10.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL10.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL10.mov"; sourceTree = SOURCE_ROOT; };
+		B228124D1D9BC34900B091E1 /* WL11.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL11.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL11.mov"; sourceTree = SOURCE_ROOT; };
+		B228124E1D9BC34900B091E1 /* WL12.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL12.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL12.mov"; sourceTree = SOURCE_ROOT; };
+		B228124F1D9BC34900B091E1 /* WL13.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL13.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL13.mov"; sourceTree = SOURCE_ROOT; };
+		B22812501D9BC34900B091E1 /* WL14.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL14.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL14.mov"; sourceTree = SOURCE_ROOT; };
+		B22812511D9BC34900B091E1 /* WL15.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL15.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL15.mov"; sourceTree = SOURCE_ROOT; };
+		B22812521D9BC34900B091E1 /* WL16.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL16.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL16.mov"; sourceTree = SOURCE_ROOT; };
+		B22812531D9BC34900B091E1 /* WL17.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL17.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL17.mov"; sourceTree = SOURCE_ROOT; };
+		B22812541D9BC34900B091E1 /* WL18.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL18.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL18.mov"; sourceTree = SOURCE_ROOT; };
+		B22812551D9BC34900B091E1 /* WL19.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL19.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL19.mov"; sourceTree = SOURCE_ROOT; };
+		B22812561D9BC34900B091E1 /* WL20.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL20.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL20.mov"; sourceTree = SOURCE_ROOT; };
+		B22812571D9BC34900B091E1 /* WL21.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL21.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL21.mov"; sourceTree = SOURCE_ROOT; };
+		B22812581D9BC34900B091E1 /* WL22.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL22.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL22.mov"; sourceTree = SOURCE_ROOT; };
+		B22812591D9BC34900B091E1 /* WL23.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL23.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL23.mov"; sourceTree = SOURCE_ROOT; };
+		B228125A1D9BC34900B091E1 /* WL24.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = WL24.mov; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/WL24.mov"; sourceTree = SOURCE_ROOT; };
+		B22812741D9BCFCB00B091E1 /* WL01 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL01 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL01 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812751D9BCFCB00B091E1 /* WL02 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL02 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL02 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812761D9BCFCB00B091E1 /* WL03 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL03 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL03 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812771D9BCFCB00B091E1 /* WL04 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL04 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL04 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812781D9BCFCB00B091E1 /* WL05 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL05 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL05 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812791D9BCFCB00B091E1 /* WL06 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL06 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL06 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B228127A1D9BCFCB00B091E1 /* WL07 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL07 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL07 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B228127B1D9BCFCB00B091E1 /* WL08 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL08 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL08 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B228127C1D9BCFCB00B091E1 /* WL09 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL09 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL09 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B228127D1D9BCFCB00B091E1 /* WL10 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL10 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL10 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B228127E1D9BCFCB00B091E1 /* WL11 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL11 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL11 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B228127F1D9BCFCB00B091E1 /* WL12 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL12 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL12 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812801D9BCFCB00B091E1 /* WL13 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL13 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL13 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812811D9BCFCB00B091E1 /* WL14 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL14 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL14 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812821D9BCFCB00B091E1 /* WL15 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL15 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL15 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812831D9BCFCB00B091E1 /* WL16 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL16 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL16 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812841D9BCFCB00B091E1 /* WL17 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL17 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL17 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812851D9BCFCB00B091E1 /* WL18 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL18 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL18 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812861D9BCFCB00B091E1 /* WL19 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL19 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL19 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812871D9BCFCB00B091E1 /* WL20 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL20 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL20 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812881D9BCFCB00B091E1 /* WL21 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL21 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL21 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B22812891D9BCFCB00B091E1 /* WL22 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL22 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL22 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B228128A1D9BCFCB00B091E1 /* WL23 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL23 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL23 THUMB.mov"; sourceTree = SOURCE_ROOT; };
+		B228128B1D9BCFCB00B091E1 /* WL24 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL24 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL24 THUMB.mov"; sourceTree = SOURCE_ROOT; };
 		B2C5B5831D93F87E0077F941 /* LashesBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LashesBrowserViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/LashesBrowserViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B2C5B5851D93FC660077F941 /* loreal_lashes_bar_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = loreal_lashes_bar_ios.xcdatamodel; path = "loreal-lashes_bar-ios/Object Model/loreal_lashes_bar_ios.xcdatamodel"; sourceTree = SOURCE_ROOT; };
 		B2C5B5931D9410660077F941 /* LashCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LashCategory+CoreDataProperties.swift"; path = "loreal-lashes_bar-ios/Object Model/LashCategory+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -395,6 +491,7 @@
 		184A553B1D702FD20027AE79 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				B22812421D9BC30700B091E1 /* Brushes */,
 				B2D0A5641D9AE85F0006450B /* 01. CUSTOM FITTING.mov */,
 				B2D0A5651D9AE85F0006450B /* 02. POP-UP LASH PREVENTION.mov */,
 				B2D0A5661D9AE85F0006450B /* 03. LASH APPLICATION.mov */,
@@ -533,6 +630,69 @@
 			path = WebServices;
 			sourceTree = "<group>";
 		};
+		B22812421D9BC30700B091E1 /* Brushes */ = {
+			isa = PBXGroup;
+			children = (
+				B22812731D9BC34F00B091E1 /* Thumbnails */,
+				B22812431D9BC34900B091E1 /* WL01.mov */,
+				B22812441D9BC34900B091E1 /* WL02.mov */,
+				B22812451D9BC34900B091E1 /* WL03.mov */,
+				B22812461D9BC34900B091E1 /* WL04.mov */,
+				B22812471D9BC34900B091E1 /* WL05.mov */,
+				B22812481D9BC34900B091E1 /* WL06.mov */,
+				B22812491D9BC34900B091E1 /* WL07.mov */,
+				B228124A1D9BC34900B091E1 /* WL08.mov */,
+				B228124B1D9BC34900B091E1 /* WL09.mov */,
+				B228124C1D9BC34900B091E1 /* WL10.mov */,
+				B228124D1D9BC34900B091E1 /* WL11.mov */,
+				B228124E1D9BC34900B091E1 /* WL12.mov */,
+				B228124F1D9BC34900B091E1 /* WL13.mov */,
+				B22812501D9BC34900B091E1 /* WL14.mov */,
+				B22812511D9BC34900B091E1 /* WL15.mov */,
+				B22812521D9BC34900B091E1 /* WL16.mov */,
+				B22812531D9BC34900B091E1 /* WL17.mov */,
+				B22812541D9BC34900B091E1 /* WL18.mov */,
+				B22812551D9BC34900B091E1 /* WL19.mov */,
+				B22812561D9BC34900B091E1 /* WL20.mov */,
+				B22812571D9BC34900B091E1 /* WL21.mov */,
+				B22812581D9BC34900B091E1 /* WL22.mov */,
+				B22812591D9BC34900B091E1 /* WL23.mov */,
+				B228125A1D9BC34900B091E1 /* WL24.mov */,
+			);
+			name = Brushes;
+			sourceTree = "<group>";
+		};
+		B22812731D9BC34F00B091E1 /* Thumbnails */ = {
+			isa = PBXGroup;
+			children = (
+				B22812741D9BCFCB00B091E1 /* WL01 THUMB.mov */,
+				B22812751D9BCFCB00B091E1 /* WL02 THUMB.mov */,
+				B22812761D9BCFCB00B091E1 /* WL03 THUMB.mov */,
+				B22812771D9BCFCB00B091E1 /* WL04 THUMB.mov */,
+				B22812781D9BCFCB00B091E1 /* WL05 THUMB.mov */,
+				B22812791D9BCFCB00B091E1 /* WL06 THUMB.mov */,
+				B228127A1D9BCFCB00B091E1 /* WL07 THUMB.mov */,
+				B228127B1D9BCFCB00B091E1 /* WL08 THUMB.mov */,
+				B228127C1D9BCFCB00B091E1 /* WL09 THUMB.mov */,
+				B228127D1D9BCFCB00B091E1 /* WL10 THUMB.mov */,
+				B228127E1D9BCFCB00B091E1 /* WL11 THUMB.mov */,
+				B228127F1D9BCFCB00B091E1 /* WL12 THUMB.mov */,
+				B22812801D9BCFCB00B091E1 /* WL13 THUMB.mov */,
+				B22812811D9BCFCB00B091E1 /* WL14 THUMB.mov */,
+				B22812821D9BCFCB00B091E1 /* WL15 THUMB.mov */,
+				B22812831D9BCFCB00B091E1 /* WL16 THUMB.mov */,
+				B22812841D9BCFCB00B091E1 /* WL17 THUMB.mov */,
+				B22812851D9BCFCB00B091E1 /* WL18 THUMB.mov */,
+				B22812861D9BCFCB00B091E1 /* WL19 THUMB.mov */,
+				B22812871D9BCFCB00B091E1 /* WL20 THUMB.mov */,
+				B22812881D9BCFCB00B091E1 /* WL21 THUMB.mov */,
+				B22812891D9BCFCB00B091E1 /* WL22 THUMB.mov */,
+				B228128A1D9BCFCB00B091E1 /* WL23 THUMB.mov */,
+				B228128B1D9BCFCB00B091E1 /* WL24 THUMB.mov */,
+			);
+			name = Thumbnails;
+			sourceTree = "<group>";
+		};
 		B2B89DB61D916685009955FE /* ThumbnailVideos */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,48 +771,96 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B22812641D9BC34900B091E1 /* WL10.mov in Resources */,
+				B22812971D9BCFCB00B091E1 /* WL12 THUMB.mov in Resources */,
+				B22812691D9BC34900B091E1 /* WL15.mov in Resources */,
+				B228125B1D9BC34900B091E1 /* WL01.mov in Resources */,
+				B22812661D9BC34900B091E1 /* WL12.mov in Resources */,
+				B22812711D9BC34900B091E1 /* WL23.mov in Resources */,
 				B2DB09121D93F0960063A25E /* Main.storyboard in Resources */,
+				B22812721D9BC34900B091E1 /* WL24.mov in Resources */,
 				B2DB09191D93F0A10063A25E /* HelveticaNeue-Light.otf in Resources */,
 				B2D0A5751D9AE85F0006450B /* 08. INDIVIDUAL LASHES.mov in Resources */,
+				B228126B1D9BC34900B091E1 /* WL17.mov in Resources */,
+				B22812631D9BC34900B091E1 /* WL09.mov in Resources */,
+				B22812671D9BC34900B091E1 /* WL13.mov in Resources */,
+				B22812621D9BC34900B091E1 /* WL08.mov in Resources */,
+				B228128F1D9BCFCB00B091E1 /* WL04 THUMB.mov in Resources */,
 				B2D0A5821D9AE8940006450B /* 01. CUSTOM FITTING THUMB.mov in Resources */,
+				B22812961D9BCFCB00B091E1 /* WL11 THUMB.mov in Resources */,
+				B228125E1D9BC34900B091E1 /* WL04.mov in Resources */,
 				B2DB090E1D93F0490063A25E /* data.json in Resources */,
+				B228126F1D9BC34900B091E1 /* WL21.mov in Resources */,
 				B2D0A5711D9AE85F0006450B /* 04. TRIO LASH APPLICATION.mov in Resources */,
 				B2D0A5731D9AE85F0006450B /* 06. WICKED FLARE.mov in Resources */,
+				B22812701D9BC34900B091E1 /* WL22.mov in Resources */,
 				B2D0A5841D9AE8940006450B /* 03. LASH APPLICATION THUMB.mov in Resources */,
+				B22812941D9BCFCB00B091E1 /* WL09 THUMB.mov in Resources */,
 				B22812391D9BB62E00B091E1 /* 04. TRIO LASH APPLICATION.png in Resources */,
 				B22812381D9BB62E00B091E1 /* 03. LASH APPLICATION.png in Resources */,
 				B22812361D9BB62E00B091E1 /* 01. CUSTOM FITTING.png in Resources */,
 				B22812411D9BBD5600B091E1 /* default_movie.mov in Resources */,
 				B228123B1D9BB62E00B091E1 /* 06. WICKED FLARE.png in Resources */,
+				B228126E1D9BC34900B091E1 /* WL20.mov in Resources */,
+				B22812911D9BCFCB00B091E1 /* WL06 THUMB.mov in Resources */,
 				B2D0A5741D9AE85F0006450B /* 07. DOUBLE STACKING.mov in Resources */,
+				B228125F1D9BC34900B091E1 /* WL05.mov in Resources */,
 				B228123F1D9BB62E00B091E1 /* 10. INVISIBLE LASHES.png in Resources */,
+				B228129D1D9BCFCB00B091E1 /* WL18 THUMB.mov in Resources */,
+				B22812A21D9BCFCB00B091E1 /* WL23 THUMB.mov in Resources */,
+				B228125D1D9BC34900B091E1 /* WL03.mov in Resources */,
 				B2DB094B1D93F13A0063A25E /* LaunchScreen.storyboard in Resources */,
 				B228122B1D9BB61600B091E1 /* 10. INVISIBLE LASHES.mov in Resources */,
+				B228129B1D9BCFCB00B091E1 /* WL16 THUMB.mov in Resources */,
+				B22812A31D9BCFCB00B091E1 /* WL24 THUMB.mov in Resources */,
 				183E40061D63736600AA3E08 /* Cartfile in Resources */,
+				B228128C1D9BCFCB00B091E1 /* WL01 THUMB.mov in Resources */,
 				B2DB091A1D93F0A10063A25E /* HelveticaNeueCond.ttf in Resources */,
 				B2DB09101D93F08C0063A25E /* Info.plist in Resources */,
 				B228123A1D9BB62E00B091E1 /* 05. ELONGATED LASHES.png in Resources */,
+				B228125C1D9BC34900B091E1 /* WL02.mov in Resources */,
 				B2D0A5891D9AE8940006450B /* 08. INDIVIDUAL LASHES THUMB.mov in Resources */,
+				B22812A11D9BCFCB00B091E1 /* WL22 THUMB.mov in Resources */,
 				B2D0A5701D9AE85F0006450B /* 03. LASH APPLICATION.mov in Resources */,
+				B22812651D9BC34900B091E1 /* WL11.mov in Resources */,
+				B22812681D9BC34900B091E1 /* WL14.mov in Resources */,
 				B228123D1D9BB62E00B091E1 /* 08. INDIVIDUAL LASHES.png in Resources */,
+				B228128E1D9BCFCB00B091E1 /* WL03 THUMB.mov in Resources */,
 				B2DB09341D93F0BD0063A25E /* default_thumb.png in Resources */,
+				B228126D1D9BC34900B091E1 /* WL19.mov in Resources */,
 				B228123C1D9BB62E00B091E1 /* 07. DOUBLE STACKING.png in Resources */,
+				B22812981D9BCFCB00B091E1 /* WL13 THUMB.mov in Resources */,
 				B2DB08C31D93ED2A0063A25E /* AVPlayerView.xib in Resources */,
 				B2D0A5831D9AE8940006450B /* 02. POP-UP LASH PREVENTION THUMB.mov in Resources */,
+				B228129C1D9BCFCB00B091E1 /* WL17 THUMB.mov in Resources */,
+				B22812931D9BCFCB00B091E1 /* WL08 THUMB.mov in Resources */,
+				B228128D1D9BCFCB00B091E1 /* WL02 THUMB.mov in Resources */,
 				B228123E1D9BB62E00B091E1 /* 09. LASH BLENDING.png in Resources */,
 				B2D0A5881D9AE8940006450B /* 07. DOUBLE STACKING THUMB.mov in Resources */,
 				1816A4D81D63714C00FB6EB1 /* build_info.json in Resources */,
+				B22812921D9BCFCB00B091E1 /* WL07 THUMB.mov in Resources */,
 				B22812371D9BB62E00B091E1 /* 02. POP-UP LASH PREVENTION.png in Resources */,
 				B2D0A58B1D9AE8940006450B /* 10. INVISIBLE LASHES THUMB.mov in Resources */,
+				B228129E1D9BCFCB00B091E1 /* WL19 THUMB.mov in Resources */,
+				B22812A01D9BCFCB00B091E1 /* WL21 THUMB.mov in Resources */,
 				B2D0A5861D9AE8940006450B /* 05. ELONGATED LASHES THUMB.mov in Resources */,
 				B2D0A5761D9AE85F0006450B /* 09. LASH BLENDING.mov in Resources */,
+				B228126C1D9BC34900B091E1 /* WL18.mov in Resources */,
+				B228129A1D9BCFCB00B091E1 /* WL15 THUMB.mov in Resources */,
+				B22812991D9BCFCB00B091E1 /* WL14 THUMB.mov in Resources */,
 				B2DB08C41D93ED2A0063A25E /* DividerView.xib in Resources */,
+				B22812951D9BCFCB00B091E1 /* WL10 THUMB.mov in Resources */,
+				B22812601D9BC34900B091E1 /* WL06.mov in Resources */,
+				B22812901D9BCFCB00B091E1 /* WL05 THUMB.mov in Resources */,
+				B22812611D9BC34900B091E1 /* WL07.mov in Resources */,
 				B2D0A5851D9AE8940006450B /* 04. TRIO LASH APPLICATION THUMB.mov in Resources */,
 				B2D0A56E1D9AE85F0006450B /* 01. CUSTOM FITTING.mov in Resources */,
 				B2D0A56F1D9AE85F0006450B /* 02. POP-UP LASH PREVENTION.mov in Resources */,
 				B2D0A5721D9AE85F0006450B /* 05. ELONGATED LASHES.mov in Resources */,
 				B2D0A58A1D9AE8940006450B /* 09. LASH BLENDING THUMB.mov in Resources */,
+				B228129F1D9BCFCB00B091E1 /* WL20 THUMB.mov in Resources */,
 				B2DB090C1D93F03B0063A25E /* Assets.xcassets in Resources */,
+				B228126A1D9BC34900B091E1 /* WL16.mov in Resources */,
 				B2D0A5871D9AE8940006450B /* 06. WICKED FLARE THUMB.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

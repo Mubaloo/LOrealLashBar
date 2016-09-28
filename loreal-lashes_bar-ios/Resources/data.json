@@ -40,6 +40,8 @@
               "hot_tip":"LIGHTLY SWEEP AND BLEND FOR EVEN COVERAGE.",
               "image":"WL01",
               "categories":["ROUND", "ALMOND", "MONOLID", "DEEP SET"],
+              "local_path":"WL01.mov",
+              "local_path_thumb":"WL01 THUMB.mov",
               "length":"Long"
               },
               {
@@ -50,6 +52,8 @@
               "hot_tip":"",
               "image":"WL02",
               "categories":["ROUND", "ALMOND", "MONOLID"],
+              "local_path":"WL02.mov",
+              "local_path_thumb":"WL02 THUMB.mov",
               "length":"Extra Short"
               },
               {
@@ -60,6 +64,8 @@
               "hot_tip":"",
               "image":"WL03",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "local_path":"WL03.mov",
+              "local_path_thumb":"WL03 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -70,6 +76,8 @@
               "hot_tip":"",
               "image":"WL04",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "local_path":"WL04.mov",
+              "local_path_thumb":"WL04 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -80,6 +88,8 @@
               "hot_tip":"",
               "image":"WL05",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "local_path":"WL05.mov",
+              "local_path_thumb":"WL05 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -90,6 +100,8 @@
               "hot_tip":"",
               "image":"WL06",
               "categories":["ROUND", "ALMOND", "MONOLID", "DEEP SET"],
+              "local_path":"WL06.mov",
+              "local_path_thumb":"WL06 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -100,6 +112,8 @@
               "hot_tip":"",
               "image":"WL07",
               "categories":["ROUND", "ALMOND", "MONOLID", "DEEP SET"],
+              "local_path":"WL07.mov",
+              "local_path_thumb":"WL07 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -110,6 +124,8 @@
               "hot_tip":"",
               "image":"WL08",
               "categories":["ALMOND", "HOODED", "MONOLID"],
+              "local_path":"WL08.mov",
+              "local_path_thumb":"WL08 THUMB.mov",
               "length":"Short"
               },
               {
@@ -120,6 +136,8 @@
               "hot_tip":"",
               "image":"WL09",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "local_path":"WL09.mov",
+              "local_path_thumb":"WL09 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -130,6 +148,8 @@
               "hot_tip":"",
               "image":"WL10",
               "categories":["ALMOND", "HOODED", "MONOLID"],
+              "local_path":"WL10.mov",
+              "local_path_thumb":"WL10 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -140,6 +160,8 @@
               "hot_tip":"",
               "image":"WL11",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "local_path":"WL11.mov",
+              "local_path_thumb":"WL11 THUMB.mov",
               "length":"Short"
               },
               {
@@ -150,6 +172,8 @@
               "hot_tip":"",
               "image":"WL12",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "local_path":"WL12.mov",
+              "local_path_thumb":"WL12 THUMB.mov",
               "length":"Short"
               },
               {
@@ -160,6 +184,8 @@
               "hot_tip":"",
               "image":"WL13",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID"],
+              "local_path":"WL13.mov",
+              "local_path_thumb":"WL13 THUMB.mov",
               "length":"Short"
               },
               {
@@ -170,6 +196,8 @@
               "hot_tip":"",
               "image":"WL14",
               "categories":["ROUND", "HOODED", "MONOLID"],
+              "local_path":"WL14.mov",
+              "local_path_thumb":"WL14 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -180,6 +208,8 @@
               "hot_tip":"",
               "image":"WL15",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "local_path":"WL15.mov",
+              "local_path_thumb":"WL15 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -190,6 +220,8 @@
               "hot_tip":"",
               "image":"WL16",
               "categories":["ROUND", "MONOLID", "DEEP SET"],
+              "local_path":"WL16.mov",
+              "local_path_thumb":"WL16 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -200,6 +232,8 @@
               "hot_tip":"",
               "image":"WL17",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "local_path":"WL17.mov",
+              "local_path_thumb":"WL17 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -210,6 +244,8 @@
               "hot_tip":"",
               "image":"WL18",
               "categories":["ROUND", "ALMOND", "MONOLID", "DEEP SET"],
+              "local_path":"WL18.mov",
+              "local_path_thumb":"WL18 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -220,6 +256,8 @@
               "hot_tip":"",
               "image":"WL19",
               "categories":["ALMOND", "DEEP SET"],
+              "local_path":"WL19.mov",
+              "local_path_thumb":"WL19 THUMB.mov",
               "length":"Long"
               },
               {
@@ -230,6 +268,8 @@
               "hot_tip":"",
               "image":"WL20",
               "categories":["ROUND", "ALMOND", "MONOLID", "DEEP SET"],
+              "local_path":"WL20.mov",
+              "local_path_thumb":"WL20 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -240,6 +280,8 @@
               "hot_tip":"",
               "image":"WL21",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "local_path":"WL21.mov",
+              "local_path_thumb":"WL21 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -250,6 +292,8 @@
               "hot_tip":"",
               "image":"WL22",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "local_path":"WL22.mov",
+              "local_path_thumb":"WL22 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -260,6 +304,8 @@
               "hot_tip":"",
               "image":"WL23",
               "categories":["ROUND", "ALMOND", "MONOLID"],
+              "local_path":"WL23.mov",
+              "local_path_thumb":"WL23 THUMB.mov",
               "length":"Medium"
               },
               {
@@ -270,6 +316,8 @@
               "hot_tip":"",
               "image":"WL24",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
+              "local_path":"WL24.mov",
+              "local_path_thumb":"WL24 THUMB.mov",
               "length":"Short"
               }
                ],

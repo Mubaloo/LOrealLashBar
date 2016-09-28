@@ -48,8 +48,17 @@ class Lash: Product, PlaylistItem {
     
     var localMediaThumbURL: NSURL {
         get {
-            // not used but required since the playlistItem protocol is supported which is needed to have the thumb for the techniques
-            return NSURL()
+            if let path = localMediaThumbPath {
+                let components = path.componentsSeparatedByString(".")
+                if components.count >= 2, let ext = components.last {
+                    let name = components[0..<components.count-1].joinWithSeparator(".")
+                    if let url = NSBundle.mainBundle().URLForResource(name, withExtension: ext) {
+                        return url
+                    }
+                }
+            }
+            
+            return NSBundle.mainBundle().URLForResource("default_movie", withExtension: "mov")!
         }
     }
     
@@ -131,6 +140,7 @@ class Lash: Product, PlaylistItem {
         
         remoteMediaPath = json["remote_path"].string
         localMediaPath = json["local_path"].string
+        localMediaThumbPath = json["local_path_thumb"].string
         thumbPath = json["thumb_path"].string
         
         if let categoriesJSON = json["categories"].array {

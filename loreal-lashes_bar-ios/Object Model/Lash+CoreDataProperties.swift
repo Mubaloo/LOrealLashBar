@@ -14,15 +14,16 @@ import CoreData
 
 extension Lash {
     
-    @NSManaged var detail: String
-    @NSManaged var hotTips: String
-    @NSManaged var inPlaylist: Bool
-    @NSManaged var localMediaPath: String?
-    @NSManaged var number: Int16
-    @NSManaged var ordinal: Int16
-    @NSManaged var remoteMediaPath: String?
-    @NSManaged var thumbPath: String?
-    @NSManaged var length: String
-    @NSManaged var categories: Set<LashCategory>?
-    @NSManaged var chapters: Set<Chapter>?
+    @NSManaged var detail:                  String
+    @NSManaged var hotTips:                 String
+    @NSManaged var inPlaylist:              Bool
+    @NSManaged var localMediaPath:          String?
+    @NSManaged var localMediaThumbPath:     String?
+    @NSManaged var number:                  Int16
+    @NSManaged var ordinal:                 Int16
+    @NSManaged var remoteMediaPath:         String?
+    @NSManaged var thumbPath:               String?
+    @NSManaged var length:                  String
+    @NSManaged var categories:              Set<LashCategory>?
+    @NSManaged var chapters:                Set<Chapter>?
 }

@@ -23,6 +23,6 @@ extension Technique {
     @NSManaged var ordinal:                 Int16
     @NSManaged var inPlaylist:              Bool
     
-    @NSManaged var chapters:    Set<Chapter>?
+    @NSManaged var chapters:                Set<Chapter>?
 
 }
