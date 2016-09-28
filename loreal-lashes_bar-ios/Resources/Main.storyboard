@@ -1175,7 +1175,8 @@
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLO-LE-h0t" userLabel="Info button">
                                                     <rect key="frame" x="650" y="0.0" width="118" height="152"/>
-                                                    <state key="normal" image="zigzag_icon"/>
+                                                    <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" image="infoIcon"/>
                                                     <connections>
                                                         <segue destination="eLa-iS-7l7" kind="show" id="1fB-kR-6OS"/>
                                                     </connections>
@@ -1250,11 +1251,11 @@
                         <viewControllerLayoutGuide type="bottom" id="iRM-Vr-kPN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Pme-Lt-j7w">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="924"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="abW-Ad-b34">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="924"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4I-Xu-Gh3" customClass="AVPlayerView" customModule="loreal_lashes_bar_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="433"/>
@@ -1364,13 +1365,13 @@
                                         </connections>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="768" placeholderIntrinsicHeight="325" translatesAutoresizingMaskIntoConstraints="NO" id="efQ-Fq-2ua">
-                                        <rect key="frame" x="0.0" y="433" width="768" height="591"/>
+                                        <rect key="frame" x="0.0" y="433" width="768" height="491"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="553" placeholderIntrinsicHeight="325" translatesAutoresizingMaskIntoConstraints="NO" id="2vW-8W-iMK">
-                                                <rect key="frame" x="0.0" y="0.0" width="553" height="591"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="553" height="491"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMp-jn-5xE" userLabel="DetailsContainer">
-                                                        <rect key="frame" x="75" y="40" width="440" height="500"/>
+                                                        <rect key="frame" x="75" y="40" width="440" height="400"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dor-48-4sb" userLabel="TypeContainer">
                                                                 <rect key="frame" x="0.0" y="0.0" width="440" height="25"/>
@@ -1451,7 +1452,7 @@
                                                                 </variation>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJc-Is-XhK">
-                                                                <rect key="frame" x="0.0" y="455" width="195" height="45"/>
+                                                                <rect key="frame" x="0.0" y="355" width="195" height="45"/>
                                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="45" id="4ia-fe-E8F"/>
@@ -1500,7 +1501,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="215" placeholderIntrinsicHeight="325" translatesAutoresizingMaskIntoConstraints="NO" id="buv-Lp-K7b">
-                                                <rect key="frame" x="553" y="0.0" width="215" height="591"/>
+                                                <rect key="frame" x="553" y="0.0" width="215" height="491"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X16-q3-rnt" customClass="AnimatedBorderView" customModule="loreal_lashes_bar_ios" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="64" width="150" height="153"/>
@@ -1961,6 +1962,7 @@
         <image name="cross_button" width="23" height="23"/>
         <image name="heart_knockout" width="17" height="17"/>
         <image name="heart_plain" width="13" height="12"/>
+        <image name="infoIcon" width="34" height="34"/>
         <image name="large_pause_button" width="64" height="85"/>
         <image name="large_play_button" width="57" height="65"/>
         <image name="mute_button" width="19" height="13"/>
@@ -1973,6 +1975,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sse-KV-tE3"/>
-        <segue reference="Z1Q-IV-u1B"/>
+        <segue reference="1fB-kR-6OS"/>
     </inferredMetricsTieBreakers>
 </document>

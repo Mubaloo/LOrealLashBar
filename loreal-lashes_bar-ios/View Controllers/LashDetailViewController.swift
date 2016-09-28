@@ -54,6 +54,11 @@ class LashDetailViewController: BaseViewController {
         updateButtons()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        videoView?.play()
+    }
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillAppear(animated)
         videoView?.pause()

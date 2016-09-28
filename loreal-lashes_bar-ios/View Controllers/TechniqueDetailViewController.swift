@@ -79,6 +79,11 @@ class TechniqueDetailViewController: BaseViewController {
         self.updateButtons()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        videoContainer.play()
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let brushDetailVC = segue.destinationViewController as? LashDetailViewController,
             chapter = currentChapter ?? technique?.orderedChapters().first {
