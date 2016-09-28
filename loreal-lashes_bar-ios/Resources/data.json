@@ -277,72 +277,72 @@
                   {
                   "name":"CUSTOM FITTING",
                   "detail":"learn how to custom fit your lashes based on your eye width",
-                  "local_path":"HIGHLIGHT & CONTOUR - CREAM.mov",
-                  "local_path_thumb":"HIGHLIGHT & CONTOUR - CREAM THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png"
+                  "local_path":"01. CUSTOM FITTING.mov",
+                  "local_path_thumb":"01. CUSTOM FITTING THUMB.mov",
+                  "thumb_path":"01. CUSTOM FITTING.png"
                   },
                   {
                   "name":"POP UP LASH PREVENTION",
                   "detail":"learn how to help prevent your lashes from popping up from the corners",
-                  "local_path":"HIGHLIGHT & CONTOUR - POWDER.mov",
-                  "local_path_thumb":"HIGHLIGHT & CONTOUR - POWDER THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png"
+                  "local_path":"02. POP-UP LASH PREVENTION.mov",
+                  "local_path_thumb":"02. POP-UP LASH PREVENTION THUMB.mov",
+                  "thumb_path":"02. POP-UP LASH PREVENTION.png"
                   },
                   {
                   "name":"LASH APPLICATION",
                   "detail":"learn how to quickly apply your strip lashes",
-                  "local_path":"PERFECT ARCH BROW.mov",
-                  "local_path_thumb":"PERFECT ARCH BROW THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png"
+                  "local_path":"03. LASH APPLICATION.mov",
+                  "local_path_thumb":"03. LASH APPLICATION THUMB.mov",
+                  "thumb_path":"03. LASH APPLICATION.png"
                   },
                   {
                   "name":"TRIO LASH APPLICATION",
                   "detail":"learn how to apply your strip lashes in 3 smaller pieces for easy application",
-                  "local_path":"SMOKEY CAT EYE.mov",
-                  "local_path_thumb":"SMOKEY CAT EYE THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png"
+                  "local_path":"04. TRIO LASH APPLICATION.mov",
+                  "local_path_thumb":"04. TRIO LASH APPLICATION THUMB.mov",
+                  "thumb_path":"04. TRIO LASH APPLICATION.png"
                   },
                   {
                   "name":"ELONGATED LASH APPLICATION",
                   "detail":"learn how to create the illusion of an elongated, sultry eye with your lashes",
-                  "local_path":"FEATHERED BROW.mov",
-                  "local_path_thumb":"FEATHERED BROW THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png"
+                  "local_path":"05. ELONGATED LASHES.mov",
+                  "local_path_thumb":"05. ELONGATED LASHES THUMB.mov",
+                  "thumb_path":"05. ELONGATED LASHES.png"
                   },
                   {
                   "name":"WICKED FLARE APPLICATION",
                   "detail":"learn how to create an extra flare to outer corners of your eyes",
-                  "local_path":"CUT CREASE.mov",
-                  "local_path_thumb":"CUT CREASE THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png"
+                  "local_path":"06. WICKED FLARE.mov",
+                  "local_path_thumb":"06. WICKED FLARE THUMB.mov",
+                  "thumb_path":"06. WICKED FLARE.png"
                   },
                   {
                   "name":"DOUBLE STACKING LASHES",
                   "detail":"learn how to double stack lashes in 2 ways for a more dramatic look",
-                  "local_path":"BLENDING WITH COLOR.mov",
-                  "local_path_thumb":"BLENDING WITH COLOR THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png"
+                  "local_path":"07. DOUBLE STACKING.mov",
+                  "local_path_thumb":"07. DOUBLE STACKING THUMB.mov",
+                  "thumb_path":"07. DOUBLE STACKING.png"
                   },
                   {
                   "name":"CREATING INDIVIDUAL LASHES",
                   "detail":"learn how to create individual lashes from strips",
-                  "local_path":"WINGED LINER.mov",
-                  "local_path_thumb":"WINGED LINER THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png"
+                  "local_path":"08. INDIVIDUAL LASHES.mov",
+                  "local_path_thumb":"08. INDIVIDUAL LASHES THUMB.mov",
+                  "thumb_path":"08. INDIVIDUAL LASHES.png"
                   },
                   {
                   "name":"LASH BLENDING",
                   "detail":"learn how to blend your real lashes with your falsies",
-                  "local_path":"LIP APPLICATION.mov",
-                  "local_path_thumb":"LIP APPLICATION THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png"
+                  "local_path":"09. LASH BLENDING.mov",
+                  "local_path_thumb":"09. LASH BLENDING THUMB.mov",
+                  "thumb_path":"09. LASH BLENDING.png"
                   },
                   {
                   "name":"INVISIBLE LASH APPLICATION",
                   "detail":"learn how to hide the band of your lashes for a more natural look",
-                  "local_path":"BLENDING SHADOW.mov",
-                  "local_path_thumb":"BLENDING SHADOW THUMB.mov",
-                  "thumb_path":"Cut Crease Test.png"
+                  "local_path":"10. INVISIBLE LASHES.mov",
+                  "local_path_thumb":"10. INVISIBLE LASHES THUMB.mov",
+                  "thumb_path":"10. INVISIBLE LASHES.png"
                   },
                   {
                   "name":"INVISIBLE LASH APPLICATION (PRO)",
