@@ -60,7 +60,7 @@ class AttractModeViewController: BaseViewController {
     }
     
     func setupVideoPlayer() {
-        let moviePath = NSBundle.mainBundle().pathForResource("01. CUSTOM FITTING THUMB", ofType: "mov")
+        let moviePath = NSBundle.mainBundle().pathForResource("01. CUSTOM FITTING", ofType: "mov")
         if let path = moviePath {
             let url = NSURL.fileURLWithPath(path)
             player = AVPlayer(URL: url)
