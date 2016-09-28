@@ -1126,11 +1126,11 @@
                         <viewControllerLayoutGuide type="bottom" id="iRM-Vr-kPN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Pme-Lt-j7w">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="924"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="abW-Ad-b34">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="924"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4I-Xu-Gh3" customClass="AVPlayerView" customModule="loreal_lashes_bar_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="433"/>
@@ -1240,13 +1240,13 @@
                                         </connections>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="768" placeholderIntrinsicHeight="325" translatesAutoresizingMaskIntoConstraints="NO" id="efQ-Fq-2ua">
-                                        <rect key="frame" x="0.0" y="433" width="768" height="591"/>
+                                        <rect key="frame" x="0.0" y="433" width="768" height="491"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="553" placeholderIntrinsicHeight="325" translatesAutoresizingMaskIntoConstraints="NO" id="2vW-8W-iMK">
-                                                <rect key="frame" x="0.0" y="0.0" width="553" height="591"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="553" height="491"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMp-jn-5xE" userLabel="DetailsContainer">
-                                                        <rect key="frame" x="75" y="40" width="440" height="500"/>
+                                                        <rect key="frame" x="75" y="40" width="440" height="400"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dor-48-4sb" userLabel="TypeContainer">
                                                                 <rect key="frame" x="0.0" y="0.0" width="440" height="25"/>
@@ -1258,7 +1258,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="8" placeholderIntrinsicHeight="8" image="zigzag_icon" translatesAutoresizingMaskIntoConstraints="NO" id="pxs-fM-sec">
-                                                                        <rect key="frame" x="54" y="11" width="8" height="8"/>
+                                                                        <rect key="frame" x="52" y="11" width="8" height="8"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="245" verticalHuggingPriority="245" horizontalCompressionResistancePriority="745" verticalCompressionResistancePriority="745" fixedFrame="YES" placeholderIntrinsicWidth="144" placeholderIntrinsicHeight="18" text="Medium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkP-Wk-peu" userLabel="Length Title Label">
                                                                         <rect key="frame" x="66" y="6" width="374" height="18"/>
@@ -1327,7 +1327,7 @@
                                                                 </variation>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJc-Is-XhK">
-                                                                <rect key="frame" x="0.0" y="455" width="195" height="45"/>
+                                                                <rect key="frame" x="0.0" y="355" width="195" height="45"/>
                                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="45" id="4ia-fe-E8F"/>
@@ -1376,7 +1376,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="215" placeholderIntrinsicHeight="325" translatesAutoresizingMaskIntoConstraints="NO" id="buv-Lp-K7b">
-                                                <rect key="frame" x="553" y="0.0" width="215" height="591"/>
+                                                <rect key="frame" x="553" y="0.0" width="215" height="491"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X16-q3-rnt" customClass="AnimatedBorderView" customModule="loreal_lashes_bar_ios" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="64" width="150" height="153"/>
@@ -2063,6 +2063,6 @@ YOU MAY ALSO BE ABLE TO REGISTER AND LOG IN USING A SOCIAL MEDIA ACCOUNT, INCLUD
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sse-KV-tE3"/>
-        <segue reference="Z1Q-IV-u1B"/>
+        <segue reference="1fB-kR-6OS"/>
     </inferredMetricsTieBreakers>
 </document>
