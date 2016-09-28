@@ -22,6 +22,7 @@ class PlaylistViewController: BaseViewController {
     
     @IBOutlet weak var tickMarkBackground: UIView!
     @IBOutlet weak var tickMarkImageView: UIImageView!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     var playlistItems: [PlaylistItem] = {
         var allItems = Lash.playlist().map({ $0 as PlaylistItem })
@@ -108,6 +109,13 @@ class PlaylistViewController: BaseViewController {
         })
     }
     
+    func updatePageNumber() {
+        if let layout = playlistCollection.collectionViewLayout as? PagedGridLayout, let cell = playlistCollection.visibleCells().first   {
+            let page = layout.pageForIndexPath(playlistCollection.indexPathForCell(cell)!)
+            pageControl.currentPage = page
+        }
+    }
+    
 }
 
 extension PlaylistViewController: UITextFieldDelegate {
@@ -121,6 +129,9 @@ extension PlaylistViewController: UITextFieldDelegate {
 extension PlaylistViewController: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if let layout = playlistCollection.collectionViewLayout as? PagedGridLayout  {
+            pageControl.numberOfPages = Int(ceil(Float(playlistItems.count) / Float(layout.rowsPerPage) / Float(layout.columnsPerPage)))
+        }
         let roundUp = Int(ceil(Float(playlistItems.count) / 4)) * 4
         return max(roundUp, 4)
     }
@@ -153,6 +164,7 @@ extension PlaylistViewController: UICollectionViewDelegate {
                 videoCell.playerView.play()
             }
         }
+        updatePageNumber()
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

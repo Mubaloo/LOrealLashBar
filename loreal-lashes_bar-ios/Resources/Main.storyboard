@@ -1550,6 +1550,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xEp-IS-0zI">
+                                <rect key="frame" x="0.0" y="749" width="768" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="QBi-Gm-smH"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </pageControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hjq-fv-U5M">
                                 <rect key="frame" x="0.0" y="202" width="768" height="532"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1844,12 +1852,15 @@
                             <constraint firstAttribute="trailing" secondItem="dy0-hR-BqK" secondAttribute="trailing" id="JYv-tq-Jgl"/>
                             <constraint firstAttribute="bottom" secondItem="bLA-ey-Orl" secondAttribute="bottom" constant="-2" id="Lb8-68-9mF"/>
                             <constraint firstItem="Mnh-eX-VgF" firstAttribute="leading" secondItem="hOF-Ju-YAo" secondAttribute="leading" id="Nk8-Ua-bnA"/>
+                            <constraint firstItem="xEp-IS-0zI" firstAttribute="leading" secondItem="hOF-Ju-YAo" secondAttribute="leading" id="Tzo-Qe-mVS"/>
                             <constraint firstItem="Hjq-fv-U5M" firstAttribute="top" secondItem="6Jn-eu-C8V" secondAttribute="bottom" constant="38" id="URZ-f2-zN0"/>
                             <constraint firstItem="bLA-ey-Orl" firstAttribute="leading" secondItem="hOF-Ju-YAo" secondAttribute="leading" id="ard-P4-jKC"/>
                             <constraint firstItem="dy0-hR-BqK" firstAttribute="top" secondItem="Mnh-eX-VgF" secondAttribute="bottom" id="f2E-f5-j0c"/>
                             <constraint firstItem="6Jn-eu-C8V" firstAttribute="centerX" secondItem="hOF-Ju-YAo" secondAttribute="centerX" id="faY-aB-wJP"/>
+                            <constraint firstItem="xEp-IS-0zI" firstAttribute="top" secondItem="Hjq-fv-U5M" secondAttribute="bottom" constant="15" id="hN4-to-FA6"/>
                             <constraint firstItem="Hjq-fv-U5M" firstAttribute="leading" secondItem="hOF-Ju-YAo" secondAttribute="leading" id="kQd-bD-H0s"/>
                             <constraint firstAttribute="trailing" secondItem="Mnh-eX-VgF" secondAttribute="trailing" id="t6s-Mi-umD"/>
+                            <constraint firstAttribute="trailing" secondItem="xEp-IS-0zI" secondAttribute="trailing" id="vD5-NR-HH5"/>
                             <constraint firstAttribute="trailing" secondItem="Hjq-fv-U5M" secondAttribute="trailing" id="yw2-mv-Tsi"/>
                         </constraints>
                     </view>
@@ -1858,6 +1869,7 @@
                         <outlet property="emailContainer" destination="0Ac-yQ-ewq" id="kQw-ZQ-cb4"/>
                         <outlet property="emailField" destination="kPf-LM-voa" id="yRt-5O-a7O"/>
                         <outlet property="myPlaylistLabel" destination="6Jn-eu-C8V" id="zII-P3-UFQ"/>
+                        <outlet property="pageControl" destination="xEp-IS-0zI" id="gv3-FS-gvk"/>
                         <outlet property="playlistCollection" destination="Hjq-fv-U5M" id="Jas-Kx-qxf"/>
                         <outlet property="sendButton" destination="Zd6-Ge-cQV" id="9wT-hx-S32"/>
                         <outlet property="tickMarkBackground" destination="6Em-Nz-KPh" id="M9g-on-ZVm"/>
@@ -1895,7 +1907,7 @@
         <!--Privacy View Controller-->
         <scene sceneID="roD-wv-EJK">
             <objects>
-                <viewController id="h9e-QQ-wJX" customClass="PrivacyViewController" customModule="loreal_brush_bar_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h9e-QQ-wJX" customClass="PrivacyViewController" customModule="loreal_lashes_bar_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RZa-AC-bXz"/>
                         <viewControllerLayoutGuide type="bottom" id="PG8-E1-Qss"/>
@@ -2045,7 +2057,7 @@ YOU MAY ALSO BE ABLE TO REGISTER AND LOG IN USING A SOCIAL MEDIA ACCOUNT, INCLUD
         <image name="small_pause_button" width="10" height="12"/>
         <image name="small_play_button" width="11" height="12"/>
         <image name="stylised_bar_narrow" width="768" height="226"/>
-        <image name="tickMark" width="255" height="645"/>
+        <image name="tickMark" width="14" height="10"/>
         <image name="unmute_button" width="19" height="13"/>
         <image name="zigzag_icon" width="8" height="11"/>
     </resources>
