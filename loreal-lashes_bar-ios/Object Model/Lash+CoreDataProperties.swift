@@ -25,5 +25,4 @@ extension Lash {
     @NSManaged var thumbPath:               String?
     @NSManaged var length:                  String
     @NSManaged var categories:              Set<LashCategory>?
-    @NSManaged var chapters:                Set<Chapter>?
 }

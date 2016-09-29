@@ -155,18 +155,18 @@ class AVPlayerView: UIView {
     
     // MARK:- Loading Assets
     
-    func loadPlaylistItem(item: PlaylistItem, chapterOffsets: [NSTimeInterval]? = nil) {
-        self.loadPlaylistItem(item, chapterOffsets: chapterOffsets, shouldLoadThumb: false)
+    func loadPlaylistItem(item: PlaylistItem) {
+        self.loadPlaylistItem(item, shouldLoadThumb: false)
     }
     
-    func loadPlaylistItem(item: PlaylistItem, chapterOffsets: [NSTimeInterval]? = nil, shouldLoadThumb: Bool) {
+    func loadPlaylistItem(item: PlaylistItem, shouldLoadThumb: Bool) {
         
         imposter?.image = item.thumbnail
         imposter?.hidden = self.player.status == .ReadyToPlay ? true : false
         if shouldLoadThumb == true {
-            loadURL(item.localMediaThumbURL, chapterOffsets: chapterOffsets)
+            loadURL(item.localMediaThumbURL)
         }else{
-            loadURL(item.localMediaURL, chapterOffsets: chapterOffsets)
+            loadURL(item.localMediaURL)
         }
     }
     
@@ -176,7 +176,7 @@ class AVPlayerView: UIView {
         }
     }
     
-    func loadURL(url: NSURL, chapterOffsets: [NSTimeInterval]? = nil) {
+    func loadURL(url: NSURL) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             let item = AVPlayerItem(URL: url)
             let chapterOffsetsNew = self.loadChapterDataFromAsset(item.asset)

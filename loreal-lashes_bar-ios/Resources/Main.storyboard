@@ -666,12 +666,16 @@
                                     <outlet property="timeLabel" destination="1X2-Z3-aRM" id="6xe-TV-2Si"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y6o-Nv-PFd" userLabel="WhiteBack">
+                                <rect key="frame" x="0.0" y="620" width="768" height="304"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="uSz-Ta-Uom">
-                                <rect key="frame" x="80" y="633" width="608" height="291"/>
+                                <rect key="frame" x="40" y="700" width="688" height="192"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="291" id="00v-aE-EqX"/>
+                                    <constraint firstAttribute="height" constant="192" id="00v-aE-EqX"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="TeO-AC-juo" appends="YES" id="Jds-JG-1rJ"/>
@@ -681,10 +685,10 @@
                                 <rect key="frame" x="0.0" y="433" width="768" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="w4N-U2-oe8">
-                                        <rect key="frame" x="20" y="43" width="729" height="114"/>
+                                        <rect key="frame" x="20" y="50" width="729" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7u-SY-rx5">
-                                                <rect key="frame" x="0.0" y="7" width="60" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="BvL-Im-obX"/>
                                                     <constraint firstAttribute="height" constant="100" id="DCB-iU-DUb"/>
@@ -695,7 +699,7 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="OoL-zV-tQH">
-                                                <rect key="frame" x="86" y="16" width="336" height="83"/>
+                                                <rect key="frame" x="86" y="9" width="336" height="83"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" placeholderIntrinsicWidth="336" placeholderIntrinsicHeight="48" text="BLENDING BRUSH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rz6-6V-RIH">
                                                         <rect key="frame" x="0.0" y="0.0" width="336" height="48"/>
@@ -715,7 +719,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bi4-WH-0QU">
-                                                <rect key="frame" x="448" y="0.0" width="195" height="114"/>
+                                                <rect key="frame" x="448" y="27" width="195" height="47"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" placeholderIntrinsicWidth="195" placeholderIntrinsicHeight="47" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCR-YL-LCR">
                                                         <rect key="frame" x="0.0" y="0.0" width="195" height="47"/>
@@ -730,31 +734,10 @@
                                                             <action selector="addToPlaylistTouched:" destination="WtL-ko-oDz" eventType="touchUpInside" id="kE9-Yt-I8S"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="31" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loC-nx-I1j" customClass="AnimatedBorderButton" customModule="loreal_lashes_bar_ios" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="67" width="195" height="47"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="200" id="HYu-ho-iC4"/>
-                                                            <constraint firstAttribute="height" constant="50" id="N0E-Xe-BG0"/>
-                                                            <constraint firstAttribute="width" constant="195" id="bc1-Bb-3eQ"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="19"/>
-                                                        <state key="normal" title="BRUSH DETAILS">
-                                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="HYu-ho-iC4"/>
-                                                                <exclude reference="N0E-Xe-BG0"/>
-                                                            </mask>
-                                                        </variation>
-                                                        <connections>
-                                                            <segue destination="eLa-iS-7l7" kind="presentation" id="Z1Q-IV-u1B"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Squ-Fn-JD4">
-                                                <rect key="frame" x="669" y="7" width="60" height="100"/>
+                                                <rect key="frame" x="669" y="0.0" width="60" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="LgI-zc-s6I"/>
                                                     <constraint firstAttribute="width" constant="60" id="aMp-Zs-Gor"/>
@@ -778,24 +761,29 @@
                                     <outletCollection property="gestureRecognizers" destination="8M8-dp-yqY" appends="YES" id="Agg-t1-aWl"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What you need:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qp9-5b-j8g">
+                                <rect key="frame" x="0.0" y="650" width="768" height="21"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <color key="textColor" red="0.84705882349999995" green="0.070588235289999995" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="q3u-lZ-QKV" firstAttribute="top" secondItem="uSz-Ta-Uom" secondAttribute="bottom" id="6mZ-hu-jum"/>
+                            <constraint firstItem="q3u-lZ-QKV" firstAttribute="top" secondItem="uSz-Ta-Uom" secondAttribute="bottom" constant="32" id="6mZ-hu-jum"/>
                             <constraint firstAttribute="trailing" secondItem="Bjx-y8-K3c" secondAttribute="trailing" id="9vB-ne-Tzm"/>
                             <constraint firstAttribute="trailing" secondItem="bLq-yW-Fzh" secondAttribute="trailing" id="F7z-w9-Y7u"/>
                             <constraint firstItem="bLq-yW-Fzh" firstAttribute="leading" secondItem="G00-dw-v1g" secondAttribute="leading" id="KMa-9A-Wgy"/>
-                            <constraint firstItem="uSz-Ta-Uom" firstAttribute="top" secondItem="Bjx-y8-K3c" secondAttribute="bottom" id="NrJ-3w-JoC"/>
+                            <constraint firstItem="uSz-Ta-Uom" firstAttribute="top" secondItem="Bjx-y8-K3c" secondAttribute="bottom" constant="67" id="NrJ-3w-JoC"/>
                             <constraint firstItem="Bjx-y8-K3c" firstAttribute="top" secondItem="bLq-yW-Fzh" secondAttribute="bottom" id="dvJ-vy-YMQ"/>
                             <constraint firstItem="bLq-yW-Fzh" firstAttribute="top" secondItem="dpW-Ot-CIM" secondAttribute="bottom" id="fAG-AW-DPb"/>
                             <constraint firstItem="Bjx-y8-K3c" firstAttribute="leading" secondItem="G00-dw-v1g" secondAttribute="leading" id="fsR-mI-suN"/>
-                            <constraint firstAttribute="trailing" secondItem="uSz-Ta-Uom" secondAttribute="trailing" constant="80" id="ozW-UA-Fgl"/>
-                            <constraint firstItem="uSz-Ta-Uom" firstAttribute="leading" secondItem="G00-dw-v1g" secondAttribute="leading" constant="80" id="z2L-zv-Ujr"/>
+                            <constraint firstAttribute="trailing" secondItem="uSz-Ta-Uom" secondAttribute="trailing" constant="40" id="ozW-UA-Fgl"/>
+                            <constraint firstItem="uSz-Ta-Uom" firstAttribute="leading" secondItem="G00-dw-v1g" secondAttribute="leading" constant="40" id="z2L-zv-Ujr"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addToPlaylistButton" destination="XCR-YL-LCR" id="P2B-fi-0Ni"/>
-                        <outlet property="brushDetailsButton" destination="loC-nx-I1j" id="Atx-Zo-PvB"/>
                         <outlet property="brushNameLabel" destination="rz6-6V-RIH" id="Y1W-TL-ZDF"/>
                         <outlet property="brushStack" destination="uSz-Ta-Uom" id="4UU-uT-pBH"/>
                         <outlet property="dataStack" destination="OoL-zV-tQH" id="D3m-GI-apv"/>
@@ -803,6 +791,7 @@
                         <outlet property="rightChevron" destination="Squ-Fn-JD4" id="Pjq-8V-usk"/>
                         <outlet property="techniqueDetailLabel" destination="nWw-55-Iqd" id="So5-Rp-z6j"/>
                         <outlet property="videoContainer" destination="bLq-yW-Fzh" id="c9B-sP-qqJ"/>
+                        <segue destination="eLa-iS-7l7" kind="show" identifier="lashDetailFromTechniqueDetail" id="ise-De-aA0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xh9-1i-Dnj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1211,7 +1200,6 @@
                                                 <state key="normal" image="cross_button"/>
                                                 <connections>
                                                     <action selector="closeButtonTouched:" destination="eLa-iS-7l7" eventType="touchUpInside" id="ff2-h6-awq"/>
-                                                    <segue destination="SWa-1A-jyD" kind="unwind" unwindAction="unwindToLashesBrowser:" id="Ua5-qG-tF7"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1458,7 +1446,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzP-Ej-bot" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="SWa-1A-jyD" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="l1C-aK-eyS"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="q9X-rT-hCA"/>
             </objects>
@@ -2062,7 +2049,7 @@ YOU MAY ALSO BE ABLE TO REGISTER AND LOG IN USING A SOCIAL MEDIA ACCOUNT, INCLUD
         <image name="zigzag_icon" width="8" height="11"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sse-KV-tE3"/>
         <segue reference="1fB-kR-6OS"/>
+        <segue reference="sse-KV-tE3"/>
     </inferredMetricsTieBreakers>
 </document>

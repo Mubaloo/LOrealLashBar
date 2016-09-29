@@ -75,6 +75,7 @@
 		B22812A21D9BCFCB00B091E1 /* WL23 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228128A1D9BCFCB00B091E1 /* WL23 THUMB.mov */; };
 		B22812A31D9BCFCB00B091E1 /* WL24 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228128B1D9BCFCB00B091E1 /* WL24 THUMB.mov */; };
 		B22812A51D9BEDB300B091E1 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22812A41D9BEDB300B091E1 /* PrivacyViewController.swift */; };
+		B22812A71D9C23D300B091E1 /* attract video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B22812A61D9C23D300B091E1 /* attract video.mp4 */; };
 		B2C5B5841D93F87F0077F941 /* LashesBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5B5831D93F87E0077F941 /* LashesBrowserViewController.swift */; };
 		B2C5B5861D93FC660077F941 /* loreal_lashes_bar_ios.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B2C5B5851D93FC660077F941 /* loreal_lashes_bar_ios.xcdatamodel */; };
 		B2C5B5971D9410660077F941 /* LashCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5B5931D9410660077F941 /* LashCategory+CoreDataProperties.swift */; };
@@ -142,10 +143,8 @@
 		B2DB08E31D93EFD10063A25E /* TechniqueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08DB1D93EFD10063A25E /* TechniqueDetailViewController.swift */; };
 		B2DB08E41D93EFD10063A25E /* TitleBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08DC1D93EFD10063A25E /* TitleBarViewController.swift */; };
 		B2DB08E61D93EFEA0063A25E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08E51D93EFEA0063A25E /* CoreDataStack.swift */; };
-		B2DB08EF1D93EFFC0063A25E /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08E91D93EFFC0063A25E /* Chapter.swift */; };
 		B2DB08F11D93EFFC0063A25E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08EB1D93EFFC0063A25E /* Product.swift */; };
 		B2DB08F21D93EFFC0063A25E /* Technique.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08EC1D93EFFC0063A25E /* Technique.swift */; };
-		B2DB08FA1D93F0080063A25E /* Chapter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08F51D93F0080063A25E /* Chapter+CoreDataProperties.swift */; };
 		B2DB08FB1D93F0080063A25E /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08F61D93F0080063A25E /* Product+CoreDataProperties.swift */; };
 		B2DB08FC1D93F0080063A25E /* Technique+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08F71D93F0080063A25E /* Technique+CoreDataProperties.swift */; };
 		B2DB08FF1D93F0210063A25E /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB08FD1D93F0210063A25E /* BaseService.swift */; };
@@ -250,6 +249,7 @@
 		B228128A1D9BCFCB00B091E1 /* WL23 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL23 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL23 THUMB.mov"; sourceTree = SOURCE_ROOT; };
 		B228128B1D9BCFCB00B091E1 /* WL24 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL24 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL24 THUMB.mov"; sourceTree = SOURCE_ROOT; };
 		B22812A41D9BEDB300B091E1 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrivacyViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/PrivacyViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B22812A61D9C23D300B091E1 /* attract video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "attract video.mp4"; path = "loreal-lashes_bar-ios/Resources/Videos/attract video.mp4"; sourceTree = SOURCE_ROOT; };
 		B2C5B5831D93F87E0077F941 /* LashesBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LashesBrowserViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/LashesBrowserViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B2C5B5851D93FC660077F941 /* loreal_lashes_bar_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = loreal_lashes_bar_ios.xcdatamodel; path = "loreal-lashes_bar-ios/Object Model/loreal_lashes_bar_ios.xcdatamodel"; sourceTree = SOURCE_ROOT; };
 		B2C5B5931D9410660077F941 /* LashCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LashCategory+CoreDataProperties.swift"; path = "loreal-lashes_bar-ios/Object Model/LashCategory+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -317,10 +317,8 @@
 		B2DB08DB1D93EFD10063A25E /* TechniqueDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TechniqueDetailViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/TechniqueDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08DC1D93EFD10063A25E /* TitleBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleBarViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/TitleBarViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08E51D93EFEA0063A25E /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = "loreal-lashes_bar-ios/Object Model/CoreDataStack.swift"; sourceTree = SOURCE_ROOT; };
-		B2DB08E91D93EFFC0063A25E /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chapter.swift; path = "loreal-lashes_bar-ios/Object Model/Chapter.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08EB1D93EFFC0063A25E /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = "loreal-lashes_bar-ios/Object Model/Product.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08EC1D93EFFC0063A25E /* Technique.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Technique.swift; path = "loreal-lashes_bar-ios/Object Model/Technique.swift"; sourceTree = SOURCE_ROOT; };
-		B2DB08F51D93F0080063A25E /* Chapter+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Chapter+CoreDataProperties.swift"; path = "loreal-lashes_bar-ios/Object Model/Chapter+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08F61D93F0080063A25E /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Product+CoreDataProperties.swift"; path = "loreal-lashes_bar-ios/Object Model/Product+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08F71D93F0080063A25E /* Technique+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Technique+CoreDataProperties.swift"; path = "loreal-lashes_bar-ios/Object Model/Technique+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		B2DB08FD1D93F0210063A25E /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseService.swift; path = "loreal-lashes_bar-ios/Data Services/BaseService.swift"; sourceTree = SOURCE_ROOT; };
@@ -494,6 +492,7 @@
 		184A553B1D702FD20027AE79 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				B22812A61D9C23D300B091E1 /* attract video.mp4 */,
 				B22812421D9BC30700B091E1 /* Brushes */,
 				B2D0A5641D9AE85F0006450B /* 01. CUSTOM FITTING.mov */,
 				B2D0A5651D9AE85F0006450B /* 02. POP-UP LASH PREVENTION.mov */,
@@ -553,7 +552,6 @@
 		1850B2691D64738300504FDD /* Properties */ = {
 			isa = PBXGroup;
 			children = (
-				B2DB08F51D93F0080063A25E /* Chapter+CoreDataProperties.swift */,
 				B2DB08F61D93F0080063A25E /* Product+CoreDataProperties.swift */,
 				B2DB08F71D93F0080063A25E /* Technique+CoreDataProperties.swift */,
 				B2C5B5931D9410660077F941 /* LashCategory+CoreDataProperties.swift */,
@@ -565,7 +563,6 @@
 		1850B26A1D64738A00504FDD /* Functional */ = {
 			isa = PBXGroup;
 			children = (
-				B2DB08E91D93EFFC0063A25E /* Chapter.swift */,
 				B2C5B5961D9410660077F941 /* Lash.swift */,
 				B2C5B5941D9410660077F941 /* LashCategory.swift */,
 				B2DB08EB1D93EFFC0063A25E /* Product.swift */,
@@ -832,6 +829,7 @@
 				B2DB09341D93F0BD0063A25E /* default_thumb.png in Resources */,
 				B228126D1D9BC34900B091E1 /* WL19.mov in Resources */,
 				B228123C1D9BB62E00B091E1 /* 07. DOUBLE STACKING.png in Resources */,
+				B22812A71D9C23D300B091E1 /* attract video.mp4 in Resources */,
 				B22812981D9BCFCB00B091E1 /* WL13 THUMB.mov in Resources */,
 				B2DB08C31D93ED2A0063A25E /* AVPlayerView.xib in Resources */,
 				B2D0A5831D9AE8940006450B /* 02. POP-UP LASH PREVENTION THUMB.mov in Resources */,
@@ -913,7 +911,6 @@
 				B2DB08E61D93EFEA0063A25E /* CoreDataStack.swift in Sources */,
 				B2DB08D21D93ED470063A25E /* ProductCell.swift in Sources */,
 				B22812A51D9BEDB300B091E1 /* PrivacyViewController.swift in Sources */,
-				B2DB08EF1D93EFFC0063A25E /* Chapter.swift in Sources */,
 				B2DB08CE1D93ED470063A25E /* AutoWidthLabel.swift in Sources */,
 				B2DB08FF1D93F0210063A25E /* BaseService.swift in Sources */,
 				B2DB08E01D93EFD10063A25E /* LashDetailViewController.swift in Sources */,
@@ -945,7 +942,6 @@
 				B2DB08A21D93ECDD0063A25E /* UIColor+Branding.swift in Sources */,
 				B2DB08941D93ECD10063A25E /* AppDelegate.swift in Sources */,
 				B2DB08FB1D93F0080063A25E /* Product+CoreDataProperties.swift in Sources */,
-				B2DB08FA1D93F0080063A25E /* Chapter+CoreDataProperties.swift in Sources */,
 				B2DB08BD1D93ED1A0063A25E /* AnimatedBorderView.swift in Sources */,
 				B2DB08BB1D93ED1A0063A25E /* AnimatedBorderButton.swift in Sources */,
 				B2DB08A11D93ECDD0063A25E /* NSUserDefaults+Custom.swift in Sources */,

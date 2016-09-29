@@ -87,12 +87,6 @@ class Lash: Product, PlaylistItem {
         }
     }
     
-    /** Returns all products associated with this lash, in the correct order. */
-//    func orderedAssociates() -> [Product] {
-//        guard let associatedProducts = associatedProducts else { return [] }
-//        return associatedProducts.sort({ $0.name < $1.name })
-//    }
-    
     func precache() {
         if let data = NSData(contentsOfURL: thumbURL) {
             _thumbCache = UIImage(data: data)
@@ -147,5 +141,6 @@ class Lash: Product, PlaylistItem {
             let identifiers = try categoriesJSON.map({ try $0.string.unwrap("Related Categories Relationship") })
             categories = Set(LashCategory.categoriesWithNames(identifiers))
         }
+    
     }
 }

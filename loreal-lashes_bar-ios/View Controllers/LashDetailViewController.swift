@@ -101,7 +101,7 @@ class LashDetailViewController: BaseViewController {
     }
     
     @IBAction func closeButtonTouched(sender: UIButton) {
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
 }

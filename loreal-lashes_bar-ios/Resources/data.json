@@ -325,6 +325,7 @@
                   {
                   "name":"CUSTOM FITTING",
                   "detail":"learn how to custom fit your lashes based on your eye width",
+                  "related_products":["WL02", "WL100", "WL101"],
                   "local_path":"01. CUSTOM FITTING.mov",
                   "local_path_thumb":"01. CUSTOM FITTING THUMB.mov",
                   "thumb_path":"01. CUSTOM FITTING.png"
@@ -399,5 +400,23 @@
                   "local_path_thumb":"",
                   "thumb_path":"Cut Crease Test.png"
                   }
-            ]
+            ],
+    "products":[
+                {
+                "name":"SCISSORS",
+                "product_id":"WL100",
+                "image":"product_default"
+                },
+                {
+                "name":"LATEX FREE LASH GLUE",
+                "product_id":"WL101",
+                "image":"product_default"
+                },
+                {
+                "name":"Stay Matte but Not Flat Powder Foundation",
+                "product_id":"WL103",
+                "image":"product_default"
+                }
+                
+                ]
 }

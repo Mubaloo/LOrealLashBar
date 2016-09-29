@@ -52,6 +52,13 @@ extension BaseService {
     
     func parseJSON(json: JSON) throws {
         
+        if let productJSON = json["products"].array {
+            let products = try productJSON.map({
+                try Product.new($0) as Product
+            })
+            print("\(products.count) products parsed")
+        }
+        
         guard let categoryJSON = json["categories"].array else {
             throw ParseError.InvalidContent(itemName: "Lash Category List")
         }

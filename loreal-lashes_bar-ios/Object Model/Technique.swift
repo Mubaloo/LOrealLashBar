@@ -25,9 +25,10 @@ class Technique: NSManagedObject, PlaylistItem {
         catch { return [] }
     }
     
-    func orderedChapters() -> [Chapter] {
-        guard let chapters = chapters else { return [] }
-        return chapters.sort({ $0.timeOffset < $1.timeOffset })
+    /** Returns all products associated with this technique, in the correct order. */
+    func orderedAssociates() -> [Product] {
+        guard let associatedProducts = associatedProducts else { return [] }
+        return associatedProducts.sort({ $0.name < $1.name })
     }
     
     var remoteMediaURL: NSURL? {
@@ -114,10 +115,11 @@ extension Technique: JSONConfigurable {
         localMediaPath = json["local_path"].string
         localMediaThumbPath = json["local_path_thumb"].string
         thumbPath = json["thumb_path"].string
+        
+        if let associatedJSON = json["related_products"].array {
+            let identifiers = try associatedJSON.map({ try $0.string.unwrap("Related Product Relationship") })
+            associatedProducts = Set(Product.productsWithIdentifiers(identifiers))
+        }
     }
-    
-    func updateWithJSONArray(array: [[String : AnyObject]]) throws {
-        let allChapters2 = try JSON(array).array.unwrap("Chapters")
-        chapters = Set(try allChapters2.map({ try Chapter.new($0) as Chapter }))
-    }
+
 }

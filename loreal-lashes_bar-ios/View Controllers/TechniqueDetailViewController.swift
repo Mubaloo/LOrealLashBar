@@ -19,19 +19,18 @@ class TechniqueDetailViewController: BaseViewController {
     @IBOutlet var leftChevron: UIButton!
     @IBOutlet var rightChevron: UIButton!
     @IBOutlet var addToPlaylistButton: UIButton!
-    @IBOutlet var brushDetailsButton: UIButton!
 
     @IBOutlet var brushStack: UIStackView!
     
     var allTechniques = Technique.orderedTechniques()
+    var selectedTag: Int!
     var technique: Technique? {
         didSet {
             if isViewLoaded() {
-                updateChapters()
+                updateRelatedProducts()
                 updateTechniqueVideo()
                 updateButtons()
-                
-                updateChapterPopover(nil)
+            
                 dataStack.crossfadeUpdate(0.5, updates: {
                     self.updateBasicData()
                 })
@@ -39,39 +38,16 @@ class TechniqueDetailViewController: BaseViewController {
         }
     }
     
-    var currentChapter: Chapter? {
-        didSet {
-            if isViewLoaded(){
-                updateChapterPopover(oldValue)
-            }
-        }
-    }
-    
-    var chapterPopoverVisible = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.lightBG
         videoContainer.shouldInterruptTimeout = true
         
-        // Set text with kerning
-        let attribs: [String: AnyObject] = [
-            NSFontAttributeName : brushDetailsButton.titleLabel!.font,
-            NSForegroundColorAttributeName : UIColor.hotPink,
-            NSKernAttributeName : NSNumber(int: 2)
-        ]
-        
-        let title = NSAttributedString(string: "VIEW DETAILS", attributes: attribs)
-        brushDetailsButton.setAttributedTitle(title, forState: .Normal)
-        
         videoContainer.delegate = self
     
         updateBasicData()
-        updateChapters()
         updateTechniqueVideo()
-        
-        updateChapterPopover(nil)
-        updateChapterPopover(nil)
+        updateRelatedProducts()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -86,17 +62,20 @@ class TechniqueDetailViewController: BaseViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let brushDetailVC = segue.destinationViewController as? LashDetailViewController,
-            chapter = currentChapter ?? technique?.orderedChapters().first {
-            brushDetailVC.lash = chapter.lash
+            product = technique!.orderedAssociates()[selectedTag] as? Lash {
+            brushDetailVC.lash = product
         }
+    }
+    
+    @IBAction func unwindToTechniqueDetail(sender: UIStoryboardSegue) {
+        // Nothing to do; just an unwind target
     }
     
     // MARK:- Update Methods
     
     private func updateTechniqueVideo() {
         guard let technique = technique else { return }
-        let chapters = Array(technique.chapters ?? []).map({ $0.timeOffset as NSTimeInterval })
-        videoContainer.loadPlaylistItem(technique, chapterOffsets: chapters)
+        videoContainer.loadPlaylistItem(technique)
     }
     
     private func updateBasicData() {
@@ -106,7 +85,7 @@ class TechniqueDetailViewController: BaseViewController {
         techniqueDetailLabel.text = technique.detail
     }
     
-    private func updateChapters() {
+    private func updateRelatedProducts() {
         for view in brushStack.arrangedSubviews {
             brushStack.removeArrangedSubview(view)
             view.removeFromSuperview()
@@ -114,19 +93,19 @@ class TechniqueDetailViewController: BaseViewController {
         
         guard let technique = technique else { return }
         
-        for (index, chapter) in technique.orderedChapters().enumerate() {
+        for (index, product) in technique.orderedAssociates().enumerate() {
             
             let newStack = UIStackView()
             newStack.axis = .Vertical
             newStack.distribution = .EqualSpacing
-            newStack.spacing = 20
+            newStack.spacing = 0
             
             let titleLabel = UILabel()
-            titleLabel.textColor = UIColor.whiteColor()
-            titleLabel.font = UIFont(name: "HelveticaNeueCond", size: 25)
-            titleLabel.text = chapter.name
+            titleLabel.textColor = UIColor.blackColor()
+            titleLabel.font = UIFont(name: "HelveticaNeueCond", size: 18)
+            titleLabel.text = product.name
             titleLabel.textAlignment = .Center
-            titleLabel.numberOfLines = 2
+            titleLabel.numberOfLines = 1
             titleLabel.tag = index
             
             newStack.addArrangedSubview(titleLabel)
@@ -134,24 +113,36 @@ class TechniqueDetailViewController: BaseViewController {
             titleLabel.translatesAutoresizingMaskIntoConstraints = false
             titleLabel.addConstraint(NSLayoutConstraint(
                 item: titleLabel, attribute: .Height, relatedBy: .Equal,
-                toItem: nil, attribute: .Height, multiplier: 0, constant: 110
+                toItem: nil, attribute: .Height, multiplier: 0, constant: 30
                 ))
             
-            let image = chapter.lash?.image.scale(0.5)
+            let image = product.image
             let imageView = UIImageView(image: image)
-            imageView.contentMode = .Top
+            imageView.contentMode = .ScaleAspectFit
             imageView.setContentHuggingPriority(240, forAxis: .Vertical)
             imageView.setContentCompressionResistancePriority(740, forAxis: .Vertical)
             imageView.tag = index
             
             newStack.addArrangedSubview(imageView)
+            
+            if product is Lash {
+                let attribs: [String: AnyObject] = [
+                    NSFontAttributeName : UIFont(name: "HelveticaNeueCond", size: 20)!,
+                    NSForegroundColorAttributeName : UIColor.hotPink,
+                    NSKernAttributeName : NSNumber(int: 2)
+                ]
+                
+                let title = NSAttributedString(string: "LASH DETAILS", attributes: attribs)
+                
+                let button = AnimatedBorderButton(type: .Custom)
+                button.tag = index
+                button.setAttributedTitle(title, forState: .Normal)
+                button.addTarget(self, action: #selector(TechniqueDetailViewController.selectedLash(_:)), forControlEvents: .TouchUpInside)
+                newStack.addArrangedSubview(button)
+            }
+            
             brushStack.addArrangedSubview(newStack)
         }
-    }
-    
-    private func updateChapterPopover(oldValue: Chapter?) {
-        let title = currentChapter?.lash?.name ?? technique?.name ?? "Error"
-        brushNameLabel.crossfadeUpdate(0.25, updates: { self.brushNameLabel.text = title })
     }
     
     private func updateButtons() {
@@ -167,6 +158,13 @@ class TechniqueDetailViewController: BaseViewController {
         
         leftChevron.enabled = (technique != allTechniques.first)
         rightChevron.enabled = (technique != allTechniques.last)
+    }
+    
+    internal func selectedLash(sender: AnyObject?) {
+        if let button = sender as? UIButton {
+            selectedTag = button.tag
+            performSegueWithIdentifier("lashDetailFromTechniqueDetail", sender: self)
+        }
     }
 
     // MARK:- User Interactions
@@ -197,19 +195,6 @@ class TechniqueDetailViewController: BaseViewController {
         shiftTechniques(-1)
     }
     
-    @IBAction func chapterTouched(sender: UIGestureRecognizer) {
-        guard let technique = technique else { return }
-        let location = sender.locationInView(brushStack)
-        for (index, view) in brushStack.arrangedSubviews.enumerate() {
-            if view.frame.contains(location) {
-                currentChapter = technique.orderedChapters()[index]
-                if let chapter = currentChapter {
-                    videoContainer.setTimeOffset(chapter.timeOffset)
-                }
-                return
-            }
-        }
-    }
     
     @IBAction func addToPlaylistTouched(sender: UIButton) {
         guard let technique = technique where !technique.inPlaylist else { return }
@@ -221,43 +206,15 @@ class TechniqueDetailViewController: BaseViewController {
 }
 
 extension TechniqueDetailViewController: AVPlayerViewDelegate {
-    
-    func player(player: AVPlayerView, didEnterChapterIndex index: Int?) {
-        if let index = index, let selectedChapter = technique?.orderedChapters()[index]  {
-            // if the chapter is equal to the current chapter that means we have already set it after the user interaction so no need to update it again.
-            if currentChapter != selectedChapter {
-                currentChapter = selectedChapter
-            }
-        } else {
-            currentChapter = nil
-        }
-    }
-    
     func playerDidFinishPlaying(player: AVPlayerView) {
-        currentChapter = nil
         videoContainer.reset()
-    }
-    
-    func playerDidRetrieveChapterData(dataArray: [[String : AnyObject]]) {
-         dispatch_async(dispatch_get_main_queue(),{
-            if let currentTechnique = self.technique {
-                do {
-                    try currentTechnique.updateWithJSONArray(dataArray)
-                    CoreDataStack.shared.saveContext()
-                } catch let error {
-                    self.reportError("Error", message: "Could not load chapter data: \(error)")
-                }
-            }
-            self.updateBasicData()
-            self.updateChapters()
-         })
     }
 }
 
 extension TechniqueDetailViewController: TransitionAnimationDataSource {
     
     func transitionableViews(direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
-        var views: [UIView] = [dataStack, brushDetailsButton, addToPlaylistButton]
+        var views: [UIView] = [dataStack, addToPlaylistButton]
         for stackView in brushStack.arrangedSubviews as! [UIStackView] {
             views.append(stackView.arrangedSubviews[0])
             views.append(stackView.arrangedSubviews[1])
@@ -271,8 +228,6 @@ extension TechniqueDetailViewController: TransitionAnimationDataSource {
         switch view {
         case dataStack :
             return [TransitionAnimationItem(mode: .SlideRight, duration: 0.5)]
-        case brushDetailsButton :
-            return [TransitionAnimationItem(mode: .SlideRight, delay: 0.2, duration:  0.5)]
         case addToPlaylistButton :
             return [TransitionAnimationItem(mode: .SlideRight, delay: 0.1, duration: 0.5)]
         case videoContainer :

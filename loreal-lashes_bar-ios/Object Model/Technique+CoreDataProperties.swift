@@ -22,7 +22,6 @@ extension Technique {
     @NSManaged var thumbPath:               String?
     @NSManaged var ordinal:                 Int16
     @NSManaged var inPlaylist:              Bool
-    
-    @NSManaged var chapters:                Set<Chapter>?
+    @NSManaged var associatedProducts:      Set<Product>?
 
 }
