@@ -162,6 +162,8 @@
 		B2DB091A1D93F0A10063A25E /* HelveticaNeueCond.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2DB09161D93F0A10063A25E /* HelveticaNeueCond.ttf */; };
 		B2DB09341D93F0BD0063A25E /* default_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DB09321D93F0BD0063A25E /* default_thumb.png */; };
 		B2DB094B1D93F13A0063A25E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DB09491D93F13A0063A25E /* LaunchScreen.storyboard */; };
+		B2EBCDA91D9E7485007E178D /* TechniqueDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBCDA81D9E7485007E178D /* TechniqueDetailsCell.swift */; };
+		B2EBCDAB1D9E754A007E178D /* HorizontalPagingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EBCDAA1D9E754A007E178D /* HorizontalPagingLayout.swift */; };
 		B2F131E91D957DA000A83F16 /* LashCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F131E81D957DA000A83F16 /* LashCategoryCell.swift */; };
 		B2F131F31D958BD000A83F16 /* LashesCategoryBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F131F21D958BD000A83F16 /* LashesCategoryBrowserViewController.swift */; };
 /* End PBXBuildFile section */
@@ -336,6 +338,8 @@
 		B2DB09161D93F0A10063A25E /* HelveticaNeueCond.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = HelveticaNeueCond.ttf; path = "loreal-lashes_bar-ios/Resources/Fonts/HelveticaNeueCond.ttf"; sourceTree = SOURCE_ROOT; };
 		B2DB09321D93F0BD0063A25E /* default_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default_thumb.png; path = "loreal-lashes_bar-ios/Resources/Videos/Thumbnails/default_thumb.png"; sourceTree = SOURCE_ROOT; };
 		B2DB094A1D93F13A0063A25E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "loreal-lashes_bar-ios/Base.lproj/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
+		B2EBCDA81D9E7485007E178D /* TechniqueDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TechniqueDetailsCell.swift; path = "loreal-lashes_bar-ios/Views/TechniqueDetailsCell.swift"; sourceTree = SOURCE_ROOT; };
+		B2EBCDAA1D9E754A007E178D /* HorizontalPagingLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HorizontalPagingLayout.swift; path = "loreal-lashes_bar-ios/Layout Assistance/HorizontalPagingLayout.swift"; sourceTree = SOURCE_ROOT; };
 		B2F131E81D957DA000A83F16 /* LashCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LashCategoryCell.swift; path = "loreal-lashes_bar-ios/Views/LashCategoryCell.swift"; sourceTree = SOURCE_ROOT; };
 		B2F131F21D958BD000A83F16 /* LashesCategoryBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LashesCategoryBrowserViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/LashesCategoryBrowserViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -518,6 +522,7 @@
 				B2DB08AE1D93ED000063A25E /* HighlightLayoutAttributes.swift */,
 				B2DB08AF1D93ED000063A25E /* InterspacedImageLayout.swift */,
 				B2DB08B01D93ED000063A25E /* PagedGridLayout.swift */,
+				B2EBCDAA1D9E754A007E178D /* HorizontalPagingLayout.swift */,
 			);
 			path = "Layout Assistance";
 			sourceTree = "<group>";
@@ -532,6 +537,7 @@
 				B2DB08CA1D93ED470063A25E /* MyPlaylistCell.swift */,
 				B2DB08CB1D93ED470063A25E /* ProductCell.swift */,
 				B2DB08CC1D93ED470063A25E /* TechniqueCell.swift */,
+				B2EBCDA81D9E7485007E178D /* TechniqueDetailsCell.swift */,
 				B2DB08CD1D93ED470063A25E /* TriangleView.swift */,
 				1858EB841D6DA4B1002D2538 /* Nibs */,
 				183A210C1D6C3D9300660255 /* Layers */,
@@ -894,6 +900,7 @@
 				B2DB08B11D93ED000063A25E /* HighlightCarouselLayout.swift in Sources */,
 				B2DB08A61D93ECDD0063A25E /* UIViewController+Utilities.swift in Sources */,
 				B2DB08951D93ECD10063A25E /* main.swift in Sources */,
+				B2EBCDAB1D9E754A007E178D /* HorizontalPagingLayout.swift in Sources */,
 				B2C5B5861D93FC660077F941 /* loreal_lashes_bar_ios.xcdatamodel in Sources */,
 				B2DB09091D93F0280063A25E /* Requestables.swift in Sources */,
 				B2DB08DD1D93EFD10063A25E /* AttractModeViewController.swift in Sources */,
@@ -940,6 +947,7 @@
 				B2D0A4E51D9914840006450B /* LashCell.swift in Sources */,
 				B2DB08F21D93EFFC0063A25E /* Technique.swift in Sources */,
 				B2DB08A21D93ECDD0063A25E /* UIColor+Branding.swift in Sources */,
+				B2EBCDA91D9E7485007E178D /* TechniqueDetailsCell.swift in Sources */,
 				B2DB08941D93ECD10063A25E /* AppDelegate.swift in Sources */,
 				B2DB08FB1D93F0080063A25E /* Product+CoreDataProperties.swift in Sources */,
 				B2DB08BD1D93ED1A0063A25E /* AnimatedBorderView.swift in Sources */,

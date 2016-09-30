@@ -12,16 +12,13 @@ class TechniqueDetailViewController: BaseViewController {
     
     @IBOutlet var videoContainer: AVPlayerView!
     
-    @IBOutlet var techniqueDetailLabel: UILabel!
-    @IBOutlet var brushNameLabel: UILabel!
-    @IBOutlet var dataStack: UIStackView!
-    
     @IBOutlet var leftChevron: UIButton!
     @IBOutlet var rightChevron: UIButton!
-    @IBOutlet var addToPlaylistButton: UIButton!
 
     @IBOutlet var brushStack: UIStackView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
+    var didLoad: Bool = false
     var allTechniques = Technique.orderedTechniques()
     var selectedTag: Int!
     var technique: Technique? {
@@ -30,16 +27,24 @@ class TechniqueDetailViewController: BaseViewController {
                 updateRelatedProducts()
                 updateTechniqueVideo()
                 updateButtons()
-            
-                dataStack.crossfadeUpdate(0.5, updates: {
-                    self.updateBasicData()
-                })
+                updateBasicData()
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let collectionViewLayout = HorizontalPagingLayout()
+        collectionViewLayout.itemSize = CGSizeMake(557, 200)
+        collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
+        collectionViewLayout.minimumInteritemSpacing = 60
+        collectionViewLayout.minimumLineSpacing = 60
+        collectionViewLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
+        
+        collectionView.collectionViewLayout = collectionViewLayout
+        collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
+        
         view.backgroundColor = UIColor.lightBG
         videoContainer.shouldInterruptTimeout = true
         
@@ -58,6 +63,11 @@ class TechniqueDetailViewController: BaseViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         videoContainer.play()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        didLoad = false
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -79,10 +89,8 @@ class TechniqueDetailViewController: BaseViewController {
     }
     
     private func updateBasicData() {
-        guard let technique = technique else { return }
-        
-        brushNameLabel.text = technique.name
-        techniqueDetailLabel.text = technique.detail
+//        guard let technique = technique else { return }
+
     }
     
     private func updateRelatedProducts() {
@@ -147,17 +155,20 @@ class TechniqueDetailViewController: BaseViewController {
     
     private func updateButtons() {
         guard let technique = technique where isViewLoaded() else { return }
-        addToPlaylistButton.userInteractionEnabled = !technique.inPlaylist
-        if technique.inPlaylist {
-            addToPlaylistButton.setTitle("ADDED!", forState: .Normal)
-            addToPlaylistButton.enabled = false
-        } else {
-            addToPlaylistButton.setTitle("ADD TO PLAYLIST", forState: .Normal)
-            addToPlaylistButton.enabled = true
-        }
         
         leftChevron.enabled = (technique != allTechniques.first)
         rightChevron.enabled = (technique != allTechniques.last)
+        
+        if collectionView.visibleCells().count > 0, let currentCell = collectionView.visibleCells()[0] as? TechniqueDetailsCell {
+            currentCell.addToPlaylistButton.userInteractionEnabled = !technique.inPlaylist
+            if technique.inPlaylist {
+                currentCell.addToPlaylistButton.setTitle("ADDED!", forState: .Normal)
+                currentCell.addToPlaylistButton.enabled = false
+            } else {
+                currentCell.addToPlaylistButton.setTitle("ADD TO PLAYLIST", forState: .Normal)
+                currentCell.addToPlaylistButton.enabled = true
+            }
+        }
     }
     
     internal func selectedLash(sender: AnyObject?) {
@@ -176,7 +187,7 @@ class TechniqueDetailViewController: BaseViewController {
         
         let newIndex = index + direction
         if newIndex < 0 || newIndex >= allTechniques.count { return }
-        self.technique = allTechniques[newIndex]
+        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: newIndex, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: true)
     }
     
     @IBAction func scrollLeft(sender: UIButton) {
@@ -186,15 +197,6 @@ class TechniqueDetailViewController: BaseViewController {
     @IBAction func scrollRight(sender: UIButton) {
         shiftTechniques(1)
     }
-    
-    @IBAction func swipedRight(sender: AnyObject) {
-        shiftTechniques(1)
-    }
-    
-    @IBAction func swipedLeft(sender: AnyObject) {
-        shiftTechniques(-1)
-    }
-    
     
     @IBAction func addToPlaylistTouched(sender: UIButton) {
         guard let technique = technique where !technique.inPlaylist else { return }
@@ -211,10 +213,73 @@ extension TechniqueDetailViewController: AVPlayerViewDelegate {
     }
 }
 
+// MARK: - CollectionViewDataSource
+extension TechniqueDetailViewController: UICollectionViewDataSource {
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return min(allTechniques.count, 1)
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return allTechniques.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("TechniqueDetailsCell", forIndexPath: indexPath)
+        if let techniqueCell = cell as? TechniqueDetailsCell {
+            techniqueCell.technique = allTechniques[indexPath.row]
+            if techniqueCell.addToPlaylistButton.allTargets().count == 0 {
+                techniqueCell.addToPlaylistButton.addTarget(self, action: #selector(TechniqueDetailViewController.addToPlaylistTouched(_:)), forControlEvents: .TouchUpInside)
+            }
+            
+            if techniqueCell.technique!.inPlaylist {
+                techniqueCell.addToPlaylistButton.setTitle("ADDED!", forState: .Normal)
+                techniqueCell.addToPlaylistButton.enabled = false
+            } else {
+                techniqueCell.addToPlaylistButton.setTitle("ADD TO PLAYLIST", forState: .Normal)
+                techniqueCell.addToPlaylistButton.enabled = true
+            }
+        }
+        return cell
+    }
+}
+
+// MARK: - CollectionViewDelegate
+extension TechniqueDetailViewController: UICollectionViewDelegate {
+    internal func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        if let currentTechnique = technique, let newIndex = allTechniques.indexOf(currentTechnique) {
+            // This positions the scroll view to the correct cell when the screen is opened
+            if didLoad == false {
+                didLoad = true
+                let indexToScrollTo = NSIndexPath(forRow: newIndex, inSection: 0)
+                collectionView.scrollToItemAtIndexPath(indexToScrollTo, atScrollPosition: .CenteredHorizontally, animated: false)
+            }
+        }
+    }
+}
+
+// MARK: - ScrollViewDelegate
+extension TechniqueDetailViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        guard collectionView.visibleCells().count > 0, let currentCell = collectionView.visibleCells()[0] as? TechniqueDetailsCell else {
+            return
+        }
+        if collectionView.visibleCells().count == 1 && technique != currentCell.technique {
+            self.technique = currentCell.technique
+        }
+    }
+}
+
 extension TechniqueDetailViewController: TransitionAnimationDataSource {
     
     func transitionableViews(direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
-        var views: [UIView] = [dataStack, addToPlaylistButton]
+        var views: [UIView] = [leftChevron, rightChevron]
+        if collectionView.visibleCells().count > 0, let currentCell = collectionView.visibleCells()[0] as? TechniqueDetailsCell {
+            views.append(currentCell.addToPlaylistButton)
+            views.append(currentCell)
+        }
         for stackView in brushStack.arrangedSubviews as! [UIStackView] {
             views.append(stackView.arrangedSubviews[0])
             views.append(stackView.arrangedSubviews[1])
@@ -226,10 +291,8 @@ extension TechniqueDetailViewController: TransitionAnimationDataSource {
     
     func transitionAnimationItemsForView(view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
         switch view {
-        case dataStack :
-            return [TransitionAnimationItem(mode: .SlideRight, duration: 0.5)]
-        case addToPlaylistButton :
-            return [TransitionAnimationItem(mode: .SlideRight, delay: 0.1, duration: 0.5)]
+        case is UIButton :
+            return [TransitionAnimationItem(mode: .SlideRight, delay: 0.2, duration:  0.5)]
         case videoContainer :
             return [TransitionAnimationItem(mode: .Fade)]
         default : break
