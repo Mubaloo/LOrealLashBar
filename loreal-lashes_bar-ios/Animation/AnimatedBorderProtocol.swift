@@ -62,11 +62,11 @@ extension AnimatedBorderProtocol {
     }
     
     func appear(duration: NSTimeInterval, delay: NSTimeInterval) {
-        animateAppearance(0, to: 1, duration: duration, delay: delay)
+        animateAppearance(0, to: 1, duration: 1, delay: delay) // overwritten duration as a quick fix. Should add a custom duration variable in the future.
     }
     
     func disappear(duration: NSTimeInterval, delay: NSTimeInterval) {
-        animateAppearance(1, to: 0, duration: duration, delay: delay)
+        animateAppearance(1, to: 0, duration: 1, delay: delay)
     }
     
 }

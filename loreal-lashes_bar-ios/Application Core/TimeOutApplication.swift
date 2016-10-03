@@ -17,6 +17,7 @@ class TimeOutApplication: UIApplication {
     
     static let ApplicationDidTimeOutNotification = "ApplicationDidTimeOutNotification"
     static let timeout: NSTimeInterval = 60 // Timeout measured in seconds of inactivity
+    static let shortTimeoutInterval: NSTimeInterval = 10 // Timeout measured in seconds of inactivity
     
     private var timer: NSTimer?
     private var pauseCount = 0
@@ -29,7 +30,18 @@ class TimeOutApplication: UIApplication {
     func beginTimeout() {
         if timer != nil { return }
         pauseCount = 0
-        refreshTimer()
+        refreshTimer(false)
+    }
+    
+    /**
+     Initialises the short timeout session, if one is not already in progress.
+     */
+    func beginShortTimeout() {
+        if timer != nil {
+            cancelTimeout()
+        }
+        pauseCount = 0
+        refreshTimer(true)
     }
     
     /**
@@ -62,10 +74,10 @@ class TimeOutApplication: UIApplication {
     }
     
     // Invalidates and restarts the timer.
-    private func refreshTimer() {
+    private func refreshTimer(shortTimeout: Bool) {
         if let timer = timer { timer.invalidate() }
         self.timer = NSTimer.scheduledTimerWithTimeInterval(
-            TimeOutApplication.timeout,
+            shortTimeout ? TimeOutApplication.shortTimeoutInterval : TimeOutApplication.timeout,
             target: self,
             selector: #selector(TimeOutApplication.appDidTimeOut),
             userInfo: nil,
@@ -79,7 +91,7 @@ class TimeOutApplication: UIApplication {
         super.sendEvent(event)
         if timeoutIsActive == false { return }
         if event.allTouches()?.filter({ $0.phase == .Began }).count == 0 { return }
-        refreshTimer()
+        refreshTimer(false)
     }
     
     // Send a notification upon timeout.

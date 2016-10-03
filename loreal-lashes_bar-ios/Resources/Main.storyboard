@@ -744,7 +744,7 @@
                                                                         <constraint firstAttribute="width" constant="337" id="vDo-hC-JuJ"/>
                                                                     </constraints>
                                                                 </stackView>
-                                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" misplaced="YES" placeholderIntrinsicWidth="195" placeholderIntrinsicHeight="47" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHH-23-kZx">
+                                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" placeholderIntrinsicWidth="195" placeholderIntrinsicHeight="47" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHH-23-kZx">
                                                                     <rect key="frame" x="362" y="77" width="195" height="47"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="195" id="SJT-ju-9hr"/>
@@ -1882,14 +1882,53 @@
                                             <constraint firstItem="kPf-LM-voa" firstAttribute="top" secondItem="hUN-ro-OG1" secondAttribute="bottom" constant="11" id="y3p-sY-pGE"/>
                                         </constraints>
                                     </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGo-YA-HWk" userLabel="StatusContainer">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="226"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sending..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKK-o5-rDK">
+                                                <rect key="frame" x="0.0" y="58" width="768" height="41"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="41" id="okh-xx-x9o"/>
+                                                    <constraint firstAttribute="width" constant="514" id="wFI-lc-nZR"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="wFI-lc-nZR"/>
+                                                    </mask>
+                                                </variation>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading-lips" translatesAutoresizingMaskIntoConstraints="NO" id="YMK-up-61y">
+                                                <rect key="frame" x="357" y="113" width="54" height="57"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="54" id="5iR-Uq-HRl"/>
+                                                    <constraint firstAttribute="height" constant="57" id="KSr-De-e1V"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="nKK-o5-rDK" secondAttribute="trailing" id="Q8m-lI-hdj"/>
+                                            <constraint firstItem="nKK-o5-rDK" firstAttribute="top" secondItem="mGo-YA-HWk" secondAttribute="top" constant="58" id="Ruz-Vs-5gj"/>
+                                            <constraint firstItem="YMK-up-61y" firstAttribute="top" secondItem="nKK-o5-rDK" secondAttribute="bottom" constant="14" id="g77-Wq-afr"/>
+                                            <constraint firstItem="YMK-up-61y" firstAttribute="centerX" secondItem="mGo-YA-HWk" secondAttribute="centerX" id="q21-IK-Fp6"/>
+                                            <constraint firstItem="nKK-o5-rDK" firstAttribute="leading" secondItem="mGo-YA-HWk" secondAttribute="leading" id="v0O-0k-p15"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="mGo-YA-HWk" firstAttribute="top" secondItem="bLA-ey-Orl" secondAttribute="top" id="6D8-GN-eaf"/>
                                     <constraint firstAttribute="trailing" secondItem="4bx-UK-WHb" secondAttribute="trailing" id="LuX-kd-p9R"/>
                                     <constraint firstItem="4bx-UK-WHb" firstAttribute="top" secondItem="bLA-ey-Orl" secondAttribute="top" id="SJZ-3C-RnX"/>
                                     <constraint firstAttribute="bottom" secondItem="4bx-UK-WHb" secondAttribute="bottom" id="T8S-eo-VuQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="mGo-YA-HWk" secondAttribute="trailing" id="cuD-y8-fDa"/>
                                     <constraint firstItem="0Ac-yQ-ewq" firstAttribute="centerX" secondItem="bLA-ey-Orl" secondAttribute="centerX" id="hJ8-le-ASt"/>
+                                    <constraint firstAttribute="bottom" secondItem="mGo-YA-HWk" secondAttribute="bottom" id="ixl-OK-2Az"/>
                                     <constraint firstItem="0Ac-yQ-ewq" firstAttribute="centerY" secondItem="bLA-ey-Orl" secondAttribute="centerY" id="j2o-db-ih6"/>
+                                    <constraint firstItem="mGo-YA-HWk" firstAttribute="leading" secondItem="bLA-ey-Orl" secondAttribute="leading" id="sgg-g6-1jZ"/>
                                     <constraint firstItem="4bx-UK-WHb" firstAttribute="leading" secondItem="bLA-ey-Orl" secondAttribute="leading" id="ysm-K3-ctt"/>
                                 </constraints>
                             </view>
@@ -1930,10 +1969,14 @@
                         <outlet property="closeButton" destination="dy0-hR-BqK" id="pD2-qW-M3C"/>
                         <outlet property="emailContainer" destination="0Ac-yQ-ewq" id="kQw-ZQ-cb4"/>
                         <outlet property="emailField" destination="kPf-LM-voa" id="yRt-5O-a7O"/>
+                        <outlet property="interfaceBottom" destination="Lb8-68-9mF" id="V7z-nR-NgW"/>
                         <outlet property="myPlaylistLabel" destination="6Jn-eu-C8V" id="zII-P3-UFQ"/>
                         <outlet property="pageControl" destination="xEp-IS-0zI" id="gv3-FS-gvk"/>
                         <outlet property="playlistCollection" destination="Hjq-fv-U5M" id="Jas-Kx-qxf"/>
                         <outlet property="sendButton" destination="Zd6-Ge-cQV" id="9wT-hx-S32"/>
+                        <outlet property="statusContainer" destination="mGo-YA-HWk" id="cKZ-ej-NoE"/>
+                        <outlet property="statusImageView" destination="YMK-up-61y" id="cFa-z1-jaD"/>
+                        <outlet property="statusLabel" destination="nKK-o5-rDK" id="rw0-xq-sbT"/>
                         <outlet property="tickMarkBackground" destination="6Em-Nz-KPh" id="M9g-on-ZVm"/>
                         <outlet property="tickMarkImageView" destination="9Tx-54-Bxw" id="aIJ-HL-kXC"/>
                         <outlet property="titleBar" destination="Mnh-eX-VgF" id="IAO-bh-PjI"/>
@@ -2114,6 +2157,7 @@ YOU MAY ALSO BE ABLE TO REGISTER AND LOG IN USING A SOCIAL MEDIA ACCOUNT, INCLUD
         <image name="infoIcon" width="34" height="34"/>
         <image name="large_pause_button" width="64" height="85"/>
         <image name="large_play_button" width="57" height="65"/>
+        <image name="loading-lips" width="52" height="57"/>
         <image name="mute_button" width="19" height="13"/>
         <image name="nyx_logo_small" width="59" height="36"/>
         <image name="small_pause_button" width="10" height="12"/>

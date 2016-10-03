@@ -20,6 +20,10 @@ class PlaylistViewController: BaseViewController {
     @IBOutlet var sendButton: UIButton!
     @IBOutlet var interfaceBottom: NSLayoutConstraint!
     
+    @IBOutlet weak var statusContainer: UIView!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusImageView: UIImageView!
+    
     @IBOutlet weak var tickMarkBackground: UIView!
     @IBOutlet weak var tickMarkImageView: UIImageView!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -40,6 +44,7 @@ class PlaylistViewController: BaseViewController {
         playlistCollection.collectionViewLayout = PagedGridLayout()
         playlistCollection.reloadData()
         sendButton.enabled = playlistItems.count > 0
+        sendButton.enabled = true
         
         let noteCenter = NSNotificationCenter.defaultCenter()
         noteCenter.addObserver(self, selector: #selector(PlaylistViewController.updateKeyboard(_:)),
@@ -69,15 +74,26 @@ class PlaylistViewController: BaseViewController {
                 emailAddress: emailAddress,
                 videoURLs: urls
             )
-            
+            self.emailContainer.hidden = true
+            self.statusContainer.hidden = false
             request.executeInSharedSession {
                 switch $0 {
                 case .Success(let response) :
                     print("Email sent to \(emailAddress)")
                     print(response)
+                    self.statusLabel.text = "Sent to \(emailAddress)!"
+                    self.statusImageView.image = UIImage(named: "loaded-lips")
+                    guard let app = UIApplication.sharedApplication() as? TimeOutApplication else { return }
+                    app.beginShortTimeout()
                 case .SuccessNoData :
                     print("Email sent to \(emailAddress) (no data in response)")
+                    self.statusLabel.text = "Sent to \(emailAddress)!"
+                    self.statusImageView.image = UIImage(named: "loaded-lips")
+                    guard let app = UIApplication.sharedApplication() as? TimeOutApplication else { return }
+                    app.beginShortTimeout()
                 case .Failure(let error) :
+                    self.statusContainer.hidden = true
+                    self.emailContainer.hidden = false
                     print("Error sending email: \(error)")
                 }
             }
