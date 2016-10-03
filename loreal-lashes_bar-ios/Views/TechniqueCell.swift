@@ -27,8 +27,12 @@ class TechniqueCell: UICollectionViewCell {
             guard let technique = technique else { return }
             titleLabel.text = technique.name
             detailLabel.text = technique.detail
-            videoPreview.loadPlaylistItem(technique, shouldLoadThumb: true)
-            videoPreview.playIfPossible()
+            let qualityOfServiceClass = QOS_CLASS_BACKGROUND
+            let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
+            dispatch_async(backgroundQueue, {
+                self.videoPreview.loadPlaylistItem(technique, shouldLoadThumb: true)
+                self.videoPreview.playIfPossible()
+            })
         }
     }
 }

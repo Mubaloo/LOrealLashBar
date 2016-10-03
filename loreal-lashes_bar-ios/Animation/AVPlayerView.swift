@@ -177,12 +177,10 @@ class AVPlayerView: UIView {
     }
     
     func loadURL(url: NSURL) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             let item = AVPlayerItem(URL: url)
             let chapterOffsetsNew = self.loadChapterDataFromAsset(item.asset)
             self.player.replaceCurrentItemWithPlayerItem(item)
             self.setChaptersAtTimeIntervals(chapterOffsetsNew)
-        })
     }
     
     func loadChapterDataFromAsset(asset: AVAsset) -> [NSTimeInterval]? {
