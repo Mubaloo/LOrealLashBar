@@ -18,11 +18,9 @@ class TechniqueDetailsCell: UICollectionViewCell {
     var technique: Technique? {
         didSet {
             guard let technique = technique else { return }
-            techniqueNameLabel.text = technique.name
+            techniqueNameLabel.text = technique.level
             techniqueDetailLabel.text = technique.detail
             brushNameLabel.text = technique.name
         }
     }
-    
-    
 }

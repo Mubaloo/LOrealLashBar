@@ -25,12 +25,6 @@ class Technique: NSManagedObject, PlaylistItem {
         catch { return [] }
     }
     
-    /** Returns all products associated with this technique, in the correct order. */
-    func orderedAssociates() -> [Product] {
-        guard let associatedProducts = associatedProducts else { return [] }
-        return associatedProducts.sort({ $0.name < $1.name })
-    }
-    
     var remoteMediaURL: NSURL? {
         get {
             if let path = remoteMediaPath {
@@ -110,16 +104,14 @@ extension Technique: JSONConfigurable {
     func configure(json: JSON) throws {
         name = try json["name"].string.unwrap("Technique Name")
         detail = try json["detail"].string.unwrap("Technique Detail")
+        level = try json["level"].string.unwrap("Technique level")
+        step1 = try json["step1"].string.unwrap("Technique step 1")
+        step2 = try json["step2"].string.unwrap("Technique step 2")
+        step3 = try json["step3"].string.unwrap("Technique step 3")
         
         remoteMediaPath = json["remote_path"].string
         localMediaPath = json["local_path"].string
         localMediaThumbPath = json["local_path_thumb"].string
         thumbPath = json["thumb_path"].string
-        
-        if let associatedJSON = json["related_products"].array {
-            let identifiers = try associatedJSON.map({ try $0.string.unwrap("Related Product Relationship") })
-            associatedProducts = Set(Product.productsWithIdentifiers(identifiers))
-        }
     }
-
 }

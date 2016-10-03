@@ -27,7 +27,6 @@ class TechniqueDetailViewController: BaseViewController {
                 updateRelatedProducts()
                 updateTechniqueVideo()
                 updateButtons()
-                updateBasicData()
             }
         }
     }
@@ -50,7 +49,6 @@ class TechniqueDetailViewController: BaseViewController {
         
         videoContainer.delegate = self
     
-        updateBasicData()
         updateTechniqueVideo()
         updateRelatedProducts()
     }
@@ -70,13 +68,6 @@ class TechniqueDetailViewController: BaseViewController {
         didLoad = false
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let brushDetailVC = segue.destinationViewController as? LashDetailViewController,
-            product = technique!.orderedAssociates()[selectedTag] as? Lash {
-            brushDetailVC.lash = product
-        }
-    }
-    
     @IBAction func unwindToTechniqueDetail(sender: UIStoryboardSegue) {
         // Nothing to do; just an unwind target
     }
@@ -88,11 +79,6 @@ class TechniqueDetailViewController: BaseViewController {
         videoContainer.loadPlaylistItem(technique)
     }
     
-    private func updateBasicData() {
-//        guard let technique = technique else { return }
-
-    }
-    
     private func updateRelatedProducts() {
         for view in brushStack.arrangedSubviews {
             brushStack.removeArrangedSubview(view)
@@ -101,55 +87,76 @@ class TechniqueDetailViewController: BaseViewController {
         
         guard let technique = technique else { return }
         
-        for (index, product) in technique.orderedAssociates().enumerate() {
-            
-            let newStack = UIStackView()
-            newStack.axis = .Vertical
-            newStack.distribution = .EqualSpacing
-            newStack.spacing = 0
+        let steps = [technique.step1, technique.step2, technique.step3]
+        
+        for (index, step) in steps.enumerate() {
+            let containerView = UIView()
+            containerView.backgroundColor = UIColor.clearColor()
             
             let titleLabel = UILabel()
-            titleLabel.textColor = UIColor.blackColor()
-            titleLabel.font = UIFont(name: "HelveticaNeueCond", size: 18)
-            titleLabel.text = product.name
+            titleLabel.textColor = UIColor.whiteColor()
+            titleLabel.font = UIFont(name: "HelveticaNeueCond", size: 28)
+            titleLabel.text = "0\(index + 1)"
             titleLabel.textAlignment = .Center
             titleLabel.numberOfLines = 1
-            titleLabel.tag = index
+            containerView.addSubview(titleLabel)
             
-            newStack.addArrangedSubview(titleLabel)
-            
-            titleLabel.translatesAutoresizingMaskIntoConstraints = false
-            titleLabel.addConstraint(NSLayoutConstraint(
-                item: titleLabel, attribute: .Height, relatedBy: .Equal,
-                toItem: nil, attribute: .Height, multiplier: 0, constant: 30
-                ))
-            
-            let image = product.image
+            let image = UIImage(named: "zigzag_icon")
             let imageView = UIImageView(image: image)
             imageView.contentMode = .ScaleAspectFit
-            imageView.setContentHuggingPriority(240, forAxis: .Vertical)
-            imageView.setContentCompressionResistancePriority(740, forAxis: .Vertical)
-            imageView.tag = index
+            containerView.addSubview(imageView)
             
-            newStack.addArrangedSubview(imageView)
+            let subtitleLabel = UILabel()
+            subtitleLabel.textColor = UIColor.whiteColor()
+            subtitleLabel.font = UIFont(name: "HelveticaNeueCond", size: 15)
+            subtitleLabel.text = step
+            subtitleLabel.textAlignment = .Center
+            subtitleLabel.numberOfLines = 0
+            containerView.addSubview(subtitleLabel)
             
-            if product is Lash {
-                let attribs: [String: AnyObject] = [
-                    NSFontAttributeName : UIFont(name: "HelveticaNeueCond", size: 20)!,
-                    NSForegroundColorAttributeName : UIColor.hotPink,
-                    NSKernAttributeName : NSNumber(int: 2)
-                ]
-                
-                let title = NSAttributedString(string: "LASH DETAILS", attributes: attribs)
-                
-                let button = AnimatedBorderButton(type: .Custom)
-                button.tag = index
-                button.setAttributedTitle(title, forState: .Normal)
-                button.addTarget(self, action: #selector(TechniqueDetailViewController.selectedLash(_:)), forControlEvents: .TouchUpInside)
-                newStack.addArrangedSubview(button)
-            }
+            let maxSize = subtitleLabel.text!.boundingRectWithSize(CGSizeMake(150, CGFloat.max), options: [.UsesFontLeading, .UsesLineFragmentOrigin], attributes:[NSFontAttributeName: subtitleLabel.font], context: nil)
             
-            brushStack.addArrangedSubview(newStack)
+            titleLabel.translatesAutoresizingMaskIntoConstraints = false
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+            
+            let views = ["title": titleLabel,
+                         "image": imageView,
+                         "subtitle": subtitleLabel]
+            
+            var allConstraints = [NSLayoutConstraint]()
+            
+            let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
+                "V:|-0-[title(35)]-20-[image(11)]-20-[subtitle(\(ceil(maxSize.height)))]",
+                options: [.AlignAllCenterX],
+                metrics: nil,
+                views: views)
+            allConstraints += verticalConstraints
+            
+            let iconHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
+                "H:[image(8)]",
+                options: [],
+                metrics: nil,
+                views: views)
+            allConstraints += iconHorizontalConstraints
+            
+            let titleHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
+                "H:|-0-[title]-0-|",
+                options: [],
+                metrics: nil,
+                views: views)
+            allConstraints += titleHorizontalConstraints
+            
+            let subtitleHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
+                "H:|-0-[subtitle]-0-|",
+                options: [],
+                metrics: nil,
+                views: views)
+            allConstraints += subtitleHorizontalConstraints
+            
+            NSLayoutConstraint.activateConstraints(allConstraints)
+        
+            brushStack.addArrangedSubview(containerView)
         }
     }
     
@@ -168,13 +175,6 @@ class TechniqueDetailViewController: BaseViewController {
                 currentCell.addToPlaylistButton.setTitle("ADD TO PLAYLIST", forState: .Normal)
                 currentCell.addToPlaylistButton.enabled = true
             }
-        }
-    }
-    
-    internal func selectedLash(sender: AnyObject?) {
-        if let button = sender as? UIButton {
-            selectedTag = button.tag
-            performSegueWithIdentifier("lashDetailFromTechniqueDetail", sender: self)
         }
     }
 
@@ -280,9 +280,8 @@ extension TechniqueDetailViewController: TransitionAnimationDataSource {
             views.append(currentCell.addToPlaylistButton)
             views.append(currentCell)
         }
-        for stackView in brushStack.arrangedSubviews as! [UIStackView] {
-            views.append(stackView.arrangedSubviews[0])
-            views.append(stackView.arrangedSubviews[1])
+        for view in brushStack.arrangedSubviews {
+            views.append(view)
         }
         
         if !(otherVC is TechniqueBrowserViewController) { views.append(videoContainer) }
@@ -300,13 +299,7 @@ extension TechniqueDetailViewController: TransitionAnimationDataSource {
         
         let count = brushStack.arrangedSubviews.count
         let delay = 0.25 / Double(count) * Double(count - view.tag - 1) + 0.5
-        if view is UILabel {
-            return [TransitionAnimationItem(mode: .SlideLeft, delay: delay, duration: 0.25)]
-        } else if view is UIImageView {
-            return [TransitionAnimationItem(mode: .SlideBottom, delay: delay, duration: 0.25, quantity: view.frame.height)]
-        }
-        
-        return nil
+        return [TransitionAnimationItem(mode: .SlideLeft, delay: delay, duration: 0.25)]
     }
     
     func viewsWithEquivalents(otherVC: UIViewController) -> [UIView]? {

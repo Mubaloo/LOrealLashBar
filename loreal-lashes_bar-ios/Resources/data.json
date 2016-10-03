@@ -325,7 +325,10 @@
                   {
                   "name":"CUSTOM FITTING",
                   "detail":"learn how to custom fit your lashes based on your eye width",
-                  "related_products":["WL02", "WL100", "WL101"],
+                  "level":"Beginner",
+                  "step1":"Measure the lash against your eye to determine the length you need",
+                  "step2":"Trim off any excess to get a custom fit",
+                  "step3":"Apply at the center and secure the edges",
                   "local_path":"01. CUSTOM FITTING.mov",
                   "local_path_thumb":"01. CUSTOM FITTING THUMB.mov",
                   "thumb_path":"01. CUSTOM FITTING.png"
@@ -333,6 +336,10 @@
                   {
                   "name":"POP UP LASH PREVENTION",
                   "detail":"learn how to help prevent your lashes from popping up from the corners",
+                  "level":"Professional",
+                  "step1":"Create motion with your false lash to loosen the band",
+                  "step2":"Wrap around one finger to establish curved shape",
+                  "step3":"Adhere to your lash and secure tightly with a second layer of adhesive, let dry and tug skin on top of lash band to cover",
                   "local_path":"02. POP-UP LASH PREVENTION.mov",
                   "local_path_thumb":"02. POP-UP LASH PREVENTION THUMB.mov",
                   "thumb_path":"02. POP-UP LASH PREVENTION.png"
@@ -340,6 +347,10 @@
                   {
                   "name":"LASH APPLICATION",
                   "detail":"learn how to quickly apply your strip lashes",
+                  "level":"Beginner",
+                  "step1":"Apply a thin black liner to your lash line",
+                  "step2":"Apply your false lash starting from the center",
+                  "step3":"Secure the inner lash against your liner",
                   "local_path":"03. LASH APPLICATION.mov",
                   "local_path_thumb":"03. LASH APPLICATION THUMB.mov",
                   "thumb_path":"03. LASH APPLICATION.png"
@@ -347,6 +358,10 @@
                   {
                   "name":"TRIO LASH APPLICATION",
                   "detail":"learn how to apply your strip lashes in 3 smaller pieces for easy application",
+                  "level":"Beginner",
+                  "step1":"Cut your false lash into three separate strips",
+                  "step2":"Apply beginning from the outside to determine the exact length",
+                  "step3":"Work your way inwards and apply the second and third strips for a perfectly framed lash",
                   "local_path":"04. TRIO LASH APPLICATION.mov",
                   "local_path_thumb":"04. TRIO LASH APPLICATION THUMB.mov",
                   "thumb_path":"04. TRIO LASH APPLICATION.png"
@@ -354,6 +369,10 @@
                   {
                   "name":"ELONGATED LASH APPLICATION",
                   "detail":"learn how to create the illusion of an elongated, sultry eye with your lashes",
+                  "level":"Intermediate",
+                  "step1":"Start off with a sharp winged liner",
+                  "step2":"Apply the inner half of the lash as normal",
+                  "step3":"Apply the end of the lash at an elevated angle against the winged liner to create a sultry lash effect",
                   "local_path":"05. ELONGATED LASHES.mov",
                   "local_path_thumb":"05. ELONGATED LASHES THUMB.mov",
                   "thumb_path":"05. ELONGATED LASHES.png"
@@ -361,6 +380,10 @@
                   {
                   "name":"WICKED FLARE APPLICATION",
                   "detail":"learn how to create an extra flare to outer corners of your eyes",
+                  "level":"Intermediate",
+                  "step1":"Cut a section off the outside end of the lash",
+                  "step2":"Layer to create a flare effect",
+                  "step3":"Apply and secure using adhesive",
                   "local_path":"06. WICKED FLARE.mov",
                   "local_path_thumb":"06. WICKED FLARE THUMB.mov",
                   "thumb_path":"06. WICKED FLARE.png"
@@ -368,6 +391,10 @@
                   {
                   "name":"DOUBLE STACKING LASHES",
                   "detail":"learn how to double stack lashes in 2 ways for a more dramatic look",
+                  "level":"Intermediate",
+                  "step1":"Stack two lashes on top of one another and adhere them together to create one thicker strip",
+                  "step2":"Apply the new double stacked lash",
+                  "step3":"Secure tightly using adhesive and tweezers",
                   "local_path":"07. DOUBLE STACKING.mov",
                   "local_path_thumb":"07. DOUBLE STACKING THUMB.mov",
                   "thumb_path":"07. DOUBLE STACKING.png"
@@ -375,6 +402,10 @@
                   {
                   "name":"CREATING INDIVIDUAL LASHES",
                   "detail":"learn how to create individual lashes from strips",
+                  "level":"Professional",
+                  "step1":"Trim the lash into small, individual strips",
+                  "step2":"Apply each individual strip beginning from the outside",
+                  "step3":"Continue applying inwards to your desired volume",
                   "local_path":"08. INDIVIDUAL LASHES.mov",
                   "local_path_thumb":"08. INDIVIDUAL LASHES THUMB.mov",
                   "thumb_path":"08. INDIVIDUAL LASHES.png"
@@ -382,6 +413,10 @@
                   {
                   "name":"LASH BLENDING",
                   "detail":"learn how to blend your real lashes with your falsies",
+                  "level":"Beginner",
+                  "step1":"Curl your natural lashes using a lash curler",
+                  "step2":"Curl your false lashes using a lash curler",
+                  "step3":"Apply lashes and add mascara for extra volume. Use a wiggling motion to blend the lashes together",
                   "local_path":"09. LASH BLENDING.mov",
                   "local_path_thumb":"09. LASH BLENDING THUMB.mov",
                   "thumb_path":"09. LASH BLENDING.png"
@@ -389,6 +424,10 @@
                   {
                   "name":"INVISIBLE LASH APPLICATION",
                   "detail":"learn how to hide the band of your lashes for a more natural look",
+                  "level":"Professional",
+                  "step1":"Curl your natural lashes using a lash curler",
+                  "step2":"Apply false lashes under your natural lashes",
+                  "step3":"Secure tightly using tweezers",
                   "local_path":"10. INVISIBLE LASHES.mov",
                   "local_path_thumb":"10. INVISIBLE LASHES THUMB.mov",
                   "thumb_path":"10. INVISIBLE LASHES.png"

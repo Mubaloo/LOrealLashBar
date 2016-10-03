@@ -16,12 +16,15 @@ extension Technique {
 
     @NSManaged var name:                    String
     @NSManaged var detail:                  String
+    @NSManaged var level:                   String
+    @NSManaged var step1:                   String
+    @NSManaged var step2:                   String
+    @NSManaged var step3:                   String
     @NSManaged var remoteMediaPath:         String?
     @NSManaged var localMediaPath:          String?
     @NSManaged var localMediaThumbPath:     String?
     @NSManaged var thumbPath:               String?
     @NSManaged var ordinal:                 Int16
     @NSManaged var inPlaylist:              Bool
-    @NSManaged var associatedProducts:      Set<Product>?
 
 }
