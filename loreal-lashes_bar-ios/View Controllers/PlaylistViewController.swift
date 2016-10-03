@@ -44,7 +44,6 @@ class PlaylistViewController: BaseViewController {
         playlistCollection.collectionViewLayout = PagedGridLayout()
         playlistCollection.reloadData()
         sendButton.enabled = playlistItems.count > 0
-        sendButton.enabled = true
         
         let noteCenter = NSNotificationCenter.defaultCenter()
         noteCenter.addObserver(self, selector: #selector(PlaylistViewController.updateKeyboard(_:)),
