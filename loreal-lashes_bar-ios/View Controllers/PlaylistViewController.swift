@@ -239,6 +239,8 @@ extension PlaylistViewController: PlaylistCellDelegate {
         item.isInPlaylist = false
         CoreDataStack.shared.saveContext()
         playlistItems.removeAtIndex(indexPath.item)
+        sendButton.enabled = playlistItems.count > 0
+        
         let itemsAfter = collectionView(playlistCollection, numberOfItemsInSection: 0)
         
         if itemsBefore != itemsAfter && itemsAfter != 0 {
