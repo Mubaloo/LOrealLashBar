@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class Product: NSManagedObject, JSONConfigurable {
 
-    var defaultImageName: String { get { return "product_default" } }
+    var defaultImageName: String { get { return "WL01THUMB" } }
     
     var image: UIImage {
         get {
