@@ -19,8 +19,15 @@ class TechniqueDetailViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var didLoad: Bool = false
-    var allTechniques = Technique.orderedTechniques()
     var selectedTag: Int!
+    
+    lazy var allTechniques: [Technique] = {
+        var orderedTechniques = Technique.orderedTechniques()
+        orderedTechniques.insert(orderedTechniques.last!, atIndex: 0)
+        orderedTechniques.append(orderedTechniques[1])
+        return orderedTechniques
+    }()
+    
     var technique: Technique? {
         didSet {
             if isViewLoaded() {
@@ -163,9 +170,6 @@ class TechniqueDetailViewController: BaseViewController {
     private func updateButtons() {
         guard let technique = technique where isViewLoaded() else { return }
         
-        leftChevron.enabled = (technique != allTechniques.first)
-        rightChevron.enabled = (technique != allTechniques.last)
-        
         if collectionView.visibleCells().count > 0, let currentCell = collectionView.visibleCells()[0] as? TechniqueDetailsCell {
             currentCell.addToPlaylistButton.userInteractionEnabled = !technique.inPlaylist
             if technique.inPlaylist {
@@ -181,12 +185,14 @@ class TechniqueDetailViewController: BaseViewController {
     // MARK:- User Interactions
     
     private func shiftTechniques(direction: Int) {
-        guard let technique = technique,
-            index = allTechniques.indexOf(technique)
+        if collectionView.scrollEnabled == false {
+            return
+        }
+        collectionView.scrollEnabled = false
+        guard let cellIndex = self.collectionView.indexPathForCell(self.collectionView.visibleCells().first!)
             else { return }
         
-        let newIndex = index + direction
-        if newIndex < 0 || newIndex >= allTechniques.count { return }
+        let newIndex = cellIndex.row + direction
         self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: newIndex, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: true)
     }
     
@@ -269,6 +275,31 @@ extension TechniqueDetailViewController: UIScrollViewDelegate {
         if collectionView.visibleCells().count == 1 && technique != currentCell.technique {
             self.technique = currentCell.technique
         }
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        // disable scrolling so that the user can only scroll one page at a time
+        scrollView.scrollEnabled = false
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        updateContinuousScrollIfNeeded()
+    }
+    
+    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+        updateContinuousScrollIfNeeded()
+    }
+    
+    // MARK: - Scrolling delegate helpers
+    func updateContinuousScrollIfNeeded() {
+        guard let cellIndex = self.collectionView.indexPathForCell(self.collectionView.visibleCells().first!)
+            else { return }
+        if cellIndex.row == 0 {
+            self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: allTechniques.count - 2, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: false)
+        }else if cellIndex.row == allTechniques.count - 1 {
+            self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: 1, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: false)
+        }
+        collectionView.scrollEnabled = true
     }
 }
 
