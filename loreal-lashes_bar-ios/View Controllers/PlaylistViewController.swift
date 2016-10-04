@@ -98,7 +98,12 @@ class PlaylistViewController: BaseViewController {
             }
         }
         
-        else { emailField.becomeFirstResponder() }
+        else {
+            let alert = UIAlertController(title: title, message: "Please enter a valid email address", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            emailField.becomeFirstResponder()
+        }
     }
     
     @IBAction func closeButtonTouched(sender: UIButton) {
