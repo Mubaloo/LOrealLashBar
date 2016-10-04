@@ -15,12 +15,30 @@ import UIKit
 class HorizontalPagingLayout: UICollectionViewFlowLayout {
     
     override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        let customOffset = targetOffsetFrom(proposedContentOffset)
+        if customOffset != nil {
+            return customOffset!
+        }
         
+        // Fallback
+        return super.targetContentOffsetForProposedContentOffset(proposedContentOffset)
+    }
+    
+    override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint) -> CGPoint {
+        let customOffset = targetOffsetFrom(proposedContentOffset)
+        if customOffset != nil {
+            return customOffset!
+        }
+        // Fallback
+        return super.targetContentOffsetForProposedContentOffset(proposedContentOffset)
+    }
+    
+    func targetOffsetFrom(proposedOffset: CGPoint) -> CGPoint? {
         if let cv = self.collectionView {
             
             let cvBounds = cv.bounds
             let halfWidth = cvBounds.size.width * 0.5;
-            let proposedContentOffsetCenterX = proposedContentOffset.x + halfWidth;
+            let proposedContentOffsetCenterX = proposedOffset.x + halfWidth;
             
             if let attributesForVisibleCells = self.layoutAttributesForElementsInRect(cvBounds) {
                 
@@ -50,14 +68,13 @@ class HorizontalPagingLayout: UICollectionViewFlowLayout {
                     
                     
                 }
-
-                return CGPoint(x : max(candidateAttributes!.center.x - halfWidth, 0) , y : proposedContentOffset.y);
+                
+                return CGPoint(x : max(candidateAttributes!.center.x - halfWidth, 0) , y : proposedOffset.y);
                 
             }
             
         }
         
-        // Fallback
-        return super.targetContentOffsetForProposedContentOffset(proposedContentOffset)
+        return nil
     }
 }

@@ -283,11 +283,17 @@ extension TechniqueDetailViewController: UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        updateContinuousScrollIfNeeded()
+        let offset = collectionView.collectionViewLayout.targetContentOffsetForProposedContentOffset(scrollView.contentOffset)
+        if offset != scrollView.contentOffset {
+            scrollView.setContentOffset(offset, animated: true)
+        }else{
+            updateContinuousScrollIfNeeded()
+        }
     }
     
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
         updateContinuousScrollIfNeeded()
+        
     }
     
     // MARK: - Scrolling delegate helpers
