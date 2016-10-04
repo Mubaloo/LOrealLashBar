@@ -76,6 +76,7 @@
 		B22812A31D9BCFCB00B091E1 /* WL24 THUMB.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228128B1D9BCFCB00B091E1 /* WL24 THUMB.mov */; };
 		B22812A51D9BEDB300B091E1 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22812A41D9BEDB300B091E1 /* PrivacyViewController.swift */; };
 		B22812A71D9C23D300B091E1 /* attract video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B22812A61D9C23D300B091E1 /* attract video.mp4 */; };
+		B2AEF3881DA3BFC300A0423A /* UILabel+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEF3871DA3BFC300A0423A /* UILabel+Utilities.swift */; };
 		B2C5B5841D93F87F0077F941 /* LashesBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5B5831D93F87E0077F941 /* LashesBrowserViewController.swift */; };
 		B2C5B5861D93FC660077F941 /* loreal_lashes_bar_ios.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B2C5B5851D93FC660077F941 /* loreal_lashes_bar_ios.xcdatamodel */; };
 		B2C5B5971D9410660077F941 /* LashCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5B5931D9410660077F941 /* LashCategory+CoreDataProperties.swift */; };
@@ -252,6 +253,7 @@
 		B228128B1D9BCFCB00B091E1 /* WL24 THUMB.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "WL24 THUMB.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/Brushes/Thumbnails/WL24 THUMB.mov"; sourceTree = SOURCE_ROOT; };
 		B22812A41D9BEDB300B091E1 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrivacyViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/PrivacyViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B22812A61D9C23D300B091E1 /* attract video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "attract video.mp4"; path = "loreal-lashes_bar-ios/Resources/Videos/attract video.mp4"; sourceTree = SOURCE_ROOT; };
+		B2AEF3871DA3BFC300A0423A /* UILabel+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UILabel+Utilities.swift"; path = "loreal-lashes_bar-ios/Extensions/UILabel+Utilities.swift"; sourceTree = SOURCE_ROOT; };
 		B2C5B5831D93F87E0077F941 /* LashesBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LashesBrowserViewController.swift; path = "loreal-lashes_bar-ios/View Controllers/LashesBrowserViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B2C5B5851D93FC660077F941 /* loreal_lashes_bar_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = loreal_lashes_bar_ios.xcdatamodel; path = "loreal-lashes_bar-ios/Object Model/loreal_lashes_bar_ios.xcdatamodel"; sourceTree = SOURCE_ROOT; };
 		B2C5B5931D9410660077F941 /* LashCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LashCategory+CoreDataProperties.swift"; path = "loreal-lashes_bar-ios/Object Model/LashCategory+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -586,6 +588,7 @@
 				B2DB089A1D93ECDD0063A25E /* UIColor+Branding.swift */,
 				B2DB089B1D93ECDD0063A25E /* UIFont+Utilities.swift */,
 				B2DB089C1D93ECDD0063A25E /* UIImage+Utilities.swift */,
+				B2AEF3871DA3BFC300A0423A /* UILabel+Utilities.swift */,
 				B2DB089D1D93ECDD0063A25E /* UIView+Utilities.swift */,
 				B2DB089E1D93ECDD0063A25E /* UIViewController+Utilities.swift */,
 			);
@@ -925,6 +928,7 @@
 				B2DB08AA1D93ECF70063A25E /* Errors.swift in Sources */,
 				B2F131F31D958BD000A83F16 /* LashesCategoryBrowserViewController.swift in Sources */,
 				B2DB089F1D93ECDD0063A25E /* CoreData+Utilities.swift in Sources */,
+				B2AEF3881DA3BFC300A0423A /* UILabel+Utilities.swift in Sources */,
 				B2DB08D01D93ED470063A25E /* CategoryCarouselCell.swift in Sources */,
 				B2DB08BC1D93ED1A0063A25E /* AnimatedBorderProtocol.swift in Sources */,
 				B2DB08C01D93ED1A0063A25E /* TransitionAnimatableProtocol.swift in Sources */,

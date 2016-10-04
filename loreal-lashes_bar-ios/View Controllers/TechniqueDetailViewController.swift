@@ -114,7 +114,7 @@ class TechniqueDetailViewController: BaseViewController {
             subtitleLabel.numberOfLines = 0
             containerView.addSubview(subtitleLabel)
             
-            let maxSize = subtitleLabel.text!.boundingRectWithSize(CGSizeMake(150, CGFloat.max), options: [.UsesFontLeading, .UsesLineFragmentOrigin], attributes:[NSFontAttributeName: subtitleLabel.font], context: nil)
+            let maxSize = subtitleLabel.sizeOfText(withMaxSize:CGSizeMake(150, CGFloat.max))
             
             titleLabel.translatesAutoresizingMaskIntoConstraints = false
             imageView.translatesAutoresizingMaskIntoConstraints = false

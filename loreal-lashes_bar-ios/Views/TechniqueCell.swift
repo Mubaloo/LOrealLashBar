@@ -14,6 +14,7 @@ class TechniqueCell: UICollectionViewCell {
     @IBOutlet var detailLabel: UILabel!
     @IBOutlet var watchButton: UIButton!
     @IBOutlet var videoPreview: AVPlayerView!
+    @IBOutlet weak var titleHeightConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +27,8 @@ class TechniqueCell: UICollectionViewCell {
         didSet {
             guard let technique = technique else { return }
             titleLabel.text = technique.name
+            let requiredSize = titleLabel.sizeOfText(withMaxSize:CGSizeMake(257, CGFloat.max))
+            titleHeightConstraint.constant = ceil(requiredSize.height)
             detailLabel.text = technique.detail
             let qualityOfServiceClass = QOS_CLASS_BACKGROUND
             let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)

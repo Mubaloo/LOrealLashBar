@@ -360,40 +360,47 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="739-N8-FCL">
                                                             <rect key="frame" x="325" y="0.0" width="325" height="182"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="inc-Wn-0Zd">
-                                                                    <rect key="frame" x="34" y="45" width="257" height="93"/>
-                                                                    <subviews>
-                                                                        <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="79" placeholderIntrinsicHeight="29" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8A-5L-Ro1">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="79" height="20"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="20" id="y7G-em-NUM"/>
-                                                                            </constraints>
-                                                                            <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
-                                                                            <state key="normal" title="Watch Video"/>
-                                                                            <connections>
-                                                                                <segue destination="WtL-ko-oDz" kind="show" id="CEO-mb-WlG"/>
-                                                                            </connections>
-                                                                        </button>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="259" placeholderIntrinsicHeight="30" text="LOREM IPSUM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axS-3r-Ady">
-                                                                            <rect key="frame" x="0.0" y="24" width="257" height="30"/>
-                                                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="25"/>
-                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="259" placeholderIntrinsicHeight="35" text="Bibbledy bobbledy flibbledy flob, something's gone wrong with the text." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eV7-kH-cH5">
-                                                                            <rect key="frame" x="0.0" y="58" width="257" height="35"/>
-                                                                            <fontDescription key="fontDescription" name="HelveticaNeueCond" family="HelveticaNeueCond" pointSize="15"/>
-                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
+                                                                <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="79" placeholderIntrinsicHeight="29" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8A-5L-Ro1">
+                                                                    <rect key="frame" x="34" y="45" width="79" height="20"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="79" id="daP-OQ-yZ5"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="y7G-em-NUM"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
+                                                                    <state key="normal" title="Watch Video"/>
+                                                                    <connections>
+                                                                        <segue destination="WtL-ko-oDz" kind="show" id="CEO-mb-WlG"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="259" placeholderIntrinsicHeight="30" text="LOREM IPSUM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axS-3r-Ady">
+                                                                    <rect key="frame" x="34" y="69" width="257" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="lsx-TX-ESy"/>
+                                                                        <constraint firstAttribute="width" constant="257" id="rlD-tO-ZOe"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="25"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="259" placeholderIntrinsicHeight="35" text="Bibbledy bobbledy flibbledy flob, something's gone wrong with the text." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eV7-kH-cH5">
+                                                                    <rect key="frame" x="34" y="103" width="257" height="35"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="257" id="gbO-r4-mMV"/>
+                                                                        <constraint firstAttribute="height" constant="35" id="z8b-cp-i4e"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeueCond" family="HelveticaNeueCond" pointSize="15"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstItem="inc-Wn-0Zd" firstAttribute="centerY" secondItem="739-N8-FCL" secondAttribute="centerY" id="Z0u-tE-kRh"/>
-                                                                <constraint firstItem="inc-Wn-0Zd" firstAttribute="leading" secondItem="739-N8-FCL" secondAttribute="leading" constant="34" id="icF-Mn-fhi"/>
-                                                                <constraint firstAttribute="trailing" secondItem="inc-Wn-0Zd" secondAttribute="trailing" constant="34" id="jGZ-he-ga3"/>
+                                                                <constraint firstItem="eV7-kH-cH5" firstAttribute="leading" secondItem="739-N8-FCL" secondAttribute="leading" constant="34" id="0UG-X2-C7J"/>
+                                                                <constraint firstItem="eV7-kH-cH5" firstAttribute="top" secondItem="axS-3r-Ady" secondAttribute="bottom" constant="4" id="1Vc-0X-qaN"/>
+                                                                <constraint firstItem="axS-3r-Ady" firstAttribute="centerY" secondItem="739-N8-FCL" secondAttribute="centerY" constant="-7" id="2BE-y2-FFH"/>
+                                                                <constraint firstItem="K8A-5L-Ro1" firstAttribute="leading" secondItem="739-N8-FCL" secondAttribute="leading" constant="34" id="7cf-iD-tZb"/>
+                                                                <constraint firstItem="axS-3r-Ady" firstAttribute="top" secondItem="K8A-5L-Ro1" secondAttribute="bottom" constant="4" id="7tC-pn-Dq8"/>
+                                                                <constraint firstItem="axS-3r-Ady" firstAttribute="leading" secondItem="739-N8-FCL" secondAttribute="leading" constant="34" id="WqB-7u-TEJ"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -409,6 +416,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="detailLabel" destination="eV7-kH-cH5" id="tcf-mZ-fnk"/>
+                                            <outlet property="titleHeightConstraint" destination="lsx-TX-ESy" id="7Ae-7n-hFE"/>
                                             <outlet property="titleLabel" destination="axS-3r-Ady" id="8WY-0p-5Fk"/>
                                             <outlet property="videoPreview" destination="i5G-fR-1VO" id="d7P-ZA-Ct8"/>
                                             <outlet property="watchButton" destination="K8A-5L-Ro1" id="iJH-zp-UFF"/>
@@ -428,40 +436,47 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0At-FJ-aTb">
                                                             <rect key="frame" x="0.0" y="0.0" width="325" height="182"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gW8-U5-Aof">
-                                                                    <rect key="frame" x="34" y="45" width="257" height="93"/>
-                                                                    <subviews>
-                                                                        <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="79" placeholderIntrinsicHeight="29" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luz-fB-oeq">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="79" height="20"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="20" id="DhC-B3-zEE"/>
-                                                                            </constraints>
-                                                                            <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
-                                                                            <state key="normal" title="Watch Video"/>
-                                                                            <connections>
-                                                                                <segue destination="WtL-ko-oDz" kind="show" id="w2e-IQ-pew"/>
-                                                                            </connections>
-                                                                        </button>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="259" placeholderIntrinsicHeight="30" text="LOREM IPSUM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BL1-KM-BMe">
-                                                                            <rect key="frame" x="0.0" y="24" width="257" height="30"/>
-                                                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="25"/>
-                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="259" placeholderIntrinsicHeight="35" text="Bibbledy bobbledy flibbledy flob, something's gone wrong with the text." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29y-Zn-OgN">
-                                                                            <rect key="frame" x="0.0" y="58" width="257" height="35"/>
-                                                                            <fontDescription key="fontDescription" name="HelveticaNeueCond" family="HelveticaNeueCond" pointSize="15"/>
-                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
+                                                                <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="79" placeholderIntrinsicHeight="29" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luz-fB-oeq">
+                                                                    <rect key="frame" x="34" y="45" width="79" height="20"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="79" id="1b2-lP-Tca"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="DhC-B3-zEE"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
+                                                                    <state key="normal" title="Watch Video"/>
+                                                                    <connections>
+                                                                        <segue destination="WtL-ko-oDz" kind="show" id="w2e-IQ-pew"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="259" placeholderIntrinsicHeight="30" text="LOREM IPSUM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BL1-KM-BMe">
+                                                                    <rect key="frame" x="34" y="69" width="257" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="257" id="E94-VV-VIK"/>
+                                                                        <constraint firstAttribute="height" constant="30" id="LjE-hy-u0m"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="25"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="259" placeholderIntrinsicHeight="35" text="Bibbledy bobbledy flibbledy flob, something's gone wrong with the text." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29y-Zn-OgN">
+                                                                    <rect key="frame" x="34" y="103" width="257" height="35"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="35" id="aHP-FS-FSo"/>
+                                                                        <constraint firstAttribute="width" constant="257" id="qio-Bb-TlL"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeueCond" family="HelveticaNeueCond" pointSize="15"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstItem="gW8-U5-Aof" firstAttribute="centerY" secondItem="0At-FJ-aTb" secondAttribute="centerY" id="FW6-c9-h0O"/>
-                                                                <constraint firstAttribute="trailing" secondItem="gW8-U5-Aof" secondAttribute="trailing" constant="34" id="ekD-Xr-weh"/>
-                                                                <constraint firstItem="gW8-U5-Aof" firstAttribute="leading" secondItem="0At-FJ-aTb" secondAttribute="leading" constant="34" id="gA7-xP-R4S"/>
+                                                                <constraint firstItem="BL1-KM-BMe" firstAttribute="centerY" secondItem="0At-FJ-aTb" secondAttribute="centerY" constant="-7" id="D1P-gj-kFz"/>
+                                                                <constraint firstItem="luz-fB-oeq" firstAttribute="leading" secondItem="0At-FJ-aTb" secondAttribute="leading" constant="34" id="HYj-Zg-uaz"/>
+                                                                <constraint firstItem="29y-Zn-OgN" firstAttribute="top" secondItem="BL1-KM-BMe" secondAttribute="bottom" constant="4" id="Ifl-RD-5Rt"/>
+                                                                <constraint firstItem="29y-Zn-OgN" firstAttribute="leading" secondItem="0At-FJ-aTb" secondAttribute="leading" constant="34" id="J9J-89-GRM"/>
+                                                                <constraint firstItem="BL1-KM-BMe" firstAttribute="top" secondItem="luz-fB-oeq" secondAttribute="bottom" constant="4" id="OTJ-uP-rs0"/>
+                                                                <constraint firstItem="BL1-KM-BMe" firstAttribute="leading" secondItem="0At-FJ-aTb" secondAttribute="leading" constant="34" id="Zhf-r1-26J"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gnp-w1-q0c" customClass="AVPlayerView" customModule="loreal_lashes_bar_ios" customModuleProvider="target">
@@ -495,6 +510,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="detailLabel" destination="29y-Zn-OgN" id="aEq-Pj-MfT"/>
+                                            <outlet property="titleHeightConstraint" destination="LjE-hy-u0m" id="t8t-I9-yt2"/>
                                             <outlet property="titleLabel" destination="BL1-KM-BMe" id="pNq-QO-zON"/>
                                             <outlet property="videoPreview" destination="Gnp-w1-q0c" id="Fmx-qE-P9a"/>
                                             <outlet property="watchButton" destination="luz-fB-oeq" id="4ZU-Rz-MKK"/>
@@ -590,10 +606,10 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZR-CR-Yg2">
-                                                <rect key="frame" x="40" y="0.0" width="582" height="40"/>
+                                                <rect key="frame" x="40" y="0.0" width="622" height="40"/>
                                                 <subviews>
                                                     <progressView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lt2-4T-SSe">
-                                                        <rect key="frame" x="0.0" y="19" width="582" height="2"/>
+                                                        <rect key="frame" x="0.0" y="19" width="622" height="2"/>
                                                         <color key="progressTintColor" white="0.0" alpha="0.75" colorSpace="calibratedWhite"/>
                                                         <color key="trackTintColor" white="0.0" alpha="0.25" colorSpace="calibratedWhite"/>
                                                     </progressView>
@@ -610,7 +626,7 @@
                                                 </connections>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1X2-Z3-aRM">
-                                                <rect key="frame" x="622" y="0.0" width="40" height="40"/>
+                                                <rect key="frame" x="662" y="0.0" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="d0J-RD-fKf"/>
                                                 </constraints>
@@ -618,14 +634,19 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0m-2Q-T4l" userLabel="Mute">
-                                                <rect key="frame" x="662" y="0.0" width="40" height="40"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0m-2Q-T4l" userLabel="Mute">
+                                                <rect key="frame" x="702" y="0.0" width="0.0" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="XvR-PS-his"/>
                                                     <constraint firstAttribute="width" constant="40" id="pnY-6w-WZ2"/>
                                                 </constraints>
                                                 <state key="normal" image="mute_button"/>
                                                 <state key="selected" image="unmute_button"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="pnY-6w-WZ2"/>
+                                                    </mask>
+                                                </variation>
                                                 <connections>
                                                     <action selector="toggleMute:" destination="bLq-yW-Fzh" eventType="touchUpInside" id="wQ5-QU-0W4"/>
                                                 </connections>
@@ -1202,10 +1223,10 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dz-hL-2pe">
-                                                        <rect key="frame" x="40" y="0.0" width="582" height="40"/>
+                                                        <rect key="frame" x="40" y="0.0" width="622" height="40"/>
                                                         <subviews>
                                                             <progressView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQN-fz-13f">
-                                                                <rect key="frame" x="0.0" y="19" width="582" height="2"/>
+                                                                <rect key="frame" x="0.0" y="19" width="622" height="2"/>
                                                                 <color key="progressTintColor" white="0.0" alpha="0.75" colorSpace="calibratedWhite"/>
                                                                 <color key="trackTintColor" white="0.0" alpha="0.25" colorSpace="calibratedWhite"/>
                                                             </progressView>
@@ -1219,7 +1240,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTU-rs-GJk">
-                                                        <rect key="frame" x="622" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="662" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="l9A-zY-9cl"/>
                                                         </constraints>
@@ -1227,14 +1248,19 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDp-7A-glh" userLabel="Mute">
-                                                        <rect key="frame" x="662" y="0.0" width="40" height="40"/>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDp-7A-glh" userLabel="Mute">
+                                                        <rect key="frame" x="702" y="0.0" width="0.0" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="9N0-uV-NSe"/>
                                                             <constraint firstAttribute="width" constant="40" id="dPP-03-PLB"/>
                                                         </constraints>
                                                         <state key="normal" image="mute_button"/>
                                                         <state key="selected" image="unmute_button"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="dPP-03-PLB"/>
+                                                            </mask>
+                                                        </variation>
                                                         <connections>
                                                             <action selector="toggleMute:" destination="D4I-Xu-Gh3" eventType="touchUpInside" id="iK3-NC-z41"/>
                                                         </connections>
