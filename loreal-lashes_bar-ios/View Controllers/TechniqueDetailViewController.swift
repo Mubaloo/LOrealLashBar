@@ -299,6 +299,12 @@ extension TechniqueDetailViewController: UIScrollViewDelegate {
         }else if cellIndex.row == allTechniques.count - 1 {
             self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: 1, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: false)
         }
+        
+        // add a small delay so that we finish the jump above before the user can shift to the next technique
+        self.performSelector(#selector(TechniqueDetailViewController.enableScrollView), withObject: nil, afterDelay: 0.2)
+    }
+    
+    func enableScrollView() {
         collectionView.scrollEnabled = true
     }
 }
