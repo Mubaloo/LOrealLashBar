@@ -1853,7 +1853,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pER-kQ-XD2">
                                                         <rect key="frame" x="559" y="0.0" width="85" height="67"/>
                                                         <connections>
-                                                            <segue destination="h9e-QQ-wJX" kind="presentation" animates="NO" id="DcG-ws-ekY"/>
+                                                            <segue destination="h9e-QQ-wJX" kind="presentation" id="DcG-ws-ekY"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -2079,7 +2079,7 @@
                                 <inset key="contentEdgeInsets" minX="0.0" minY="26" maxX="26" maxY="0.0"/>
                                 <state key="normal" image="cross_button"/>
                                 <connections>
-                                    <segue destination="xfZ-1g-Rq2" kind="unwind" animates="NO" unwindAction="unwindToPlaylistVC:" id="kB0-Ev-6fZ"/>
+                                    <segue destination="xfZ-1g-Rq2" kind="unwind" unwindAction="unwindToPlaylistVC:" id="kB0-Ev-6fZ"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68D-el-R5x">
