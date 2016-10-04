@@ -1658,76 +1658,64 @@
                                                         <constraint firstAttribute="height" constant="174" id="iX4-so-Ufv"/>
                                                     </constraints>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aob-yM-zeg">
-                                                    <rect key="frame" x="20" y="186" width="268" height="48"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxi-Tf-8ww" userLabel="Container">
+                                                    <rect key="frame" x="0.0" y="175" width="308" height="77"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hpj-Sl-mrD">
-                                                            <rect key="frame" x="0.0" y="0.0" width="89" height="18"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="No 01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLy-Ci-dVo">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="41" height="18"/>
-                                                                    <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="15"/>
-                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" image="zigzag_icon" translatesAutoresizingMaskIntoConstraints="NO" id="KVe-lt-G1m">
-                                                                    <rect key="frame" x="46" y="4" width="8" height="11"/>
-                                                                </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" text="Face" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8WE-zB-6sY">
-                                                                    <rect key="frame" x="59" y="0.0" width="30" height="18"/>
-                                                                    <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="15"/>
-                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angled Eyeliner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZk-DK-Hsc">
-                                                            <rect key="frame" x="0.0" y="18" width="161" height="30"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2f-QP-uB4">
+                                                            <rect key="frame" x="228" y="0.0" width="80" height="77"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="80" id="CYF-Fw-CLi"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="15"/>
+                                                            <state key="normal" title="Remove"/>
+                                                            <connections>
+                                                                <action selector="removeTouched:" destination="nYv-X6-v4l" eventType="touchUpInside" id="kgm-jF-Vlv"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angled Eyeliner" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZk-DK-Hsc">
+                                                            <rect key="frame" x="20" y="0.0" width="208" height="77"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="TE2-YJ-RZ1"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="25"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="TE2-YJ-RZ1"/>
+                                                                </mask>
+                                                            </variation>
                                                         </label>
                                                     </subviews>
-                                                </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2f-QP-uB4">
-                                                    <rect key="frame" x="228" y="175" width="60" height="40"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="CYF-Fw-CLi"/>
-                                                        <constraint firstAttribute="height" constant="40" id="GTO-H2-Gbo"/>
+                                                        <constraint firstAttribute="bottom" secondItem="zZk-DK-Hsc" secondAttribute="bottom" id="APR-t7-oGw"/>
+                                                        <constraint firstAttribute="bottom" secondItem="d2f-QP-uB4" secondAttribute="bottom" id="F8C-1w-U4O"/>
+                                                        <constraint firstItem="zZk-DK-Hsc" firstAttribute="leading" secondItem="hxi-Tf-8ww" secondAttribute="leading" constant="20" id="HOm-WX-vU7"/>
+                                                        <constraint firstItem="d2f-QP-uB4" firstAttribute="top" secondItem="hxi-Tf-8ww" secondAttribute="top" id="Snh-le-I4w"/>
+                                                        <constraint firstItem="d2f-QP-uB4" firstAttribute="leading" secondItem="zZk-DK-Hsc" secondAttribute="trailing" id="dwk-dy-3Zx"/>
+                                                        <constraint firstItem="zZk-DK-Hsc" firstAttribute="centerY" secondItem="hxi-Tf-8ww" secondAttribute="centerY" id="f2F-zE-7aT"/>
+                                                        <constraint firstAttribute="trailing" secondItem="d2f-QP-uB4" secondAttribute="trailing" id="gmT-q1-nGx"/>
+                                                        <constraint firstItem="zZk-DK-Hsc" firstAttribute="top" secondItem="hxi-Tf-8ww" secondAttribute="top" id="xc2-V7-peC"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="15"/>
-                                                    <state key="normal" title="Remove"/>
-                                                    <connections>
-                                                        <action selector="removeTouched:" destination="nYv-X6-v4l" eventType="touchUpInside" id="kgm-jF-Vlv"/>
-                                                    </connections>
-                                                </button>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="d2f-QP-uB4" secondAttribute="trailing" constant="20" id="6Cx-QU-TLw"/>
-                                            <constraint firstItem="aob-yM-zeg" firstAttribute="leading" secondItem="nYv-X6-v4l" secondAttribute="leading" constant="20" id="BZK-75-dvo"/>
-                                            <constraint firstAttribute="trailing" secondItem="aob-yM-zeg" secondAttribute="trailing" constant="20" id="UKD-OI-6Gh"/>
-                                            <constraint firstItem="d2f-QP-uB4" firstAttribute="top" secondItem="AGo-CS-dIZ" secondAttribute="bottom" id="VAc-Mg-4LX"/>
-                                            <constraint firstItem="d2f-QP-uB4" firstAttribute="baseline" secondItem="iLy-Ci-dVo" secondAttribute="baseline" id="VFP-53-OLE"/>
+                                            <constraint firstItem="hxi-Tf-8ww" firstAttribute="leading" secondItem="nYv-X6-v4l" secondAttribute="leading" id="6KF-e0-W1q"/>
+                                            <constraint firstAttribute="trailing" secondItem="hxi-Tf-8ww" secondAttribute="trailing" id="8dD-Dk-ftx"/>
+                                            <constraint firstAttribute="bottom" secondItem="hxi-Tf-8ww" secondAttribute="bottom" id="Tzf-9b-mzo"/>
                                             <constraint firstItem="AGo-CS-dIZ" firstAttribute="top" secondItem="nYv-X6-v4l" secondAttribute="top" id="a3Q-cP-i1r"/>
                                             <constraint firstAttribute="trailing" secondItem="AGo-CS-dIZ" secondAttribute="trailing" id="dUR-A3-Yl4"/>
                                             <constraint firstItem="AGo-CS-dIZ" firstAttribute="leading" secondItem="nYv-X6-v4l" secondAttribute="leading" id="fHp-rZ-U2d"/>
-                                            <constraint firstItem="aob-yM-zeg" firstAttribute="top" secondItem="AGo-CS-dIZ" secondAttribute="bottom" constant="12" id="zFg-na-g76"/>
+                                            <constraint firstItem="hxi-Tf-8ww" firstAttribute="top" secondItem="AGo-CS-dIZ" secondAttribute="bottom" constant="1" id="zdR-yN-lPi"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="VAc-Mg-4LX"/>
-                                            </mask>
-                                        </variation>
                                         <connections>
-                                            <outlet property="categoryLabel" destination="8WE-zB-6sY" id="nWZ-ac-rve"/>
                                             <outlet property="nameLabel" destination="zZk-DK-Hsc" id="ZVt-BY-usn"/>
-                                            <outlet property="numberLabel" destination="iLy-Ci-dVo" id="VBR-1P-v3s"/>
                                             <outlet property="playerView" destination="AGo-CS-dIZ" id="aio-Nx-mB1"/>
                                             <outlet property="removeButton" destination="d2f-QP-uB4" id="ZNb-QJ-nfy"/>
-                                            <outlet property="zigzag" destination="KVe-lt-G1m" id="x01-co-bfD"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmptyVideoCell" id="vCk-pA-SdQ" customClass="EmptyVideoCell" customModule="loreal_lashes_bar_ios" customModuleProvider="target">

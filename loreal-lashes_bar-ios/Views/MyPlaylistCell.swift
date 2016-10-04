@@ -16,18 +16,13 @@ protocol PlaylistCellDelegate: class {
 class MyPlaylistCell: UICollectionViewCell {
     
     @IBOutlet var playerView: AVPlayerView!
-    @IBOutlet var numberLabel: UILabel!
-    @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var removeButton: UIButton!
-    @IBOutlet var zigzag: UIImageView!
     
     weak var delegate: PlaylistCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        numberLabel.textColor = UIColor.hotPink
-        categoryLabel.textColor = UIColor.hotPink
         removeButton.setTitleColor(UIColor.hotPink, forState: .Normal)
         
         playerView.shouldRepeat = true
@@ -42,16 +37,6 @@ class MyPlaylistCell: UICollectionViewCell {
         didSet {
             guard let item = item else { return }
             nameLabel.text = item.name
-            
-            if let lash = item as? Lash {
-                numberLabel.text = lash.numberString
-//                categoryLabel.text = brush.category?.name
-                zigzag.hidden = false
-            } else {
-                numberLabel.text = "Technique"
-                categoryLabel.text = ""
-                zigzag.hidden = true
-            }
             
             playerView.loadPlaylistItem(item)
         }
