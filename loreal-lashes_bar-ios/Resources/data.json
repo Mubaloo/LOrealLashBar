@@ -301,7 +301,7 @@
               "product_id":"WL23",
               "number":23,
               "detail":"Double Stack Glamour full",
-              "hot_tip":"Great choice for monolid eye types",
+              "hot_tip":"Great choice for almond eye types",
               "image":"WL23",
               "categories":["ROUND", "ALMOND", "MONOLID"],
               "local_path":"WL23.mov",
@@ -309,7 +309,7 @@
               "length":"Medium"
               },
               {
-              "name":"LAY EM ON ME",
+              "name":"LAY 'EM ON ME",
               "product_id":"WL24",
               "number":24,
               "detail":"Glamour flare full",
@@ -432,23 +432,5 @@
                   "local_path_thumb":"10. INVISIBLE LASHES THUMB.mov",
                   "thumb_path":"10. INVISIBLE LASHES.png"
                   }
-            ],
-    "products":[
-                {
-                "name":"SCISSORS",
-                "product_id":"WL100",
-                "image":"product_default"
-                },
-                {
-                "name":"LATEX FREE LASH GLUE",
-                "product_id":"WL101",
-                "image":"product_default"
-                },
-                {
-                "name":"Stay Matte but Not Flat Powder Foundation",
-                "product_id":"WL103",
-                "image":"product_default"
-                }
-                
-                ]
+            ]
 }
