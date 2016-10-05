@@ -1789,7 +1789,7 @@
                                                         <rect key="frame" x="5" y="0.0" width="445" height="48"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="XEp-yo-rr0" id="VQi-Og-c6A"/>
                                                         </connections>
