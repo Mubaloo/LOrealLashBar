@@ -160,8 +160,9 @@ class AVPlayerView: UIView {
     }
     
     func loadPlaylistItem(item: PlaylistItem, shouldLoadThumb: Bool) {
-        
-        imposter?.image = item.thumbnail
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.imposter?.image = item.thumbnail
+        })
         imposter?.hidden = self.player.status == .ReadyToPlay ? true : false
         if shouldLoadThumb == true {
             loadURL(item.localMediaThumbURL)
