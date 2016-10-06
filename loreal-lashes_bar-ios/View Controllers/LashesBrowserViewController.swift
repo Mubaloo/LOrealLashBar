@@ -72,8 +72,6 @@ extension LashesBrowserViewController: UITableViewDataSource {
             return cell
         }
         
-        lashCell.leftLashImageView.image = UIImage(CGImage: (UIImage(named: "\(lash.productID)THUMB")!.CGImage)!, scale: 1.0, orientation: .UpMirrored)
-        lashCell.rightLashImageView.image = UIImage(named: "\(lash.productID)THUMB")
         lashCell.infoButton.tag = indexPath.row
         lashCell.lash = lash
         cell.backgroundColor = UIColor.lightBG
