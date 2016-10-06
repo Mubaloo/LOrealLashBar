@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HelveticaNeueCond.ttf">
@@ -718,25 +719,28 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="557" height="200"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8MF-fg-dlH" userLabel="SkillLevelContainer">
-                                                            <rect key="frame" x="207" y="29" width="240" height="20"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="U0v-Nt-TXu">
+                                                            <rect key="frame" x="167" y="29" width="223" height="18"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" placeholderIntrinsicWidth="91" placeholderIntrinsicHeight="18" text="SKILL LEVEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8L-K6-jhR">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" placeholderIntrinsicWidth="91" placeholderIntrinsicHeight="18" text="SKILL LEVEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8L-K6-jhR">
                                                                     <rect key="frame" x="0.0" y="0.0" width="91" height="18"/>
                                                                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="15"/>
                                                                     <color key="textColor" red="0.84705882349999995" green="0.070588235289999995" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="8" placeholderIntrinsicHeight="11" image="zigzag_icon" translatesAutoresizingMaskIntoConstraints="NO" id="igC-DW-z59">
-                                                                    <rect key="frame" x="100" y="3" width="8" height="11"/>
+                                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="8" placeholderIntrinsicHeight="11" image="zigzag_icon" translatesAutoresizingMaskIntoConstraints="NO" id="igC-DW-z59">
+                                                                    <rect key="frame" x="97" y="0.0" width="8" height="18"/>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" fixedFrame="YES" placeholderIntrinsicWidth="112" placeholderIntrinsicHeight="18" text="INTERMEDIATE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfK-df-acY">
-                                                                    <rect key="frame" x="115" y="0.0" width="125" height="18"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" placeholderIntrinsicWidth="112" placeholderIntrinsicHeight="18" text="INTERMEDIATE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfK-df-acY">
+                                                                    <rect key="frame" x="111" y="0.0" width="112" height="18"/>
                                                                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="15"/>
                                                                     <color key="textColor" red="0.84705882349999995" green="0.070588235289999995" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                        </stackView>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8MF-fg-dlH" userLabel="SkillLevelContainer">
+                                                            <rect key="frame" x="207" y="29" width="240" height="20"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" fixedFrame="YES" placeholderIntrinsicWidth="336" placeholderIntrinsicHeight="48" text="INVISIBLE LASH APPLICATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bub-6V-hB4">
@@ -766,7 +770,9 @@
                                                 </view>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstItem="U0v-Nt-TXu" firstAttribute="centerX" secondItem="f6g-Zb-sPH" secondAttribute="centerX" id="UXV-9w-VsA"/>
                                                     <constraint firstAttribute="bottom" secondItem="FHH-23-kZx" secondAttribute="bottom" id="dYr-X2-gGL"/>
+                                                    <constraint firstItem="U0v-Nt-TXu" firstAttribute="top" secondItem="f6g-Zb-sPH" secondAttribute="topMargin" constant="21" id="lRW-YQ-1XX"/>
                                                     <constraint firstItem="FHH-23-kZx" firstAttribute="centerX" secondItem="f6g-Zb-sPH" secondAttribute="centerX" id="rhf-Q3-Jmd"/>
                                                 </constraints>
                                                 <connections>

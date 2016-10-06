@@ -86,9 +86,15 @@ class TitleBarViewController: BaseViewController {
         
         switch browserType {
         case .Lashes :
+            if let navigatonVC = viewControllers[0] as? UINavigationController {
+                navigatonVC.popViewControllerAnimated(false)
+            }
             childTabBarController.selectedViewController = viewControllers[0]
             browserButton.setTitle(BrowserType.Technique.rawValue, forState: .Normal)
         case .Technique :
+            if let navigatonVC = viewControllers[1] as? UINavigationController {
+                navigatonVC.popViewControllerAnimated(false)
+            }
             childTabBarController.selectedViewController = viewControllers[1]
             browserButton.setTitle(BrowserType.Lashes.rawValue, forState: .Normal)
         }

@@ -74,8 +74,8 @@ class LashDetailViewController: BaseViewController {
         detailLabel.text = lash.detail
         hotTipLabel.text = lash.hotTips
         
-        leftLashImageView.image = lash.image
-        rightLashImageView.image = UIImage(CGImage: (lash.image.CGImage)!, scale: 1.0, orientation: .UpMirrored)
+        leftLashImageView.image = UIImage(CGImage: (lash.image.CGImage)!, scale: 1.0, orientation: .UpMirrored)
+        rightLashImageView.image = lash.image
     }
     
     private func updateButtons() {
