@@ -157,7 +157,6 @@
 		B2DB090A1D93F0280063A25E /* Responsables.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB09051D93F0280063A25E /* Responsables.swift */; };
 		B2DB090C1D93F03B0063A25E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2DB090B1D93F03B0063A25E /* Assets.xcassets */; };
 		B2DB090E1D93F0490063A25E /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B2DB090D1D93F0490063A25E /* data.json */; };
-		B2DB09101D93F08C0063A25E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2DB090F1D93F08C0063A25E /* Info.plist */; };
 		B2DB09121D93F0960063A25E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DB09111D93F0960063A25E /* Main.storyboard */; };
 		B2DB09191D93F0A10063A25E /* HelveticaNeue-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B2DB09151D93F0A10063A25E /* HelveticaNeue-Light.otf */; };
 		B2DB091A1D93F0A10063A25E /* HelveticaNeueCond.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2DB09161D93F0A10063A25E /* HelveticaNeueCond.ttf */; };
@@ -748,7 +747,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Sane Mubaloo";
 				TargetAttributes = {
 					1811A3501D632A18002EA7F6 = {
@@ -826,7 +825,6 @@
 				183E40061D63736600AA3E08 /* Cartfile in Resources */,
 				B228128C1D9BCFCB00B091E1 /* WL01 THUMB.mov in Resources */,
 				B2DB091A1D93F0A10063A25E /* HelveticaNeueCond.ttf in Resources */,
-				B2DB09101D93F08C0063A25E /* Info.plist in Resources */,
 				B228123A1D9BB62E00B091E1 /* 05. ELONGATED LASHES.png in Resources */,
 				B228125C1D9BC34900B091E1 /* WL02.mov in Resources */,
 				B2D0A5891D9AE8940006450B /* 08. INDIVIDUAL LASHES THUMB.mov in Resources */,
@@ -995,8 +993,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1042,8 +1042,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -1064,6 +1066,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "760de03f-fbd2-4de7-883f-e3d31e2e4f40";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
