@@ -29,9 +29,9 @@ protocol Requestable {}
 protocol WebServiceRequest : Requestable {
     
     associatedtype Response : WebServiceResponse
-    associatedtype Task = NSURLSessionDataTask
+    associatedtype Task = URLSessionDataTask
     
-    var URL: NSURL { get }
+    var URL: Foundation.URL { get }
     var method: HTTPMethod { get }
     var includeAccessToken: Bool { get }
     var requestBody: AnyObject? { get }
@@ -45,81 +45,82 @@ extension WebServiceRequest {
     var method: HTTPMethod { return .GET }
     var includeAccessToken: Bool { return true }
     var requestBody: AnyObject? { return nil }
-    var acceptableStatusCodes: [HTTPStatusCode] { return [.OK] }
-    var taskIdentifier: String { return String(self.dynamicType) }
+    var acceptableStatusCodes: [HTTPStatusCode] { return [.ok] }
+    var taskIdentifier: String { return String(describing: type(of: self)) }
 }
 
 extension WebServiceRequest {
     
-    private var requestDescription: String { return String(self.dynamicType) }
+    fileprivate var requestDescription: String { return String(describing: type(of: self)) }
     
-    private func createRequest() -> NSMutableURLRequest {
-        let mutableRequest = NSMutableURLRequest(URL: URL)
-        mutableRequest.HTTPMethod = method.rawValue
+    fileprivate func createRequest() -> NSMutableURLRequest {
+        let mutableRequest = NSMutableURLRequest(url: URL)
+        mutableRequest.httpMethod = method.rawValue
         mutableRequest.setValue(MediaType.JSON.rawValue, forHTTPHeaderField: RequestHeader.ContentType.rawValue)
         
-        if let accessToken = NSUserDefaults.accessToken where includeAccessToken {
+        if let accessToken = UserDefaults.accessToken , includeAccessToken {
             mutableRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: RequestHeader.Authorization.rawValue)
         }
         
         if let obj = requestBody {
-            mutableRequest.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(obj, options: [])
+            mutableRequest.httpBody = try! JSONSerialization.data(withJSONObject: obj, options: [])
         }
         
         return mutableRequest
     }
     
-    func executeInSharedSession(dispatchQueue: dispatch_queue_t = dispatch_get_main_queue(),
-                                completion: (WebServiceResult<Response> -> Void)? = nil) -> NSURLSessionDataTask {
-        return executeInSession(NSURLSession.sharedSession(), dispatchQueue: dispatchQueue, completion: completion)
+    func executeInSharedSession(_ dispatchQueue: DispatchQueue = DispatchQueue.main,
+                                completion: ((WebServiceResult<Response>) -> Void)? = nil) -> URLSessionDataTask {
+        return executeInSession(URLSession.shared, dispatchQueue: dispatchQueue, completion: completion)
     }
     
-    func executeInSession(session: NSURLSession,
-                          dispatchQueue: dispatch_queue_t = dispatch_get_main_queue(),
-                          completion: (WebServiceResult<Response> -> Void)? = nil) -> NSURLSessionDataTask {
-        let completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void = { data, response, error in
+    func executeInSession(_ session: URLSession,
+                          dispatchQueue: DispatchQueue = DispatchQueue.main,
+                          completion: ((WebServiceResult<Response>) -> Void)? = nil) -> URLSessionDataTask {
+        let completionHandler: (Data?, URLResponse?, NSError?) -> Void = { data, response, error in
             if let completion = completion {
                 let result = self.parseResponse(data, response: response, error: error)
-                dispatch_async(dispatchQueue) {
+                dispatchQueue.async {
                     completion(result)
                 }
             }
         }
         
-        let request = createRequest()
-        let task = session.dataTaskWithRequest(request) { data, response, error in
-            guard let statusCode = statusCodeFromResponse(response) where !(statusCode == .Unauthorized && self.includeAccessToken) else {
+        let request = createRequest() as URLRequest
+      //  var request = URLRequest(url: NSURL(string: "http://example.com")! as URL)
+        let task: URLSessionDataTask = session.dataTask(with: request, completionHandler: { data, response, error in
+            guard let statusCode = statusCodeFromResponse(response) , !(statusCode == .unauthorized && self.includeAccessToken) else {
                 refreshToken { result in
                     switch result {
-                    case .Success:
-                        let newRequest = self.createRequest()
-                        let originalTask = session.dataTaskWithRequest(newRequest, completionHandler: completionHandler)
+                    case .success:
+                        let newRequest = self.createRequest() as URLRequest
+                        let originalTask = session.dataTask(with: newRequest, completionHandler: completionHandler as! (Data?, URLResponse?, Error?) -> Void)
                         originalTask.resume()
                         
-                    case .Failure:
-                        completion?(.Failure(.Unauthorised))
+                    case .failure:
+                        completion?(.failure(.unauthorised))
                     }
                 }
                 return
             }
             
-            completionHandler(data, response, error)
-        }
+            completionHandler(data, response, error as NSError?)
+        }) 
         task.resume()
         return task
     }
     
-    private func parseResponse(data: NSData?, response: NSURLResponse?, error: NSError?) -> WebServiceResult<Response> {
+    fileprivate func parseResponse(_ data: Data?, response: URLResponse?, error: NSError?) -> WebServiceResult<Response> {
         if let error = error {
             switch error.code {
             case NSURLErrorNotConnectedToInternet:
-                return .Failure(.NoInternetConnection)
+                return .failure(.noInternetConnection)
                 
             case NSURLErrorCancelled:
-                return .Failure(.Cancelled)
+                return .failure(.cancelled)
                 
             default:
-                return .Failure(.NetworkingError(error))
+                return .failure(.networkingError(error))
             }
         }
         
@@ -127,46 +128,46 @@ extension WebServiceRequest {
             try validateResponseCode(response, data: data)
             
             guard let data = data else {
-                return .Failure(.InvalidResponse)
+                return .failure(.invalidResponse)
             }
             
-            let json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String : AnyObject]
+            let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String : AnyObject]
             let parsedResponse = try Response(json: json)
             
-            return .Success(parsedResponse)
+            return .success(parsedResponse)
         } catch let requestError as RequestError {
-            return .Failure(requestError)
+            return .failure(requestError)
         } catch {
-            return .Failure(.InvalidResponse)
+            return .failure(.invalidResponse)
         }
     }
     
-    private func validateResponseCode(response: NSURLResponse?, data: NSData?) throws {
-        if let statusCode = statusCodeFromResponse(response) where !acceptableStatusCodes.contains(statusCode) {
+    fileprivate func validateResponseCode(_ response: URLResponse?, data: Data?) throws {
+        if let statusCode = statusCodeFromResponse(response) , !acceptableStatusCodes.contains(statusCode) {
             switch statusCode {
-            case .Unauthorized:
-                throw RequestError.Unauthorised
+            case .unauthorized:
+                throw RequestError.unauthorised
                 
             default:
                 try serverError(data)
-                throw RequestError.BadResponse(statusCode: statusCode)
+                throw RequestError.badResponse(statusCode: statusCode)
             }
         }
     }
     
-    private func serverError(data: NSData?) throws {
-        guard let data = data, json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String : AnyObject] else {
+    fileprivate func serverError(_ data: Data?) throws {
+        guard let data = data, let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : AnyObject] else {
             return
         }
         
         if let error = try? ServerErrorData(json: json) {
-            throw RequestError.ServerError(displayMessage: error.message)
+            throw RequestError.serverError(displayMessage: error.message)
         }
     }
 }
 
-private func statusCodeFromResponse(response: NSURLResponse?) -> HTTPStatusCode? {
-    guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode else {
+private func statusCodeFromResponse(_ response: URLResponse?) -> HTTPStatusCode? {
+    guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
         return nil
     }
     return HTTPStatusCode(rawValue: statusCode)

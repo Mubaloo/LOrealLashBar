@@ -13,17 +13,17 @@ import HockeySDK
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private var navigator: UINavigationController!
-    private var transitions = SelfDrivenTransition()
+    fileprivate var navigator: UINavigationController!
+    fileprivate var transitions = SelfDrivenTransition()
     
-    private static let HockeyAppID = "06c9bf1f7d044616861bc3e8b17c95ab"
+    fileprivate static let HockeyAppID = "06c9bf1f7d044616861bc3e8b17c95ab"
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // Prepare Hockey for crash reporting
-        BITHockeyManager.sharedHockeyManager().configureWithIdentifier(AppDelegate.HockeyAppID)
-        BITHockeyManager.sharedHockeyManager().startManager()
-        BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
+        BITHockeyManager.shared().configure(withIdentifier: AppDelegate.HockeyAppID)
+        BITHockeyManager.shared().start()
+        BITHockeyManager.shared().authenticator.authenticateInstallation()
         
         // The app delegate is responsible for forwarding transition animations to the transitions object.
         // To this end, it delegates for various navigation and tab bar controllers to determine when new
@@ -34,26 +34,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigator.delegate = self
         
         // App timeout support
-        let noteCenter = NSNotificationCenter.defaultCenter()
+        let noteCenter = NotificationCenter.default
         noteCenter.addObserver(self, selector: #selector(AppDelegate.appDidTimeOut),
-                               name: TimeOutApplication.ApplicationDidTimeOutNotification,
+                               name: NSNotification.Name(rawValue: TimeOutApplication.ApplicationDidTimeOutNotification),
                                object: nil)
         
         return true
     }
     
-    func applicationDidBecomeActive(application: UIApplication) {
-        NSNotificationCenter.defaultCenter().postNotificationName("applicationDidBecomeActive", object: nil)
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "applicationDidBecomeActive"), object: nil)
     }
     
     func appDidTimeOut() {
         // When the app times out we purge the playlist and pop to the attract mode view controller.
         CoreDataStack.shared.purgePlaylist()
-        navigator.topViewController?.dismissViewControllerAnimated(true, completion: nil)
-        navigator.popToRootViewControllerAnimated(true)
+        navigator.topViewController?.dismiss(animated: true, completion: nil)
+        navigator.popToRootViewController(animated: true)
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         CoreDataStack.shared.saveContext()
     }
 
@@ -61,8 +61,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: UINavigationControllerDelegate {
     
-    func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
-        guard let app = UIApplication.sharedApplication() as? TimeOutApplication else { return }
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        guard let app = UIApplication.shared as? TimeOutApplication else { return }
         if viewController is AttractModeViewController {
             app.cancelTimeout()
         } else {
@@ -70,7 +70,7 @@ extension AppDelegate: UINavigationControllerDelegate {
         }
     }
     
-    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return transitions
     }
     
@@ -78,7 +78,7 @@ extension AppDelegate: UINavigationControllerDelegate {
 
 extension AppDelegate: UITabBarControllerDelegate {
     
-    func tabBarController(tabBarController: UITabBarController, animationControllerForTransitionFromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return transitions
     }
     
@@ -86,11 +86,11 @@ extension AppDelegate: UITabBarControllerDelegate {
 
 extension AppDelegate: UIViewControllerTransitioningDelegate {
     
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return transitions
     }
     
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return transitions
     }
     

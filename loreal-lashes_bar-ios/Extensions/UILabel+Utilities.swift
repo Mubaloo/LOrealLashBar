@@ -11,9 +11,9 @@ import UIKit
 extension UILabel {
     func sizeOfText(withMaxSize maxSize:CGSize) -> CGRect {
         if let txt = self.text {
-            return txt.boundingRectWithSize(maxSize, options: [.UsesFontLeading, .UsesLineFragmentOrigin], attributes:[NSFontAttributeName: self.font], context: nil)
+            return txt.boundingRect(with: maxSize, options: [.usesFontLeading, .usesLineFragmentOrigin], attributes:[NSFontAttributeName: self.font], context: nil)
         } else {
-            return CGRectZero
+            return CGRect.zero
         }
     }
 }

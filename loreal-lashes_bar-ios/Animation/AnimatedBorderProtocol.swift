@@ -20,7 +20,7 @@ protocol AnimatedBorderProtocol: TransitionAnimatable {
 
 extension AnimatedBorderProtocol {
     
-    private func animateAppearance(from: Float, to: Float, duration: NSTimeInterval, delay: NSTimeInterval) {
+    fileprivate func animateAppearance(_ from: Float, to: Float, duration: TimeInterval, delay: TimeInterval) {
         
         let fadingViews = fadeInSubviews()
         let halfDuration = duration / 2
@@ -30,22 +30,22 @@ extension AnimatedBorderProtocol {
         let borderDuration = hasFade ? halfDuration : duration
         
         let borderAnim = CABasicAnimation()
-        borderAnim.fromValue = NSNumber(float: from)
-        borderAnim.toValue = NSNumber(float: to)
+        borderAnim.fromValue = NSNumber(value: from as Float)
+        borderAnim.toValue = NSNumber(value: to as Float)
         borderAnim.duration = borderDuration
         borderAnim.beginTime = CACurrentMediaTime() + borderDelay + delay
         
-        borderLayer.removeAnimationForKey("appearanceProgress")
+        borderLayer.removeAnimation(forKey: "appearanceProgress")
         
-        let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(Double(NSEC_PER_SEC) * delay))
-        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
-            self.borderLayer.addAnimation(borderAnim, forKey: "appearanceProgress")
+        let dispatchTime = DispatchTime.now() + Double(Int64(Double(NSEC_PER_SEC) * delay)) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
+            self.borderLayer.add(borderAnim, forKey: "appearanceProgress")
             self.borderLayer.appearanceProgress = CGFloat(to)
             if hasFade == false { return }
             
             let fadeDelay = fadingOut ? 0 : halfDuration
             for view in self.fadeInSubviews() {
-                UIView.animateWithDuration(halfDuration, delay: fadeDelay, options: [],
+                UIView.animate(withDuration: halfDuration, delay: fadeDelay, options: [],
                     animations: { view.alpha = CGFloat(to) }, completion: nil)
             }
         })
@@ -61,11 +61,11 @@ extension AnimatedBorderProtocol {
         })
     }
     
-    func appear(duration: NSTimeInterval, delay: NSTimeInterval) {
+    func appear(_ duration: TimeInterval, delay: TimeInterval) {
         animateAppearance(0, to: 1, duration: 1, delay: delay) // overwritten duration as a quick fix. Should add a custom duration variable in the future.
     }
     
-    func disappear(duration: NSTimeInterval, delay: NSTimeInterval) {
+    func disappear(_ duration: TimeInterval, delay: TimeInterval) {
         animateAppearance(1, to: 0, duration: 1, delay: delay)
     }
     

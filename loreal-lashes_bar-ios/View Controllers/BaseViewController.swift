@@ -17,7 +17,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        transitioningDelegate = UIApplication.sharedApplication().delegate as? UIViewControllerTransitioningDelegate
+        transitioningDelegate = UIApplication.shared.delegate as? UIViewControllerTransitioningDelegate
     }
     
 }

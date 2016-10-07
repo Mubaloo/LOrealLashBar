@@ -11,23 +11,23 @@ import AVFoundation
 
 protocol AVPlayerViewDelegate: class {
     /** Sent when the player has loaded its video. Optional. */
-    func playerIsReady(player: AVPlayerView)
+    func playerIsReady(_ player: AVPlayerView)
     
     /** Sent when the player detects that a given chapter has been entered, or nil if no chapter is currently valid. Optional. */
-    func player(player: AVPlayerView, didEnterChapterIndex index: Int?)
+    func player(_ player: AVPlayerView, didEnterChapterIndex index: Int?)
     
     /** Sent when the end of the content is reached. Optional. */
-    func playerDidFinishPlaying(player: AVPlayerView)
+    func playerDidFinishPlaying(_ player: AVPlayerView)
     
     /** Sent when the player has processed the chapter data. Optional. */
-    func playerDidRetrieveChapterData(dataArray: [[String : AnyObject]])
+    func playerDidRetrieveChapterData(_ dataArray: [[String : AnyObject]])
 }
 
 extension AVPlayerViewDelegate {
-    func playerIsReady(player: AVPlayerView) {}
-    func player(player: AVPlayerView, didEnterChapterIndex index: Int?) {}
-    func playerDidFinishPlaying(player: AVPlayerView) {}
-    func playerDidRetrieveChapterData(dataArry: [[String : AnyObject]]) {}
+    func playerIsReady(_ player: AVPlayerView) {}
+    func player(_ player: AVPlayerView, didEnterChapterIndex index: Int?) {}
+    func playerDidFinishPlaying(_ player: AVPlayerView) {}
+    func playerDidRetrieveChapterData(_ dataArry: [[String : AnyObject]]) {}
 }
 
 /**
@@ -59,10 +59,10 @@ class AVPlayerView: UIView {
     
     weak var delegate: AVPlayerViewDelegate?
     
-    private var playerLayer: AVPlayerLayer { get { return self.layer as! AVPlayerLayer } }
-    private var chapterOffsets: [NSTimeInterval]?
-    private var chapterObserver: AnyObject?
-    private var player: AVPlayer { get { return playerLayer.player! } }
+    fileprivate var playerLayer: AVPlayerLayer { get { return self.layer as! AVPlayerLayer } }
+    fileprivate var chapterOffsets: [TimeInterval]?
+    fileprivate var chapterObserver: AnyObject?
+    fileprivate var player: AVPlayer { get { return playerLayer.player! } }
     
     /** The status of the encapsulated AVPlayer */
     var status: AVPlayerStatus { get { return player.status } }
@@ -95,7 +95,7 @@ class AVPlayerView: UIView {
         setUpPlayer()
     }
     
-    override class func layerClass() -> AnyClass {
+    override class var layerClass : AnyClass {
         return AVPlayerLayer.self
     }
     
@@ -108,18 +108,18 @@ class AVPlayerView: UIView {
     /** Creates a new AVPlayerView with all required controls using the standard nib. */
     class func newFromNib() -> AVPlayerView {
         let nib = UINib(nibName: "AVPlayerView", bundle: nil)
-        return nib.instantiateWithOwner(nil, options: nil)[0] as! AVPlayerView
+        return nib.instantiate(withOwner: nil, options: nil)[0] as! AVPlayerView
     }
     
-    private func setUpPlayer() {
+    fileprivate func setUpPlayer() {
         let player = AVPlayer()
         let oneSecond = CMTimeMake(1, 60)
         
-        player.addPeriodicTimeObserverForInterval(
-            oneSecond, queue: dispatch_get_main_queue(),
-            usingBlock: { [weak self] time in
+        player.addPeriodicTimeObserver(
+            forInterval: oneSecond, queue: DispatchQueue.main,
+            using: { [weak self] time in
                 if let timeLabel = self?.timeLabel {
-                    let seconds = Int(floor(time.seconds % 60))
+                    let seconds = Int(floor(time.seconds.truncatingRemainder(dividingBy: 60)))
                     let minutes = Int(floor(time.seconds / 60))
                     timeLabel.text = String(format: "%02d:%02d", minutes, seconds)
                 }
@@ -129,10 +129,10 @@ class AVPlayerView: UIView {
                 }
             })
         
-        player.actionAtItemEnd = AVPlayerActionAtItemEnd.Pause
-        player.addObserver(self, forKeyPath: "rate", options: [.Old, .New], context: nil)
-        player.addObserver(self, forKeyPath: "status", options: [.Old, .New], context: nil)
-        player.muted = NSUserDefaults.videoMuted
+        player.actionAtItemEnd = AVPlayerActionAtItemEnd.pause
+        player.addObserver(self, forKeyPath: "rate", options: [.old, .new], context: nil)
+        player.addObserver(self, forKeyPath: "status", options: [.old, .new], context: nil)
+        player.isMuted = UserDefaults.videoMuted
         
         playerLayer.player = player
         playerLayer.videoGravity = AVLayerVideoGravityResize
@@ -140,52 +140,52 @@ class AVPlayerView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        muteButton?.selected = player.muted
+        muteButton?.isSelected = player.isMuted
     }
     
     // We override this method so that the imposter can be made temporarily visible
     // before the snapshot is taken, assuming it isn't already.
     override func snapshot() -> UIImage {
-        if imposter?.hidden == false { return super.snapshot() }
-        imposter?.hidden = false
+        if imposter?.isHidden == false { return super.snapshot() }
+        imposter?.isHidden = false
         let image = super.snapshot()
-        imposter?.hidden = true
+        imposter?.isHidden = true
         return image
     }
     
     // MARK:- Loading Assets
     
-    func loadPlaylistItem(item: PlaylistItem) {
+    func loadPlaylistItem(_ item: PlaylistItem) {
         self.loadPlaylistItem(item, shouldLoadThumb: false)
     }
     
-    func loadPlaylistItem(item: PlaylistItem, shouldLoadThumb: Bool) {
-        imposter?.hidden = self.player.status == .ReadyToPlay ? true : false
+    func loadPlaylistItem(_ item: PlaylistItem, shouldLoadThumb: Bool) {
+        imposter?.isHidden = self.player.status == .readyToPlay ? true : false
         if shouldLoadThumb == true {
-            loadURL(item.localMediaThumbURL)
+            loadURL(item.localMediaThumbURL as URL)
         }else{
-            loadURL(item.localMediaURL)
+            loadURL(item.localMediaURL as URL)
         }
     }
     
     func playIfPossible() {
-        if self.player.status == .ReadyToPlay {
+        if self.player.status == .readyToPlay {
             self.player.play()
         }
     }
     
-    func loadURL(url: NSURL) {
-            let item = AVPlayerItem(URL: url)
+    func loadURL(_ url: URL) {
+            let item = AVPlayerItem(url: url)
             let chapterOffsetsNew = self.loadChapterDataFromAsset(item.asset)
-            self.player.replaceCurrentItemWithPlayerItem(item)
+            self.player.replaceCurrentItem(with: item)
             self.setChaptersAtTimeIntervals(chapterOffsetsNew)
     }
     
-    func loadChapterDataFromAsset(asset: AVAsset) -> [NSTimeInterval]? {
+    func loadChapterDataFromAsset(_ asset: AVAsset) -> [TimeInterval]? {
         let keys = [AVMetadataCommonKeyTitle]
-        let chapters = asset.chapterMetadataGroupsWithTitleLocale(NSLocale.currentLocale(), containingItemsWithCommonKeys: keys)
+        let chapters = asset.chapterMetadataGroups(withTitleLocale: Locale.current, containingItemsWithCommonKeys: keys)
         var chapterData: [[String : AnyObject]] = []
-        var chapterTimes: [NSTimeInterval] = []
+        var chapterTimes: [TimeInterval] = []
         for metadataGroup in chapters {
             let items = metadataGroup.items
             for metadataItem in items {
@@ -194,7 +194,7 @@ class AVPlayerView: UIView {
                 }
                 if key == AVMetadataCommonKeyTitle {
                     let time = CMTimeGetSeconds(metadataGroup.timeRange.start)
-                    chapterData.append(["name": value, "time_offset": time])
+                    chapterData.append(["name": value, "time_offset": time as AnyObject])
                     chapterTimes.append(time)
                 }
             }
@@ -205,8 +205,8 @@ class AVPlayerView: UIView {
     
     // MARK:- Controlling Playback
     
-    func setTimeOffset(offset: NSTimeInterval) {
-        player.seekToTime(CMTimeMake(Int64((offset + 0.00001) * 1000000), 1000000), toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimePositiveInfinity)
+    func setTimeOffset(_ offset: TimeInterval) {
+        player.seek(to: CMTimeMake(Int64((offset + 0.00001) * 1000000), 1000000), toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimePositiveInfinity)
         if player.rate == 0 { togglePlay(self) }
     }
     
@@ -219,20 +219,20 @@ class AVPlayerView: UIView {
     }
     
     func mute() {
-        if !player.muted { player.muted = true }
+        if !player.isMuted { player.isMuted = true }
     }
     
     func unmute() {
-        if player.muted { player.muted = false }
+        if player.isMuted { player.isMuted = false }
     }
     
     @IBAction func reset() {
         player.rate = 0
-        player.seekToTime(CMTimeMake(0, 1))
+        player.seek(to: CMTimeMake(0, 1))
         delegate?.player(self, didEnterChapterIndex: nil)
     }
     
-    @IBAction func togglePlay(sender: AnyObject) {
+    @IBAction func togglePlay(_ sender: AnyObject) {
         if player.rate == 0 {
             if player.currentTime() == player.currentItem?.duration { reset() }
             informDelegateOfChapterChange()
@@ -242,47 +242,47 @@ class AVPlayerView: UIView {
         }
     }
     
-    @IBAction func toggleMute(sender: AnyObject) {
-        player.muted = !player.muted
-        muteButton?.selected = player.muted
-        NSUserDefaults.videoMuted = player.muted
+    @IBAction func toggleMute(_ sender: AnyObject) {
+        player.isMuted = !player.isMuted
+        muteButton?.isSelected = player.isMuted
+        UserDefaults.videoMuted = player.isMuted
     }
     
     // Connect this to a pan gesture to enable scrubbing
-    @IBAction func videoScrubbing(sender: UIPanGestureRecognizer) {
+    @IBAction func videoScrubbing(_ sender: UIPanGestureRecognizer) {
         switch sender.state {
-        case .Possible, .Cancelled, .Failed :
+        case .possible, .cancelled, .failed :
             togglePlay(self)
             return
         default: break
         }
         
         guard let view = sender.view else { return }
-        let location = sender.locationInView(view)
+        let location = sender.location(in: view)
         let progress = location.x / view.bounds.width
         let duration = player.currentItem?.duration.seconds ?? 0
         let time = CMTimeMake(Int64(duration * Double(progress) * 10), 10)
-        player.seekToTime(time)
+        player.seek(to: time)
         
-        if sender.state == .Began { player.rate = 0 }
-        if sender.state == .Ended { togglePlay(sender) }
+        if sender.state == .began { player.rate = 0 }
+        if sender.state == .ended { togglePlay(sender) }
     }
     
     // MARK:- Update Display for Rate and Status Changes
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
         // If the player's rate changes it may have been paused or reached the end.
         if keyPath == "rate" {
             
             // Update the play / pause button to show the right image
             let isPlaying = (player.rate != 0)
-            playPauseButton?.selected = isPlaying
-            let app = UIApplication.sharedApplication() as! TimeOutApplication
+            playPauseButton?.isSelected = isPlaying
+            let app = UIApplication.shared as! TimeOutApplication
             
             // Only update the timeout if the value has changed from or to zero, not just speed
-            let old = change![NSKeyValueChangeOldKey] as! NSNumber
-            let new = change![NSKeyValueChangeNewKey] as! NSNumber
+            let old = change![NSKeyValueChangeKey.oldKey] as! NSNumber
+            let new = change![NSKeyValueChangeKey.newKey] as! NSNumber
             if (old.floatValue != 0) == (new.floatValue != 0) { return }
             if isPlaying {
                 if shouldInterruptTimeout {
@@ -296,7 +296,7 @@ class AVPlayerView: UIView {
                 let duration = player.currentItem?.duration ?? CMTimeMake(0, 1)
                 if player.currentTime().seconds >= duration.seconds {
                     if shouldRepeat {
-                        player.seekToTime(kCMTimeZero)
+                        player.seek(to: kCMTimeZero)
                         togglePlay(self)
                     } else {
                         delegate?.playerDidFinishPlaying(self)
@@ -306,25 +306,25 @@ class AVPlayerView: UIView {
             
             // Show or hide the big play button
             let playAlpha: CGFloat = isPlaying ? 0 : 1
-            UIView.animateWithDuration(0.25, animations: { self.bigPlayButton?.alpha = playAlpha })
+            UIView.animate(withDuration: 0.25, animations: { self.bigPlayButton?.alpha = playAlpha })
         }
         
         // If status changes, it could mean that the player is now ready to rock.
         else if keyPath == "status" {
-            let old = change![NSKeyValueChangeOldKey] as! NSNumber
-            let new = change![NSKeyValueChangeNewKey] as! NSNumber
-            let wasReady = (old.integerValue == AVPlayerStatus.ReadyToPlay.rawValue)
-            let isReady = (new.integerValue == AVPlayerStatus.ReadyToPlay.rawValue)
+            let old = change![NSKeyValueChangeKey.oldKey] as! NSNumber
+            let new = change![NSKeyValueChangeKey.newKey] as! NSNumber
+            let wasReady = (old.intValue == AVPlayerStatus.readyToPlay.rawValue)
+            let isReady = (new.intValue == AVPlayerStatus.readyToPlay.rawValue)
             if wasReady == isReady { return }
-            imposter?.hidden = isReady
+            imposter?.isHidden = isReady
             if isReady { delegate?.playerIsReady(self) }
         }
     }
     
     // MARK:- Chapters
     
-    private func setChaptersAtTimeIntervals(chapterOffsets: [NSTimeInterval]?) {
-        let sorted = chapterOffsets?.sort()
+    fileprivate func setChaptersAtTimeIntervals(_ chapterOffsets: [TimeInterval]?) {
+        let sorted = chapterOffsets?.sorted()
         self.chapterOffsets = sorted
         
         // Remove the existing chapters if necessary
@@ -337,19 +337,19 @@ class AVPlayerView: UIView {
         guard let sortedTimes = sorted else { return }
         
         // * 1000000 and divide by the same to alow using decimals in the chapter times
-        let times = sortedTimes.map({ NSValue(CMTime: CMTimeMake(Int64($0 * 1000000) , 1000000)) })
+        let times = sortedTimes.map({ NSValue(time: CMTimeMake(Int64($0 * 1000000) , 1000000)) })
         
-        chapterObserver = player.addBoundaryTimeObserverForTimes(
-            times, queue: dispatch_get_main_queue(),
-            usingBlock: { [weak self] in self?.informDelegateOfChapterChange() }
-        )
+        chapterObserver = player.addBoundaryTimeObserver(
+            forTimes: times, queue: DispatchQueue.main,
+            using: { [weak self] in self?.informDelegateOfChapterChange() }
+        ) as AnyObject?
     }
     
-    private func informDelegateOfChapterChange() {
+    fileprivate func informDelegateOfChapterChange() {
         guard let chapterOffsets = chapterOffsets else { return }
         let seconds = player.currentTime().seconds
         if let chapterTime = chapterOffsets.filter({ $0 <= seconds }).last,
-            chapterIndex = chapterOffsets.indexOf(chapterTime) {
+            let chapterIndex = chapterOffsets.index(of: chapterTime) {
             delegate?.player(self, didEnterChapterIndex: chapterIndex)
         }
     }

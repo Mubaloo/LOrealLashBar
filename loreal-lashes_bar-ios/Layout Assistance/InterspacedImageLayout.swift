@@ -24,58 +24,58 @@ class InterspacedImageLayout: UICollectionViewLayout {
     /** The amount of spacing between cells. Decorations are interspersed between these evenly. */
     var spacing: CGFloat = 60 { didSet { invalidateLayout() } }
     
-    private var cellX: CGFloat = 0
-    private var interspaceX: CGFloat = 0
-    private var contentSize = CGSize.zero
+    fileprivate var cellX: CGFloat = 0
+    fileprivate var interspaceX: CGFloat = 0
+    fileprivate var contentSize = CGSize.zero
     
-    override func collectionViewContentSize() -> CGSize {
+    override var collectionViewContentSize : CGSize {
         return contentSize
     }
     
-    override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return newBounds.width != collectionView?.bounds.size.width
     }
     
-    override func prepareLayout() {
+    override func prepare() {
         guard let collectionView = collectionView else { return }
-        let height = CGFloat(collectionView.numberOfItemsInSection(0)) * (cellSize.height + spacing) + spacing
+        let height = CGFloat(collectionView.numberOfItems(inSection: 0)) * (cellSize.height + spacing) + spacing
         contentSize = CGSize(width: collectionView.bounds.width, height: height)
         cellX = (collectionView.bounds.width - cellSize.width) / 2
         interspaceX = (collectionView.bounds.width - interspaceSize.width) / 2
     }
     
-    override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         guard let collectionView = collectionView else { return nil }
         
-        let maxItem = collectionView.numberOfItemsInSection(0)-1
+        let maxItem = collectionView.numberOfItems(inSection: 0)-1
         let minimum = max(0, Int(floor(rect.minX / (cellSize.height + spacing))))
         let maximum = max(maxItem, Int(ceil(rect.maxX / (cellSize.height + spacing))))
         
         var cellAttr = (minimum ... maximum).map({
-            layoutAttributesForItemAtIndexPath(NSIndexPath(forItem: $0, inSection: 0))!
+            layoutAttributesForItem(at: IndexPath(item: $0, section: 0))!
         })
         
         if minimum == maximum { return cellAttr }
         
         let decorationAttr = (minimum ... maximum-1).map({
-            layoutAttributesForDecorationViewOfKind("Separator", atIndexPath: NSIndexPath(forItem: $0, inSection: 0))!
+            layoutAttributesForDecorationView(ofKind: "Separator", at: IndexPath(item: $0, section: 0))!
         })
         
-        cellAttr.appendContentsOf(decorationAttr)
+        cellAttr.append(contentsOf: decorationAttr)
         return cellAttr
     }
     
-    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
-        let yPos = (cellSize.height + spacing) * CGFloat(indexPath.row) + spacing
-        let attr = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        let yPos = (cellSize.height + spacing) * CGFloat((indexPath as NSIndexPath).row) + spacing
+        let attr = UICollectionViewLayoutAttributes(forCellWith: indexPath)
         attr.frame = CGRect(x: cellX, y: yPos, width: cellSize.width, height: cellSize.height)
         attr.zIndex = 10
         return attr
     }
     
-    override func layoutAttributesForDecorationViewOfKind(elementKind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
-        let yPos = (cellSize.height + spacing) * CGFloat(indexPath.row + 1) - ((spacing + interspaceSize.height) / 2) + spacing
-        let attr = UICollectionViewLayoutAttributes(forDecorationViewOfKind: elementKind, withIndexPath: indexPath)
+    override func layoutAttributesForDecorationView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        let yPos = (cellSize.height + spacing) * CGFloat((indexPath as NSIndexPath).row + 1) - ((spacing + interspaceSize.height) / 2) + spacing
+        let attr = UICollectionViewLayoutAttributes(forDecorationViewOfKind: elementKind, with: indexPath)
         attr.frame = CGRect(x: interspaceX, y: yPos, width: interspaceSize.width, height: interspaceSize.height)
         return attr
     }

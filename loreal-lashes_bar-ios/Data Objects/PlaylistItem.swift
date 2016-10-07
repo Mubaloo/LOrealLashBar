@@ -22,9 +22,9 @@ import CoreData
 protocol PlaylistItem {
     var name: String { get }
     var isInPlaylist: Bool { get set }
-    var remoteMediaURL: NSURL? { get }
-    var localMediaURL: NSURL { get }
-    var localMediaThumbURL: NSURL { get }
+    var remoteMediaURL: URL? { get }
+    var localMediaURL: URL { get }
+    var localMediaThumbURL: URL { get }
     var thumbnail: UIImage { get }
     var ordinal: Int16 { get }
     
@@ -41,11 +41,11 @@ extension PlaylistItem where Self: NSManagedObject {
      Generic function returning a list of all items of the receiving class that are in
      the current user's playlist.
      */
-    static func playlist(context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) -> [Self] {
-        let fetchRequest = NSFetchRequest(entityName: Self.entityName)
+    static func playlist(_ context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) -> [Self] {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: Self.entityName)
         fetchRequest.predicate = NSPredicate(format: "inPlaylist == YES")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "ordinal", ascending: true)]
-        let results = try? context.executeFetchRequest(fetchRequest)
+        let results = try? context.fetch(fetchRequest)
         return results as? [Self] ?? []
     }
     

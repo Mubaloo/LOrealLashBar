@@ -19,7 +19,7 @@ class AnimatedBorderView: UIView, AnimatedBorderProtocol {
         set { borderLayer.titleWidth = newValue }
     }
     
-    private func adjustBorder() {
+    fileprivate func adjustBorder() {
         borderLayer.frame = bounds
         if borderLayer.superlayer == nil {
             self.layer.addSublayer(borderLayer)

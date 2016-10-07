@@ -31,7 +31,7 @@ class PlaylistViewController: BaseViewController {
     var playlistItems: [PlaylistItem] = {
         var allItems = Lash.playlist().map({ $0 as PlaylistItem })
         let allTechniques = Technique.playlist().map({ $0 as PlaylistItem })
-        allItems.appendContentsOf(allTechniques)
+        allItems.append(contentsOf: allTechniques)
         for item in allItems { item.precache() }
         return allItems
     }()
@@ -43,86 +43,86 @@ class PlaylistViewController: BaseViewController {
         tickMarkBackground.layer.cornerRadius = 3
         playlistCollection.collectionViewLayout = PagedGridLayout()
         playlistCollection.reloadData()
-        sendButton.enabled = playlistItems.count > 0
+        sendButton.isEnabled = playlistItems.count > 0
         
-        let noteCenter = NSNotificationCenter.defaultCenter()
+        let noteCenter = NotificationCenter.default
         noteCenter.addObserver(self, selector: #selector(PlaylistViewController.updateKeyboard(_:)),
-                               name: UIKeyboardWillChangeFrameNotification, object: nil)
+                               name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     func emailIsValid() -> Bool {
-        guard let email = emailField.text where email.characters.count > 0 else { return false }
-        let splitAt = email.componentsSeparatedByString("@")
+        guard let email = emailField.text , email.characters.count > 0 else { return false }
+        let splitAt = email.components(separatedBy: "@")
         if splitAt.count != 2 { return false }
-        return splitAt[1].componentsSeparatedByString(".").count > 1
+        return splitAt[1].components(separatedBy: ".").count > 1
     }
     
     // TODO: test full implementation when web service is in place on the back end.
-    @IBAction func unwindToPlaylistVC(segue: UIStoryboardSegue) {
+    @IBAction func unwindToPlaylistVC(_ segue: UIStoryboardSegue) {
         // No need to do anything here yet
     }
     
-    @IBAction func sendButtonTouched (sender: UIButton) {
+    @IBAction func sendButtonTouched (_ sender: UIButton) {
         if emailIsValid(), let emailAddress = emailField.text {
             let urls = playlistItems.flatMap({ $0.remoteMediaURL?.path })
             let request = EntryEventRequest(
                 emailAddress: emailAddress,
                 videoURLs: urls
             )
-            self.emailContainer.hidden = true
-            self.statusContainer.hidden = false
-            request.executeInSharedSession {
+            self.emailContainer.isHidden = true
+            self.statusContainer.isHidden = false
+            _ = request.executeInSharedSession {
                 switch $0 {
-                case .Success(let response) :
+                case .success(let response) :
                     print("Email sent to \(emailAddress)")
                     print(response)
                     self.statusLabel.text = "Sent to \(emailAddress)!"
                     self.statusImageView.image = UIImage(named: "loaded-lips")
-                    guard let app = UIApplication.sharedApplication() as? TimeOutApplication else { return }
+                    guard let app = UIApplication.shared as? TimeOutApplication else { return }
                     app.beginShortTimeout()
-                case .SuccessNoData :
+                case .successNoData :
                     print("Email sent to \(emailAddress) (no data in response)")
                     self.statusLabel.text = "Sent to \(emailAddress)!"
                     self.statusImageView.image = UIImage(named: "loaded-lips")
-                    guard let app = UIApplication.sharedApplication() as? TimeOutApplication else { return }
+                    guard let app = UIApplication.shared as? TimeOutApplication else { return }
                     app.beginShortTimeout()
-                case .Failure(let error) :
-                    self.statusContainer.hidden = true
-                    self.emailContainer.hidden = false
+                case .failure(let error) :
+                    self.statusContainer.isHidden = true
+                    self.emailContainer.isHidden = false
                     print("Error sending email: \(error)")
                 }
             }
         }
         
         else {
-            let alert = UIAlertController(title: title, message: "Please enter a valid email address", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            let alert = UIAlertController(title: title, message: "Please enter a valid email address", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             emailField.becomeFirstResponder()
         }
     }
     
-    @IBAction func closeButtonTouched(sender: UIButton) {
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func closeButtonTouched(_ sender: UIButton) {
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func tickContainerTouched(sender: AnyObject) {
-        if tickMarkImageView.hidden == true {
-            tickMarkImageView.hidden = false
+    @IBAction func tickContainerTouched(_ sender: AnyObject) {
+        if tickMarkImageView.isHidden == true {
+            tickMarkImageView.isHidden = false
         }else{
-            tickMarkImageView.hidden = true
+            tickMarkImageView.isHidden = true
         }
     }
     
-    func updateKeyboard(notif: NSNotification) {
-        guard let value = notif.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else { return }
-        let frame = value.CGRectValue()
+    func updateKeyboard(_ notif: Notification) {
+        guard let value = (notif as NSNotification).userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else { return }
+        let frame = value.cgRectValue
         if frame.maxX < view.bounds.maxX { return }
-        UIView.animateWithDuration(0.25, animations: { [weak self] in
+        UIView.animate(withDuration: 0.25, animations: { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.interfaceBottom.constant = strongSelf.view.bounds.maxY - frame.minY
             strongSelf.view.layoutIfNeeded()
@@ -130,8 +130,8 @@ class PlaylistViewController: BaseViewController {
     }
     
     func updatePageNumber() {
-        if let layout = playlistCollection.collectionViewLayout as? PagedGridLayout, let cell = playlistCollection.visibleCells().first   {
-            let page = layout.pageForIndexPath(playlistCollection.indexPathForCell(cell)!)
+        if let layout = playlistCollection.collectionViewLayout as? PagedGridLayout, let cell = playlistCollection.visibleCells.first   {
+            let page = layout.pageForIndexPath(playlistCollection.indexPath(for: cell)!)
             pageControl.currentPage = page
         }
     }
@@ -140,7 +140,7 @@ class PlaylistViewController: BaseViewController {
 
 extension PlaylistViewController: UITextFieldDelegate {
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return textField.resignFirstResponder()
     }
     
@@ -148,7 +148,7 @@ extension PlaylistViewController: UITextFieldDelegate {
 
 extension PlaylistViewController: UICollectionViewDataSource {
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let layout = playlistCollection.collectionViewLayout as? PagedGridLayout  {
             pageControl.numberOfPages = Int(ceil(Float(playlistItems.count) / Float(layout.rowsPerPage) / Float(layout.columnsPerPage)))
         }
@@ -156,11 +156,11 @@ extension PlaylistViewController: UICollectionViewDataSource {
         return max(roundUp, 4)
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cellID = indexPath.item >= playlistItems.count ? "EmptyVideoCell" : "VideoCell"
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cellID = (indexPath as NSIndexPath).item >= playlistItems.count ? "EmptyVideoCell" : "VideoCell"
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
         if let videoCell = cell as? MyPlaylistCell {
-            videoCell.item = playlistItems[indexPath.item]
+            videoCell.item = playlistItems[(indexPath as NSIndexPath).item]
             videoCell.delegate = self
         }
         return cell
@@ -170,16 +170,16 @@ extension PlaylistViewController: UICollectionViewDataSource {
 
 extension PlaylistViewController: UICollectionViewDelegate {
     
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        for cell in playlistCollection.visibleCells() {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        for cell in playlistCollection.visibleCells {
             if let videoCell = cell as? MyPlaylistCell {
                 videoCell.playerView.pause()
             }
         }
     }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        for cell in playlistCollection.visibleCells() {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        for cell in playlistCollection.visibleCells {
             if let videoCell = cell as? MyPlaylistCell {
                 videoCell.playerView.play()
             }
@@ -187,10 +187,10 @@ extension PlaylistViewController: UICollectionViewDelegate {
         updatePageNumber()
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        collectionView.deselectItemAtIndexPath(indexPath, animated: false)
-        if indexPath.item >= playlistItems.count {
-             presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: false)
+        if (indexPath as NSIndexPath).item >= playlistItems.count {
+             presentingViewController?.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -198,32 +198,32 @@ extension PlaylistViewController: UICollectionViewDelegate {
 
 extension PlaylistViewController: TransitionAnimationDataSource {
     
-    func transitionableViews(direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
+    func transitionableViews(_ direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
         var views: [UIView] = [titleBar,  myPlaylistLabel, emailContainer, closeButton]
-        views.appendContentsOf(playlistCollection.visibleCells() as [UIView])
+        views.append(contentsOf: playlistCollection.visibleCells as [UIView])
         return views
     }
     
-    func transitionAnimationItemsForView(view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
+    func transitionAnimationItemsForView(_ view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
         switch view {
         case titleBar :
-            return [TransitionAnimationItem(mode: .SlideTop, duration: 0.5, quantity: view.frame.height)]
+            return [TransitionAnimationItem(mode: .slideTop, duration: 0.5, quantity: view.frame.height)]
         case myPlaylistLabel :
-            return [TransitionAnimationItem(mode: .SlideLeft, delay: 0.5, duration: 0.5)]
+            return [TransitionAnimationItem(mode: .slideLeft, delay: 0.5, duration: 0.5)]
         case emailContainer :
-            return [TransitionAnimationItem(mode: .SlideBottom, duration: 0.5, quantity: view.frame.height)]
+            return [TransitionAnimationItem(mode: .slideBottom, duration: 0.5, quantity: view.frame.height)]
         case closeButton :
-            return [TransitionAnimationItem(mode: .SlideRight, delay: 0.5, duration: 0.5, quantity: 100)]
+            return [TransitionAnimationItem(mode: .slideRight, delay: 0.5, duration: 0.5, quantity: 100)]
         default : break
         }
         
         guard let cell = view as? UICollectionViewCell,
-            indexPath = playlistCollection.indexPathForCell(cell)
+            let indexPath = playlistCollection.indexPath(for: cell)
             else { return nil }
         
         let first = Int(floor(playlistCollection.contentOffset.x / playlistCollection.frame.width)) * 4
-        let mode: TransitionAnimationMode = (indexPath.row % 2 == 0) ? .SlideLeft : .SlideRight
-        let delay = 0.5 / Double(playlistCollection.visibleCells().count) * Double(indexPath.row - first)
+        let mode: TransitionAnimationMode = ((indexPath as NSIndexPath).row % 2 == 0) ? .slideLeft : .slideRight
+        let delay = 0.5 / Double(playlistCollection.visibleCells.count) * Double((indexPath as NSIndexPath).row - first)
         return [TransitionAnimationItem(mode: mode, delay: delay, duration: 0.5)]
     }
     
@@ -231,30 +231,30 @@ extension PlaylistViewController: TransitionAnimationDataSource {
 
 extension PlaylistViewController: PlaylistCellDelegate {
     
-    func cellWantsToBeRemoved(cell: MyPlaylistCell) {
-        guard let indexPath = playlistCollection.indexPathForCell(cell) else { return }
+    func cellWantsToBeRemoved(_ cell: MyPlaylistCell) {
+        guard let indexPath = playlistCollection.indexPath(for: cell) else { return }
         
         let itemsBefore = collectionView(playlistCollection, numberOfItemsInSection: 0)
-        var item = playlistItems[indexPath.item]
+        var item = playlistItems[(indexPath as NSIndexPath).item]
         item.isInPlaylist = false
         CoreDataStack.shared.saveContext()
-        playlistItems.removeAtIndex(indexPath.item)
-        sendButton.enabled = playlistItems.count > 0
+        playlistItems.remove(at: (indexPath as NSIndexPath).item)
+        sendButton.isEnabled = playlistItems.count > 0
         
         let itemsAfter = collectionView(playlistCollection, numberOfItemsInSection: 0)
         
         if itemsBefore != itemsAfter && itemsAfter != 0 {
             let first = Int(floor(Float(itemsBefore - 1) / 4)) * 4
             let range = first ..< first + 4
-            let indices = range.map({ NSIndexPath(forItem: $0, inSection: 0) })
-            playlistCollection.deleteItemsAtIndexPaths(indices)
+            let indices = range.map({ IndexPath(item: $0, section: 0) })
+            playlistCollection.deleteItems(at: indices)
         }
         
-        if indexPath.item >= itemsAfter { return }
-        let last = Int(floor(Float(indexPath.item) / 4) + 1) * 4
-        let range = indexPath.item ..< last
-        let indices = range.map({ NSIndexPath(forItem: $0, inSection: 0) })
-        playlistCollection.reloadItemsAtIndexPaths(indices)
+        if (indexPath as NSIndexPath).item >= itemsAfter { return }
+        let last = Int(floor(Float((indexPath as NSIndexPath).item) / 4) + 1) * 4
+        let range = (indexPath as NSIndexPath).item ..< last
+        let indices = range.map({ IndexPath(item: $0, section: 0) })
+        playlistCollection.reloadItems(at: indices)
     }
     
 }

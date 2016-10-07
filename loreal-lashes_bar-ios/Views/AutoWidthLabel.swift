@@ -14,15 +14,15 @@ import UIKit
  */
 class AutoWidthLabel: UILabel {
 
-    override func intrinsicContentSize() -> CGSize {
+    override var intrinsicContentSize : CGSize {
         assert(numberOfLines > 0, "Need a definite number of lines to aim for!")
         guard let text = self.text else {
             return CGSize(width: UIViewNoIntrinsicMetric, height: UIViewNoIntrinsicMetric)
         }
         
-        let singleLine = text.boundingRectWithSize(
-            CGSize(width: Int.max, height: Int.max),
-            options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+        let singleLine = text.boundingRect(
+            with: CGSize(width: Int.max, height: Int.max),
+            options: NSStringDrawingOptions.usesLineFragmentOrigin,
             attributes: [NSFontAttributeName: font],
             context: nil
         )
@@ -32,9 +32,9 @@ class AutoWidthLabel: UILabel {
         
         repeat {
             approxWidth += 10
-            approx = text.boundingRectWithSize(
-                CGSize(width: approxWidth, height: 1000),
-                options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+            approx = text.boundingRect(
+                with: CGSize(width: approxWidth, height: 1000),
+                options: NSStringDrawingOptions.usesLineFragmentOrigin,
                 attributes: [NSFontAttributeName: font],
                 context: nil
             )

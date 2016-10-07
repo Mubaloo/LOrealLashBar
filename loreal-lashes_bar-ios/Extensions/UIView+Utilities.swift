@@ -14,11 +14,11 @@ extension UIView {
     func snapshot() -> UIImage {
         UIGraphicsBeginImageContext(frame.size)
         let rect = CGRect(origin: CGPoint.zero, size: frame.size)
-        drawViewHierarchyInRect(rect, afterScreenUpdates: true)
-        layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        drawHierarchy(in: rect, afterScreenUpdates: true)
+        layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image
+        return image!
     }
     
     /**
@@ -26,15 +26,15 @@ extension UIView {
      (typically to alter the appearance of the receiver) then fades it back in
      again. Useful for performing quick, simple view transitions.
      */
-    func crossfadeUpdate(duration: NSTimeInterval, updates: ()->()) {
+    func crossfadeUpdate(_ duration: TimeInterval, updates: @escaping ()->()) {
         let halfDuration = duration / 2
-        UIView.animateWithDuration(
-            halfDuration,
+        UIView.animate(
+            withDuration: halfDuration,
             animations: { self.alpha = 0 },
             completion: { [weak self] _ in
                 updates()
-                UIView.animateWithDuration(
-                    halfDuration,
+                UIView.animate(
+                    withDuration: halfDuration,
                     animations: { self?.alpha = 1 }
                 )
             }

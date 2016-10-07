@@ -28,22 +28,22 @@ class TitleBarViewController: BaseViewController {
     @IBOutlet var playlistButton: UIButton!
     @IBOutlet var containerView: UIView!
     
-    private var childTabBarController: UITabBarController?
-    private var browserType = BrowserType.Lashes
+    fileprivate var childTabBarController: UITabBarController?
+    fileprivate var browserType = BrowserType.Lashes
     
     /** Fetch controller used solely for handling the number tag in the Playlist button. This one fetches lashes. */
-    private var lashFetch: NSFetchedResultsController = {
+    fileprivate var lashFetch: NSFetchedResultsController<Lash> = {
         let context = CoreDataStack.shared.managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName: "Lash")
+        let fetchRequest: NSFetchRequest<Lash> = NSFetchRequest(entityName: "Lash")
         fetchRequest.predicate = NSPredicate(format: "inPlaylist == YES")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "number", ascending: true)]
         return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     }()
     
     /** Fetch controller used solely for handling the number tag in the Playlist button. This one fetches techniques. */
-    private var techniqueFetch: NSFetchedResultsController = {
+    fileprivate var techniqueFetch: NSFetchedResultsController<Lash> = {
         let context = CoreDataStack.shared.managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName: "Technique")
+        let fetchRequest: NSFetchRequest<Lash> = NSFetchRequest(entityName: "Technique")
         fetchRequest.predicate = NSPredicate(format: "inPlaylist == YES")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "ordinal", ascending: true)]
         return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -67,47 +67,47 @@ class TitleBarViewController: BaseViewController {
         try! techniqueFetch.performFetch()
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let tbc = segue.destinationViewController as? UITabBarController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let tbc = segue.destination as? UITabBarController {
             childTabBarController = tbc
-            tbc.tabBar.hidden = true
-            tbc.delegate = UIApplication.sharedApplication().delegate as? UITabBarControllerDelegate
+            tbc.tabBar.isHidden = true
+            tbc.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
             for navigator in tbc.viewControllers as! [UINavigationController] {
-                navigator.delegate = UIApplication.sharedApplication().delegate as? UINavigationControllerDelegate
+                navigator.delegate = UIApplication.shared.delegate as? UINavigationControllerDelegate
             }
         }
     }
     
-    func setBrowserType(newType: BrowserType, animated: Bool = false) {
+    func setBrowserType(_ newType: BrowserType, animated: Bool = false) {
         browserType = newType
         guard let childTabBarController = childTabBarController,
-            viewControllers = childTabBarController.viewControllers
+            let viewControllers = childTabBarController.viewControllers
             else { return }
         
         switch browserType {
         case .Lashes :
             if let navigatonVC = viewControllers[0] as? UINavigationController {
-                navigatonVC.popViewControllerAnimated(false)
+                navigatonVC.popViewController(animated: false)
             }
             childTabBarController.selectedViewController = viewControllers[0]
-            browserButton.setTitle(BrowserType.Technique.rawValue, forState: .Normal)
+            browserButton.setTitle(BrowserType.Technique.rawValue, for: UIControlState())
         case .Technique :
             if let navigatonVC = viewControllers[1] as? UINavigationController {
-                navigatonVC.popViewControllerAnimated(false)
+                navigatonVC.popViewController(animated: false)
             }
             childTabBarController.selectedViewController = viewControllers[1]
-            browserButton.setTitle(BrowserType.Lashes.rawValue, forState: .Normal)
+            browserButton.setTitle(BrowserType.Lashes.rawValue, for: UIControlState())
         }
     }
     
-    @IBAction func browserButtonTouched(sender: UIButton) {
+    @IBAction func browserButtonTouched(_ sender: UIButton) {
         switch browserType {
         case .Lashes : self.setBrowserType(.Technique, animated: true)
         case .Technique : self.setBrowserType(.Lashes, animated: true)
         }
     }
     
-    @IBAction func unwindToTitleBar(sender: UIStoryboardSegue) {
+    @IBAction func unwindToTitleBar(_ sender: UIStoryboardSegue) {
         // Don't do anything yet
     }
     
@@ -119,24 +119,24 @@ extension TitleBarViewController: TransitionAnimationDataSource {
     // This function simply returns that view controller if it conforms to the appropriate protocol. If it
     // does not, the results of calling those methods would be nil anyway so we can return nil here and save
     // the bother of checking separately.
-    private func currentlyDisplayedDataSource() -> TransitionAnimationDataSource? {
+    fileprivate func currentlyDisplayedDataSource() -> TransitionAnimationDataSource? {
         guard childViewControllers.count > 0,
             let tabBar = childViewControllers[0] as? UITabBarController,
-            navigator = tabBar.selectedViewController as? UINavigationController,
-            viewController = navigator.topViewController
+            let navigator = tabBar.selectedViewController as? UINavigationController,
+            let viewController = navigator.topViewController
             else { return nil }
         
         return viewController as? TransitionAnimationDataSource
     }
     
-    func transitionableViews(direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
+    func transitionableViews(_ direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
         var views = [UIView]()
         views.append(titleBar)
         
         // Concatinate with views from the currently displayed child.
         if let child = currentlyDisplayedDataSource() {
             if let additional = child.transitionableViews(direction, otherVC: otherVC) {
-                views.appendContentsOf(additional)
+                views.append(contentsOf: additional)
             } else if let vc = child as? UIViewController {
                 views.append(vc.view)
             }
@@ -145,11 +145,11 @@ extension TitleBarViewController: TransitionAnimationDataSource {
         return views
     }
     
-    func transitionAnimationItemsForView(view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
+    func transitionAnimationItemsForView(_ view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
         if view == titleBar {
             switch direction {
-            case .Appear : return [TransitionAnimationItem(mode: .Fade, duration: 0.3)]
-            case .Disappear : return [TransitionAnimationItem(mode: .Fade, duration: 1)]
+            case .appear : return [TransitionAnimationItem(mode: .fade, duration: 0.3)]
+            case .disappear : return [TransitionAnimationItem(mode: .fade, duration: 1)]
             }
         }
         
@@ -159,8 +159,8 @@ extension TitleBarViewController: TransitionAnimationDataSource {
             return animations
         }
         
-        if let vc = child as? UIViewController where vc.view == view {
-            return [TransitionAnimationItem(mode: .Fade)]
+        if let vc = child as? UIViewController , vc.view == view {
+            return [TransitionAnimationItem(mode: .fade)]
         }
         
         return nil
@@ -171,15 +171,15 @@ extension TitleBarViewController: TransitionAnimationDataSource {
 extension TitleBarViewController: NSFetchedResultsControllerDelegate {
     
     // Updates the number in the My Playlists button when something is added or removed.
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         let lashCount = lashFetch.fetchedObjects?.count ?? 0
         let techniqueCount = techniqueFetch.fetchedObjects?.count ?? 0
         let total = lashCount + techniqueCount
         
         if total == 0 {
-            playlistButton.setTitle("MY PLAYLIST", forState: .Normal)
+            playlistButton.setTitle("MY PLAYLIST", for: UIControlState())
         } else {
-            playlistButton.setTitle("MY PLAYLIST (\(total))", forState: .Normal)
+            playlistButton.setTitle("MY PLAYLIST (\(total))", for: UIControlState())
         }
     }
     

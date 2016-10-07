@@ -9,4 +9,7 @@
 import UIKit
 
 // Override to ensure that the application is our custom subclass.
-UIApplicationMain(Process.argc, Process.unsafeArgv, NSStringFromClass(TimeOutApplication), NSStringFromClass(AppDelegate))
+UIApplicationMain(CommandLine.argc, UnsafeMutableRawPointer(CommandLine.unsafeArgv)
+    .bindMemory(
+        to: UnsafeMutablePointer<Int8>.self,
+        capacity: Int(CommandLine.argc)), NSStringFromClass(TimeOutApplication.self), NSStringFromClass(AppDelegate.self))

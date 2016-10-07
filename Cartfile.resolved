@@ -1,2 +1,2 @@
-github "bitstadium/HockeySDK-iOS" "4.0.2"
-github "SwiftyJSON/SwiftyJSON" "2.3.3"
+github "bitstadium/HockeySDK-iOS" "4.1.2"
+github "SwiftyJSON/SwiftyJSON" "v3.1.1"

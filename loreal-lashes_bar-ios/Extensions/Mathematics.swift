@@ -12,11 +12,11 @@ struct FloatRange {
     let start: Float
     let end: Float
     
-    func contains(number: Float) -> Bool {
+    func contains(_ number: Float) -> Bool {
         return start <= number && end >= number
     }
     
-    func constrain(number: Float) -> Float {
+    func constrain(_ number: Float) -> Float {
         if number <= start { return start }
         if number >= end { return end }
         return number
@@ -31,7 +31,7 @@ extension Float {
      from 0% (start) to 100% (end), and applying that percentage to the `toRange` in the
      same fashion.
      */
-    func normalise(fromRange: FloatRange, toRange: FloatRange) -> Float {
+    func normalise(_ fromRange: FloatRange, toRange: FloatRange) -> Float {
         if self <= fromRange.start { return toRange.start }
         if self >= fromRange.end { return toRange.end }
         let progression = (self - fromRange.start) / (fromRange.end - fromRange.start)

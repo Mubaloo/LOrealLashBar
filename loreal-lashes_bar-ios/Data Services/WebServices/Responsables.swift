@@ -8,53 +8,53 @@
 
 import Foundation
 
-enum RequestError: ErrorType {
+enum RequestError: Error {
     
-    case NoInternetConnection
+    case noInternetConnection
     
     /// There was an NSURLError
-    case NetworkingError(NSError)
+    case networkingError(NSError)
     
     /// The response returned a non-2xx status code, with no display message from server
-    case BadResponse(statusCode: HTTPStatusCode)
+    case badResponse(statusCode: HTTPStatusCode)
     
     /// The response returned a non-2xx status code, with display message from server
-    case ServerError(displayMessage: String)
+    case serverError(displayMessage: String)
     
     /// The response returned a 401 error
-    case Unauthorised
+    case unauthorised
     
     /// There was an invalid response from the server
-    case InvalidResponse
+    case invalidResponse
     
     /// The web service request was cancelled - normally when another request of the same type is made.
-    case Cancelled
+    case cancelled
     
-    case Other(NSError)
+    case other(NSError)
 }
 
 extension RequestError : CustomStringConvertible {
     
     var description: String {
         switch self {
-        case .NetworkingError(let error):
+        case .networkingError(let error):
             return error.localizedDescription
             
-        case .BadResponse(let statusCode):
-            return NSHTTPURLResponse.localizedStringForStatusCode(statusCode.rawValue)
+        case .badResponse(let statusCode):
+            return HTTPURLResponse.localizedString(forStatusCode: statusCode.rawValue)
             
-        case .ServerError(let displayMessage):
+        case .serverError(let displayMessage):
             return displayMessage
             
-        case .Unauthorised:
-            return NSHTTPURLResponse.localizedStringForStatusCode(HTTPStatusCode.Unauthorized.rawValue)
+        case .unauthorised:
+            return HTTPURLResponse.localizedString(forStatusCode: HTTPStatusCode.unauthorized.rawValue)
             
-        case .InvalidResponse:
+        case .invalidResponse:
             fallthrough
-        case .Cancelled:
+        case .cancelled:
             return NSLocalizedString("Cancelled", comment: "")
             
-        case .Other(let error):
+        case .other(let error):
             return error.localizedDescription
             
         default:
@@ -69,14 +69,14 @@ protocol WebServiceResponse : Responsable {
 }
 
 enum WebServiceResult<R> {
-    case Success(R)
-    case SuccessNoData
-    case Failure(RequestError)
+    case success(R)
+    case successNoData
+    case failure(RequestError)
 }
 
 enum APIRequestResult<R> {
-    case Success(R)
-    case Failure(RequestError)
+    case success(R)
+    case failure(RequestError)
 }
 
 protocol JSONSubscriptType {}
@@ -84,9 +84,9 @@ extension String : JSONSubscriptType {}
 
 extension Dictionary where Key : JSONSubscriptType {
     
-    func parse<T>(path: Key) throws -> T {
+    func parse<T>(_ path: Key) throws -> T {
         guard let value = self[path] as? T else {
-            throw RequestError.InvalidResponse
+            throw RequestError.invalidResponse
         }
         return value
     }

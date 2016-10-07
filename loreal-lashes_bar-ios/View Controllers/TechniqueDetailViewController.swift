@@ -23,14 +23,14 @@ class TechniqueDetailViewController: BaseViewController {
     
     lazy var allTechniques: [Technique] = {
         var orderedTechniques = Technique.orderedTechniques()
-        orderedTechniques.insert(orderedTechniques.last!, atIndex: 0)
+        orderedTechniques.insert(orderedTechniques.last!, at: 0)
         orderedTechniques.append(orderedTechniques[1])
         return orderedTechniques
     }()
     
     var technique: Technique? {
         didSet {
-            if isViewLoaded() {
+            if isViewLoaded {
                 updateRelatedProducts()
                 updateTechniqueVideo()
                 updateButtons()
@@ -42,11 +42,11 @@ class TechniqueDetailViewController: BaseViewController {
         super.viewDidLoad()
         
         let collectionViewLayout = HorizontalPagingLayout()
-        collectionViewLayout.itemSize = CGSizeMake(557, 200)
+        collectionViewLayout.itemSize = CGSize(width: 557, height: 200)
         collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
         collectionViewLayout.minimumInteritemSpacing = 60
         collectionViewLayout.minimumLineSpacing = 60
-        collectionViewLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
+        collectionViewLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         
         collectionView.collectionViewLayout = collectionViewLayout
         collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
@@ -60,34 +60,34 @@ class TechniqueDetailViewController: BaseViewController {
         updateRelatedProducts()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.updateButtons()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         videoContainer.play()
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         didLoad = false
     }
     
-    @IBAction func unwindToTechniqueDetail(sender: UIStoryboardSegue) {
+    @IBAction func unwindToTechniqueDetail(_ sender: UIStoryboardSegue) {
         // Nothing to do; just an unwind target
     }
     
     // MARK:- Update Methods
     
-    private func updateTechniqueVideo() {
+    fileprivate func updateTechniqueVideo() {
         guard let technique = technique else { return }
         videoContainer.imposter!.image = technique.thumbnail
         videoContainer.loadPlaylistItem(technique)
     }
     
-    private func updateRelatedProducts() {
+    fileprivate func updateRelatedProducts() {
         for view in brushStack.arrangedSubviews {
             brushStack.removeArrangedSubview(view)
             view.removeFromSuperview()
@@ -97,32 +97,32 @@ class TechniqueDetailViewController: BaseViewController {
         
         let steps = [technique.step1, technique.step2, technique.step3]
         
-        for (index, step) in steps.enumerate() {
+        for (index, step) in steps.enumerated() {
             let containerView = UIView()
-            containerView.backgroundColor = UIColor.clearColor()
+            containerView.backgroundColor = UIColor.clear
             
             let titleLabel = UILabel()
-            titleLabel.textColor = UIColor.whiteColor()
+            titleLabel.textColor = UIColor.white
             titleLabel.font = UIFont(name: "HelveticaNeueCond", size: 28)
             titleLabel.text = "0\(index + 1)"
-            titleLabel.textAlignment = .Center
+            titleLabel.textAlignment = .center
             titleLabel.numberOfLines = 1
             containerView.addSubview(titleLabel)
             
             let image = UIImage(named: "zigzag_icon")
             let imageView = UIImageView(image: image)
-            imageView.contentMode = .ScaleAspectFit
+            imageView.contentMode = .scaleAspectFit
             containerView.addSubview(imageView)
             
             let subtitleLabel = UILabel()
-            subtitleLabel.textColor = UIColor.whiteColor()
+            subtitleLabel.textColor = UIColor.white
             subtitleLabel.font = UIFont(name: "HelveticaNeueCond", size: 15)
             subtitleLabel.text = step
-            subtitleLabel.textAlignment = .Center
+            subtitleLabel.textAlignment = .center
             subtitleLabel.numberOfLines = 0
             containerView.addSubview(subtitleLabel)
             
-            let maxSize = subtitleLabel.sizeOfText(withMaxSize:CGSizeMake(150, CGFloat.max))
+            let maxSize = subtitleLabel.sizeOfText(withMaxSize:CGSize(width: 150, height: CGFloat.greatestFiniteMagnitude))
             
             titleLabel.translatesAutoresizingMaskIntoConstraints = false
             imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -134,79 +134,79 @@ class TechniqueDetailViewController: BaseViewController {
             
             var allConstraints = [NSLayoutConstraint]()
             
-            let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
-                "V:|-0-[title(35)]-20-[image(11)]-20-[subtitle(\(ceil(maxSize.height)))]",
-                options: [.AlignAllCenterX],
+            let verticalConstraints = NSLayoutConstraint.constraints(
+                withVisualFormat: "V:|-0-[title(35)]-20-[image(11)]-20-[subtitle(\(ceil(maxSize.height)))]",
+                options: [.alignAllCenterX],
                 metrics: nil,
                 views: views)
             allConstraints += verticalConstraints
             
-            let iconHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
-                "H:[image(8)]",
+            let iconHorizontalConstraints = NSLayoutConstraint.constraints(
+                withVisualFormat: "H:[image(8)]",
                 options: [],
                 metrics: nil,
                 views: views)
             allConstraints += iconHorizontalConstraints
             
-            let titleHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
-                "H:|-0-[title]-0-|",
+            let titleHorizontalConstraints = NSLayoutConstraint.constraints(
+                withVisualFormat: "H:|-0-[title]-0-|",
                 options: [],
                 metrics: nil,
                 views: views)
             allConstraints += titleHorizontalConstraints
             
-            let subtitleHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
-                "H:|-0-[subtitle]-0-|",
+            let subtitleHorizontalConstraints = NSLayoutConstraint.constraints(
+                withVisualFormat: "H:|-0-[subtitle]-0-|",
                 options: [],
                 metrics: nil,
                 views: views)
             allConstraints += subtitleHorizontalConstraints
             
-            NSLayoutConstraint.activateConstraints(allConstraints)
+            NSLayoutConstraint.activate(allConstraints)
         
             brushStack.addArrangedSubview(containerView)
         }
     }
     
-    private func updateButtons() {
-        guard let technique = technique where isViewLoaded() else { return }
+    fileprivate func updateButtons() {
+        guard let technique = technique , isViewLoaded else { return }
         
-        if collectionView.visibleCells().count > 0, let currentCell = collectionView.visibleCells()[0] as? TechniqueDetailsCell {
-            currentCell.addToPlaylistButton.userInteractionEnabled = !technique.inPlaylist
+        if collectionView.visibleCells.count > 0, let currentCell = collectionView.visibleCells[0] as? TechniqueDetailsCell {
+            currentCell.addToPlaylistButton.isUserInteractionEnabled = !technique.inPlaylist
             if technique.inPlaylist {
-                currentCell.addToPlaylistButton.setTitle("ADDED!", forState: .Normal)
-                currentCell.addToPlaylistButton.enabled = false
+                currentCell.addToPlaylistButton.setTitle("ADDED!", for: UIControlState())
+                currentCell.addToPlaylistButton.isEnabled = false
             } else {
-                currentCell.addToPlaylistButton.setTitle("ADD TO PLAYLIST", forState: .Normal)
-                currentCell.addToPlaylistButton.enabled = true
+                currentCell.addToPlaylistButton.setTitle("ADD TO PLAYLIST", for: UIControlState())
+                currentCell.addToPlaylistButton.isEnabled = true
             }
         }
     }
 
     // MARK:- User Interactions
     
-    private func shiftTechniques(direction: Int) {
-        if collectionView.scrollEnabled == false {
+    fileprivate func shiftTechniques(_ direction: Int) {
+        if collectionView.isScrollEnabled == false {
             return
         }
-        collectionView.scrollEnabled = false
-        guard let cellIndex = self.collectionView.indexPathForCell(self.collectionView.visibleCells().first!)
+        collectionView.isScrollEnabled = false
+        guard let cellIndex = self.collectionView.indexPath(for: self.collectionView.visibleCells.first!)
             else { return }
         
-        let newIndex = cellIndex.row + direction
-        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: newIndex, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: true)
+        let newIndex = (cellIndex as NSIndexPath).row + direction
+        self.collectionView.scrollToItem(at: IndexPath(item: newIndex, section: 0), at: .centeredHorizontally, animated: true)
     }
     
-    @IBAction func scrollLeft(sender: UIButton) {
+    @IBAction func scrollLeft(_ sender: UIButton) {
         shiftTechniques(-1)
     }
     
-    @IBAction func scrollRight(sender: UIButton) {
+    @IBAction func scrollRight(_ sender: UIButton) {
         shiftTechniques(1)
     }
     
-    @IBAction func addToPlaylistTouched(sender: UIButton) {
-        guard let technique = technique where !technique.inPlaylist else { return }
+    @IBAction func addToPlaylistTouched(_ sender: UIButton) {
+        guard let technique = technique , !technique.inPlaylist else { return }
         technique.inPlaylist = true
         CoreDataStack.shared.saveContext()
         updateButtons()
@@ -215,7 +215,7 @@ class TechniqueDetailViewController: BaseViewController {
 }
 
 extension TechniqueDetailViewController: AVPlayerViewDelegate {
-    func playerDidFinishPlaying(player: AVPlayerView) {
+    func playerDidFinishPlaying(_ player: AVPlayerView) {
         videoContainer.reset()
     }
 }
@@ -223,29 +223,29 @@ extension TechniqueDetailViewController: AVPlayerViewDelegate {
 // MARK: - CollectionViewDataSource
 extension TechniqueDetailViewController: UICollectionViewDataSource {
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return min(allTechniques.count, 1)
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return allTechniques.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("TechniqueDetailsCell", forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TechniqueDetailsCell", for: indexPath)
         if let techniqueCell = cell as? TechniqueDetailsCell {
-            techniqueCell.technique = allTechniques[indexPath.row]
-            if techniqueCell.addToPlaylistButton.allTargets().count == 0 {
-                techniqueCell.addToPlaylistButton.addTarget(self, action: #selector(TechniqueDetailViewController.addToPlaylistTouched(_:)), forControlEvents: .TouchUpInside)
+            techniqueCell.technique = allTechniques[(indexPath as NSIndexPath).row]
+            if techniqueCell.addToPlaylistButton.allTargets.count == 0 {
+                techniqueCell.addToPlaylistButton.addTarget(self, action: #selector(TechniqueDetailViewController.addToPlaylistTouched(_:)), for: .touchUpInside)
             }
             
             if techniqueCell.technique!.inPlaylist {
-                techniqueCell.addToPlaylistButton.setTitle("ADDED!", forState: .Normal)
-                techniqueCell.addToPlaylistButton.enabled = false
+                techniqueCell.addToPlaylistButton.setTitle("ADDED!", for: UIControlState())
+                techniqueCell.addToPlaylistButton.isEnabled = false
             } else {
-                techniqueCell.addToPlaylistButton.setTitle("ADD TO PLAYLIST", forState: .Normal)
-                techniqueCell.addToPlaylistButton.enabled = true
+                techniqueCell.addToPlaylistButton.setTitle("ADD TO PLAYLIST", for: UIControlState())
+                techniqueCell.addToPlaylistButton.isEnabled = true
             }
         }
         return cell
@@ -254,13 +254,13 @@ extension TechniqueDetailViewController: UICollectionViewDataSource {
 
 // MARK: - CollectionViewDelegate
 extension TechniqueDetailViewController: UICollectionViewDelegate {
-    internal func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-        if let currentTechnique = technique, let newIndex = allTechniques.indexOf(currentTechnique) {
+    internal func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if let currentTechnique = technique, let newIndex = allTechniques.index(of: currentTechnique) {
             // This positions the scroll view to the correct cell when the screen is opened
             if didLoad == false {
                 didLoad = true
-                let indexToScrollTo = NSIndexPath(forRow: newIndex, inSection: 0)
-                collectionView.scrollToItemAtIndexPath(indexToScrollTo, atScrollPosition: .CenteredHorizontally, animated: false)
+                let indexToScrollTo = IndexPath(row: newIndex, section: 0)
+                collectionView.scrollToItem(at: indexToScrollTo, at: .centeredHorizontally, animated: false)
             }
         }
     }
@@ -269,22 +269,22 @@ extension TechniqueDetailViewController: UICollectionViewDelegate {
 // MARK: - ScrollViewDelegate
 extension TechniqueDetailViewController: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        guard collectionView.visibleCells().count > 0, let currentCell = collectionView.visibleCells()[0] as? TechniqueDetailsCell else {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard collectionView.visibleCells.count > 0, let currentCell = collectionView.visibleCells[0] as? TechniqueDetailsCell else {
             return
         }
-        if collectionView.visibleCells().count == 1 && technique != currentCell.technique {
+        if collectionView.visibleCells.count == 1 && technique != currentCell.technique {
             self.technique = currentCell.technique
         }
     }
     
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         // disable scrolling so that the user can only scroll one page at a time
-        scrollView.scrollEnabled = false
+        scrollView.isScrollEnabled = false
     }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        let offset = collectionView.collectionViewLayout.targetContentOffsetForProposedContentOffset(scrollView.contentOffset)
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let offset = collectionView.collectionViewLayout.targetContentOffset(forProposedContentOffset: scrollView.contentOffset)
         if offset != scrollView.contentOffset {
             scrollView.setContentOffset(offset, animated: true)
         }else{
@@ -292,35 +292,35 @@ extension TechniqueDetailViewController: UIScrollViewDelegate {
         }
     }
     
-    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         updateContinuousScrollIfNeeded()
         
     }
     
     // MARK: - Scrolling delegate helpers
     func updateContinuousScrollIfNeeded() {
-        guard let cellIndex = self.collectionView.indexPathForCell(self.collectionView.visibleCells().first!)
+        guard let cellIndex = self.collectionView.indexPath(for: self.collectionView.visibleCells.first!)
             else { return }
-        if cellIndex.row == 0 {
-            self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: allTechniques.count - 2, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: false)
-        }else if cellIndex.row == allTechniques.count - 1 {
-            self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: 1, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: false)
+        if (cellIndex as NSIndexPath).row == 0 {
+            self.collectionView.scrollToItem(at: IndexPath(item: allTechniques.count - 2, section: 0), at: .centeredHorizontally, animated: false)
+        }else if (cellIndex as NSIndexPath).row == allTechniques.count - 1 {
+            self.collectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: false)
         }
         
         // add a small delay so that we finish the jump above before the user can shift to the next technique
-        self.performSelector(#selector(TechniqueDetailViewController.enableScrollView), withObject: nil, afterDelay: 0.2)
+        self.perform(#selector(TechniqueDetailViewController.enableScrollView), with: nil, afterDelay: 0.2)
     }
     
     func enableScrollView() {
-        collectionView.scrollEnabled = true
+        collectionView.isScrollEnabled = true
     }
 }
 
 extension TechniqueDetailViewController: TransitionAnimationDataSource {
     
-    func transitionableViews(direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
+    func transitionableViews(_ direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
         var views: [UIView] = [leftChevron, rightChevron]
-        if collectionView.visibleCells().count > 0, let currentCell = collectionView.visibleCells()[0] as? TechniqueDetailsCell {
+        if collectionView.visibleCells.count > 0, let currentCell = collectionView.visibleCells[0] as? TechniqueDetailsCell {
             views.append(currentCell.addToPlaylistButton)
             views.append(currentCell)
         }
@@ -332,26 +332,26 @@ extension TechniqueDetailViewController: TransitionAnimationDataSource {
         return views
     }
     
-    func transitionAnimationItemsForView(view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
+    func transitionAnimationItemsForView(_ view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
         switch view {
         case is UIButton :
-            return [TransitionAnimationItem(mode: .SlideRight, delay: 0.2, duration:  0.5)]
+            return [TransitionAnimationItem(mode: .slideRight, delay: 0.2, duration:  0.5)]
         case videoContainer :
-            return [TransitionAnimationItem(mode: .Fade)]
+            return [TransitionAnimationItem(mode: .fade)]
         default : break
         }
         
         let count = brushStack.arrangedSubviews.count
         let delay = 0.25 / Double(count) * Double(count - view.tag - 1) + 0.5
-        return [TransitionAnimationItem(mode: .SlideLeft, delay: delay, duration: 0.25)]
+        return [TransitionAnimationItem(mode: .slideLeft, delay: delay, duration: 0.25)]
     }
     
-    func viewsWithEquivalents(otherVC: UIViewController) -> [UIView]? {
+    func viewsWithEquivalents(_ otherVC: UIViewController) -> [UIView]? {
         if otherVC is TechniqueBrowserViewController { return [videoContainer] }
         return nil
     }
     
-    func equivalentViewForView(view: UIView, otherVC: UIViewController) -> UIView? {
+    func equivalentViewForView(_ view: UIView, otherVC: UIViewController) -> UIView? {
         return videoContainer
     }
     

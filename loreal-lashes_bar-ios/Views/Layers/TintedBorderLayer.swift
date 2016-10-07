@@ -25,22 +25,22 @@ class TintedBorderLayer: CALayer {
     /** True if the animated line starts in the top left, false if it starts in the top centre. */
     var fromTopLeft: Bool = false
     
-    private var gradient: CGGradientRef?
+    fileprivate var gradient: CGGradient?
     
-    override class func needsDisplayForKey(key: String) -> Bool {
+    override class func needsDisplay(forKey key: String) -> Bool {
         switch key {
         case "titleSize", "tintedBorderWidth", "appearanceProgress", "gradient", "fromTopLeft" : return true
-        default: return super.needsDisplayForKey(key)
+        default: return super.needsDisplay(forKey: key)
         }
     }
     
     override init() {
         super.init()
-        self.setGradient(UIColor.blackColor(), to: UIColor.hotPink)
+        self.setGradient(UIColor.black, to: UIColor.hotPink)
         self.setNeedsDisplay()
     }
     
-    override init(layer: AnyObject) {
+    override init(layer: Any) {
         if let borderLayer = layer as? TintedBorderLayer {
             self.titleWidth = borderLayer.titleWidth
             self.appearanceProgress = borderLayer.appearanceProgress
@@ -48,17 +48,17 @@ class TintedBorderLayer: CALayer {
             self.fromTopLeft = borderLayer.fromTopLeft
         }
         super.init(layer: layer)
-        self.setGradient(UIColor.blackColor(), to: UIColor.hotPink)
+        self.setGradient(UIColor.black, to: UIColor.hotPink)
         self.setNeedsDisplay()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.setGradient(UIColor.blackColor(), to: UIColor.hotPink)
+        self.setGradient(UIColor.black, to: UIColor.hotPink)
         self.setNeedsDisplay()
     }
     
-    private func setGradient(from: UIColor, to: UIColor) {
+    fileprivate func setGradient(_ from: UIColor, to: UIColor) {
         var r1: CGFloat = 0, g1: CGFloat = 0, b1: CGFloat = 0, a1: CGFloat = 0
         var r2: CGFloat = 0, g2: CGFloat = 0, b2: CGFloat = 0, a2: CGFloat = 0
         from.getRed(&r1, green: &g1, blue: &b1, alpha: &a1)
@@ -71,13 +71,13 @@ class TintedBorderLayer: CALayer {
             r1, g1, b1, a1
         ]
         
-        gradient = CGGradientCreateWithColorComponents(
-            CGColorSpaceCreateDeviceRGB(),
-            colors, nil, 4
+        gradient = CGGradient(
+            colorSpace: CGColorSpaceCreateDeviceRGB(),
+            colorComponents: colors, locations: nil, count: 4
         )
     }
     
-    override func drawInContext(ctx: CGContext) {
+    override func draw(in ctx: CGContext) {
         
         // 0 progress means it's completely invisible, so bail out
         if appearanceProgress == 0 { return }
@@ -85,60 +85,59 @@ class TintedBorderLayer: CALayer {
         UIGraphicsPushContext(ctx)
 
         // Create the border path
-        let border = CGPathCreateMutable()
+        let border = CGMutablePath()
         if appearanceProgress == 1 && titleWidth == 0 {
-            CGPathAddRect(border, nil, bounds)
+            border.addRect(bounds)
         } else {
             var progress = ((bounds.width + bounds.height) * 2 - titleWidth) * appearanceProgress
             
             // Draw from the top-left, or the top-centre leaving space for a title if required
             if fromTopLeft {
-                CGPathMoveToPoint(border, nil, bounds.minX, bounds.minY)
-                CGPathAddLineToPoint(border, nil, min(bounds.maxX, progress), bounds.minY)
+                border.move(to: CGPoint(x: bounds.minX, y: bounds.minY))
+                border.addLine(to: CGPoint(x: min(bounds.maxX, progress), y: bounds.minY))
                 progress -= bounds.maxX
             } else {
                 let startX = bounds.midX + titleWidth / 2
-                CGPathMoveToPoint(border, nil, startX, bounds.minY)
-                CGPathAddLineToPoint(border, nil, min(bounds.maxX, progress + startX), bounds.minY)
+                border.move(to: CGPoint(x: startX, y: bounds.minY))
+                border.addLine(to: CGPoint(x: min(bounds.maxX, progress + startX), y: bounds.minY))
                 progress -= bounds.maxX - startX
             }
             
             // Draw the right-hand side, if necessary
             if progress > 0 {
-                CGPathAddLineToPoint(border, nil, bounds.maxX, min(bounds.maxY, progress))
+                border.addLine(to: CGPoint(x: bounds.maxX, y: min(bounds.maxY, progress)))
                 progress -= bounds.height
             }
             
             // Draw the bottom, if necessary
             if progress > 0 {
-                CGPathAddLineToPoint(border, nil, bounds.maxX - min(bounds.maxX, progress), bounds.maxY)
+                border.addLine(to: CGPoint(x: bounds.maxX - min(bounds.maxX, progress), y: bounds.maxY))
                 progress -= bounds.width
             }
             
             // Draw the left-hand side, if necessary
             if progress > 0 {
-                CGPathAddLineToPoint(border, nil, bounds.minX, bounds.maxY - min(bounds.maxY, progress))
+                border.addLine(to: CGPoint(x: bounds.minX, y: bounds.maxY - min(bounds.maxY, progress)))
                 progress -= bounds.height
             }
             
             // If we started from the centre, complete the square by drawing back up to it again.
             if progress > 0 && !fromTopLeft {
-                CGPathAddLineToPoint(border, nil, progress, bounds.minY)
+                border.addLine(to: CGPoint(x: progress, y: bounds.minY))
             }
         }
         
         
         // Use the outline to mask the context
-        let stroked = CGPathCreateCopyByStrokingPath(border, nil, tintedBorderWidth * 2, .Butt, .Miter, 10)
-        CGContextAddPath(ctx, stroked)
-        CGContextClip(ctx)
+        let stroked = CGPath(__byStroking: border, transform: nil, lineWidth: tintedBorderWidth * 2, lineCap: .butt, lineJoin: .miter, miterLimit: 10)
+        ctx.addPath(stroked!)
+        ctx.clip()
         
         // Draw a linear gradient
-        CGContextDrawLinearGradient(
-            ctx, gradient,
-            CGPoint(x: bounds.minX, y: 0),
-            CGPoint(x: bounds.size.width, y: 0),
-            []
+        ctx.drawLinearGradient(gradient!,
+            start: CGPoint(x: bounds.minX, y: 0),
+            end: CGPoint(x: bounds.size.width, y: 0),
+            options: []
         )
         
         UIGraphicsPopContext()

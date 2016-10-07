@@ -11,15 +11,15 @@ import SwiftyJSON
 
 struct TextFileService: BaseService {
     
-    func fetchJSON(completion: BaseServiceFetchResponse) {
-        guard let url = NSBundle.mainBundle().URLForResource("data", withExtension: "json"),
-            data = NSData(contentsOfURL: url) else {
-            completion(json: nil, error: DataServiceError.NoContentError)
+    func fetchJSON(_ completion: BaseServiceFetchResponse) {
+        guard let url = Bundle.main.url(forResource: "data", withExtension: "json"),
+            let data = try? Data(contentsOf: url) else {
+            completion(nil, DataServiceError.noContentError)
             return
         }
         
         let json = JSON(data: data)
-        completion(json: json, error: nil)
+        completion(json, nil)
     }
     
 }

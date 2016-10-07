@@ -13,7 +13,7 @@ struct AuthenticationDetails {
     static let clientSecret = "1F8B9e2dedSRy38Jiuz2uLv0"
 }
 
-private let requestTokenURL = NSURL(string: "http://auth.exacttargetapis.com/v1/requestToken")!
+private let requestTokenURL = URL(string: "http://auth.exacttargetapis.com/v1/requestToken")!
 
 /**
  *  Generates authentication token to be used in subsequent calls. Tokens are valid for 1 hour before having to be refreshed.
@@ -28,7 +28,7 @@ struct RequestTokenRequest : WebServiceRequest {
     let clientId: String
     let clientSecret: String
     
-    var requestBody: AnyObject? {
+    var requestBody: [String: Any] {
         return [
             "clientId" : clientId,
             "clientSecret" : clientSecret
@@ -47,16 +47,16 @@ struct RequestTokenResponse : WebServiceResponse {
     }
 }
 
-func refreshToken(completion: (APIRequestResult<String?>) -> Void) {
+func refreshToken(_ completion: @escaping (APIRequestResult<String?>) -> Void) {
     let request = RequestTokenRequest(clientId: AuthenticationDetails.clientId, clientSecret: AuthenticationDetails.clientSecret)
-    request.executeInSharedSession() {
-        if case let .Success(response) = $0 {
+    _ = request.executeInSharedSession() {
+        if case let .success(response) = $0 {
             let accessToken = response.accessToken
-            NSUserDefaults.accessToken = accessToken
-            completion(.Success(accessToken))
+            UserDefaults.accessToken = accessToken
+            completion(.success(accessToken))
         } else {
-            NSUserDefaults.accessToken = nil
-            completion(.Failure(RequestError.InvalidResponse))
+            UserDefaults.accessToken = nil
+            completion(.failure(RequestError.invalidResponse))
         }
     }
 }

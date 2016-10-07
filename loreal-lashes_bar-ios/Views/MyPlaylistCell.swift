@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 protocol PlaylistCellDelegate: class {
-    func cellWantsToBeRemoved(cell: MyPlaylistCell)
+    func cellWantsToBeRemoved(_ cell: MyPlaylistCell)
 }
 
 class MyPlaylistCell: UICollectionViewCell {
@@ -23,13 +23,13 @@ class MyPlaylistCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        removeButton.setTitleColor(UIColor.hotPink, forState: .Normal)
+        removeButton.setTitleColor(UIColor.hotPink, for: UIControlState())
         
         playerView.shouldRepeat = true
         playerView.delegate = self
     }
     
-    @IBAction func removeTouched(sender: UIButton) {
+    @IBAction func removeTouched(_ sender: UIButton) {
         delegate?.cellWantsToBeRemoved(self)
     }
     
@@ -46,7 +46,7 @@ class MyPlaylistCell: UICollectionViewCell {
 
 extension MyPlaylistCell: AVPlayerViewDelegate {
     
-    func playerIsReady(player: AVPlayerView) {
+    func playerIsReady(_ player: AVPlayerView) {
         player.mute()
         player.rate = 10
         player.play()

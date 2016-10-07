@@ -18,30 +18,30 @@ class Product: NSManagedObject, JSONConfigurable {
     var image: UIImage {
         get {
             // TODO: when a web service is implemented, this will change (hence 'imagePath' rather than 'imageName')
-            if let name = imagePath, image = UIImage(named: name) { return image }
+            if let name = imagePath, let image = UIImage(named: name) { return image }
             return UIImage(named: defaultImageName)!
         }
     }
     
     /** Returns a product with the given identifier, or nil if none exists. */
-    class func productWithIdentifier(identifier: String, context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) -> Product? {
-        let fetch = NSFetchRequest(entityName: Product.entityName)
+    class func productWithIdentifier(_ identifier: String, context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) -> Product? {
+        let fetch: NSFetchRequest<Product> = NSFetchRequest(entityName: Product.entityName)
         fetch.predicate = NSPredicate(format: "productID == %@", identifier)
         fetch.fetchLimit = 1
         
-        guard let results = try? context.executeFetchRequest(fetch) as? [Product] else { return nil }
+        let results = try? context.fetch(fetch)
         return results?.first
     }
     
     /** Returns an array of products whose identifiers appear in the passed list. */
-    class func productsWithIdentifiers(identifiers: [String], context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) -> [Product] {
-        let fetch = NSFetchRequest(entityName: Product.entityName)
+    class func productsWithIdentifiers(_ identifiers: [String], context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) -> [Product] {
+        let fetch: NSFetchRequest<Product> = NSFetchRequest(entityName: Product.entityName)
         fetch.predicate = NSPredicate(format: "%@ CONTAINS productID", identifiers)
-        guard let results = try? context.executeFetchRequest(fetch) as? [Product] else { return [] }
+        let results = try? context.fetch(fetch)
         return results ?? []
     }
     
-    func configure(json: JSON) throws {
+    func configure(_ json: JSON) throws {
         name = try json["name"].string.unwrap("Product Name")
         productID = try json["product_id"].string.unwrap("Product ID")
         imagePath = json["image"].string // No need to unwrap, this can be nil

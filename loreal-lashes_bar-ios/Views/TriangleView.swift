@@ -12,39 +12,39 @@ import UIKit
 @IBDesignable class TriangleView: UIView {
     
     @IBInspectable var direction: Int = 0 { didSet { setNeedsDisplay() } }
-    @IBInspectable var triangleColor: UIColor = UIColor.blackColor() { didSet { setNeedsDisplay() } }
+    @IBInspectable var triangleColor: UIColor = UIColor.black { didSet { setNeedsDisplay() } }
     
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         self.setNeedsDisplay()
     }
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         let ctx = UIGraphicsGetCurrentContext()
         triangleColor.setFill()
-        CGContextBeginPath(ctx)
+        ctx?.beginPath()
         
         switch  direction {
         case 1 :
-            CGContextMoveToPoint(ctx, 0, 0)
-            CGContextAddLineToPoint(ctx, bounds.width, bounds.height / 2)
-            CGContextAddLineToPoint(ctx, 0, bounds.height)
+            ctx?.move(to: CGPoint(x: 0, y: 0))
+            ctx?.addLine(to: CGPoint(x: bounds.width, y: bounds.height / 2))
+            ctx?.addLine(to: CGPoint(x: 0, y: bounds.height))
         case 2 :
-            CGContextMoveToPoint(ctx, 0, bounds.height)
-            CGContextAddLineToPoint(ctx, bounds.width / 2, 0)
-            CGContextAddLineToPoint(ctx, bounds.width, bounds.height)
+            ctx?.move(to: CGPoint(x: 0, y: bounds.height))
+            ctx?.addLine(to: CGPoint(x: bounds.width / 2, y: 0))
+            ctx?.addLine(to: CGPoint(x: bounds.width, y: bounds.height))
         case 3 :
-            CGContextMoveToPoint(ctx, bounds.width, 0)
-            CGContextAddLineToPoint(ctx, 0, bounds.height / 2)
-            CGContextAddLineToPoint(ctx, bounds.width, bounds.height)
+            ctx?.move(to: CGPoint(x: bounds.width, y: 0))
+            ctx?.addLine(to: CGPoint(x: 0, y: bounds.height / 2))
+            ctx?.addLine(to: CGPoint(x: bounds.width, y: bounds.height))
         default :
-            CGContextMoveToPoint(ctx, 0, 0)
-            CGContextAddLineToPoint(ctx, bounds.width / 2, bounds.height)
-            CGContextAddLineToPoint(ctx, bounds.width, 0)
+            ctx?.move(to: CGPoint(x: 0, y: 0))
+            ctx?.addLine(to: CGPoint(x: bounds.width / 2, y: bounds.height))
+            ctx?.addLine(to: CGPoint(x: bounds.width, y: 0))
         }
         
-        CGContextClosePath(ctx)
-        CGContextFillPath(ctx)
+        ctx?.closePath()
+        ctx?.fillPath()
     }
     
 }

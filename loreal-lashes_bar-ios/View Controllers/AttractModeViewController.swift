@@ -27,7 +27,7 @@ class AttractModeViewController: BaseViewController {
         view.backgroundColor = UIColor.lightBG
         for label in browseByLabels { label.textColor = UIColor.hotPink }
         for button in [brushButton, techniqueButton] {
-            button.setTitleColor(UIColor.hotPink, forState: .Normal)
+            button?.setTitleColor(UIColor.hotPink, for: UIControlState())
         }
         
         // TODO: this will eventually be replaced with a nightly-updated web service
@@ -43,19 +43,19 @@ class AttractModeViewController: BaseViewController {
         setupVideoPlayer()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         player.play()
-        NSNotificationCenter.defaultCenter().addObserver(player, selector: #selector(AVPlayer.play), name: "applicationDidBecomeActive", object: nil)
+        NotificationCenter.default.addObserver(player, selector: #selector(AVPlayer.play), name: NSNotification.Name(rawValue: "applicationDidBecomeActive"), object: nil)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
          super.viewWillDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(player, name: "applicationDidBecomeActive", object: nil)
+        NotificationCenter.default.removeObserver(player, name: NSNotification.Name(rawValue: "applicationDidBecomeActive"), object: nil)
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let tbvc = segue.destinationViewController as? TitleBarViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let tbvc = segue.destination as? TitleBarViewController {
             guard let button = sender as? UIButton else { return }
             switch button {
             case brushButton : tbvc.setBrowserType(.Lashes)
@@ -66,50 +66,50 @@ class AttractModeViewController: BaseViewController {
     }
     
     func setupVideoPlayer() {
-        let moviePath = NSBundle.mainBundle().pathForResource("attract video", ofType: "mp4")
+        let moviePath = Bundle.main.path(forResource: "attract video", ofType: "mp4")
         if let path = moviePath {
-            let url = NSURL.fileURLWithPath(path)
-            player = AVPlayer(URL: url)
+            let url = URL(fileURLWithPath: path)
+            player = AVPlayer(url: url)
             let playerViewController = AVPlayerViewController()
             playerViewController.showsPlaybackControls = false
             playerViewController.player = player
-            playerViewController.view.frame = UIScreen.mainScreen().bounds
-            playerViewController.view.backgroundColor = UIColor.clearColor()
-            self.view.insertSubview(playerViewController.view, atIndex: 0)
+            playerViewController.view.frame = UIScreen.main.bounds
+            playerViewController.view.backgroundColor = UIColor.clear
+            self.view.insertSubview(playerViewController.view, at: 0)
             self.addChildViewController(playerViewController)
             loopVideo()
         }
     }
     
     func loopVideo() {
-        NSNotificationCenter.defaultCenter().addObserverForName(AVPlayerItemDidPlayToEndTimeNotification, object: nil, queue: nil) { notification in
-            self.player.seekToTime(kCMTimeZero)
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { notification in
+            self.player.seek(to: kCMTimeZero)
             self.player.play()
         }
     }
     
-    @IBAction func browserChosen(sender: UIButton) {
-        performSegueWithIdentifier("ExitAttractMode", sender: sender)
+    @IBAction func browserChosen(_ sender: UIButton) {
+        performSegue(withIdentifier: "ExitAttractMode", sender: sender)
     }
     
 }
 
 extension AttractModeViewController: TransitionAnimationDataSource {
     
-    func transitionableViews(direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
+    func transitionableViews(_ direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
         var allViews = browseByLabels as [UIView]
-        allViews.appendContentsOf(titleLabels as [UIView])
-        allViews.appendContentsOf([brushButton, techniqueButton])
+        allViews.append(contentsOf: titleLabels as [UIView])
+        allViews.append(contentsOf: [brushButton, techniqueButton])
         return allViews
     }
     
-    func transitionAnimationItemsForView(view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
+    func transitionAnimationItemsForView(_ view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
         if view is UILabel {
-            return [TransitionAnimationItem(mode: .Fade, delay: 0, duration: 0.5)]
+            return [TransitionAnimationItem(mode: .fade, delay: 0, duration: 0.5)]
         }
         
         if view is TransitionAnimatable {
-            return [TransitionAnimationItem(mode: .Native, delay: 0.5, duration: 0.5)]
+            return [TransitionAnimationItem(mode: .native, delay: 0.5, duration: 0.5)]
         }
         
         return nil

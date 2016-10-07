@@ -9,8 +9,8 @@
 import Foundation
 import SwiftyJSON
 
-typealias PopulateDatabaseCompletion = (error: ErrorType?)->()
-typealias BaseServiceFetchResponse = ((json: JSON?, error: ErrorType?) -> ())
+typealias PopulateDatabaseCompletion = (_ error: Error?)->()
+typealias BaseServiceFetchResponse = ((_ json: JSON?, _ error: Error?) -> ())
 
 /**
  Protocol representing a web service. Note that under usual circumstances, only the
@@ -19,38 +19,38 @@ typealias BaseServiceFetchResponse = ((json: JSON?, error: ErrorType?) -> ())
  */
 
 protocol BaseService {
-    func populateDatabase(completion: PopulateDatabaseCompletion)
-    func fetchJSON(completion: BaseServiceFetchResponse)
-    func parseJSON(json: JSON) throws
+    func populateDatabase(_ completion: PopulateDatabaseCompletion)
+    func fetchJSON(_ completion: BaseServiceFetchResponse)
+    func parseJSON(_ json: JSON) throws
 }
 
 extension BaseService {
     
-    func populateDatabase(completion: PopulateDatabaseCompletion) {
+    internal func populateDatabase(_ completion: (Error?) -> ()) {
         fetchJSON({ json, error in
             
             if let error = error {
-                completion(error: error)
+                completion(error)
                 return
             }
             
             guard let json = json else {
-                completion(error: DataServiceError.NoContentError)
+                completion(DataServiceError.noContentError)
                 return
             }
             
             do {
                 CoreDataStack.shared.purgeDatabase()
                 try self.parseJSON(json)
-                completion(error: nil)
+                completion(nil)
             } catch let error {
-                completion(error: error)
+                completion(error)
             }
             
         })
     }
     
-    func parseJSON(json: JSON) throws {
+    func parseJSON(_ json: JSON) throws {
         
         if let productJSON = json["products"].array {
             let products = try productJSON.map({
@@ -60,10 +60,10 @@ extension BaseService {
         }
         
         guard let categoryJSON = json["categories"].array else {
-            throw ParseError.InvalidContent(itemName: "Lash Category List")
+            throw ParseError.invalidContent(itemName: "Lash Category List")
         }
         
-        let categories = try categoryJSON.enumerate().map({
+        let categories = try categoryJSON.enumerated().map({
             let newCat = try LashCategory.new($0.1) as LashCategory
             newCat.ordinal = Int16($0.0)
         })
@@ -71,10 +71,10 @@ extension BaseService {
         CoreDataStack.shared.saveContext()
         
         guard let lashesJSON = json["lashes"].array else {
-            throw ParseError.InvalidContent(itemName: "Lashes List")
+            throw ParseError.invalidContent(itemName: "Lashes List")
         }
         
-        let lashes = try lashesJSON.enumerate().map({
+        let lashes = try lashesJSON.enumerated().map({
             let newLash = try Lash.new($0.1) as Lash
             newLash.ordinal = Int16($0.0)
         })
@@ -83,10 +83,10 @@ extension BaseService {
         print("\(lashes.count) lashes parsed")
         
         guard let techniqueJSON = json["techniques"].array else {
-            throw ParseError.InvalidContent(itemName: "Technique List")
+            throw ParseError.invalidContent(itemName: "Technique List")
         }
         
-        let techniques = try techniqueJSON.enumerate().map({
+        let techniques = try techniqueJSON.enumerated().map({
             let newTechnique = try Technique.new($0.1) as Technique
             newTechnique.ordinal = Int16($0.0)
         })

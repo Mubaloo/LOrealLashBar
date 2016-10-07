@@ -14,39 +14,39 @@ import UIKit
 
 class HorizontalPagingLayout: UICollectionViewFlowLayout {
     
-    override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         let customOffset = targetOffsetFrom(proposedContentOffset)
         if customOffset != nil {
             return customOffset!
         }
         
         // Fallback
-        return super.targetContentOffsetForProposedContentOffset(proposedContentOffset)
+        return super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
     }
     
-    override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint) -> CGPoint {
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
         let customOffset = targetOffsetFrom(proposedContentOffset)
         if customOffset != nil {
             return customOffset!
         }
         // Fallback
-        return super.targetContentOffsetForProposedContentOffset(proposedContentOffset)
+        return super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
     }
     
-    func targetOffsetFrom(proposedOffset: CGPoint) -> CGPoint? {
+    func targetOffsetFrom(_ proposedOffset: CGPoint) -> CGPoint? {
         if let cv = self.collectionView {
             
             let cvBounds = cv.bounds
             let halfWidth = cvBounds.size.width * 0.5;
             let proposedContentOffsetCenterX = proposedOffset.x + halfWidth;
             
-            if let attributesForVisibleCells = self.layoutAttributesForElementsInRect(cvBounds) {
+            if let attributesForVisibleCells = self.layoutAttributesForElements(in: cvBounds) {
                 
                 var candidateAttributes : UICollectionViewLayoutAttributes?
                 for attributes in attributesForVisibleCells {
                     
                     // == Skip comparison with non-cell items (headers and footers) == //
-                    if attributes.representedElementCategory != UICollectionElementCategory.Cell {
+                    if attributes.representedElementCategory != UICollectionElementCategory.cell {
                         continue
                     }
                     

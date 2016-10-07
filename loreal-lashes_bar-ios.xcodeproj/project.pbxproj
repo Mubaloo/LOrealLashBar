@@ -754,6 +754,7 @@
 					1811A3501D632A18002EA7F6 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8MMCHWVX54;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -1083,6 +1084,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mubaloo.loreal-lash-bar-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1100,6 +1102,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mubaloo.loreal-lash-bar-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -24,8 +24,8 @@ class CategoryCarouselCell: UICollectionViewCell {
         boldLabel.textColor = UIColor.hotPink
     }
     
-    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
-        super.applyLayoutAttributes(layoutAttributes)
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.apply(layoutAttributes)
         if let attribs = layoutAttributes as? HighlightLayoutAttributes {
             let value = CGFloat(FloatRange(start: 0, end: 1).constrain(Float(attribs.highlight)))
             boldLabel.alpha = value

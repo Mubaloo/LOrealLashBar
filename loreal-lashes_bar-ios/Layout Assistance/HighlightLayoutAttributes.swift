@@ -12,13 +12,13 @@ class HighlightLayoutAttributes: UICollectionViewLayoutAttributes {
     
     var highlight: CGFloat = 1.0
     
-    override func copyWithZone(zone: NSZone) -> AnyObject {
-        let copy = super.copyWithZone(zone) as! HighlightLayoutAttributes
+    override func copy(with zone: NSZone?) -> Any {
+        let copy = super.copy(with: zone) as! HighlightLayoutAttributes
         copy.highlight = highlight
         return copy
     }
     
-    override func isEqual(object: AnyObject?) -> Bool {
+    override func isEqual(_ object: Any?) -> Bool {
         if let attributes = object as? HighlightLayoutAttributes {
             if (attributes.highlight == highlight) {
                 return super.isEqual(object)

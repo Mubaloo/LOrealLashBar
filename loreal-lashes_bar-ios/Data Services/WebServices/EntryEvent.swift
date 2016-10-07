@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let interactionEventsURL = NSURL(string: "http://www.exacttargetapis.com/interaction/v1/events")!
+private let interactionEventsURL = URL(string: "http://www.exacttargetapis.com/interaction/v1/events")!
 
 /**
  *  Enters subscriber into Palette Builder journey - currently only sends one email.
@@ -19,14 +19,14 @@ struct EntryEventRequest : WebServiceRequest {
     
     let URL = interactionEventsURL
     let method: HTTPMethod = .POST
-    let acceptableStatusCodes: [HTTPStatusCode] = [.Created]
+    let acceptableStatusCodes: [HTTPStatusCode] = [.created]
     
     let emailAddress: String
     let videoURLs: [String]
     let eventDefinitionKey = "NYX_Lash_Bar-EntryEvent"
     let source = "Retail"
     
-    var requestBody: AnyObject? {
+    var requestBody: [String:Any] {
         return [
             "ContactKey" : emailAddress,
             "EventDefinitionKey" : eventDefinitionKey,
@@ -34,7 +34,7 @@ struct EntryEventRequest : WebServiceRequest {
             "Data" : [
                 "EmailAddress" : emailAddress,
                 "Email_Perm_Status" : "Y",
-                "Video_URLs" : videoURLs.joinWithSeparator("|"),
+                "Video_URLs" : videoURLs.joined(separator: "|"),
                 "Source" : source
             ]
         ]
@@ -43,10 +43,10 @@ struct EntryEventRequest : WebServiceRequest {
 
 struct EntryEventResponse : WebServiceResponse {
     
-    let eventInstanceId: NSUUID?
+    let eventInstanceId: UUID?
     
     init(json: [String : AnyObject]) throws {
         let eventInstanceId: String = try json.parse("eventInstanceId")
-        self.eventInstanceId = NSUUID(UUIDString: eventInstanceId)
+        self.eventInstanceId = UUID(uuidString: eventInstanceId)
     }
 }

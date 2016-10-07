@@ -31,24 +31,24 @@ class PagedGridLayout: UICollectionViewLayout {
     
     // Precalculated layout variables
     
-    private var spacing = CGSize.zero
-    private var itemsPerPage = 0
-    private var sectionStartPages = [Int]()
-    private var contentSize = CGSize.zero
+    fileprivate var spacing = CGSize.zero
+    fileprivate var itemsPerPage = 0
+    fileprivate var sectionStartPages = [Int]()
+    fileprivate var contentSize = CGSize.zero
     
-    private var _pageCount: Int = 0
+    fileprivate var _pageCount: Int = 0
     var pageCount: Int { get { return _pageCount } }
     
-    override func collectionViewContentSize() -> CGSize {
+    override var collectionViewContentSize : CGSize {
         return contentSize
     }
     
-    func pageForIndexPath(indexPath: NSIndexPath) -> Int {
-        let firstPage = sectionStartPages[indexPath.section]
-        return firstPage + Int(floor(Float(indexPath.item)/Float(itemsPerPage)))
+    func pageForIndexPath(_ indexPath: IndexPath) -> Int {
+        let firstPage = sectionStartPages[(indexPath as NSIndexPath).section]
+        return firstPage + Int(floor(Float((indexPath as NSIndexPath).item)/Float(itemsPerPage)))
     }
     
-    override func prepareLayout() {
+    override func prepare() {
         guard let collectionView = collectionView else { return }
         
         // Precalculate the spacing between cells
@@ -67,9 +67,9 @@ class PagedGridLayout: UICollectionViewLayout {
         let perPage = CGFloat(itemsPerPage)
         sectionStartPages.removeAll()
         
-        for section in 0 ..< collectionView.numberOfSections() {
+        for section in 0 ..< collectionView.numberOfSections {
             sectionStartPages.append(total)
-            total += Int(ceil(CGFloat(collectionView.numberOfItemsInSection(section)) / perPage))
+            total += Int(ceil(CGFloat(collectionView.numberOfItems(inSection: section)) / perPage))
         }
         
         // Record page count and content size
@@ -80,37 +80,37 @@ class PagedGridLayout: UICollectionViewLayout {
         )
     }
     
-    override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         guard let collectionView = collectionView else { return nil }
         let fromPage = max(Int(floor(rect.minX / collectionView.frame.width)), 0)
         let toPage = min(Int(floor(rect.maxX / collectionView.frame.width)), max(pageCount - 1, 0))
         let range = Array(fromPage ... toPage)
         
         let x = range.flatMap ({ (pageNumber) -> ([UICollectionViewLayoutAttributes]?) in
-            guard let (section, firstPage) = sectionStartPages.enumerate().filter({ $0.1 <= pageNumber }).last else { return nil }
+            guard let (section, firstPage) = sectionStartPages.enumerated().filter({ $0.1 <= pageNumber }).last else { return nil }
             let firstItem = (pageNumber - firstPage) * itemsPerPage
-            let count = min(firstItem + itemsPerPage, collectionView.numberOfItemsInSection(section))
+            let count = min(firstItem + itemsPerPage, collectionView.numberOfItems(inSection: section))
             return Array(firstItem ..< count).flatMap({
-                let indexPath = NSIndexPath(forItem: $0, inSection: section)
-                return layoutAttributesForItemAtIndexPath(indexPath)
+                let indexPath = IndexPath(item: $0, section: section)
+                return layoutAttributesForItem(at: indexPath)
             })
         })
         
-        return Array(x.flatten())
+        return Array(x.joined())
     }
     
-    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         let pageNumber = pageForIndexPath(indexPath)
         guard let collectionView = collectionView,
-            firstPage = sectionStartPages.filter({ $0 <= pageNumber }).last
+            let firstPage = sectionStartPages.filter({ $0 <= pageNumber }).last
             else { return nil }
         
         let pageX = CGFloat(pageNumber) * collectionView.frame.width
-        let pageItemNumber = indexPath.item - (pageNumber - firstPage) * itemsPerPage
+        let pageItemNumber = (indexPath as NSIndexPath).item - (pageNumber - firstPage) * itemsPerPage
         let itemX = CGFloat(pageItemNumber % columnsPerPage) * (cellSize.width + spacing.width) + pageInsets.left
         let itemY = floor(CGFloat(pageItemNumber / columnsPerPage)) * (cellSize.height + spacing.height) + pageInsets.top
         
-        let attr = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+        let attr = UICollectionViewLayoutAttributes(forCellWith: indexPath)
         attr.frame = CGRect(origin: CGPoint(x: itemX + pageX, y: itemY), size: cellSize)
         return attr
     }

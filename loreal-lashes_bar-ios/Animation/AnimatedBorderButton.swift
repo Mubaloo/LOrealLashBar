@@ -18,7 +18,7 @@ class AnimatedBorderButton: UIButton, AnimatedBorderProtocol {
         return [titleLabel]
     }
     
-    private func adjustBorder() {
+    fileprivate func adjustBorder() {
         borderLayer.fromTopLeft = true
         borderLayer.frame = bounds
         if borderLayer.superlayer == nil {

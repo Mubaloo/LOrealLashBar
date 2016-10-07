@@ -18,71 +18,71 @@ class Technique: NSManagedObject, PlaylistItem {
     }
     
     /** Returns all Technique objects, in the correct order. */
-    class func orderedTechniques(context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) -> [Technique] {
-        let fetch = NSFetchRequest(entityName: Technique.entityName)
+    class func orderedTechniques(_ context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) -> [Technique] {
+        let fetch: NSFetchRequest<Technique> = NSFetchRequest(entityName: Technique.entityName)
         fetch.sortDescriptors = [NSSortDescriptor(key: "ordinal", ascending: true)]
-        do { return (try context.executeFetchRequest(fetch) as? [Technique]) ?? [] }
+        do { return (try context.fetch(fetch))}
         catch { return [] }
     }
     
-    var remoteMediaURL: NSURL? {
+    var remoteMediaURL: URL? {
         get {
             if let path = remoteMediaPath {
-                return NSURL(fileURLWithPath: path)
+                return URL(fileURLWithPath: path)
             }
             return nil
         }
     }
     
-    var localMediaURL: NSURL {
+    var localMediaURL: URL {
         get {
             if let path = localMediaPath {
-                let components = path.componentsSeparatedByString(".")
+                let components = path.components(separatedBy: ".")
                 if components.count >= 2, let ext = components.last {
-                    let name = components[0..<components.count-1].joinWithSeparator(".")
-                    if let url = NSBundle.mainBundle().URLForResource(name, withExtension: ext) {
+                    let name = components[0..<components.count-1].joined(separator: ".")
+                    if let url = Bundle.main.url(forResource: name, withExtension: ext) {
                         return url
                     }
                 }
             }
             
-            return NSBundle.mainBundle().URLForResource("default_movie", withExtension: "mov")!
+            return Bundle.main.url(forResource: "default_movie", withExtension: "mov")!
         }
     }
     
-    var localMediaThumbURL: NSURL {
+    var localMediaThumbURL: URL {
         get {
             if let path = localMediaThumbPath {
-                let components = path.componentsSeparatedByString(".")
+                let components = path.components(separatedBy: ".")
                 if components.count >= 2, let ext = components.last {
-                    let name = components[0..<components.count-1].joinWithSeparator(".")
-                    if let url = NSBundle.mainBundle().URLForResource(name, withExtension: ext) {
+                    let name = components[0..<components.count-1].joined(separator: ".")
+                    if let url = Bundle.main.url(forResource: name, withExtension: ext) {
                         return url
                     }
                 }
             }
             
-            return NSBundle.mainBundle().URLForResource("default_movie", withExtension: "mov")!
+            return Bundle.main.url(forResource: "default_movie", withExtension: "mov")!
         }
     }
     
-    var thumbURL: NSURL {
+    var thumbURL: URL {
         get {
             if let path = thumbPath {
-                let components = path.componentsSeparatedByString(".")
+                let components = path.components(separatedBy: ".")
                 if components.count >= 2, let ext = components.last {
-                    let name = components[0..<components.count-1].joinWithSeparator(".")
-                    if let url = NSBundle.mainBundle().URLForResource(name, withExtension: ext) {
+                    let name = components[0..<components.count-1].joined(separator: ".")
+                    if let url = Bundle.main.url(forResource: name, withExtension: ext) {
                         return url
                     }
                 }
             }
             
-            return NSBundle.mainBundle().URLForResource("default_thumb", withExtension: "png")!
+            return Bundle.main.url(forResource: "default_thumb", withExtension: "png")!
         }
     }
     
-    private var _thumbCache: UIImage?
+    fileprivate var _thumbCache: UIImage?
     var thumbnail: UIImage {
         get {
             if let thumb = _thumbCache { return thumb }
@@ -92,7 +92,7 @@ class Technique: NSManagedObject, PlaylistItem {
     }
     
     func precache() {
-        if let data = NSData(contentsOfURL: thumbURL) {
+        if let data = try? Data(contentsOf: thumbURL) {
             _thumbCache = UIImage(data: data)
         }
     }
@@ -101,7 +101,7 @@ class Technique: NSManagedObject, PlaylistItem {
 
 extension Technique: JSONConfigurable {
     
-    func configure(json: JSON) throws {
+    func configure(_ json: JSON) throws {
         name = try json["name"].string.unwrap("Technique Name")
         detail = try json["detail"].string.unwrap("Technique Detail")
         level = try json["level"].string.unwrap("Technique level")

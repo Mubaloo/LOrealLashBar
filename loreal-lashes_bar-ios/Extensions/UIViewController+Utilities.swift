@@ -14,12 +14,12 @@ extension UIViewController {
      Convenience method that displays a `UIAlertController` with the given title and message,
      accompanied by an Ok button that dismisses it. Typically used for warnings and errors.
      */
-    func reportError(title: String?, message: String?) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
-            self.dismissViewControllerAnimated(true, completion: nil)
+    func reportError(_ title: String?, message: String?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            self.dismiss(animated: true, completion: nil)
         }))
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
@@ -29,22 +29,22 @@ extension UIViewController {
 
 extension UINavigationController: TransitionAnimationDataSource {
     
-    func transitionableViews(direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
+    func transitionableViews(_ direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
         guard let animatable = topViewController as? TransitionAnimationDataSource else { return nil }
         return animatable.transitionableViews(direction, otherVC: otherVC)
     }
     
-    func transitionAnimationItemsForView(view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
+    func transitionAnimationItemsForView(_ view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
         guard let animatable = topViewController as? TransitionAnimationDataSource else { return nil }
         return animatable.transitionAnimationItemsForView(view, direction: direction, otherVC: otherVC)
     }
     
-    func viewsWithEquivalents(otherVC: UIViewController) -> [UIView]? {
+    func viewsWithEquivalents(_ otherVC: UIViewController) -> [UIView]? {
         guard let animatable = topViewController as? TransitionAnimationDataSource else { return nil }
         return animatable.viewsWithEquivalents(otherVC)
     }
     
-    func equivalentViewForView(view: UIView, otherVC: UIViewController) -> UIView? {
+    func equivalentViewForView(_ view: UIView, otherVC: UIViewController) -> UIView? {
         guard let animatable = topViewController as? TransitionAnimationDataSource else { return nil }
         return animatable.equivalentViewForView(view, otherVC: otherVC)
     }

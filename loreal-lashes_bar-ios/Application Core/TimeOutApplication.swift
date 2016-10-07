@@ -16,11 +16,11 @@ import UIKit
 class TimeOutApplication: UIApplication {
     
     static let ApplicationDidTimeOutNotification = "ApplicationDidTimeOutNotification"
-    static let timeout: NSTimeInterval = 60 // Timeout measured in seconds of inactivity
-    static let shortTimeoutInterval: NSTimeInterval = 10 // Timeout measured in seconds of inactivity
+    static let timeout: TimeInterval = 60 // Timeout measured in seconds of inactivity
+    static let shortTimeoutInterval: TimeInterval = 10 // Timeout measured in seconds of inactivity
     
-    private var timer: NSTimer?
-    private var pauseCount = 0
+    fileprivate var timer: Timer?
+    fileprivate var pauseCount = 0
     
     var timeoutIsActive: Bool { get { return timer != nil } }
     
@@ -74,10 +74,10 @@ class TimeOutApplication: UIApplication {
     }
     
     // Invalidates and restarts the timer.
-    private func refreshTimer(shortTimeout: Bool) {
+    fileprivate func refreshTimer(_ shortTimeout: Bool) {
         if let timer = timer { timer.invalidate() }
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(
-            shortTimeout ? TimeOutApplication.shortTimeoutInterval : TimeOutApplication.timeout,
+        self.timer = Timer.scheduledTimer(
+            timeInterval: shortTimeout ? TimeOutApplication.shortTimeoutInterval : TimeOutApplication.timeout,
             target: self,
             selector: #selector(TimeOutApplication.appDidTimeOut),
             userInfo: nil,
@@ -87,18 +87,18 @@ class TimeOutApplication: UIApplication {
     
     // Overriding this function allows us to reset the timer for every interaction the user
     // makes, regardless of where in the app this occurs.
-    override func sendEvent(event: UIEvent) {
+    override func sendEvent(_ event: UIEvent) {
         super.sendEvent(event)
         if timeoutIsActive == false { return }
-        if event.allTouches()?.filter({ $0.phase == .Began }).count == 0 { return }
+        if event.allTouches?.filter({ $0.phase == .began }).count == 0 { return }
         refreshTimer(false)
     }
     
     // Send a notification upon timeout.
     internal func appDidTimeOut() {
         timer = nil
-        NSNotificationCenter.defaultCenter().postNotificationName(
-            TimeOutApplication.ApplicationDidTimeOutNotification,
+        NotificationCenter.default.post(
+            name: Notification.Name(rawValue: TimeOutApplication.ApplicationDidTimeOutNotification),
             object: self
         )
     }

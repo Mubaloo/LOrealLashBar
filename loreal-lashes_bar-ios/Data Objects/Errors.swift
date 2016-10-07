@@ -8,15 +8,15 @@
 
 import Foundation
 
-enum DataServiceError: ErrorType {
-    case NoContentError
+enum DataServiceError: Error {
+    case noContentError
 }
 
-enum UnwrapError: ErrorType {
-    case NoContentError(itemName: String)
+enum UnwrapError: Error {
+    case noContentError(itemName: String)
 }
 
-enum ParseError: ErrorType {
-    case InvalidContent(itemName: String)
-    case RelationshipTargetNotFound(itemName: String)
+enum ParseError: Error {
+    case invalidContent(itemName: String)
+    case relationshipTargetNotFound(itemName: String)
 }

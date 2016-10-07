@@ -12,7 +12,7 @@ class LashesCategoryBrowserViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var categories = [LashCategory]()
+    fileprivate var categories = [LashCategory]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,28 +27,28 @@ class LashesCategoryBrowserViewController: BaseViewController {
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let detailVC = segue.destinationViewController as? LashesBrowserViewController, let cell = sender as? LashCategoryCell, let indexPath = tableView.indexPathForCell(cell) {
-            let category = categories[indexPath.row]
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailVC = segue.destination as? LashesBrowserViewController, let cell = sender as? LashCategoryCell, let indexPath = tableView.indexPath(for: cell) {
+            let category = categories[(indexPath as NSIndexPath).row]
             detailVC.selectedCategory = category
         }
     }
     
-    @IBAction func unwindToLashesCategoryBrowser(sender: UIStoryboardSegue) {
+    @IBAction func unwindToLashesCategoryBrowser(_ sender: UIStoryboardSegue) {
         // Nothing to do; just an unwind target
     }
 }
 
 extension LashesCategoryBrowserViewController: UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let category = categories[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let category = categories[(indexPath as NSIndexPath).row]
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("LashCategoryCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LashCategoryCell", for: indexPath)
         
         if let categoryCell = cell as? LashCategoryCell {
             categoryCell.lashCategory = category
@@ -60,42 +60,42 @@ extension LashesCategoryBrowserViewController: UITableViewDataSource {
 
 extension LashesCategoryBrowserViewController: TransitionAnimationDataSource {
 
-    private func viewEquivalent(otherVC: UIViewController) -> UIView? {
+    fileprivate func viewEquivalent(_ otherVC: UIViewController) -> UIView? {
         guard let detailVC = otherVC as? LashesBrowserViewController,
-            category = detailVC.selectedCategory,
-            itemNumber = categories.indexOf(category)
+            let category = detailVC.selectedCategory,
+            let itemNumber = categories.index(of: category)
             else { return nil }
 
-        let indexPath = NSIndexPath(forItem: itemNumber, inSection: 0)
-        guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? LashCategoryCell else { return nil }
+        let indexPath = IndexPath(item: itemNumber, section: 0)
+        guard let cell = tableView.cellForRow(at: indexPath) as? LashCategoryCell else { return nil }
         return cell
     }
 
-    func transitionableViews(direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
+    func transitionableViews(_ direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
         return tableView.visibleCells
     }
 
-    func transitionAnimationItemsForView(view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
+    func transitionAnimationItemsForView(_ view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
         guard let cell = view as? LashCategoryCell,
-            indexPath = tableView.indexPathForCell(cell)
-            else { return [TransitionAnimationItem(mode: .Fade)] }
+            let indexPath = tableView.indexPath(for: cell)
+            else { return [TransitionAnimationItem(mode: .fade)] }
 
         if otherVC is LashesBrowserViewController {
-            return [TransitionAnimationItem(mode: .Fade)]
+            return [TransitionAnimationItem(mode: .fade)]
         }else{
             let count = tableView.visibleCells.count
-            let mode: TransitionAnimationMode = .SlideBottom
-            let delay = 0.5 / Double(count-1) * Double(indexPath.row)
-            return [TransitionAnimationItem(mode: mode, delay: delay, duration: 0.5 - Double(indexPath.row) / 10)]
+            let mode: TransitionAnimationMode = .slideBottom
+            let delay = 0.5 / Double(count-1) * Double((indexPath as NSIndexPath).row)
+            return [TransitionAnimationItem(mode: mode, delay: delay, duration: 0.5 - Double((indexPath as NSIndexPath).row) / 10)]
         }
     }
 
-    func viewsWithEquivalents(otherVC: UIViewController) -> [UIView]? {
+    func viewsWithEquivalents(_ otherVC: UIViewController) -> [UIView]? {
         if let equivalent = viewEquivalent(otherVC) { return [equivalent] }
         return nil
     }
 
-    func equivalentViewForView(view: UIView, otherVC: UIViewController) -> UIView? {
+    func equivalentViewForView(_ view: UIView, otherVC: UIViewController) -> UIView? {
         return viewEquivalent(otherVC)
     }
 }

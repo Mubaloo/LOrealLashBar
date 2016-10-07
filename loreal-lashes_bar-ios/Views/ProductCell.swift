@@ -25,22 +25,22 @@ class ProductCell: UICollectionViewCell {
         nameLabel.alpha = 0
     }
     
-    override var selected: Bool {
+    override var isSelected: Bool {
         didSet {
             let completion: (Bool)->() = { finished in
-                let time = dispatch_time(DISPATCH_TIME_NOW, Int64(3 * NSEC_PER_SEC))
-                dispatch_after(time, dispatch_get_main_queue(), {
-                    UIView.animateWithDuration(
-                        0.25,
+                let time = DispatchTime.now() + Double(Int64(3 * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)
+                DispatchQueue.main.asyncAfter(deadline: time, execute: {
+                    UIView.animate(
+                        withDuration: 0.25,
                         animations: { self.nameLabel.alpha = 0 },
                         completion: nil
                     )
                 })
             }
             
-            UIView.animateWithDuration(
-                0.25,
-                animations: { self.nameLabel.alpha = self.selected ? 1 : 0 },
+            UIView.animate(
+                withDuration: 0.25,
+                animations: { self.nameLabel.alpha = self.isSelected ? 1 : 0 },
                 completion: completion
             )
         }

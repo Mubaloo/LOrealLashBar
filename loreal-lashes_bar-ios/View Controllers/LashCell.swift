@@ -23,7 +23,7 @@ class LashCell: UITableViewCell {
             imagesLoaded += 1
             lengthTitleLabel.text = lash?.length
             nameLabel.text = lash?.name
-            self.leftLashImageView.image = UIImage(CGImage: (self.lash?.image.CGImage)!, scale: 1.0, orientation: .UpMirrored)
+            self.leftLashImageView.image = UIImage(cgImage: (self.lash?.image.cgImage)!, scale: 1.0, orientation: .upMirrored)
             self.rightLashImageView.image = self.lash?.image
         }
     }

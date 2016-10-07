@@ -18,12 +18,12 @@ extension Optional {
      debuggers to note which object failed to unwrap accurately. Primarily used when parsing
      web service response JSON.
      */
-    func unwrap(itemName: String? = nil) throws -> Wrapped {
+    func unwrap(_ itemName: String? = nil) throws -> Wrapped {
         switch self {
-        case .Some(let value) :
+        case .some(let value) :
             return value
         default :
-            throw UnwrapError.NoContentError(itemName: itemName ?? "Unknown")
+            throw UnwrapError.noContentError(itemName: itemName ?? "Unknown")
         }
     }
     
@@ -37,7 +37,7 @@ extension NSManagedObject {
     final class var entityName: String {
         get {
             let original = NSStringFromClass(self)
-            let parts = original.componentsSeparatedByString(".")
+            let parts = original.components(separatedBy: ".")
             return parts.last!
         }
     }
@@ -47,9 +47,9 @@ extension NSManagedObject {
      from the appropriate `NSManagedObject` subclass. If JSON is supplied and the managed object
      in question supports the JSONConfigurable protocol, it will be returned ready-configured.
      */
-    class func new<T: NSManagedObject>(json: JSON? = nil, context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) throws -> T {
-        let new = NSEntityDescription.insertNewObjectForEntityForName(entityName, inManagedObjectContext: context)
-        if let json = json, configurable = new as? JSONConfigurable {
+    class func new<T: NSManagedObject>(_ json: JSON? = nil, context: NSManagedObjectContext = CoreDataStack.shared.managedObjectContext) throws -> T {
+        let new = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
+        if let json = json, let configurable = new as? JSONConfigurable {
             try configurable.configure(json)
         }
         return new as! T
@@ -71,9 +71,15 @@ extension NSManagedObjectContext {
             print("--------------------------")
             let allEntities = model.entitiesByName
             for (key, _) in allEntities {
-                let fetch = NSFetchRequest(entityName:key)
-                let count = self.countForFetchRequest(fetch, error:nil)
-                print("\(count): \(key)")
+                let fetch: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName:key)
+                do {
+                    let count = try self.count(for: fetch)
+                     print("\(count): \(key)")
+                } catch {
+                    print(error)
+                }
+               
+               
             }
             print("--------------------------")
             print("")

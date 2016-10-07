@@ -15,9 +15,9 @@ extension UIFont {
      with non-standard fonts.
     */
     class func logAllFonts() {
-        for family in UIFont.familyNames() {
+        for family in UIFont.familyNames {
             print("----------\(family)")
-            print(UIFont.fontNamesForFamilyName(family).joinWithSeparator(" / "))
+            print(UIFont.fontNames(forFamilyName: family).joined(separator: " / "))
         }
     }
     

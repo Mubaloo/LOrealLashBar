@@ -14,5 +14,5 @@ import SwiftyJSON
  SwiftyJSON `JSON` object. Typically used to populated the local database.
  */
 protocol JSONConfigurable {
-    func configure(json: JSON) throws
+    func configure(_ json: JSON) throws
 }

@@ -74,7 +74,7 @@ typedef NS_ENUM(NSInteger, BITFeedbackObservationMode) {
    */
   BITFeedbackObservationModeOnScreenshot = 1,
   /**
-   *  Triggers when the user taps with three fingers on the screen.
+   *  Triggers when the user taps with three fingers on the screen. Captures a screenshot and attaches it to the composer.
    */
   BITFeedbackObservationModeThreeFingerTap = 2
 };
@@ -216,8 +216,8 @@ typedef NS_ENUM(NSInteger, BITFeedbackObservationMode) {
    own trigger and then call `[[BITHockeyManager sharedHockeyManager].feedbackManager showFeedbackComposeViewWithGeneratedScreenshot];` to handle your custom events
    that should trigger this.
  - `BITFeedbackObservationModeOnScreenshot`: Triggers when the user takes a screenshot.
-    This will grab the latest image from the camera roll. Requires iOS 7 or later!
- - `BITFeedbackObservationModeThreeFingerTap`: Triggers when the user taps on the screen for three seconds with three fingers.
+    This will grab the latest image from the camera roll. Requires iOS 7 or later! It also requires to add a NSPhotoLibraryUsageDescription to your app's Info.plist.
+ - `BITFeedbackObservationModeThreeFingerTap`: Triggers when the user taps on the screen with three fingers. Takes a screenshot and attaches it to the composer. It also requires to add a NSPhotoLibraryUsageDescription to your app's Info.plist.
  
  Default is `BITFeedbackObservationNone`
  
