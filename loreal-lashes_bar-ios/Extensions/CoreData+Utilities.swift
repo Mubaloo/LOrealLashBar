@@ -78,8 +78,6 @@ extension NSManagedObjectContext {
                 } catch {
                     print(error)
                 }
-               
-               
             }
             print("--------------------------")
             print("")

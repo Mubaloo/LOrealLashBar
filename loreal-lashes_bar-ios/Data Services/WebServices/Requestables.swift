@@ -87,7 +87,6 @@ extension WebServiceRequest {
         }
         
         let request = createRequest() as URLRequest
-      //  var request = URLRequest(url: NSURL(string: "http://example.com")! as URL)
         let task: URLSessionDataTask = session.dataTask(with: request, completionHandler: { data, response, error in
             guard let statusCode = statusCodeFromResponse(response) , !(statusCode == .unauthorized && self.includeAccessToken) else {
                 refreshToken { result in
