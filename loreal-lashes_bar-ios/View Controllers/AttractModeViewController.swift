@@ -46,6 +46,12 @@ class AttractModeViewController: BaseViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         player.play()
+        NSNotificationCenter.defaultCenter().addObserver(player, selector: #selector(AVPlayer.play), name: "applicationDidBecomeActive", object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+         super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(player, name: "applicationDidBecomeActive", object: nil)
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -42,6 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func applicationDidBecomeActive(application: UIApplication) {
+        NSNotificationCenter.defaultCenter().postNotificationName("applicationDidBecomeActive", object: nil)
+    }
+    
     func appDidTimeOut() {
         // When the app times out we purge the playlist and pop to the attract mode view controller.
         CoreDataStack.shared.purgePlaylist()
