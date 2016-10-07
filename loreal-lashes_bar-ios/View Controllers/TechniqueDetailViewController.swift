@@ -83,6 +83,7 @@ class TechniqueDetailViewController: BaseViewController {
     
     private func updateTechniqueVideo() {
         guard let technique = technique else { return }
+        videoContainer.imposter!.image = technique.thumbnail
         videoContainer.loadPlaylistItem(technique)
     }
     

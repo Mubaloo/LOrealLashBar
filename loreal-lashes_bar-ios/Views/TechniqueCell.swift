@@ -30,6 +30,7 @@ class TechniqueCell: UICollectionViewCell {
             let requiredSize = titleLabel.sizeOfText(withMaxSize:CGSizeMake(257, CGFloat.max))
             titleHeightConstraint.constant = ceil(requiredSize.height)
             detailLabel.text = technique.detail
+            self.videoPreview.imposter?.image = technique.thumbnail
             let qualityOfServiceClass = QOS_CLASS_BACKGROUND
             let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
             dispatch_async(backgroundQueue, {
