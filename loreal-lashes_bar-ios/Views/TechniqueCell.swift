@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class TechniqueCell: UICollectionViewCell {
     
@@ -15,6 +16,8 @@ class TechniqueCell: UICollectionViewCell {
     @IBOutlet var watchButton: UIButton!
     @IBOutlet var videoPreview: AVPlayerView!
     @IBOutlet weak var titleHeightConstraint: NSLayoutConstraint!
+    
+    var playerLayer: AVPlayerLayer?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,13 +33,32 @@ class TechniqueCell: UICollectionViewCell {
             let requiredSize = titleLabel.sizeOfText(withMaxSize:CGSize(width: 257, height: CGFloat.greatestFiniteMagnitude))
             titleHeightConstraint.constant = ceil(requiredSize.height)
             detailLabel.text = technique.detail
+            
+            // had to override the default videoplayer because it was causing a grey screen issue after loading the videos several times.
+            playerLayer = AVPlayerLayer(player: AVPlayer(playerItem: AVPlayerItem(url: technique.localMediaThumbURL)))
+            playerLayer?.videoGravity = AVLayerVideoGravityResize
+            playerLayer?.frame = self.videoPreview.frame
+            self.contentView.layer.addSublayer(playerLayer!)
+            playerLayer?.player?.play()
+            
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(TechniqueCell.playerItemDidReachEnd(notification:)),
+                                                   name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+                                                   object: playerLayer?.player?.currentItem)
+            
             self.videoPreview.imposter?.image = technique.thumbnail
-            let qualityOfServiceClass = DispatchQoS.QoSClass.background
-            let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
-            backgroundQueue.async(execute: {
-                self.videoPreview.loadPlaylistItem(technique, shouldLoadThumb: true)
-                self.videoPreview.playIfPossible()
-            })
         }
+    }
+    
+    func playerItemDidReachEnd(notification: NSNotification) {
+        self.playerLayer?.player?.seek(to: kCMTimeZero)
+        self.playerLayer?.player?.play()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        NotificationCenter.default.removeObserver(self)
+        playerLayer?.removeFromSuperlayer()
+        playerLayer = nil
     }
 }
