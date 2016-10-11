@@ -37,7 +37,7 @@ class TechniqueCell: UICollectionViewCell {
             // had to override the default videoplayer because it was causing a grey screen issue after loading the videos several times.
             playerLayer = AVPlayerLayer(player: AVPlayer(playerItem: AVPlayerItem(url: technique.localMediaThumbURL)))
             playerLayer?.videoGravity = AVLayerVideoGravityResize
-            playerLayer?.frame = self.videoPreview.frame
+            playerLayer?.frame = CGRect(x: self.reuseIdentifier == "TechniqueCellB" ?  325: 0, y: 0, width: 325, height: 182)
             self.contentView.layer.addSublayer(playerLayer!)
             playerLayer?.player?.play()
             
