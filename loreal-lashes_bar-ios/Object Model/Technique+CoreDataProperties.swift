@@ -21,6 +21,8 @@ extension Technique {
     @NSManaged var step2:                   String
     @NSManaged var step3:                   String
     @NSManaged var remoteMediaPath:         String?
+    @NSManaged var videoId:                 String?
+    @NSManaged var videoType:               String?
     @NSManaged var localMediaPath:          String?
     @NSManaged var localMediaThumbPath:     String?
     @NSManaged var thumbPath:               String?

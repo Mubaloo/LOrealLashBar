@@ -22,22 +22,38 @@ struct EntryEventRequest : WebServiceRequest {
     let acceptableStatusCodes: [HTTPStatusCode] = [.created]
     
     let emailAddress: String
-    let videoURLs: [String]
-    let eventDefinitionKey = "NYX_Lash_Bar-EntryEvent"
-    let source = "Retail"
+    let videoItems: [[String:String]]
+    let emailStatus: Bool
+    let sendDate: String
+    let eventDefinitionKey = "NYX_BrushLash_EntryEvent"
+    let source = "Retail-LashBar"
     
-    var requestBody: [String:Any] {
+    var requestBody: AnyObject? {
         return [
             "ContactKey" : emailAddress,
             "EventDefinitionKey" : eventDefinitionKey,
-            "EstablishContactKey" : false,
+            "EstablishContactKey" : true,
+            "Email_Perm_Status" : emailStatus ? "Y" : "N",
+            "Source" : source,
             "Data" : [
-                "EmailAddress" : emailAddress,
-                "Email_Perm_Status" : "Y",
-                "Video_URLs" : videoURLs.joined(separator: "|"),
-                "Source" : source
+                "emailaddress" : emailAddress,
+                "send_date" : sendDate,
+                "VideoData" : convertedVideoItems(items: videoItems),
             ]
-        ]
+        ] as AnyObject
+    }
+    
+    func convertedVideoItems(items: [[String:String]]) -> String {
+        var finalString = "<root>"
+        let stringArray = items.map{(dictionary: [String:String]) -> String in
+            guard let url = dictionary["Landing_URL"], let id = dictionary["Video_Id"], let type = dictionary["Video_Type"] else {
+                return ""
+            }
+            return "<Video ID='\(id)' Landing_URL='\(url)' Video_Type='\(type)'></Video>"
+        }
+        finalString.append(stringArray.joined(separator: ""))
+        finalString.append("</root>")
+        return finalString
     }
 }
 

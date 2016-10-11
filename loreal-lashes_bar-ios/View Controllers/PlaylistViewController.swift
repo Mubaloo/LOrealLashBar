@@ -36,6 +36,12 @@ class PlaylistViewController: BaseViewController {
         return allItems
     }()
     
+    lazy var formatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return df
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.lightBG
@@ -68,24 +74,30 @@ class PlaylistViewController: BaseViewController {
     
     @IBAction func sendButtonTouched (_ sender: UIButton) {
         if emailIsValid(), let emailAddress = emailField.text {
-            let urls = playlistItems.flatMap({ $0.remoteMediaURL?.path })
+            let videoItems = playlistItems.map { ( item: PlaylistItem) -> [String:String] in
+                guard let url = item.remoteMediaURL, let id = item.remoteVideoId, let type = item.remoteVideoType else {
+                    return ["":""]
+                }
+                return ["Landing_URL" : url.path, "Video_Id" : id, "Video_Type" : type]
+            }
             let request = EntryEventRequest(
                 emailAddress: emailAddress,
-                videoURLs: urls
+                videoItems: videoItems,
+                emailStatus: !self.tickMarkImageView.isHidden,
+                sendDate: self.formatter.string(from: NSDate() as Date)
             )
+
             self.emailContainer.isHidden = true
             self.statusContainer.isHidden = false
             _ = request.executeInSharedSession {
                 switch $0 {
                 case .success(let response) :
-                    print("Email sent to \(emailAddress)")
                     print(response)
                     self.statusLabel.text = "Sent to \(emailAddress)!"
                     self.statusImageView.image = UIImage(named: "loaded-lips")
                     guard let app = UIApplication.shared as? TimeOutApplication else { return }
                     app.beginShortTimeout()
                 case .successNoData :
-                    print("Email sent to \(emailAddress) (no data in response)")
                     self.statusLabel.text = "Sent to \(emailAddress)!"
                     self.statusImageView.image = UIImage(named: "loaded-lips")
                     guard let app = UIApplication.shared as? TimeOutApplication else { return }
@@ -93,7 +105,6 @@ class PlaylistViewController: BaseViewController {
                 case .failure(let error) :
                     self.statusContainer.isHidden = true
                     self.emailContainer.isHidden = false
-                    print("Error sending email: \(error)")
                 }
             }
         }

@@ -77,7 +77,7 @@ extension WebServiceRequest {
     func executeInSession(_ session: URLSession,
                           dispatchQueue: DispatchQueue = DispatchQueue.main,
                           completion: ((WebServiceResult<Response>) -> Void)? = nil) -> URLSessionDataTask {
-        let completionHandler: (Data?, URLResponse?, NSError?) -> Void = { data, response, error in
+        let finalCompletionHandler: (Data?, URLResponse?, Error?) -> Void = { data, response, error in
             if let completion = completion {
                 let result = self.parseResponse(data, response: response, error: error)
                 dispatchQueue.async {
@@ -92,8 +92,9 @@ extension WebServiceRequest {
                 refreshToken { result in
                     switch result {
                     case .success:
+                        
                         let newRequest = self.createRequest() as URLRequest
-                        let originalTask = session.dataTask(with: newRequest, completionHandler: completionHandler as! (Data?, URLResponse?, Error?) -> Void)
+                        let originalTask = session.dataTask(with: newRequest, completionHandler: finalCompletionHandler)
                         originalTask.resume()
                         
                     case .failure:
@@ -103,14 +104,14 @@ extension WebServiceRequest {
                 return
             }
             
-            completionHandler(data, response, error as NSError?)
+            finalCompletionHandler(data, response, error as NSError?)
         }) 
         task.resume()
         return task
     }
     
-    fileprivate func parseResponse(_ data: Data?, response: URLResponse?, error: NSError?) -> WebServiceResult<Response> {
-        if let error = error {
+    fileprivate func parseResponse(_ data: Data?, response: URLResponse?, error: Error?) -> WebServiceResult<Response> {
+        if let error = error as? NSError {
             switch error.code {
             case NSURLErrorNotConnectedToInternet:
                 return .failure(.noInternetConnection)

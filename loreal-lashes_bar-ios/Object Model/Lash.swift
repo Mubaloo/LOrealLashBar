@@ -30,6 +30,24 @@ class Lash: Product, PlaylistItem {
         }
     }
     
+    var remoteVideoId: String? {
+        get {
+            if  let id = videoId {
+                return id
+            }
+            return nil
+        }
+    }
+    
+    var remoteVideoType: String? {
+        get {
+            if  let type = videoType {
+                return type
+            }
+            return nil
+        }
+    }
+    
     var localMediaURL: URL {
         get {
             if let path = localMediaPath {
@@ -133,6 +151,8 @@ class Lash: Product, PlaylistItem {
         ordinal = number // This may be necessary if lash number changes to a string
         
         remoteMediaPath = json["remote_path"].string
+        videoId = json["remote_video_id"].string
+        videoType = json["remote_video_type"].string
         localMediaPath = json["local_path"].string
         localMediaThumbPath = json["local_path_thumb"].string
         thumbPath = json["thumb_path"].string
