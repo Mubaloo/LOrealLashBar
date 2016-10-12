@@ -16,6 +16,7 @@ class LashDetailViewController: BaseViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var detailLabel: UILabel!
     @IBOutlet weak var typeContainer: UIView!
+    @IBOutlet weak var typesLabel: UILabel!
     
     @IBOutlet var hotTipStackView: UIStackView!
     @IBOutlet var hotTipLabel: UILabel!
@@ -73,6 +74,12 @@ class LashDetailViewController: BaseViewController {
         nameLabel.text = lash.name
         detailLabel.text = lash.detail
         hotTipLabel.text = lash.hotTips
+        
+        let categoriesArray = Array(lash.categories!)
+        let categoryNames = categoriesArray.map{ ( item: LashCategory) -> String in
+            return item.name
+        }
+        typesLabel.text = "Good for: \(categoryNames.joined(separator: ", "))"
         
         leftLashImageView.image = UIImage(cgImage: (lash.image.cgImage)!, scale: 1.0, orientation: .upMirrored)
         rightLashImageView.image = lash.image

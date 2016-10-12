@@ -78,7 +78,7 @@ class PlaylistViewController: BaseViewController {
                 guard let url = item.remoteMediaURL, let id = item.remoteVideoId, let type = item.remoteVideoType else {
                     return ["":""]
                 }
-                return ["Landing_URL" : url.path, "Video_Id" : id, "Video_Type" : type]
+                return ["Landing_URL" : url, "Video_Id" : id, "Video_Type" : type]
             }
             let request = EntryEventRequest(
                 emailAddress: emailAddress,
@@ -91,8 +91,7 @@ class PlaylistViewController: BaseViewController {
             self.statusContainer.isHidden = false
             _ = request.executeInSharedSession {
                 switch $0 {
-                case .success(let response) :
-                    print(response)
+                case .success(_) :
                     self.statusLabel.text = "Sent to \(emailAddress)!"
                     self.statusImageView.image = UIImage(named: "loaded-lips")
                     guard let app = UIApplication.shared as? TimeOutApplication else { return }
@@ -102,7 +101,7 @@ class PlaylistViewController: BaseViewController {
                     self.statusImageView.image = UIImage(named: "loaded-lips")
                     guard let app = UIApplication.shared as? TimeOutApplication else { return }
                     app.beginShortTimeout()
-                case .failure(let error) :
+                case .failure(_) :
                     self.statusContainer.isHidden = true
                     self.emailContainer.isHidden = false
                 }
@@ -202,6 +201,11 @@ extension PlaylistViewController: UICollectionViewDelegate {
         collectionView.deselectItem(at: indexPath, animated: false)
         if (indexPath as NSIndexPath).item >= playlistItems.count {
              presentingViewController?.dismiss(animated: true, completion: nil)
+        }else{
+            presentingViewController?.dismiss(animated: true, completion: nil)
+            let object = playlistItems[indexPath.item]
+            let notification = Notification(name: Notification.Name(rawValue: TitleBarViewController.NavigationTriggeredNotification), object: nil, userInfo: ["object":object])
+            NotificationCenter.default.post(notification)
         }
     }
     

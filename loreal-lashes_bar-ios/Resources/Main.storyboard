@@ -17,7 +17,7 @@
             <objects>
                 <navigationController navigationBarHidden="YES" id="yaf-ak-wPJ" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PvV-wL-xFz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="PvV-wL-xFz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -84,8 +84,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="eOe-EB-92Z"/>
                                         <exclude reference="bck-rG-SpO"/>
+                                        <exclude reference="eOe-EB-92Z"/>
                                         <exclude reference="XGx-gd-z40"/>
                                     </mask>
                                 </variation>
@@ -132,8 +132,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="T8g-dT-ygW"/>
                                         <exclude reference="gW7-dy-dKN"/>
+                                        <exclude reference="T8g-dT-ygW"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -464,7 +464,7 @@
                                             <outlet property="titleLabel" destination="BL1-KM-BMe" id="pNq-QO-zON"/>
                                             <outlet property="videoPreview" destination="Gnp-w1-q0c" id="Fmx-qE-P9a"/>
                                             <outlet property="watchButton" destination="luz-fB-oeq" id="4ZU-Rz-MKK"/>
-                                            <segue destination="WtL-ko-oDz" kind="show" id="QuS-D4-Gq7"/>
+                                            <segue destination="WtL-ko-oDz" kind="show" identifier="pushTechniqueDetail" id="QuS-D4-Gq7"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -499,7 +499,7 @@
                 <navigationController navigationBarHidden="YES" id="P4y-Ob-AWc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="701-H8-L1U"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bxb-po-rdd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bxb-po-rdd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -553,7 +553,8 @@
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZR-CR-Yg2">
                                                 <subviews>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lt2-4T-SSe">
+                                                    <progressView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lt2-4T-SSe">
+                                                        <frame key="frameInset" minY="19" width="622" height="2"/>
                                                         <color key="progressTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="trackTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
@@ -874,7 +875,7 @@
                                             <outlet property="mainImageView" destination="k22-Eq-qpB" id="NYP-uh-4Ws"/>
                                             <outlet property="mainTitleLabel" destination="dWQ-1Q-1Ga" id="ple-Fr-AWY"/>
                                             <outlet property="subtitleLabel" destination="Zoz-98-jkZ" id="TaX-QL-YuD"/>
-                                            <segue destination="eZB-VY-psb" kind="show" id="EaA-we-i24"/>
+                                            <segue destination="eZB-VY-psb" kind="show" identifier="pushLashBrowser" id="EaA-we-i24"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1041,7 +1042,7 @@
                                                     <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="37" maxY="0.0"/>
                                                     <state key="normal" image="infoIcon"/>
                                                     <connections>
-                                                        <segue destination="eLa-iS-7l7" kind="show" id="1fB-kR-6OS"/>
+                                                        <segue destination="eLa-iS-7l7" kind="show" identifier="pushLashDetail" id="1fB-kR-6OS"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1267,7 +1268,15 @@
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="36" text="A soft and full brush that is perfect for easily applying loose or pressed powder." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQR-uY-rnl">
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="QeT-Sz-tTW"/>
+                                                                    <constraint firstAttribute="height" constant="25" id="QeT-Sz-tTW"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeueCond" family="HelveticaNeueCond" pointSize="15"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="36" text="A soft and full brush that is perfect for easily applying loose or pressed powder." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCJ-JR-yEa" userLabel="Types Label">
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="45" id="gOs-yc-QTv"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeueCond" family="HelveticaNeueCond" pointSize="15"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1301,8 +1310,8 @@
                                                                 </constraints>
                                                                 <variation key="default">
                                                                     <mask key="constraints">
-                                                                        <exclude reference="J9Y-1p-eMb"/>
                                                                         <exclude reference="v4Y-6O-XrQ"/>
+                                                                        <exclude reference="J9Y-1p-eMb"/>
                                                                     </mask>
                                                                 </variation>
                                                             </view>
@@ -1324,9 +1333,11 @@
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
+                                                            <constraint firstItem="cCJ-JR-yEa" firstAttribute="top" secondItem="qO0-gQ-1iU" secondAttribute="bottom" constant="20" id="BcZ-zJ-ZPt"/>
                                                             <constraint firstAttribute="trailing" secondItem="dor-48-4sb" secondAttribute="trailing" id="EXq-oa-b3e"/>
+                                                            <constraint firstItem="cCJ-JR-yEa" firstAttribute="leading" secondItem="NMp-jn-5xE" secondAttribute="leading" id="GZo-6g-Y8h"/>
                                                             <constraint firstItem="cQR-uY-rnl" firstAttribute="leading" secondItem="NMp-jn-5xE" secondAttribute="leading" id="HNI-Em-IeF"/>
-                                                            <constraint firstItem="2eL-4c-3YH" firstAttribute="top" secondItem="cQR-uY-rnl" secondAttribute="bottom" constant="41" id="HiD-B3-wns"/>
+                                                            <constraint firstItem="2eL-4c-3YH" firstAttribute="top" secondItem="cQR-uY-rnl" secondAttribute="bottom" constant="61" id="HiD-B3-wns"/>
                                                             <constraint firstItem="qO0-gQ-1iU" firstAttribute="leading" secondItem="NMp-jn-5xE" secondAttribute="leading" id="LaM-hm-SDb"/>
                                                             <constraint firstAttribute="bottom" secondItem="FJc-Is-XhK" secondAttribute="bottom" id="MnS-wo-mEk"/>
                                                             <constraint firstItem="cQR-uY-rnl" firstAttribute="top" secondItem="qO0-gQ-1iU" secondAttribute="bottom" constant="1" id="V3j-me-TWd"/>
@@ -1334,6 +1345,7 @@
                                                             <constraint firstItem="qO0-gQ-1iU" firstAttribute="top" secondItem="dor-48-4sb" secondAttribute="bottom" id="Zq8-EQ-hhm"/>
                                                             <constraint firstItem="2eL-4c-3YH" firstAttribute="leading" secondItem="NMp-jn-5xE" secondAttribute="leading" id="dRe-MQ-nhO"/>
                                                             <constraint firstItem="dor-48-4sb" firstAttribute="top" secondItem="NMp-jn-5xE" secondAttribute="top" id="iPB-lx-5Ro"/>
+                                                            <constraint firstAttribute="trailing" secondItem="cCJ-JR-yEa" secondAttribute="trailing" constant="90" id="lfm-Q0-nMN"/>
                                                             <constraint firstItem="FJc-Is-XhK" firstAttribute="leading" secondItem="NMp-jn-5xE" secondAttribute="leading" id="myj-sY-r1G"/>
                                                             <constraint firstItem="2eL-4c-3YH" firstAttribute="top" secondItem="cQR-uY-rnl" secondAttribute="bottom" id="rqg-Rw-gYM"/>
                                                             <constraint firstItem="dor-48-4sb" firstAttribute="leading" secondItem="NMp-jn-5xE" secondAttribute="leading" id="svt-zR-ANx"/>
@@ -1435,6 +1447,7 @@
                         <outlet property="nameLabel" destination="qO0-gQ-1iU" id="GQf-JP-K7r"/>
                         <outlet property="rightLashImageView" destination="29Z-e6-ZzT" id="VTi-BM-CCE"/>
                         <outlet property="typeContainer" destination="dor-48-4sb" id="V4D-bh-ONr"/>
+                        <outlet property="typesLabel" destination="cCJ-JR-yEa" id="YJh-Hr-aSb"/>
                         <outlet property="videoView" destination="D4I-Xu-Gh3" id="4JP-Le-dY9"/>
                     </connections>
                 </viewController>
@@ -1884,7 +1897,7 @@
                 <navigationController navigationBarHidden="YES" id="x1x-rZ-be2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="t3O-pV-KiN"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SB1-Df-UYz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SB1-Df-UYz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2045,6 +2058,6 @@ YOU MAY ALSO BE ABLE TO REGISTER AND LOG IN USING A SOCIAL MEDIA ACCOUNT, INCLUD
         <image name="zigzag_icon" width="8" height="11"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sse-KV-tE3"/>
+        <segue reference="QuS-D4-Gq7"/>
     </inferredMetricsTieBreakers>
 </document>

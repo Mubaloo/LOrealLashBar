@@ -25,10 +25,10 @@ class Technique: NSManagedObject, PlaylistItem {
         catch { return [] }
     }
     
-    var remoteMediaURL: URL? {
+    var remoteMediaURL: String? {
         get {
             if let path = remoteMediaPath {
-                return URL(fileURLWithPath: path)
+                return path
             }
             return nil
         }

@@ -21,10 +21,10 @@ class Lash: Product, PlaylistItem {
     
     var numberString: String { get { return String(format: "Nº %02d", number) } }
     
-    var remoteMediaURL: URL? {
+    var remoteMediaURL: String? {
         get {
             if let path = remoteMediaPath {
-                return URL(fileURLWithPath: path)
+                return path
             }
             return nil
         }

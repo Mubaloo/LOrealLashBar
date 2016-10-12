@@ -23,6 +23,8 @@ enum BrowserType: String {
 
 class TitleBarViewController: BaseViewController {
 
+    static let NavigationTriggeredNotification = "NavigationTriggeredNotification"
+
     @IBOutlet var titleBar: UIView!
     @IBOutlet var browserButton: UIButton!
     @IBOutlet var playlistButton: UIButton!
@@ -65,6 +67,37 @@ class TitleBarViewController: BaseViewController {
         techniqueFetch.delegate = self
         try! lashFetch.performFetch()
         try! techniqueFetch.performFetch()
+        
+        // subscribe at viewDidLoad and don't unsubscribe because this is a persistent view controller
+        NotificationCenter.default.addObserver(self, selector: #selector(TitleBarViewController.navigationTriggered(_:)),
+                                               name: NSNotification.Name(rawValue: TitleBarViewController.NavigationTriggeredNotification),
+                                               object: nil)
+    }
+    
+    func navigationTriggered(_ notif: Notification) {
+        guard let childTabBarController = childTabBarController,
+            let object = notif.userInfo?["object"],
+            let techniqueNavCotroller = childTabBarController.viewControllers?[1] as? UINavigationController,
+            let lashNavCotroller = childTabBarController.viewControllers?[0] as? UINavigationController
+            else { return }
+        
+        let techniqueViewControllers = techniqueNavCotroller.viewControllers
+        let techniqueControl = techniqueViewControllers[0] as? TechniqueBrowserViewController
+        let lashViewControllers = lashNavCotroller.viewControllers
+        let lashControl = lashViewControllers[0] as? LashesCategoryBrowserViewController
+        
+        // dismiss lash details in case it is showing
+        lashNavCotroller.popToRootViewController(animated: false)
+        
+        if let technique = object as? Technique {
+            self.setBrowserType(.Technique, animated: false)
+            techniqueControl?.manualTransitionTechnique = technique
+        }
+        
+        if let lash = object as? Lash {
+            self.setBrowserType(.Lashes, animated: false)
+            lashControl?.manualTransitionLash = lash
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

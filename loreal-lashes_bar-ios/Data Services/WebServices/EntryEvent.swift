@@ -33,9 +33,9 @@ struct EntryEventRequest : WebServiceRequest {
             "ContactKey" : emailAddress,
             "EventDefinitionKey" : eventDefinitionKey,
             "EstablishContactKey" : true,
-            "Email_Perm_Status" : emailStatus ? "Y" : "N",
             "Source" : source,
             "Data" : [
+                "Email_Perm_Status" : emailStatus ? "Y" : "N",
                 "emailaddress" : emailAddress,
                 "send_date" : sendDate,
                 "VideoData" : convertedVideoItems(items: videoItems),

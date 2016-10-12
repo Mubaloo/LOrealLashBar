@@ -442,6 +442,7 @@
 				B2DB08D91D93EFD10063A25E /* PlaylistViewController.swift */,
 				B22812A41D9BEDB300B091E1 /* PrivacyViewController.swift */,
 				B2DB08DA1D93EFD10063A25E /* TechniqueBrowserViewController.swift */,
+				B2DB08EB1D93EFFC0063A25E /* Product.swift */,
 				B2DB08DB1D93EFD10063A25E /* TechniqueDetailViewController.swift */,
 				B2DB08DC1D93EFD10063A25E /* TitleBarViewController.swift */,
 			);
@@ -572,7 +573,6 @@
 			children = (
 				B2C5B5961D9410660077F941 /* Lash.swift */,
 				B2C5B5941D9410660077F941 /* LashCategory.swift */,
-				B2DB08EB1D93EFFC0063A25E /* Product.swift */,
 				B2DB08EC1D93EFFC0063A25E /* Technique.swift */,
 			);
 			name = Functional;
