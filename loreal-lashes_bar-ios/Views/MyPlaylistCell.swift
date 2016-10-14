@@ -20,6 +20,8 @@ class MyPlaylistCell: UICollectionViewCell {
     @IBOutlet var removeButton: UIButton!
     
     weak var delegate: PlaylistCellDelegate?
+    var playerLayer: AVPlayerLayer?
+    var player: AVPlayer?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,10 +40,50 @@ class MyPlaylistCell: UICollectionViewCell {
             guard let item = item else { return }
             nameLabel.text = item.name
             
-            playerView.loadPlaylistItem(item)
+            // had to override the default videoplayer because it was causing a grey screen issue after loading the videos several times.
+            weak var weakSelf = self
+            let backgroundQueue = DispatchQueue(label: "com.app.queue",
+                                                qos: .background,
+                                                target: nil)
+            backgroundQueue.async {
+                weakSelf?.player = AVPlayer(playerItem: AVPlayerItem(url: item.localMediaThumbURL))
+                weakSelf?.playerLayer = AVPlayerLayer(player: nil)
+                weakSelf?.playerLayer?.videoGravity = AVLayerVideoGravityResize
+                DispatchQueue.main.async {
+                    weakSelf?.playerLayer?.frame = CGRect(x: 0, y: 0, width: 308, height: 174)
+                    weakSelf?.contentView.layer.addSublayer((weakSelf?.playerLayer!)!)
+                    weakSelf?.playerLayer?.player?.play()
+                }
+            }
+            
+            
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(TechniqueCell.playerItemDidReachEnd(notification:)),
+                                                   name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+                                                   object: playerLayer?.player?.currentItem)
+            
+            self.playerView.imposter?.image = item.thumbnail
         }
     }
     
+    func startPlayer() {
+        playerLayer?.player = player
+        playerLayer?.player?.play()
+    }
+    
+    func playerItemDidReachEnd(notification: NSNotification) {
+        self.playerLayer?.player?.seek(to: kCMTimeZero)
+        self.playerLayer?.player?.play()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        NotificationCenter.default.removeObserver(self)
+        playerLayer?.player?.currentItem?.asset.cancelLoading()
+        playerLayer?.player = nil
+        playerLayer?.removeFromSuperlayer()
+        playerLayer = nil
+    }
 }
 
 extension MyPlaylistCell: AVPlayerViewDelegate {

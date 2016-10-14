@@ -60,6 +60,11 @@ class PlaylistViewController: BaseViewController {
         emailField.addTarget(self, action: #selector(PlaylistViewController.textFieldDidChange), for: .editingChanged)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        playVideos()
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -157,6 +162,14 @@ class PlaylistViewController: BaseViewController {
             sendButton.isEnabled = false
         }
     }
+    
+    func playVideos() {
+        for cell in playlistCollection.visibleCells {
+            if let videoCell = cell as? MyPlaylistCell {
+                videoCell.startPlayer()
+            }
+        }
+    }
 }
 
 extension PlaylistViewController: UITextFieldDelegate {
@@ -194,6 +207,12 @@ extension PlaylistViewController: UICollectionViewDataSource {
 
 extension PlaylistViewController: UICollectionViewDelegate {
     
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool){
+        if decelerate == false {
+            playVideos()
+        }
+    }
+    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         for cell in playlistCollection.visibleCells {
             if let videoCell = cell as? MyPlaylistCell {
@@ -203,12 +222,8 @@ extension PlaylistViewController: UICollectionViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        for cell in playlistCollection.visibleCells {
-            if let videoCell = cell as? MyPlaylistCell {
-                videoCell.playerView.play()
-            }
-        }
         updatePageNumber()
+        playVideos()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
