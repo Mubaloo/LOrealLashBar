@@ -50,6 +50,7 @@ class PlaylistViewController: BaseViewController {
         playlistCollection.collectionViewLayout = PagedGridLayout()
         playlistCollection.reloadData()
         sendButton.isEnabled = false
+        emailField.isUserInteractionEnabled = playlistItems.count > 0
         
         let noteCenter = NotificationCenter.default
         noteCenter.addObserver(self, selector: #selector(PlaylistViewController.updateKeyboard(_:)),
@@ -268,6 +269,7 @@ extension PlaylistViewController: PlaylistCellDelegate {
         playlistItems.remove(at: (indexPath as NSIndexPath).item)
         
         updateSendButton()
+        emailField.isUserInteractionEnabled = playlistItems.count > 0
         
         let itemsAfter = collectionView(playlistCollection, numberOfItemsInSection: 0)
         
