@@ -18,6 +18,7 @@ class TechniqueCell: UICollectionViewCell {
     @IBOutlet weak var titleHeightConstraint: NSLayoutConstraint!
     
     var playerLayer: AVPlayerLayer?
+    var player: AVPlayer?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,11 +36,21 @@ class TechniqueCell: UICollectionViewCell {
             detailLabel.text = technique.detail
             
             // had to override the default videoplayer because it was causing a grey screen issue after loading the videos several times.
-            playerLayer = AVPlayerLayer(player: AVPlayer(playerItem: AVPlayerItem(url: technique.localMediaThumbURL)))
-            playerLayer?.videoGravity = AVLayerVideoGravityResize
-            playerLayer?.frame = CGRect(x: self.reuseIdentifier == "TechniqueCellB" ?  325: 0, y: 0, width: 325, height: 182)
-            self.contentView.layer.addSublayer(playerLayer!)
-            playerLayer?.player?.play()
+            weak var weakSelf = self
+            let backgroundQueue = DispatchQueue(label: "com.app.queue",
+                                                qos: .background,
+                                                target: nil)
+            backgroundQueue.async {
+                weakSelf?.player = AVPlayer(playerItem: AVPlayerItem(url: technique.localMediaThumbURL))
+                weakSelf?.playerLayer = AVPlayerLayer(player: nil)
+                weakSelf?.playerLayer?.videoGravity = AVLayerVideoGravityResize
+                DispatchQueue.main.async {
+                    weakSelf?.playerLayer?.frame = CGRect(x: weakSelf?.reuseIdentifier == "TechniqueCellB" ?  325: 0, y: 0, width: 325, height: 182)
+                    weakSelf?.contentView.layer.addSublayer((weakSelf?.playerLayer!)!)
+                    weakSelf?.playerLayer?.player?.play()
+                }
+            }
+            
             
             NotificationCenter.default.addObserver(self,
                                                    selector: #selector(TechniqueCell.playerItemDidReachEnd(notification:)),
@@ -50,6 +61,11 @@ class TechniqueCell: UICollectionViewCell {
         }
     }
     
+    func startPlayer() {
+        playerLayer?.player = player
+        playerLayer?.player?.play()
+    }
+    
     func playerItemDidReachEnd(notification: NSNotification) {
         self.playerLayer?.player?.seek(to: kCMTimeZero)
         self.playerLayer?.player?.play()
@@ -58,6 +74,8 @@ class TechniqueCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         NotificationCenter.default.removeObserver(self)
+        playerLayer?.player?.currentItem?.asset.cancelLoading()
+        playerLayer?.player = nil
         playerLayer?.removeFromSuperlayer()
         playerLayer = nil
     }

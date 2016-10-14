@@ -26,11 +26,17 @@ class TechniqueBrowserViewController: BaseViewController {
         layout.register(dividerNib, forDecorationViewOfKind: "Separator")
         techniqueCollection.collectionViewLayout = layout
         techniqueCollection.reloadData()
+        techniqueCollection.decelerationRate = UIScrollViewDecelerationRateFast;
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.doManualTransitionIfNeeded()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        playVideos()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -56,6 +62,14 @@ class TechniqueBrowserViewController: BaseViewController {
             self.performSegue(withIdentifier: "pushTechniqueDetail", sender: view)
         }
     }
+    
+    func playVideos() {
+        for cell in techniqueCollection.visibleCells {
+            if let techCell = cell as? TechniqueCell {
+                techCell.startPlayer()
+            }
+        }
+    }
 }
 
 extension TechniqueBrowserViewController: UICollectionViewDataSource {
@@ -79,6 +93,18 @@ extension TechniqueBrowserViewController: UICollectionViewDataSource {
         return cell
     }
     
+}
+
+extension TechniqueBrowserViewController: UIScrollViewDelegate {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        playVideos()
+    }
+    
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool){
+        if decelerate == false {
+            playVideos()
+        }
+    }
 }
 
 extension TechniqueBrowserViewController: TransitionAnimationDataSource {
