@@ -1235,18 +1235,18 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dor-48-4sb" userLabel="TypeContainer">
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="18" text="Length" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYF-Sc-n28" userLabel="Length Label">
-                                                                        <frame key="frameInset" minY="6" width="50" height="18"/>
+                                                                        <frame key="frameInset" minY="3" width="50" height="18"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="15"/>
                                                                         <color key="textColor" red="0.84705882349999995" green="0.070588235289999995" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="8" placeholderIntrinsicHeight="8" image="zigzag_icon" translatesAutoresizingMaskIntoConstraints="NO" id="pxs-fM-sec">
-                                                                        <frame key="frameInset" minX="52" minY="11" width="8" height="8"/>
+                                                                        <frame key="frameInset" minX="52" minY="8" width="8" height="8"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="245" verticalHuggingPriority="245" horizontalCompressionResistancePriority="745" verticalCompressionResistancePriority="745" fixedFrame="YES" placeholderIntrinsicWidth="144" placeholderIntrinsicHeight="18" text="Medium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkP-Wk-peu" userLabel="Length Title Label">
-                                                                        <frame key="frameInset" minX="66" minY="6" width="374" height="18"/>
+                                                                        <frame key="frameInset" minX="66" minY="3" width="374" height="18"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="15"/>
                                                                         <color key="textColor" red="0.84705882349999995" green="0.070588235289999995" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1333,7 +1333,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstItem="cCJ-JR-yEa" firstAttribute="top" secondItem="qO0-gQ-1iU" secondAttribute="bottom" constant="20" id="BcZ-zJ-ZPt"/>
+                                                            <constraint firstItem="cCJ-JR-yEa" firstAttribute="top" secondItem="qO0-gQ-1iU" secondAttribute="bottom" constant="13" id="BcZ-zJ-ZPt"/>
                                                             <constraint firstAttribute="trailing" secondItem="dor-48-4sb" secondAttribute="trailing" id="EXq-oa-b3e"/>
                                                             <constraint firstItem="cCJ-JR-yEa" firstAttribute="leading" secondItem="NMp-jn-5xE" secondAttribute="leading" id="GZo-6g-Y8h"/>
                                                             <constraint firstItem="cQR-uY-rnl" firstAttribute="leading" secondItem="NMp-jn-5xE" secondAttribute="leading" id="HNI-Em-IeF"/>
@@ -1681,7 +1681,7 @@
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kPf-LM-voa">
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="XEp-yo-rr0" id="VQi-Og-c6A"/>
                                                         </connections>

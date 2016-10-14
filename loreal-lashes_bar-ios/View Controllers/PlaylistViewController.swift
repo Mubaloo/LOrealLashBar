@@ -51,6 +51,7 @@ class PlaylistViewController: BaseViewController {
         playlistCollection.reloadData()
         sendButton.isEnabled = false
         emailField.isUserInteractionEnabled = playlistItems.count > 0
+        emailField.enablesReturnKeyAutomatically = playlistItems.count > 0;
         
         let noteCenter = NotificationCenter.default
         noteCenter.addObserver(self, selector: #selector(PlaylistViewController.updateKeyboard(_:)),
@@ -270,6 +271,7 @@ extension PlaylistViewController: PlaylistCellDelegate {
         
         updateSendButton()
         emailField.isUserInteractionEnabled = playlistItems.count > 0
+        emailField.enablesReturnKeyAutomatically = playlistItems.count > 0;
         
         let itemsAfter = collectionView(playlistCollection, numberOfItemsInSection: 0)
         
