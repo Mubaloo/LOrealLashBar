@@ -49,11 +49,13 @@ class PlaylistViewController: BaseViewController {
         tickMarkBackground.layer.cornerRadius = 3
         playlistCollection.collectionViewLayout = PagedGridLayout()
         playlistCollection.reloadData()
-        sendButton.isEnabled = playlistItems.count > 0
+        sendButton.isEnabled = false
         
         let noteCenter = NotificationCenter.default
         noteCenter.addObserver(self, selector: #selector(PlaylistViewController.updateKeyboard(_:)),
                                name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
+        emailField.addTarget(self, action: #selector(PlaylistViewController.textFieldDidChange), for: .editingChanged)
     }
     
     deinit {
@@ -146,6 +148,13 @@ class PlaylistViewController: BaseViewController {
         }
     }
     
+    func updateSendButton() {
+        if playlistItems.count > 0 && (emailField.text?.characters.count)! > 0 {
+            sendButton.isEnabled = true
+        }else{
+            sendButton.isEnabled = false
+        }
+    }
 }
 
 extension PlaylistViewController: UITextFieldDelegate {
@@ -154,6 +163,9 @@ extension PlaylistViewController: UITextFieldDelegate {
         return textField.resignFirstResponder()
     }
     
+    func textFieldDidChange() {
+        updateSendButton()
+    }
 }
 
 extension PlaylistViewController: UICollectionViewDataSource {
@@ -254,7 +266,8 @@ extension PlaylistViewController: PlaylistCellDelegate {
         item.isInPlaylist = false
         CoreDataStack.shared.saveContext()
         playlistItems.remove(at: (indexPath as NSIndexPath).item)
-        sendButton.isEnabled = playlistItems.count > 0
+        
+        updateSendButton()
         
         let itemsAfter = collectionView(playlistCollection, numberOfItemsInSection: 0)
         
