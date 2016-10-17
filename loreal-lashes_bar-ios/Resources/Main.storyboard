@@ -1630,7 +1630,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmptyVideoCell" id="vCk-pA-SdQ" customClass="EmptyVideoCell" customModule="loreal_lashes_bar_ios" customModuleProvider="target">
-                                        <rect key="frame" x="460" y="40" width="308" height="252"/>
+                                        <rect key="frame" x="366" y="40" width="308" height="252"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="308" height="252"/>
@@ -1699,11 +1699,11 @@
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="kPf-LM-voa" secondAttribute="bottom" id="08T-XP-cCL"/>
-                                                    <constraint firstAttribute="trailing" secondItem="kPf-LM-voa" secondAttribute="trailing" id="9JF-CS-9fv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kPf-LM-voa" secondAttribute="trailing" constant="8" id="9JF-CS-9fv"/>
                                                     <constraint firstItem="kPf-LM-voa" firstAttribute="top" secondItem="tDw-Qt-5cN" secondAttribute="top" id="H5f-Up-efX"/>
                                                     <constraint firstAttribute="height" constant="48" id="SO2-N7-7IN"/>
                                                     <constraint firstAttribute="width" constant="450" id="Vhm-y5-8AC"/>
-                                                    <constraint firstItem="kPf-LM-voa" firstAttribute="leading" secondItem="tDw-Qt-5cN" secondAttribute="leading" constant="5" id="XGe-Hy-dha"/>
+                                                    <constraint firstItem="kPf-LM-voa" firstAttribute="leading" secondItem="tDw-Qt-5cN" secondAttribute="leading" constant="8" id="XGe-Hy-dha"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zd6-Ge-cQV">
