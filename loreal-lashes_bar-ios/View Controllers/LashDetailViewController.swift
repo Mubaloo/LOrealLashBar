@@ -10,7 +10,7 @@ import UIKit
 
 class LashDetailViewController: BaseViewController {
     
-    @IBOutlet var videoView: AVPlayerView!
+    @IBOutlet var videoView: UIView!
     
     @IBOutlet weak var lengthTitleLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
@@ -29,6 +29,8 @@ class LashDetailViewController: BaseViewController {
     @IBOutlet var addToPlaylistButton: UIButton!
     @IBOutlet weak var lashesImagesContainerView: UIView!
 
+    let videoPlayer = AVSharedPlayerView.sharedInstance
+
     var lash: Lash? {
         didSet {
             updateLashData()
@@ -39,8 +41,8 @@ class LashDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Videos on this screen should prevent a timeout
-        videoView.shouldInterruptTimeout = true
+        setupPlayer()
+
         hotTipBorder.titleWidth = 34
         
         // Colour scheme setup
@@ -57,19 +59,34 @@ class LashDetailViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        videoView?.play()
+        videoPlayer.playerView.play()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        videoView?.pause()
+        videoPlayer.playerView.pause()
+    }
+    
+    // MARK:- Player setup
+    private func setupPlayer() {
+        self.videoView.insertSubview(videoPlayer, at: 0)
+        
+        let topConstraint = NSLayoutConstraint(item: videoPlayer, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: videoView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
+        let bottomConstraint = NSLayoutConstraint(item: videoPlayer, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: videoView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
+        let leftConstraint = NSLayoutConstraint(item: videoPlayer, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: videoView, attribute: NSLayoutAttribute.left, multiplier: 1, constant: 0)
+        let rightConstraint = NSLayoutConstraint(item: videoPlayer, attribute: NSLayoutAttribute.right, relatedBy: NSLayoutRelation.equal, toItem: videoView, attribute: NSLayoutAttribute.right, multiplier: 1, constant: 0)
+        
+        NSLayoutConstraint.activate([topConstraint, bottomConstraint, leftConstraint, rightConstraint])
+        
+        
+        videoPlayer.playerView.shouldInterruptTimeout = true
     }
     
     fileprivate func updateLashData() {
         if isViewLoaded == false { return }
         guard let lash = lash else { return }
         
-        videoView.loadPlaylistItem(lash)
+        videoPlayer.playerView.loadPlaylistItem(lash)
         lengthTitleLabel.text = lash.length
         nameLabel.text = lash.name
         detailLabel.text = lash.detail
@@ -116,12 +133,12 @@ class LashDetailViewController: BaseViewController {
 extension LashDetailViewController: TransitionAnimationDataSource {
     
     func transitionableViews(_ direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
-        return [videoView, nameLabel, detailLabel, typeContainer, addToPlaylistButton, hotTipStackView, hotTipHeart, hotTipBorder]
+        return [videoPlayer, nameLabel, detailLabel, typeContainer, addToPlaylistButton, hotTipStackView, hotTipHeart, hotTipBorder]
     }
     
     func transitionAnimationItemsForView(_ view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
         switch view {
-        case videoView :
+        case videoPlayer :
             let fade = TransitionAnimationItem(mode: .fade, duration: 0.5)
             let scale = TransitionAnimationItem(mode: .scale, duration: 0.4, quantity: 1.3)
             return [fade, scale]

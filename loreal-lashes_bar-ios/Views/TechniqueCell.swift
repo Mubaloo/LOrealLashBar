@@ -24,7 +24,6 @@ class TechniqueCell: UICollectionViewCell {
         super.awakeFromNib()
         watchButton.setTitleColor(UIColor.hotPink, for: UIControlState())
         videoPreview.shouldRepeat = true
-        videoPreview.play()
     }
     
     var technique: Technique? {

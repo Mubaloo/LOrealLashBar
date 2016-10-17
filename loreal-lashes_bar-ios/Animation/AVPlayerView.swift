@@ -105,6 +105,12 @@ class AVPlayerView: UIView {
         player.removeObserver(self, forKeyPath: "status")
     }
     
+    func cleanup() {
+        self.player.replaceCurrentItem(with: nil)
+        imposter?.isHidden = false
+        imposter?.image = nil
+    }
+
     /** Creates a new AVPlayerView with all required controls using the standard nib. */
     class func newFromNib() -> AVPlayerView {
         let nib = UINib(nibName: "AVPlayerView", bundle: nil)
@@ -160,7 +166,6 @@ class AVPlayerView: UIView {
     }
     
     func loadPlaylistItem(_ item: PlaylistItem, shouldLoadThumb: Bool) {
-        imposter?.isHidden = self.player.status == .readyToPlay ? true : false
         if shouldLoadThumb == true {
             loadURL(item.localMediaThumbURL as URL)
         }else{
@@ -171,6 +176,7 @@ class AVPlayerView: UIView {
     func playIfPossible() {
         if self.player.status == .readyToPlay {
             self.player.play()
+            imposter?.isHidden = true
         }
     }
     
@@ -212,6 +218,7 @@ class AVPlayerView: UIView {
     
     func play() {
         if player.rate == 0 { togglePlay(self) }
+        imposter?.isHidden = true
     }
     
     func pause() {
@@ -316,7 +323,6 @@ class AVPlayerView: UIView {
             let wasReady = (old.intValue == AVPlayerStatus.readyToPlay.rawValue)
             let isReady = (new.intValue == AVPlayerStatus.readyToPlay.rawValue)
             if wasReady == isReady { return }
-            imposter?.isHidden = isReady
             if isReady { delegate?.playerIsReady(self) }
         }
     }

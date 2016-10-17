@@ -17,7 +17,7 @@
             <objects>
                 <navigationController navigationBarHidden="YES" id="yaf-ak-wPJ" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="PvV-wL-xFz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PvV-wL-xFz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -527,75 +527,9 @@
                                 <frame key="frameInset" minY="698" width="768" height="226"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLq-yW-Fzh" customClass="AVPlayerView" customModule="loreal_lashes_bar_ios" customModuleProvider="target">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLq-yW-Fzh">
                                 <frame key="frameInset" width="768" height="433"/>
                                 <subviews>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2xj-qd-eTu"/>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AA5-wy-Oxg">
-                                        <state key="normal" image="large_play_button"/>
-                                        <state key="selected" image="large_pause_button"/>
-                                        <connections>
-                                            <action selector="togglePlay:" destination="bLq-yW-Fzh" eventType="touchUpInside" id="j7J-Ya-odA"/>
-                                        </connections>
-                                    </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCj-Mc-hty">
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXk-U8-f1b" userLabel="Play / Pause">
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="MFZ-EL-dMC"/>
-                                                    <constraint firstAttribute="height" constant="40" id="Oeu-T9-Wyt"/>
-                                                </constraints>
-                                                <state key="normal" image="small_play_button"/>
-                                                <state key="selected" image="small_pause_button"/>
-                                                <connections>
-                                                    <action selector="togglePlay:" destination="bLq-yW-Fzh" eventType="touchUpInside" id="NkA-VB-hyj"/>
-                                                </connections>
-                                            </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZR-CR-Yg2">
-                                                <subviews>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lt2-4T-SSe">
-                                                        <frame key="frameInset" minY="19" width="622" height="2"/>
-                                                        <color key="progressTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="trackTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </progressView>
-                                                </subviews>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <gestureRecognizers/>
-                                                <constraints>
-                                                    <constraint firstItem="lt2-4T-SSe" firstAttribute="leading" secondItem="cZR-CR-Yg2" secondAttribute="leading" id="7R3-V5-Gp1"/>
-                                                    <constraint firstAttribute="trailing" secondItem="lt2-4T-SSe" secondAttribute="trailing" id="ADH-fx-TnB"/>
-                                                    <constraint firstItem="lt2-4T-SSe" firstAttribute="centerY" secondItem="cZR-CR-Yg2" secondAttribute="centerY" id="WRC-US-OgV"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="Wcf-zZ-7ug" appends="YES" id="jRa-8J-oKw"/>
-                                                </connections>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1X2-Z3-aRM">
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="d0J-RD-fKf"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="12"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0m-2Q-T4l" userLabel="Mute">
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="XvR-PS-his"/>
-                                                    <constraint firstAttribute="width" constant="40" id="pnY-6w-WZ2"/>
-                                                </constraints>
-                                                <state key="normal" image="mute_button"/>
-                                                <state key="selected" image="unmute_button"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="pnY-6w-WZ2"/>
-                                                    </mask>
-                                                </variation>
-                                                <connections>
-                                                    <action selector="toggleMute:" destination="bLq-yW-Fzh" eventType="touchUpInside" id="wQ5-QU-0W4"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tau-HX-lgF">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="JaK-Rs-oI8"/>
@@ -608,29 +542,12 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="433" id="1fs-xM-3JL"/>
-                                    <constraint firstAttribute="trailing" secondItem="2xj-qd-eTu" secondAttribute="trailing" id="ADp-VI-Wey"/>
-                                    <constraint firstAttribute="trailing" secondItem="xCj-Mc-hty" secondAttribute="trailing" constant="33" id="BBx-xV-0aU"/>
                                     <constraint firstItem="tau-HX-lgF" firstAttribute="top" secondItem="bLq-yW-Fzh" secondAttribute="top" id="EHp-2E-r8v"/>
-                                    <constraint firstItem="AA5-wy-Oxg" firstAttribute="centerX" secondItem="bLq-yW-Fzh" secondAttribute="centerX" id="Iu4-oN-Pgj"/>
                                     <constraint firstAttribute="trailing" secondItem="tau-HX-lgF" secondAttribute="trailing" id="LL2-7A-oMF"/>
-                                    <constraint firstItem="2xj-qd-eTu" firstAttribute="leading" secondItem="bLq-yW-Fzh" secondAttribute="leading" id="T63-IY-95C"/>
-                                    <constraint firstAttribute="bottom" secondItem="xCj-Mc-hty" secondAttribute="bottom" id="kbs-u6-Nc4"/>
-                                    <constraint firstItem="xCj-Mc-hty" firstAttribute="leading" secondItem="bLq-yW-Fzh" secondAttribute="leading" constant="33" id="odg-g8-d6V"/>
-                                    <constraint firstItem="2xj-qd-eTu" firstAttribute="top" secondItem="bLq-yW-Fzh" secondAttribute="top" id="pRS-84-yEr"/>
-                                    <constraint firstAttribute="bottom" secondItem="2xj-qd-eTu" secondAttribute="bottom" id="qrb-HI-JxT"/>
-                                    <constraint firstItem="AA5-wy-Oxg" firstAttribute="centerY" secondItem="bLq-yW-Fzh" secondAttribute="centerY" id="w0p-7h-MhI"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="bigPlayButton" destination="AA5-wy-Oxg" id="fij-jw-oNW"/>
-                                    <outlet property="imposter" destination="2xj-qd-eTu" id="31z-PF-BHh"/>
-                                    <outlet property="muteButton" destination="L0m-2Q-T4l" id="h6T-4R-ezk"/>
-                                    <outlet property="playPauseButton" destination="NXk-U8-f1b" id="apo-rt-yyg"/>
-                                    <outlet property="progressBar" destination="lt2-4T-SSe" id="lYa-KR-PNA"/>
-                                    <outlet property="timeLabel" destination="1X2-Z3-aRM" id="6xe-TV-2Si"/>
-                                </connections>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="uSz-Ta-Uom">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1126,70 +1043,8 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="abW-Ad-b34">
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4I-Xu-Gh3" customClass="AVPlayerView" customModule="loreal_lashes_bar_ios" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4I-Xu-Gh3">
                                         <subviews>
-                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1gZ-vu-4CZ"/>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdy-Lk-mBe">
-                                                <state key="normal" image="large_play_button"/>
-                                                <state key="selected" image="large_pause_button"/>
-                                                <connections>
-                                                    <action selector="togglePlay:" destination="D4I-Xu-Gh3" eventType="touchUpInside" id="Nx6-Rd-23y"/>
-                                                </connections>
-                                            </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpO-AP-2G4">
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYj-AJ-pIc" userLabel="Play / Pause">
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="40" id="Nxf-aK-sHf"/>
-                                                            <constraint firstAttribute="height" constant="40" id="aTh-FB-ewE"/>
-                                                        </constraints>
-                                                        <state key="normal" image="small_play_button"/>
-                                                        <state key="selected" image="small_pause_button"/>
-                                                        <connections>
-                                                            <action selector="togglePlay:" destination="D4I-Xu-Gh3" eventType="touchUpInside" id="KRg-NY-7kC"/>
-                                                        </connections>
-                                                    </button>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dz-hL-2pe">
-                                                        <subviews>
-                                                            <progressView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQN-fz-13f">
-                                                                <color key="progressTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="trackTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </progressView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <gestureRecognizers/>
-                                                        <constraints>
-                                                            <constraint firstItem="WQN-fz-13f" firstAttribute="centerY" secondItem="0dz-hL-2pe" secondAttribute="centerY" id="909-em-Omc"/>
-                                                            <constraint firstItem="WQN-fz-13f" firstAttribute="leading" secondItem="0dz-hL-2pe" secondAttribute="leading" id="YqF-ZN-ylj"/>
-                                                            <constraint firstAttribute="trailing" secondItem="WQN-fz-13f" secondAttribute="trailing" id="cQs-Nu-JsS"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTU-rs-GJk">
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="40" id="l9A-zY-9cl"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="12"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDp-7A-glh" userLabel="Mute">
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="9N0-uV-NSe"/>
-                                                            <constraint firstAttribute="width" constant="40" id="dPP-03-PLB"/>
-                                                        </constraints>
-                                                        <state key="normal" image="mute_button"/>
-                                                        <state key="selected" image="unmute_button"/>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="dPP-03-PLB"/>
-                                                            </mask>
-                                                        </variation>
-                                                        <connections>
-                                                            <action selector="toggleMute:" destination="D4I-Xu-Gh3" eventType="touchUpInside" id="iK3-NC-z41"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcZ-Ke-KOJ">
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="0Mj-zu-wqD"/>
@@ -1202,29 +1057,12 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="1gZ-vu-4CZ" secondAttribute="trailing" id="7UG-y7-sjU"/>
-                                            <constraint firstItem="Xdy-Lk-mBe" firstAttribute="centerX" secondItem="D4I-Xu-Gh3" secondAttribute="centerX" id="9QU-Bh-hyU"/>
                                             <constraint firstAttribute="height" constant="433" id="Qig-gP-2V8"/>
                                             <constraint firstAttribute="trailing" secondItem="TcZ-Ke-KOJ" secondAttribute="trailing" id="Tqd-tD-iWv"/>
-                                            <constraint firstItem="Xdy-Lk-mBe" firstAttribute="centerY" secondItem="D4I-Xu-Gh3" secondAttribute="centerY" id="UGx-jG-nA1"/>
                                             <constraint firstItem="TcZ-Ke-KOJ" firstAttribute="top" secondItem="D4I-Xu-Gh3" secondAttribute="top" id="Z4e-Ce-52A"/>
-                                            <constraint firstAttribute="trailing" secondItem="kpO-AP-2G4" secondAttribute="trailing" constant="33" id="Zwq-UH-GxX"/>
-                                            <constraint firstItem="1gZ-vu-4CZ" firstAttribute="top" secondItem="D4I-Xu-Gh3" secondAttribute="top" id="e2T-rg-MWF"/>
-                                            <constraint firstItem="kpO-AP-2G4" firstAttribute="leading" secondItem="D4I-Xu-Gh3" secondAttribute="leading" constant="33" id="hmZ-Od-JqR"/>
-                                            <constraint firstItem="1gZ-vu-4CZ" firstAttribute="leading" secondItem="D4I-Xu-Gh3" secondAttribute="leading" id="iN3-Ai-h8n"/>
-                                            <constraint firstAttribute="bottom" secondItem="kpO-AP-2G4" secondAttribute="bottom" id="nx3-L2-vnK"/>
-                                            <constraint firstAttribute="bottom" secondItem="1gZ-vu-4CZ" secondAttribute="bottom" id="o2A-Xd-uqf"/>
                                         </constraints>
-                                        <connections>
-                                            <outlet property="bigPlayButton" destination="Xdy-Lk-mBe" id="thl-gL-sPf"/>
-                                            <outlet property="imposter" destination="1gZ-vu-4CZ" id="ZR0-qh-AIf"/>
-                                            <outlet property="muteButton" destination="sDp-7A-glh" id="exr-ea-kzB"/>
-                                            <outlet property="playPauseButton" destination="RYj-AJ-pIc" id="RuE-i0-VqI"/>
-                                            <outlet property="progressBar" destination="WQN-fz-13f" id="ieW-s3-aNv"/>
-                                            <outlet property="timeLabel" destination="QTU-rs-GJk" id="qbZ-bT-Sd6"/>
-                                        </connections>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="768" placeholderIntrinsicHeight="325" translatesAutoresizingMaskIntoConstraints="NO" id="efQ-Fq-2ua">
                                         <subviews>
@@ -2053,17 +1891,11 @@ YOU MAY ALSO BE ABLE TO REGISTER AND LOG IN USING A SOCIAL MEDIA ACCOUNT, INCLUD
         <image name="heart_knockout" width="17" height="17"/>
         <image name="heart_plain" width="13" height="12"/>
         <image name="infoIcon" width="32" height="32"/>
-        <image name="large_pause_button" width="64" height="85"/>
-        <image name="large_play_button" width="57" height="65"/>
         <image name="loading-lips" width="52" height="57"/>
-        <image name="mute_button" width="19" height="13"/>
         <image name="nyx_logo_small" width="59" height="36"/>
-        <image name="small_pause_button" width="10" height="12"/>
-        <image name="small_play_button" width="11" height="12"/>
         <image name="stylised_bar_narrow" width="768" height="226"/>
         <image name="tickMark" width="14" height="10"/>
         <image name="tips icon" width="68" height="77"/>
-        <image name="unmute_button" width="19" height="13"/>
         <image name="zigzag_icon" width="8" height="11"/>
     </resources>
     <inferredMetricsTieBreakers>
