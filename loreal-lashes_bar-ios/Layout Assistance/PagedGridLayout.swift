@@ -83,7 +83,7 @@ class PagedGridLayout: UICollectionViewLayout {
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         guard let collectionView = collectionView else { return nil }
         let fromPage = max(Int(floor(rect.minX / collectionView.frame.width)), 0)
-        let toPage = min(Int(floor(rect.maxX / collectionView.frame.width)), max(pageCount - 1, 0))
+        let toPage = min(Int(floor(rect.maxX / collectionView.frame.width)), max(pageCount, 0))
         let range = Array(fromPage ... toPage)
         
         let x = range.flatMap ({ (pageNumber) -> ([UICollectionViewLayoutAttributes]?) in

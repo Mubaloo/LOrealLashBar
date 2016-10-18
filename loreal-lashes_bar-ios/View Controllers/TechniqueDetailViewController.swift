@@ -74,9 +74,12 @@ class TechniqueDetailViewController: BaseViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         didLoad = false
-        self.videoPlayer.cleanUp()
     }
     
+    deinit {
+        self.videoPlayer.cleanUp()
+    }
+
     @IBAction func unwindToTechniqueDetail(_ sender: UIStoryboardSegue) {
         // Nothing to do; just an unwind target
     }
@@ -192,7 +195,6 @@ class TechniqueDetailViewController: BaseViewController {
         guard let technique = technique , isViewLoaded else { return }
         
         if collectionView.visibleCells.count > 0, let currentCell = collectionView.visibleCells[0] as? TechniqueDetailsCell {
-            currentCell.addToPlaylistButton.isUserInteractionEnabled = !technique.inPlaylist
             if technique.inPlaylist {
                 currentCell.addToPlaylistButton.setTitle("ADDED!", for: UIControlState())
                 currentCell.addToPlaylistButton.isEnabled = false
