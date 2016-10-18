@@ -301,7 +301,11 @@ extension PlaylistViewController: PlaylistCellDelegate {
         let last = Int(floor(Float((indexPath as NSIndexPath).item) / 4) + 1) * 4
         let range = (indexPath as NSIndexPath).item ..< last
         let indices = range.map({ IndexPath(item: $0, section: 0) })
-        playlistCollection.reloadItems(at: indices)
-        perform(#selector(PlaylistViewController.playVideos), with: nil,  afterDelay:0.5)
+        weak var weakSelf = self
+        playlistCollection.performBatchUpdates({ 
+            weakSelf?.playlistCollection.reloadItems(at: indices)
+            }) { (_) in
+               weakSelf?.playVideos()
+        }
     }
 }
