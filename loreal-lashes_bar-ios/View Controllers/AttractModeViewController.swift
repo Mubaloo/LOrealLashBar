@@ -85,8 +85,8 @@ class AttractModeViewController: BaseViewController {
     
     func loopVideo() {
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { notification in
-            guard let sourcePlayer = notification.object as? AVPlayer else { return }
-            if sourcePlayer == self.player {
+            guard let sourceItem = notification.object as? AVPlayerItem else { return }
+            if sourceItem == self.player.currentItem {
                 self.player.seek(to: kCMTimeZero)
                 self.player.play()
             }
