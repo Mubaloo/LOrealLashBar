@@ -52,16 +52,14 @@ class MyPlaylistCell: UICollectionViewCell {
                 DispatchQueue.main.async {
                     weakSelf?.playerLayer?.frame = CGRect(x: 0, y: 0, width: 308, height: 174)
                     weakSelf?.contentView.layer.addSublayer((weakSelf?.playerLayer!)!)
-                    weakSelf?.playerLayer?.player?.play()
                 }
             }
-            
+    
             
             NotificationCenter.default.addObserver(self,
                                                    selector: #selector(TechniqueCell.playerItemDidReachEnd(notification:)),
                                                    name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
                                                    object: playerLayer?.player?.currentItem)
-            
             self.playerView.imposter?.image = item.thumbnail
         }
     }
@@ -69,6 +67,7 @@ class MyPlaylistCell: UICollectionViewCell {
     func startPlayer() {
         playerLayer?.player = player
         playerLayer?.player?.play()
+        self.playerView.isHidden = true
     }
     
     func playerItemDidReachEnd(notification: NSNotification) {
@@ -78,6 +77,15 @@ class MyPlaylistCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        self.playerView.isHidden = false
+        cleanup()
+    }
+    
+    deinit {
+        cleanup()
+    }
+    
+    private func cleanup() {
         NotificationCenter.default.removeObserver(self)
         playerLayer?.player?.currentItem?.asset.cancelLoading()
         playerLayer?.player = nil
