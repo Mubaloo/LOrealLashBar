@@ -10,9 +10,6 @@ import Foundation
 
 private let interactionEventsURL = URL(string: "http://www.exacttargetapis.com/interaction/v1/events")!
 
-/**
- *  Enters subscriber into Palette Builder journey - currently only sends one email.
- */
 struct EntryEventRequest : WebServiceRequest {
     
     typealias Response = EntryEventResponse
@@ -33,8 +30,8 @@ struct EntryEventRequest : WebServiceRequest {
             "ContactKey" : emailAddress,
             "EventDefinitionKey" : eventDefinitionKey,
             "EstablishContactKey" : true,
-            "Source" : source,
             "Data" : [
+                "Source" : source,
                 "Email_Perm_Status" : emailStatus ? "Y" : "N",
                 "emailaddress" : emailAddress,
                 "send_date" : sendDate,
