@@ -32,6 +32,7 @@ class TechniqueBrowserViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.doManualTransitionIfNeeded()
+        NotificationCenter.default.addObserver(self, selector: #selector(TechniqueBrowserViewController.playVideos), name: NSNotification.Name(rawValue: "applicationDidBecomeActive"), object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,6 +43,7 @@ class TechniqueBrowserViewController: BaseViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         manualTransitionTechnique = nil
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "applicationDidBecomeActive"), object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
