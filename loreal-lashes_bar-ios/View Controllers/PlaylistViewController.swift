@@ -197,9 +197,7 @@ class PlaylistViewController: BaseViewController {
     func playStoppedVideos() {
         for cell in playlistCollection.visibleCells {
             if let videoCell = cell as? MyPlaylistCell {
-                if videoCell.player?.rate == 0 {
-                    videoCell.startPlayer()
-                }
+                videoCell.startPlayer()
             }
         }
     }
