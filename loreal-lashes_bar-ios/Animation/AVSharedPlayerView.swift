@@ -14,6 +14,7 @@ class AVSharedPlayerView: UIView {
     
     var playerView: AVPlayerView = {
         let player = AVPlayerView.newFromNib()
+        player.shouldInterruptTimeout = true
         player.translatesAutoresizingMaskIntoConstraints = false
         return player
     }()

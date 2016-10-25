@@ -60,11 +60,18 @@ class LashDetailViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         videoPlayer.playerView.play()
+        // time out after a second to make sure that the automatic timer start has finished
+        perform(#selector(TechniqueDetailViewController.stopTimeout), with: nil, afterDelay: 1)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
         videoPlayer.playerView.pause()
+    }
+    
+    func stopTimeout() {
+        let app = UIApplication.shared as! TimeOutApplication
+        app.pauseTimeout()
     }
     
     // MARK:- Player setup
