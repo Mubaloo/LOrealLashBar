@@ -29,7 +29,6 @@ class PlaylistViewController: BaseViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     
     var currentTimer: Timer?
-    var shouldMoveToAttract: Bool = false
     
     var playlistItems: [PlaylistItem] = {
         var allItems = Lash.playlist().map({ $0 as PlaylistItem })
@@ -119,13 +118,11 @@ class PlaylistViewController: BaseViewController {
                     self.statusImageView.image = UIImage(named: "loaded-lips")
                     guard let app = UIApplication.shared as? TimeOutApplication else { return }
                     app.beginShortTimeout()
-                    self.shouldMoveToAttract = true
                 case .successNoData :
                     self.statusLabel.text = "Sent to \(emailAddress)!"
                     self.statusImageView.image = UIImage(named: "loaded-lips")
                     guard let app = UIApplication.shared as? TimeOutApplication else { return }
                     app.beginShortTimeout()
-                    self.shouldMoveToAttract = true
                 case .failure(_) :
                     self.statusContainer.isHidden = true
                     self.emailContainer.isHidden = false
@@ -142,12 +139,7 @@ class PlaylistViewController: BaseViewController {
     }
     
     @IBAction func closeButtonTouched(_ sender: UIButton) {
-        if shouldMoveToAttract == true {
-            guard let app = UIApplication.shared as? TimeOutApplication else { return }
-            app.appDidTimeOut()
-        }else{
-             presentingViewController?.dismiss(animated: true, completion: nil)
-        }
+       presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tickContainerTouched(_ sender: AnyObject) {
@@ -238,13 +230,6 @@ extension PlaylistViewController: UICollectionViewDataSource {
 
 extension PlaylistViewController: UICollectionViewDelegate {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if shouldMoveToAttract == true {
-            guard let app = UIApplication.shared as? TimeOutApplication else { return }
-            app.appDidTimeOut()
-        }
-    }
-    
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool){
         if decelerate == false {
             playVideos()
@@ -257,19 +242,14 @@ extension PlaylistViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if shouldMoveToAttract == true {
-            guard let app = UIApplication.shared as? TimeOutApplication else { return }
-            app.appDidTimeOut()
+        collectionView.deselectItem(at: indexPath, animated: false)
+        if (indexPath as NSIndexPath).item >= playlistItems.count {
+            presentingViewController?.dismiss(animated: true, completion: nil)
         }else{
-            collectionView.deselectItem(at: indexPath, animated: false)
-            if (indexPath as NSIndexPath).item >= playlistItems.count {
-                presentingViewController?.dismiss(animated: true, completion: nil)
-            }else{
-                presentingViewController?.dismiss(animated: true, completion: nil)
-                let object = playlistItems[indexPath.item]
-                let notification = Notification(name: Notification.Name(rawValue: TitleBarViewController.NavigationTriggeredNotification), object: nil, userInfo: ["object":object])
-                NotificationCenter.default.post(notification)
-            }
+            presentingViewController?.dismiss(animated: true, completion: nil)
+            let object = playlistItems[indexPath.item]
+            let notification = Notification(name: Notification.Name(rawValue: TitleBarViewController.NavigationTriggeredNotification), object: nil, userInfo: ["object":object])
+            NotificationCenter.default.post(notification)
         }
     }
 }

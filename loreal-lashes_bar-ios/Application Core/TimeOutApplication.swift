@@ -17,7 +17,7 @@ class TimeOutApplication: UIApplication {
     
     static let ApplicationDidTimeOutNotification = "ApplicationDidTimeOutNotification"
     static let timeout: TimeInterval = 60 // Timeout measured in seconds of inactivity
-    static let shortTimeoutInterval: TimeInterval = 10 // Timeout measured in seconds of inactivity
+    static let shortTimeoutInterval: TimeInterval = 2 // Timeout measured in seconds of inactivity
     
     fileprivate var timer: Timer?
     fileprivate var pauseCount = 0
