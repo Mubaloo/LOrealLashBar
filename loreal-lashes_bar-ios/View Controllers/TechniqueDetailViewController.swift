@@ -69,8 +69,6 @@ class TechniqueDetailViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         videoPlayer.playerView.play()
-        // time out after a second to make sure that the automatic timer start has finished
-        perform(#selector(TechniqueDetailViewController.stopTimeout), with: nil, afterDelay: 1)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

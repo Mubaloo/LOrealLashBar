@@ -70,6 +70,9 @@ class TimeOutApplication: UIApplication {
      */
     func resumeTimeout() {
         pauseCount -= 1
+        if pauseCount < 0 {
+            pauseCount = 0
+        }
         if pauseCount == 0 { beginTimeout() }
     }
     
