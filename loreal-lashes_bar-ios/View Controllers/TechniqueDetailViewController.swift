@@ -10,13 +10,15 @@ import UIKit
 
 class TechniqueDetailViewController: BaseViewController {
     
-    @IBOutlet var videoContainer: AVPlayerView!
+    @IBOutlet var videoContainer: UIView!
     
     @IBOutlet var leftChevron: UIButton!
     @IBOutlet var rightChevron: UIButton!
 
     @IBOutlet var brushStack: UIStackView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    let videoPlayer = AVSharedPlayerView.sharedInstance
     
     var didLoad: Bool = false
     var selectedTag: Int!
@@ -52,12 +54,13 @@ class TechniqueDetailViewController: BaseViewController {
         collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
         
         view.backgroundColor = UIColor.lightBG
-        videoContainer.shouldInterruptTimeout = true
         
-        videoContainer.delegate = self
+        setupPlayer()
     
         updateTechniqueVideo()
         updateRelatedProducts()
+        
+        Analytics.sendEvent(category: .Technique, action: .TechniqueDetails, label: (technique?.name)!, value: Int((technique?.ordinal)!))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +70,7 @@ class TechniqueDetailViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        videoContainer.play()
+        videoPlayer.playerView.play()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -75,16 +78,43 @@ class TechniqueDetailViewController: BaseViewController {
         didLoad = false
     }
     
+    deinit {
+        self.videoPlayer.cleanUp()
+    }
+    
+    func stopTimeout() {
+        let app = UIApplication.shared as! TimeOutApplication
+        app.pauseTimeout()
+    }
+
     @IBAction func unwindToTechniqueDetail(_ sender: UIStoryboardSegue) {
         // Nothing to do; just an unwind target
+    }
+    
+    // MARK:- Player setup
+    private func setupPlayer() {
+        self.videoContainer.insertSubview(videoPlayer, at: 0)
+        
+        let topConstraint = NSLayoutConstraint(item: videoPlayer, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: videoContainer, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
+        let bottomConstraint = NSLayoutConstraint(item: videoPlayer, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: videoContainer, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
+        let leftConstraint = NSLayoutConstraint(item: videoPlayer, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: videoContainer, attribute: NSLayoutAttribute.left, multiplier: 1, constant: 0)
+        let rightConstraint = NSLayoutConstraint(item: videoPlayer, attribute: NSLayoutAttribute.right, relatedBy: NSLayoutRelation.equal, toItem: videoContainer, attribute: NSLayoutAttribute.right, multiplier: 1, constant: 0)
+        
+        NSLayoutConstraint.activate([topConstraint, bottomConstraint, leftConstraint, rightConstraint])
+        
+        
+        videoPlayer.playerView.shouldInterruptTimeout = true
+        
+        videoPlayer.playerView.delegate = self
+        
     }
     
     // MARK:- Update Methods
     
     fileprivate func updateTechniqueVideo() {
         guard let technique = technique else { return }
-        videoContainer.imposter!.image = technique.thumbnail
-        videoContainer.loadPlaylistItem(technique)
+        videoPlayer.playerView.imposter!.image = technique.thumbnail
+        videoPlayer.playerView.loadPlaylistItem(technique)
     }
     
     fileprivate func updateRelatedProducts() {
@@ -172,7 +202,6 @@ class TechniqueDetailViewController: BaseViewController {
         guard let technique = technique , isViewLoaded else { return }
         
         if collectionView.visibleCells.count > 0, let currentCell = collectionView.visibleCells[0] as? TechniqueDetailsCell {
-            currentCell.addToPlaylistButton.isUserInteractionEnabled = !technique.inPlaylist
             if technique.inPlaylist {
                 currentCell.addToPlaylistButton.setTitle("ADDED!", for: UIControlState())
                 currentCell.addToPlaylistButton.isEnabled = false
@@ -210,13 +239,15 @@ class TechniqueDetailViewController: BaseViewController {
         technique.inPlaylist = true
         CoreDataStack.shared.saveContext()
         updateButtons()
+        
+        Analytics.sendEvent(category: .Technique, action: .AddToPlaylist, label: technique.name, value: Int(technique.ordinal))
     }
     
 }
 
 extension TechniqueDetailViewController: AVPlayerViewDelegate {
     func playerDidFinishPlaying(_ player: AVPlayerView) {
-        videoContainer.reset()
+        videoPlayer.playerView.reset()
     }
 }
 
@@ -328,7 +359,7 @@ extension TechniqueDetailViewController: TransitionAnimationDataSource {
             views.append(view)
         }
         
-        if !(otherVC is TechniqueBrowserViewController) { views.append(videoContainer) }
+        if !(otherVC is TechniqueBrowserViewController) { views.append(videoPlayer) }
         return views
     }
     
@@ -336,7 +367,7 @@ extension TechniqueDetailViewController: TransitionAnimationDataSource {
         switch view {
         case is UIButton :
             return [TransitionAnimationItem(mode: .slideRight, delay: 0.2, duration:  0.5)]
-        case videoContainer :
+        case videoPlayer :
             return [TransitionAnimationItem(mode: .fade)]
         default : break
         }
@@ -347,12 +378,12 @@ extension TechniqueDetailViewController: TransitionAnimationDataSource {
     }
     
     func viewsWithEquivalents(_ otherVC: UIViewController) -> [UIView]? {
-        if otherVC is TechniqueBrowserViewController { return [videoContainer] }
+        if otherVC is TechniqueBrowserViewController { return [videoPlayer] }
         return nil
     }
     
     func equivalentViewForView(_ view: UIView, otherVC: UIViewController) -> UIView? {
-        return videoContainer
+        return videoPlayer
     }
     
 }

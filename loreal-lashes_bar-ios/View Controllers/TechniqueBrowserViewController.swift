@@ -14,6 +14,8 @@ class TechniqueBrowserViewController: BaseViewController {
     
     fileprivate var techniques = [Technique]()
     
+    var manualTransitionTechnique: Technique?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.lightBG
@@ -24,6 +26,24 @@ class TechniqueBrowserViewController: BaseViewController {
         layout.register(dividerNib, forDecorationViewOfKind: "Separator")
         techniqueCollection.collectionViewLayout = layout
         techniqueCollection.reloadData()
+        techniqueCollection.decelerationRate = UIScrollViewDecelerationRateFast;
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.doManualTransitionIfNeeded()
+        NotificationCenter.default.addObserver(self, selector: #selector(TechniqueBrowserViewController.playVideos), name: NSNotification.Name(rawValue: "applicationDidBecomeActive"), object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        playVideos()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        manualTransitionTechnique = nil
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "applicationDidBecomeActive"), object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -37,6 +57,21 @@ class TechniqueBrowserViewController: BaseViewController {
         // No need to do anything here yet
     }
 
+    func doManualTransitionIfNeeded() {
+        if manualTransitionTechnique != nil {
+            let view = UIView()
+            view.tag = techniques.index(of: manualTransitionTechnique!)!
+            self.performSegue(withIdentifier: "pushTechniqueDetail", sender: view)
+        }
+    }
+    
+    func playVideos() {
+        for cell in techniqueCollection.visibleCells {
+            if let techCell = cell as? TechniqueCell {
+                techCell.startPlayer()
+            }
+        }
+    }
 }
 
 extension TechniqueBrowserViewController: UICollectionViewDataSource {
@@ -62,9 +97,24 @@ extension TechniqueBrowserViewController: UICollectionViewDataSource {
     
 }
 
+extension TechniqueBrowserViewController: UIScrollViewDelegate {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        playVideos()
+    }
+    
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool){
+        if decelerate == false {
+            playVideos()
+        }
+    }
+}
+
 extension TechniqueBrowserViewController: TransitionAnimationDataSource {
     
     fileprivate func viewEquivalent(_ otherVC: UIViewController) -> UIView? {
+        if manualTransitionTechnique != nil {
+            return nil
+        }
         guard let detailVC = otherVC as? TechniqueDetailViewController,
             let technique = detailVC.technique,
             let itemNumber = techniques.index(of: technique)
@@ -76,10 +126,16 @@ extension TechniqueBrowserViewController: TransitionAnimationDataSource {
     }
     
     func transitionableViews(_ direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
+        if manualTransitionTechnique != nil {
+            return nil
+        }
         return techniqueCollection.subviews.filter({ $0 is TechniqueCell || $0 is UICollectionReusableView })
     }
     
     func transitionAnimationItemsForView(_ view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
+        if manualTransitionTechnique != nil {
+            return nil
+        }
         guard let cell = view as? TechniqueCell,
             let indexPath = techniqueCollection.indexPath(for: cell)
             else { return [TransitionAnimationItem(mode: .fade)] }
@@ -91,11 +147,17 @@ extension TechniqueBrowserViewController: TransitionAnimationDataSource {
     }
     
     func viewsWithEquivalents(_ otherVC: UIViewController) -> [UIView]? {
+        if manualTransitionTechnique != nil {
+            return nil
+        }
         if let equivalent = viewEquivalent(otherVC) { return [equivalent] }
         return nil
     }
     
     func equivalentViewForView(_ view: UIView, otherVC: UIViewController) -> UIView? {
+        if manualTransitionTechnique != nil {
+            return nil
+        }
         return viewEquivalent(otherVC)
     }
     

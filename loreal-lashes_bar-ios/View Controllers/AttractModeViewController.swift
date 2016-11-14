@@ -47,11 +47,14 @@ class AttractModeViewController: BaseViewController {
         super.viewDidAppear(animated)
         player.play()
         NotificationCenter.default.addObserver(player, selector: #selector(AVPlayer.play), name: NSNotification.Name(rawValue: "applicationDidBecomeActive"), object: nil)
+        loopVideo()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
          super.viewWillDisappear(animated)
+        player.pause()
         NotificationCenter.default.removeObserver(player, name: NSNotification.Name(rawValue: "applicationDidBecomeActive"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -77,14 +80,16 @@ class AttractModeViewController: BaseViewController {
             playerViewController.view.backgroundColor = UIColor.clear
             self.view.insertSubview(playerViewController.view, at: 0)
             self.addChildViewController(playerViewController)
-            loopVideo()
         }
     }
     
     func loopVideo() {
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { notification in
-            self.player.seek(to: kCMTimeZero)
-            self.player.play()
+            guard let sourceItem = notification.object as? AVPlayerItem else { return }
+            if sourceItem == self.player.currentItem {
+                self.player.seek(to: kCMTimeZero)
+                self.player.play()
+            }
         }
     }
     

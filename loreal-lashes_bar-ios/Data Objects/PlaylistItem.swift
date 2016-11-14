@@ -22,7 +22,9 @@ import CoreData
 protocol PlaylistItem {
     var name: String { get }
     var isInPlaylist: Bool { get set }
-    var remoteMediaURL: URL? { get }
+    var remoteMediaURL: String? { get }
+    var remoteVideoId: String? { get }
+    var remoteVideoType: String? { get }
     var localMediaURL: URL { get }
     var localMediaThumbURL: URL { get }
     var thumbnail: UIImage { get }

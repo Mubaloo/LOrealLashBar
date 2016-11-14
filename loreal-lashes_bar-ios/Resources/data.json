@@ -41,7 +41,11 @@
               "image":"WL01",
               "categories":["ROUND", "ALMOND", "MONOLID", "DEEP SET"],
               "local_path":"WL01.mov",
+              "thumb_path":"WL01.png",
               "local_path_thumb":"WL01 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897830717.html",
+              "remote_video_id":"q56Ut3rnk4g",
+              "remote_video_type":"Product",
               "length":"Long"
               },
               {
@@ -53,7 +57,11 @@
               "image":"WL02",
               "categories":["ROUND", "ALMOND", "MONOLID"],
               "local_path":"WL02.mov",
+              "thumb_path":"WL02.png",
               "local_path_thumb":"WL02 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897830724.html",
+              "remote_video_id":"Ms02XyoQp-A",
+              "remote_video_type":"Product",
               "length":"Extra Short"
               },
               {
@@ -65,7 +73,11 @@
               "image":"WL03",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
               "local_path":"WL03.mov",
+              "thumb_path":"WL03.png",
               "local_path_thumb":"WL03 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897830731.html",
+              "remote_video_id":"eVCMDAzJE_M",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -77,7 +89,11 @@
               "image":"WL04",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
               "local_path":"WL04.mov",
+              "thumb_path":"WL04.png",
               "local_path_thumb":"WL04 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897830748.html",
+              "remote_video_id":"UIVMc7BOoJc",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -89,7 +105,11 @@
               "image":"WL05",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
               "local_path":"WL05.mov",
+              "thumb_path":"WL05.png",
               "local_path_thumb":"WL05 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897830755.html",
+              "remote_video_id":"-qXnaxEDtyc",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -101,7 +121,11 @@
               "image":"WL06",
               "categories":["ROUND", "ALMOND", "MONOLID", "DEEP SET"],
               "local_path":"WL06.mov",
+              "thumb_path":"WL06.png",
               "local_path_thumb":"WL06 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897830762.html",
+              "remote_video_id":"0XDHGIQtvsQ",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -113,7 +137,11 @@
               "image":"WL07",
               "categories":["ROUND", "ALMOND", "MONOLID", "DEEP SET"],
               "local_path":"WL07.mov",
+              "thumb_path":"WL07.png",
               "local_path_thumb":"WL07 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897830779.html",
+              "remote_video_id":"5F8ki8aOjoQ",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -125,7 +153,11 @@
               "image":"WL08",
               "categories":["ALMOND", "HOODED", "MONOLID"],
               "local_path":"WL08.mov",
+              "thumb_path":"WL08.png",
               "local_path_thumb":"WL08 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897830786.html",
+              "remote_video_id":"i6Ob_4xpH6o",
+              "remote_video_type":"Product",
               "length":"Short"
               },
               {
@@ -137,7 +169,11 @@
               "image":"WL09",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
               "local_path":"WL09.mov",
+              "thumb_path":"WL09.png",
               "local_path_thumb":"WL09 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897830793.html",
+              "remote_video_id":"Hekec-cGDMw",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -149,7 +185,11 @@
               "image":"WL10",
               "categories":["ALMOND", "HOODED", "MONOLID"],
               "local_path":"WL10.mov",
+              "thumb_path":"WL10.png",
               "local_path_thumb":"WL10 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897830809.html",
+              "remote_video_id":"VtF4uHD6YZQ",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -161,7 +201,11 @@
               "image":"WL11",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
               "local_path":"WL11.mov",
+              "thumb_path":"WL11.png",
               "local_path_thumb":"WL11 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897830816.html",
+              "remote_video_id":"PwdRosrMvi0",
+              "remote_video_type":"Product",
               "length":"Short"
               },
               {
@@ -173,7 +217,11 @@
               "image":"WL12",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
               "local_path":"WL12.mov",
+              "thumb_path":"WL12.png",
               "local_path_thumb":"WL12 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897830823.html",
+              "remote_video_id":"a_zXJ_f4uiQ",
+              "remote_video_type":"Product",
               "length":"Short"
               },
               {
@@ -185,7 +233,11 @@
               "image":"WL13",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID"],
               "local_path":"WL13.mov",
+              "thumb_path":"WL13.png",
               "local_path_thumb":"WL13 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897047153.html",
+              "remote_video_id":"eVuhz57cP24",
+              "remote_video_type":"Product",
               "length":"Short"
               },
               {
@@ -197,7 +249,11 @@
               "image":"WL14",
               "categories":["ROUND", "HOODED", "MONOLID"],
               "local_path":"WL14.mov",
+              "thumb_path":"WL14.png",
               "local_path_thumb":"WL14 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897047160.html",
+              "remote_video_id":"IBxz-uV9Vzw",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -209,7 +265,11 @@
               "image":"WL15",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
               "local_path":"WL15.mov",
+              "thumb_path":"WL15.png",
               "local_path_thumb":"WL15 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897047177.html",
+              "remote_video_id":"twg0R9zuC9A",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -221,7 +281,11 @@
               "image":"WL16",
               "categories":["ROUND", "MONOLID", "DEEP SET"],
               "local_path":"WL16.mov",
+              "thumb_path":"WL16.png",
               "local_path_thumb":"WL16 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897047184.html",
+              "remote_video_id":"5J-x8hii6mo",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -233,7 +297,11 @@
               "image":"WL17",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
               "local_path":"WL17.mov",
+              "thumb_path":"WL17.png",
               "local_path_thumb":"WL17 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897047191.html",
+              "remote_video_id":"luLqYWhnEc0",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -245,7 +313,11 @@
               "image":"WL18",
               "categories":["ROUND", "ALMOND", "MONOLID", "DEEP SET"],
               "local_path":"WL18.mov",
+              "thumb_path":"WL18.png",
               "local_path_thumb":"WL18 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897047207.html",
+              "remote_video_id":"GFVemWmlp9Y",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -257,7 +329,11 @@
               "image":"WL19",
               "categories":["ALMOND", "DEEP SET"],
               "local_path":"WL19.mov",
+              "thumb_path":"WL19.png",
               "local_path_thumb":"WL19 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897047214.html",
+              "remote_video_id":"nzu7sIDbCJs",
+              "remote_video_type":"Product",
               "length":"Long"
               },
               {
@@ -269,7 +345,11 @@
               "image":"WL20",
               "categories":["ROUND", "ALMOND", "MONOLID", "DEEP SET"],
               "local_path":"WL20.mov",
+              "thumb_path":"WL20.png",
               "local_path_thumb":"WL20 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897047221.html",
+              "remote_video_id":"L0ITz0UWkhc",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -281,7 +361,11 @@
               "image":"WL21",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
               "local_path":"WL21.mov",
+              "thumb_path":"WL21.png",
               "local_path_thumb":"WL21 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897047238.html",
+              "remote_video_id":"CmbjYcIZ7fI",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -293,7 +377,11 @@
               "image":"WL22",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
               "local_path":"WL22.mov",
+              "thumb_path":"WL22.png",
               "local_path_thumb":"WL22 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897047245.html",
+              "remote_video_id":"EnD-1DvqTwE",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -305,7 +393,11 @@
               "image":"WL23",
               "categories":["ROUND", "ALMOND", "MONOLID"],
               "local_path":"WL23.mov",
+              "thumb_path":"WL23.png",
               "local_path_thumb":"WL23 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897047252.html",
+              "remote_video_id":"CgCyC_wfhlM",
+              "remote_video_type":"Product",
               "length":"Medium"
               },
               {
@@ -317,7 +409,11 @@
               "image":"WL24",
               "categories":["ROUND", "ALMOND", "HOODED", "MONOLID", "DEEP SET"],
               "local_path":"WL24.mov",
+              "thumb_path":"WL24.png",
               "local_path_thumb":"WL24 THUMB.mov",
+              "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/800897047269.html",
+              "remote_video_id":"2AD180tiQhg",
+              "remote_video_type":"Product",
               "length":"Short"
               }
                ],
@@ -331,6 +427,9 @@
                   "step3":"Apply at the center and secure the edges",
                   "local_path":"01. CUSTOM FITTING.mov",
                   "local_path_thumb":"01. CUSTOM FITTING THUMB.mov",
+                  "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/NYX_160.html",
+                  "remote_video_id":"JfO7Rs9YIA0",
+                  "remote_video_type":"Technique",
                   "thumb_path":"01. CUSTOM FITTING.png"
                   },
                   {
@@ -342,6 +441,9 @@
                   "step3":"Adhere to your lash and secure tightly with a second layer of adhesive, let dry and tug skin on top of lash band to cover",
                   "local_path":"02. POP-UP LASH PREVENTION.mov",
                   "local_path_thumb":"02. POP-UP LASH PREVENTION THUMB.mov",
+                  "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/NYX_160.html",
+                  "remote_video_id":"p5ZJVk5toUg",
+                  "remote_video_type":"Technique",
                   "thumb_path":"02. POP-UP LASH PREVENTION.png"
                   },
                   {
@@ -353,6 +455,9 @@
                   "step3":"Secure the inner lash against your liner",
                   "local_path":"03. LASH APPLICATION.mov",
                   "local_path_thumb":"03. LASH APPLICATION THUMB.mov",
+                  "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/NYX_160.html",
+                  "remote_video_id":"vFg-O7H9mq4",
+                  "remote_video_type":"Technique",
                   "thumb_path":"03. LASH APPLICATION.png"
                   },
                   {
@@ -364,6 +469,9 @@
                   "step3":"Work your way inwards and apply the second and third strips for a perfectly framed lash",
                   "local_path":"04. TRIO LASH APPLICATION.mov",
                   "local_path_thumb":"04. TRIO LASH APPLICATION THUMB.mov",
+                  "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/NYX_160.html",
+                  "remote_video_id":"PoBcyXtCPhE",
+                  "remote_video_type":"Technique",
                   "thumb_path":"04. TRIO LASH APPLICATION.png"
                   },
                   {
@@ -375,6 +483,9 @@
                   "step3":"Apply the end of the lash at an elevated angle against the winged liner to create a sultry lash effect",
                   "local_path":"05. ELONGATED LASHES.mov",
                   "local_path_thumb":"05. ELONGATED LASHES THUMB.mov",
+                  "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/NYX_160.html",
+                  "remote_video_id":"j8tpdqyEq_g",
+                  "remote_video_type":"Technique",
                   "thumb_path":"05. ELONGATED LASHES.png"
                   },
                   {
@@ -386,6 +497,9 @@
                   "step3":"Apply and secure using adhesive",
                   "local_path":"06. WICKED FLARE.mov",
                   "local_path_thumb":"06. WICKED FLARE THUMB.mov",
+                  "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/NYX_160.html",
+                  "remote_video_id":"G9-dBttA1gU",
+                  "remote_video_type":"Technique",
                   "thumb_path":"06. WICKED FLARE.png"
                   },
                   {
@@ -397,6 +511,9 @@
                   "step3":"Secure tightly using adhesive and tweezers",
                   "local_path":"07. DOUBLE STACKING.mov",
                   "local_path_thumb":"07. DOUBLE STACKING THUMB.mov",
+                  "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/NYX_160.html",
+                  "remote_video_id":"92j_CoPyS9M",
+                  "remote_video_type":"Technique",
                   "thumb_path":"07. DOUBLE STACKING.png"
                   },
                   {
@@ -408,6 +525,9 @@
                   "step3":"Continue applying inwards to your desired volume",
                   "local_path":"08. INDIVIDUAL LASHES.mov",
                   "local_path_thumb":"08. INDIVIDUAL LASHES THUMB.mov",
+                  "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/NYX_160.html",
+                  "remote_video_id":"bMedTCet0h4",
+                  "remote_video_type":"Technique",
                   "thumb_path":"08. INDIVIDUAL LASHES.png"
                   },
                   {
@@ -419,6 +539,9 @@
                   "step3":"Apply lashes and add mascara for extra volume. Use a wiggling motion to blend the lashes together",
                   "local_path":"09. LASH BLENDING.mov",
                   "local_path_thumb":"09. LASH BLENDING THUMB.mov",
+                  "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/NYX_160.html",
+                  "remote_video_id":"zE8wvMEwL18",
+                  "remote_video_type":"Technique",
                   "thumb_path":"09. LASH BLENDING.png"
                   },
                   {
@@ -430,6 +553,9 @@
                   "step3":"Secure tightly using tweezers",
                   "local_path":"10. INVISIBLE LASHES.mov",
                   "local_path_thumb":"10. INVISIBLE LASHES THUMB.mov",
+                  "remote_path":"http://www.nyxcosmetics.com/wicked-lashes/NYX_160.html",
+                  "remote_video_id":"uCzUTrf3DIA",
+                  "remote_video_type":"Technique",
                   "thumb_path":"10. INVISIBLE LASHES.png"
                   }
             ]

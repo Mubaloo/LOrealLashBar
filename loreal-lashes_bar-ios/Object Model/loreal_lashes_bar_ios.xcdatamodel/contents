@@ -11,6 +11,8 @@
         <attribute name="ordinal" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="remoteMediaPath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="thumbPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="videoId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="videoType" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LashCategory" inverseName="lashes" inverseEntity="LashCategory" syncable="YES"/>
     </entity>
     <entity name="LashCategory" representedClassName=".LashCategory" syncable="YES">
@@ -38,11 +40,13 @@
         <attribute name="step2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="step3" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="thumbPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="videoId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="videoType" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Lash" positionX="-56" positionY="-9" width="128" height="208"/>
+        <element name="Lash" positionX="-56" positionY="-9" width="128" height="238"/>
         <element name="LashCategory" positionX="214" positionY="-25" width="128" height="118"/>
         <element name="Product" positionX="-65" positionY="279" width="128" height="88"/>
-        <element name="Technique" positionX="-317" positionY="20" width="128" height="223"/>
+        <element name="Technique" positionX="-317" positionY="20" width="128" height="253"/>
     </elements>
 </model>

@@ -17,7 +17,7 @@ class TimeOutApplication: UIApplication {
     
     static let ApplicationDidTimeOutNotification = "ApplicationDidTimeOutNotification"
     static let timeout: TimeInterval = 60 // Timeout measured in seconds of inactivity
-    static let shortTimeoutInterval: TimeInterval = 10 // Timeout measured in seconds of inactivity
+    static let shortTimeoutInterval: TimeInterval = 2 // Timeout measured in seconds of inactivity
     
     fileprivate var timer: Timer?
     fileprivate var pauseCount = 0
@@ -70,6 +70,9 @@ class TimeOutApplication: UIApplication {
      */
     func resumeTimeout() {
         pauseCount -= 1
+        if pauseCount < 0 {
+            pauseCount = 0
+        }
         if pauseCount == 0 { beginTimeout() }
     }
     

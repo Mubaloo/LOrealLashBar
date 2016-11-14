@@ -25,10 +25,28 @@ class Technique: NSManagedObject, PlaylistItem {
         catch { return [] }
     }
     
-    var remoteMediaURL: URL? {
+    var remoteMediaURL: String? {
         get {
             if let path = remoteMediaPath {
-                return URL(fileURLWithPath: path)
+                return path
+            }
+            return nil
+        }
+    }
+    
+    var remoteVideoId: String? {
+        get {
+            if  let id = videoId {
+                return id
+            }
+            return nil
+        }
+    }
+    
+    var remoteVideoType: String? {
+        get {
+            if  let type = videoType {
+                return type
             }
             return nil
         }
@@ -110,6 +128,8 @@ extension Technique: JSONConfigurable {
         step3 = try json["step3"].string.unwrap("Technique step 3")
         
         remoteMediaPath = json["remote_path"].string
+        videoId = json["remote_video_id"].string
+        videoType = json["remote_video_type"].string
         localMediaPath = json["local_path"].string
         localMediaThumbPath = json["local_path_thumb"].string
         thumbPath = json["thumb_path"].string

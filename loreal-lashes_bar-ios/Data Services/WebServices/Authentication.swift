@@ -28,11 +28,11 @@ struct RequestTokenRequest : WebServiceRequest {
     let clientId: String
     let clientSecret: String
     
-    var requestBody: [String: Any] {
+    var requestBody: AnyObject? {
         return [
             "clientId" : clientId,
             "clientSecret" : clientSecret
-        ]
+        ] as AnyObject
     }
 }
 

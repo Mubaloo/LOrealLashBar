@@ -10,12 +10,13 @@ import UIKit
 
 class LashDetailViewController: BaseViewController {
     
-    @IBOutlet var videoView: AVPlayerView!
+    @IBOutlet var videoView: UIView!
     
     @IBOutlet weak var lengthTitleLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var detailLabel: UILabel!
     @IBOutlet weak var typeContainer: UIView!
+    @IBOutlet weak var typesLabel: UILabel!
     
     @IBOutlet var hotTipStackView: UIStackView!
     @IBOutlet var hotTipLabel: UILabel!
@@ -28,6 +29,8 @@ class LashDetailViewController: BaseViewController {
     @IBOutlet var addToPlaylistButton: UIButton!
     @IBOutlet weak var lashesImagesContainerView: UIView!
 
+    let videoPlayer = AVSharedPlayerView.sharedInstance
+
     var lash: Lash? {
         didSet {
             updateLashData()
@@ -38,13 +41,15 @@ class LashDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Videos on this screen should prevent a timeout
-        videoView.shouldInterruptTimeout = true
+        setupPlayer()
+
         hotTipBorder.titleWidth = 34
         
         // Colour scheme setup
         view.backgroundColor = UIColor.lightBG
         hotTipTitle.textColor = UIColor.hotPink
+        
+        Analytics.sendEvent(category: .Lashes, action: .ProductDetail, label: (lash?.name)!, value: Int((lash?.ordinal)!))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,23 +61,44 @@ class LashDetailViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        videoView?.play()
+        videoPlayer.playerView.play()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        videoView?.pause()
+        videoPlayer.playerView.pause()
+    }
+    
+    // MARK:- Player setup
+    private func setupPlayer() {
+        self.videoView.insertSubview(videoPlayer, at: 0)
+        
+        let topConstraint = NSLayoutConstraint(item: videoPlayer, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: videoView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
+        let bottomConstraint = NSLayoutConstraint(item: videoPlayer, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: videoView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
+        let leftConstraint = NSLayoutConstraint(item: videoPlayer, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: videoView, attribute: NSLayoutAttribute.left, multiplier: 1, constant: 0)
+        let rightConstraint = NSLayoutConstraint(item: videoPlayer, attribute: NSLayoutAttribute.right, relatedBy: NSLayoutRelation.equal, toItem: videoView, attribute: NSLayoutAttribute.right, multiplier: 1, constant: 0)
+        
+        NSLayoutConstraint.activate([topConstraint, bottomConstraint, leftConstraint, rightConstraint])
+        
+        
+        videoPlayer.playerView.shouldInterruptTimeout = true
     }
     
     fileprivate func updateLashData() {
         if isViewLoaded == false { return }
         guard let lash = lash else { return }
         
-        videoView.loadPlaylistItem(lash)
+        videoPlayer.playerView.loadPlaylistItem(lash)
         lengthTitleLabel.text = lash.length
         nameLabel.text = lash.name
         detailLabel.text = lash.detail
         hotTipLabel.text = lash.hotTips
+        
+        let categoriesArray = Array(lash.categories!)
+        let categoryNames = categoriesArray.map{ ( item: LashCategory) -> String in
+            return item.name
+        }
+        typesLabel.text = "Good for: \(categoryNames.joined(separator: ", "))"
         
         leftLashImageView.image = UIImage(cgImage: (lash.image.cgImage)!, scale: 1.0, orientation: .upMirrored)
         rightLashImageView.image = lash.image
@@ -98,6 +124,7 @@ class LashDetailViewController: BaseViewController {
         brush.inPlaylist = true
         CoreDataStack.shared.saveContext()
         updateButtons()
+        Analytics.sendEvent(category: .Lashes, action: .AddToPlaylist, label: (lash?.name)!, value: Int((lash?.ordinal)!))
     }
     
     @IBAction func closeButtonTouched(_ sender: UIButton) {
@@ -109,12 +136,12 @@ class LashDetailViewController: BaseViewController {
 extension LashDetailViewController: TransitionAnimationDataSource {
     
     func transitionableViews(_ direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
-        return [videoView, nameLabel, detailLabel, typeContainer, addToPlaylistButton, hotTipStackView, hotTipHeart, hotTipBorder]
+        return [videoPlayer, nameLabel, detailLabel, typeContainer, addToPlaylistButton, hotTipStackView, hotTipHeart, hotTipBorder]
     }
     
     func transitionAnimationItemsForView(_ view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
         switch view {
-        case videoView :
+        case videoPlayer :
             let fade = TransitionAnimationItem(mode: .fade, duration: 0.5)
             let scale = TransitionAnimationItem(mode: .scale, duration: 0.4, quantity: 1.3)
             return [fade, scale]

@@ -13,6 +13,7 @@ class LashesCategoryBrowserViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     fileprivate var categories = [LashCategory]()
+    var manualTransitionLash: Lash?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,17 +27,38 @@ class LashesCategoryBrowserViewController: BaseViewController {
         tableView.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.doManualTransitionIfNeeded()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        manualTransitionLash = nil
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let detailVC = segue.destination as? LashesBrowserViewController, let cell = sender as? LashCategoryCell, let indexPath = tableView.indexPath(for: cell) {
-            let category = categories[(indexPath as NSIndexPath).row]
-            detailVC.selectedCategory = category
+        if let detailVC = segue.destination as? LashesBrowserViewController {
+            if manualTransitionLash != nil {
+                detailVC.selectedCategory = manualTransitionLash!.categories!.first
+                detailVC.manualTransitionLash = manualTransitionLash
+            }else if let cell = sender as? LashCategoryCell, let indexPath = tableView.indexPath(for: cell) {
+                let category = categories[(indexPath as NSIndexPath).row]
+                detailVC.selectedCategory = category
+            }
         }
     }
     
     @IBAction func unwindToLashesCategoryBrowser(_ sender: UIStoryboardSegue) {
         // Nothing to do; just an unwind target
     }
+    
+    func doManualTransitionIfNeeded() {
+        if manualTransitionLash != nil {
+            self.performSegue(withIdentifier: "pushLashBrowser", sender: nil)
+        }
+    }
+
 }
 
 extension LashesCategoryBrowserViewController: UITableViewDataSource {
@@ -61,6 +83,10 @@ extension LashesCategoryBrowserViewController: UITableViewDataSource {
 extension LashesCategoryBrowserViewController: TransitionAnimationDataSource {
 
     fileprivate func viewEquivalent(_ otherVC: UIViewController) -> UIView? {
+        if manualTransitionLash != nil {
+            return nil
+        }
+
         guard let detailVC = otherVC as? LashesBrowserViewController,
             let category = detailVC.selectedCategory,
             let itemNumber = categories.index(of: category)
@@ -72,10 +98,16 @@ extension LashesCategoryBrowserViewController: TransitionAnimationDataSource {
     }
 
     func transitionableViews(_ direction: TransitionAnimationDirection, otherVC: UIViewController) -> [UIView]? {
+        if manualTransitionLash != nil {
+            return nil
+        }
         return tableView.visibleCells
     }
 
     func transitionAnimationItemsForView(_ view: UIView, direction: TransitionAnimationDirection, otherVC: UIViewController) -> [TransitionAnimationItem]? {
+        if manualTransitionLash != nil {
+            return nil
+        }
         guard let cell = view as? LashCategoryCell,
             let indexPath = tableView.indexPath(for: cell)
             else { return [TransitionAnimationItem(mode: .fade)] }
@@ -91,11 +123,17 @@ extension LashesCategoryBrowserViewController: TransitionAnimationDataSource {
     }
 
     func viewsWithEquivalents(_ otherVC: UIViewController) -> [UIView]? {
+        if manualTransitionLash != nil {
+            return nil
+        }
         if let equivalent = viewEquivalent(otherVC) { return [equivalent] }
         return nil
     }
 
     func equivalentViewForView(_ view: UIView, otherVC: UIViewController) -> UIView? {
+        if manualTransitionLash != nil {
+            return nil
+        }
         return viewEquivalent(otherVC)
     }
 }

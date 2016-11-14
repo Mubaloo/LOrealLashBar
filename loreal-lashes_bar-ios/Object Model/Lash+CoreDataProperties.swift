@@ -22,6 +22,8 @@ extension Lash {
     @NSManaged var number:                  Int16
     @NSManaged var ordinal:                 Int16
     @NSManaged var remoteMediaPath:         String?
+    @NSManaged var videoId:                 String?
+    @NSManaged var videoType:               String?
     @NSManaged var thumbPath:               String?
     @NSManaged var length:                  String
     @NSManaged var categories:              Set<LashCategory>?

@@ -1,0 +1,6 @@
+framework module Pods_loreal_lashes_bar_ios {
+  umbrella header "Pods-loreal-lashes_bar-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}
