@@ -4,4 +4,7 @@
    <FileRef
       location = "group:loreal-lashes_bar-ios.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>

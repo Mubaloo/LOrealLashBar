@@ -128,6 +128,7 @@ class PlaylistViewController: BaseViewController {
                     self.emailContainer.isHidden = false
                 }
             }
+            Analytics.sendEvent(category: .Email, action: .EmailConversions, label: "")
         }
         
         else {

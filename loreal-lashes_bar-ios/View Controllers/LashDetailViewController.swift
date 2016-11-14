@@ -48,6 +48,8 @@ class LashDetailViewController: BaseViewController {
         // Colour scheme setup
         view.backgroundColor = UIColor.lightBG
         hotTipTitle.textColor = UIColor.hotPink
+        
+        Analytics.sendEvent(category: .Lashes, action: .ProductDetail, label: (lash?.name)!, value: Int((lash?.ordinal)!))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -122,6 +124,7 @@ class LashDetailViewController: BaseViewController {
         brush.inPlaylist = true
         CoreDataStack.shared.saveContext()
         updateButtons()
+        Analytics.sendEvent(category: .Lashes, action: .AddToPlaylist, label: (lash?.name)!, value: Int((lash?.ordinal)!))
     }
     
     @IBAction func closeButtonTouched(_ sender: UIButton) {

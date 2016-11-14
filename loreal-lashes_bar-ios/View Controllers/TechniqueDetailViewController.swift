@@ -59,6 +59,8 @@ class TechniqueDetailViewController: BaseViewController {
     
         updateTechniqueVideo()
         updateRelatedProducts()
+        
+        Analytics.sendEvent(category: .Technique, action: .TechniqueDetails, label: (technique?.name)!, value: Int((technique?.ordinal)!))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -237,6 +239,8 @@ class TechniqueDetailViewController: BaseViewController {
         technique.inPlaylist = true
         CoreDataStack.shared.saveContext()
         updateButtons()
+        
+        Analytics.sendEvent(category: .Technique, action: .AddToPlaylist, label: technique.name, value: Int(technique.ordinal))
     }
     
 }
