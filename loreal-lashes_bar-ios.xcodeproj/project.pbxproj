@@ -1264,6 +1264,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 8MMCHWVX54;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1271,8 +1273,10 @@
 				INFOPLIST_FILE = "loreal-lashes_bar-ios/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mubaloo.loreal-lash-bar-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NYXStoreKiosk.ipglab.lashbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "13475b86-c648-44c5-96d4-232659f7522e";
+				PROVISIONING_PROFILE_SPECIFIER = "Mubaloo Distribution Wildcard (Oct 2016)";
 				SWIFT_OBJC_BRIDGING_HEADER = "loreal-lashes_bar-ios/Application Core/Header-loreal-lash_bar-ios.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1285,6 +1289,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = NLJ97PH8Y2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1292,8 +1297,10 @@
 				INFOPLIST_FILE = "loreal-lashes_bar-ios/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mubaloo.loreal-lash-bar-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NYXStoreKiosk.ipglab.lashbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a4c17c26-24d7-4fa2-bab2-6ab86ae38b96";
+				PROVISIONING_PROFILE_SPECIFIER = com.NYXStoreKiosk.ipglab.lashbar;
 				SWIFT_OBJC_BRIDGING_HEADER = "loreal-lashes_bar-ios/Application Core/Header-loreal-lash_bar-ios.h";
 				SWIFT_VERSION = 3.0;
 			};
