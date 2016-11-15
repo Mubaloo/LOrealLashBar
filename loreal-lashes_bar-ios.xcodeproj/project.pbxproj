@@ -10,11 +10,7 @@
 		03EB080F6DEB8BA3240AF242 /* Pods_loreal_lashes_bar_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29B8CEDC11CCB0CEFBD48A4 /* Pods_loreal_lashes_bar_ios.framework */; };
 		1816A4D81D63714C00FB6EB1 /* build_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 1816A4D61D63714C00FB6EB1 /* build_info.json */; };
 		183E40061D63736600AA3E08 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 183E40051D63736600AA3E08 /* Cartfile */; };
-		183E400A1D63742500AA3E08 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183E40091D63742500AA3E08 /* HockeySDK.framework */; };
-		183E400B1D63742500AA3E08 /* HockeySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 183E40091D63742500AA3E08 /* HockeySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		184A55431D70393D0027AE79 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184A55421D70393D0027AE79 /* AVFoundation.framework */; };
-		1850B2721D6475F500504FDD /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1850B2711D6475F500504FDD /* SwiftyJSON.framework */; };
-		1850B2731D6475F500504FDD /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1850B2711D6475F500504FDD /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B228122B1D9BB61600B091E1 /* 10. INVISIBLE LASHES.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228122A1D9BB61600B091E1 /* 10. INVISIBLE LASHES.mov */; };
 		B22812361D9BB62E00B091E1 /* 01. CUSTOM FITTING.png in Resources */ = {isa = PBXBuildFile; fileRef = B228122C1D9BB62E00B091E1 /* 01. CUSTOM FITTING.png */; };
 		B22812371D9BB62E00B091E1 /* 02. POP-UP LASH PREVENTION.png in Resources */ = {isa = PBXBuildFile; fileRef = B228122D1D9BB62E00B091E1 /* 02. POP-UP LASH PREVENTION.png */; };
@@ -202,8 +198,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1850B2731D6475F500504FDD /* SwiftyJSON.framework in Embed Frameworks */,
-				183E400B1D63742500AA3E08 /* HockeySDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,9 +208,7 @@
 		1811A3511D632A18002EA7F6 /* loreal-lashes_bar-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "loreal-lashes_bar-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1816A4D61D63714C00FB6EB1 /* build_info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = build_info.json; sourceTree = SOURCE_ROOT; };
 		183E40051D63736600AA3E08 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
-		183E40091D63742500AA3E08 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = Carthage/Build/iOS/HockeySDK.framework; sourceTree = "<group>"; };
 		184A55421D70393D0027AE79 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		1850B2711D6475F500504FDD /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		5A29BE657075205924DA64F5 /* Pods-loreal-lashes_bar-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loreal-lashes_bar-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-loreal-lashes_bar-ios/Pods-loreal-lashes_bar-ios.release.xcconfig"; sourceTree = "<group>"; };
 		9DE61E07D5E6A63667A472E8 /* Pods-loreal-lashes_bar-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loreal-lashes_bar-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-loreal-lashes_bar-ios/Pods-loreal-lashes_bar-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		B228122A1D9BB61600B091E1 /* 10. INVISIBLE LASHES.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "10. INVISIBLE LASHES.mov"; path = "loreal-lashes_bar-ios/Resources/Videos/10. INVISIBLE LASHES.mov"; sourceTree = SOURCE_ROOT; };
@@ -408,8 +400,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				184A55431D70393D0027AE79 /* AVFoundation.framework in Frameworks */,
-				1850B2721D6475F500504FDD /* SwiftyJSON.framework in Frameworks */,
-				183E400A1D63742500AA3E08 /* HockeySDK.framework in Frameworks */,
 				03EB080F6DEB8BA3240AF242 /* Pods_loreal_lashes_bar_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,8 +549,6 @@
 			isa = PBXGroup;
 			children = (
 				184A55421D70393D0027AE79 /* AVFoundation.framework */,
-				183E40091D63742500AA3E08 /* HockeySDK.framework */,
-				1850B2711D6475F500504FDD /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
 			path = ..;
@@ -841,7 +829,6 @@
 				1811A34D1D632A18002EA7F6 /* Sources */,
 				1811A34E1D632A18002EA7F6 /* Frameworks */,
 				1811A34F1D632A18002EA7F6 /* Resources */,
-				183E40071D6373BB00AA3E08 /* ShellScript */,
 				183E400C1D63742500AA3E08 /* Embed Frameworks */,
 				30745C93ED51F10FBF3BAF57 /* [CP] Embed Pods Frameworks */,
 				DFC8D58ED67F4A5A8849D785 /* [CP] Copy Pods Resources */,
@@ -1016,21 +1003,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		183E40071D6373BB00AA3E08 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/HockeySDK.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		30745C93ED51F10FBF3BAF57 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1266,10 +1238,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8MMCHWVX54;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "loreal-lashes_bar-ios/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1290,10 +1259,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = NLJ97PH8Y2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "loreal-lashes_bar-ios/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

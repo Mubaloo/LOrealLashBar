@@ -8,5 +8,7 @@ target 'loreal-lashes_bar-ios' do
   use_frameworks!
 
 pod 'Google/Analytics'
+pod 'HockeySDK'
+pod 'SwiftyJSON'
 
 end
