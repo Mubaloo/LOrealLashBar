@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		03EB080F6DEB8BA3240AF242 /* Pods_loreal_lashes_bar_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29B8CEDC11CCB0CEFBD48A4 /* Pods_loreal_lashes_bar_ios.framework */; };
 		1816A4D81D63714C00FB6EB1 /* build_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 1816A4D61D63714C00FB6EB1 /* build_info.json */; };
-		183E40061D63736600AA3E08 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 183E40051D63736600AA3E08 /* Cartfile */; };
 		184A55431D70393D0027AE79 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184A55421D70393D0027AE79 /* AVFoundation.framework */; };
 		B228122B1D9BB61600B091E1 /* 10. INVISIBLE LASHES.mov in Resources */ = {isa = PBXBuildFile; fileRef = B228122A1D9BB61600B091E1 /* 10. INVISIBLE LASHES.mov */; };
 		B22812361D9BB62E00B091E1 /* 01. CUSTOM FITTING.png in Resources */ = {isa = PBXBuildFile; fileRef = B228122C1D9BB62E00B091E1 /* 01. CUSTOM FITTING.png */; };
@@ -207,7 +206,6 @@
 /* Begin PBXFileReference section */
 		1811A3511D632A18002EA7F6 /* loreal-lashes_bar-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "loreal-lashes_bar-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1816A4D61D63714C00FB6EB1 /* build_info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = build_info.json; sourceTree = SOURCE_ROOT; };
-		183E40051D63736600AA3E08 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		184A55421D70393D0027AE79 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5A29BE657075205924DA64F5 /* Pods-loreal-lashes_bar-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loreal-lashes_bar-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-loreal-lashes_bar-ios/Pods-loreal-lashes_bar-ios.release.xcconfig"; sourceTree = "<group>"; };
 		9DE61E07D5E6A63667A472E8 /* Pods-loreal-lashes_bar-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loreal-lashes_bar-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-loreal-lashes_bar-ios/Pods-loreal-lashes_bar-ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -463,7 +461,6 @@
 				B2DB090B1D93F03B0063A25E /* Assets.xcassets */,
 				B2DB090D1D93F0490063A25E /* data.json */,
 				1816A4D61D63714C00FB6EB1 /* build_info.json */,
-				183E40051D63736600AA3E08 /* Cartfile */,
 				B2DB090F1D93F08C0063A25E /* Info.plist */,
 			);
 			path = Resources;
@@ -937,7 +934,6 @@
 				B228122B1D9BB61600B091E1 /* 10. INVISIBLE LASHES.mov in Resources */,
 				B228129B1D9BCFCB00B091E1 /* WL16 THUMB.mov in Resources */,
 				B22812A31D9BCFCB00B091E1 /* WL24 THUMB.mov in Resources */,
-				183E40061D63736600AA3E08 /* Cartfile in Resources */,
 				B2AA90631DB625C900F80FD3 /* WL01.png in Resources */,
 				B2AA906D1DB625C900F80FD3 /* WL11.png in Resources */,
 				B2AA90731DB625C900F80FD3 /* WL17.png in Resources */,
