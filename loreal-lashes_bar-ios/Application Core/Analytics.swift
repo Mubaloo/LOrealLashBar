@@ -27,7 +27,7 @@ struct Analytics {
     
     enum Category: String {
         case Technique = "Lashes Technique"
-        case Lashes = "Lashes"
+        case Lashes = "Lashes Product"
         case Email = "Lashes Email"
         case VideoPlayback = "Lashes Video playback Started"
     }
