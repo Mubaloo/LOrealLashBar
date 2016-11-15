@@ -1264,7 +1264,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8MMCHWVX54;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1275,8 +1275,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NYXStoreKiosk.ipglab.lashbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "13475b86-c648-44c5-96d4-232659f7522e";
-				PROVISIONING_PROFILE_SPECIFIER = "Mubaloo Distribution Wildcard (Oct 2016)";
+				PROVISIONING_PROFILE = "cecff12d-867d-4ed9-bd3f-f673e31ae070";
+				PROVISIONING_PROFILE_SPECIFIER = "Xcode-8-Wildcard";
 				SWIFT_OBJC_BRIDGING_HEADER = "loreal-lashes_bar-ios/Application Core/Header-loreal-lash_bar-ios.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
