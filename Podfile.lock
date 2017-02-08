@@ -21,9 +21,15 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.0)
   - GoogleToolboxForMac/NSData+zlib (2.1.0):
     - GoogleToolboxForMac/Defines (= 2.1.0)
+  - HockeySDK (4.1.2):
+    - HockeySDK/DefaultLib (= 4.1.2)
+  - HockeySDK/DefaultLib (4.1.2)
+  - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
   - Google/Analytics
+  - HockeySDK
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   FirebaseAnalytics: 6e58fc9b397664369ac7617fb0ba93fab6ba7b5b
@@ -34,7 +40,9 @@ SPEC CHECKSUMS:
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
+  HockeySDK: c7523379550a4305cefc1cdfa7b5f9a5a3538180
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 4800680bcd2ddaa050ff5d8358d3574f3579b429
+PODFILE CHECKSUM: fb16f3f2f484301a0c8940247851872d10ddc906
 
 COCOAPODS: 1.1.1

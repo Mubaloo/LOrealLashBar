@@ -7,19 +7,88 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		073F65460A31DE4979A0A774BD43FF3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		07E864677E8B257973A9C4615AB853D2 /* Pods-loreal-lashes_bar-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 225C0D1A773B7C24526BC1D193473BA4 /* Pods-loreal-lashes_bar-ios-dummy.m */; };
+		00C2326872F126DBFA899D7CBF08739E /* Pods-loreal-lashes_bar-ios-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86DA86AA24AFEAEA7CC3270B4C17A027 /* Pods-loreal-lashes_bar-ios-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		012574A34934758CA36667207368C7D3 /* buttonRoundedDelete.png in Resources */ = {isa = PBXBuildFile; fileRef = 3102A9CF8216F5BF7B93385B9461CCF3 /* buttonRoundedDelete.png */; };
+		08004F0F8AA5A69563740F44B0E71466 /* hr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A292F96BC9FBCE9CDCB455184EC8A882 /* hr.lproj */; };
+		086FB3FF466ABDBB532F9C3D6B045F4B /* Rectangle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EB95518F2E3DF2DEB2DFE8DF5AF190 /* Rectangle@3x.png */; };
+		0FBB11F2B81A09AA09E34425AE8F26C6 /* Arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A87016FCC16B841301F8766E30A2384 /* Arrow@3x.png */; };
+		167292D131070088C969BA32B8E6B9DC /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 37874279540C68FBF1A4B99AFFB042C2 /* ru.lproj */; };
+		1F264474B1D23914C14F7E268B72813A /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 8B1A20F731E28EF640CDC8F75E1065E8 /* it.lproj */; };
+		2263FEB26F2B68D3BB06DC739822F443 /* IconGradient@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D13ADB7BA06EAFD4E3F5E45D1D2F8E /* IconGradient@2x.png */; };
+		24D26F28A357297C515EC4C0534CCED3 /* Cancel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5CB987D1E10EB19BAC0B27E5D1DAE8 /* Cancel@3x.png */; };
+		2586546B5FE3E0319C540A923034ECAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		29A7F90400AA19ADA66D3B4D1C87627A /* Ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B96A926F96FF3DB1EABE51F690EF653 /* Ok.png */; };
+		2A222B5F8AA639E2C6C7A7AD12F2CBAC /* Pods-loreal-lashes_bar-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 225C0D1A773B7C24526BC1D193473BA4 /* Pods-loreal-lashes_bar-ios-dummy.m */; };
+		2B87ABC53C1DE65EBD4503D75E9CC767 /* pt-PT.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 33086646716302A47D4CC2478732874D /* pt-PT.lproj */; };
 		3159D7CAFD56B809F40CA3330DA10889 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = C31B2A63D6C73854FC6A8C1DB27E8B28 /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		79148F2D88179AD0450A6C303E9A3437 /* Pods-loreal-lashes_bar-ios-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86DA86AA24AFEAEA7CC3270B4C17A027 /* Pods-loreal-lashes_bar-ios-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86775A1258261F64AA78B11B0CD4FCBB /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 052BA672F9AB720D7937C0A0967BA8F4 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F370B70818D5AF2F17813F8CFAE132 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A451E33247024842D7AD3967B7BAC44 /* GoogleToolboxForMac-dummy.m */; };
+		3B788FE1AB0E5B70D2CDBC0D659406BB /* authorize_denied@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4082424F37CD81FF3839437CAE4B2C7 /* authorize_denied@3x.png */; };
+		3CF84D3185ACDCE0708C487268D8756E /* Blur@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7F5EB015691CCABCD6AEB8AEAEDE20 /* Blur@3x.png */; };
+		3F5CE914C5764EB66E25C7B3D078C586 /* Arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66508A1ECEC381721F131FC0CFA8C800 /* Arrow@2x.png */; };
+		40D6208CE0DFAE1763D6F6993A2839BD /* FeedbackPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB2ED5F207514BA2D91689AF7FFAC3C /* FeedbackPlaceholder.png */; };
+		4433676858B373028A01EE14DF4D6226 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 91F7AF98897F97CA6D2D71B4D4FD701E /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FFB8BDF4139D773D1077CE61EDECAAF /* iconCamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 4381FA5C9EC2B5CE0683084197F6CD71 /* iconCamera.png */; };
+		50699F7280571D81491F5809986B194C /* buttonRoundedRegular.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A2C19095FBDA61A636DB3EC0015DA60 /* buttonRoundedRegular.png */; };
+		541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 484F22424252C05AF67420CA909E8183 /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56FFE03D1297AC8CF3773E64160E1F1F /* buttonRoundedRegularHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0EAF2263C009FF582DDAAEB599909F /* buttonRoundedRegularHighlighted.png */; };
+		595BD133D480DFB8E913C9D3A4C44E40 /* buttonRoundedDeleteHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E544D301956C1B058DED0A66E2F592 /* buttonRoundedDeleteHighlighted.png */; };
+		597BA3A316DD95CD5E3A89D6BB6DBAD8 /* iconCamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74A2466A5E177C1DDFD7A116B92F45C /* iconCamera@2x.png */; };
+		5B21881EE3D7A6CCB986A1B5AB0589EC /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = CF9990CCB4F74895F72168A1942A54B5 /* de.lproj */; };
+		5F5259B9495E6ACCE15A4BA37F98ACAF /* Cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD5A6FF3888C4B527F50B90F35110449 /* Cancel@2x.png */; };
+		6B6B5666653F3E571F520D55C5EA5A5A /* feedbackActivity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ACDFEFED5DC15B34F099C35F82DE05F /* feedbackActivity@2x.png */; };
+		6DC66302C64DFD2DD27320496A42E097 /* IconGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 128DF221CF193B38956C7B103712BF1F /* IconGradient.png */; };
+		723711496ABB053DC09570B629C7A9A8 /* hu.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1664B3B6155D8DAEAF9801867CF1B66B /* hu.lproj */; };
+		7AC05E45B51F53EB89C7BE365C37B167 /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = BE17BAC62ACDC36712789947C10D9EC6 /* nl.lproj */; };
+		7DDAC14D4BAB142F83295AED4E6106DF /* feedbackActivity@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 809117ACA98ADB9BADAB382BD32A49AD /* feedbackActivity@2x~ipad.png */; };
+		7F9C783356390B1E73318FA81F9E32B4 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 801B750273FA5D63D7B50356F19F123F /* fr.lproj */; };
+		7FE006CE21EB9439E3A3BE536392E4DC /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 56413A96175073FCA31D72AF729DBDE9 /* pt.lproj */; };
+		81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A0E00A5271ED34BFE3D6F98C73F899B /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81E681CD655DDE888B13F12F14BD394D /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D84855B874A3F828CEDE9B6FB152A964 /* en.lproj */; };
+		824CDDD5EE9C511C3B329A268DCF2397 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3F20D4BD0423C8D5534331C6CD29971B /* zh-Hans.lproj */; };
+		8AE50E482ECAA86F8E165A96C8549880 /* Blur@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B76EAAA904C6CE47C3562B85C21F422 /* Blur@2x.png */; };
+		8DC2FAE6F799DB26C6E97C921FD63849 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BD26AF6B2DCC1F23FC3A71A779418A /* SwiftyJSON-dummy.m */; };
+		96D891B67B6A11CFBD6E674756641A85 /* buttonRoundedDeleteHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9480F79B25294712A390236CA6E284 /* buttonRoundedDeleteHighlighted@2x.png */; };
+		9B35DF95D9A943F451E656C18D706147 /* Blur.png in Resources */ = {isa = PBXBuildFile; fileRef = 71744A0B3A77DD22ADCF78FFB240E694 /* Blur.png */; };
+		A6913C013AF0CD0ABC8D722C3F2DF4E4 /* ja.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 7A61E99A0EF4E7F58DC86434BB720F17 /* ja.lproj */; };
+		A9AAC0011FCCC972E7EB113BDE4DA61F /* authorize_denied.png in Resources */ = {isa = PBXBuildFile; fileRef = F63A08D28D4CEA31AB295756CAE0A06B /* authorize_denied.png */; };
+		B56FAE79A717F5F7AD9D2EFEB542C5B4 /* feedbackActivity@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3564D91A8A6D600224EEFAF8E7AE085B /* feedbackActivity@3x.png */; };
+		C18918180C7F2F8CB85E7A51810564A7 /* Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2F1CCCDD737C49BDBD0F7B82E0B474 /* Arrow.png */; };
+		C259EDE6F7496CC3DD4B08CCADB8E3E9 /* feedbackActivity~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 92DFCCABBCD91C1C7F458D5AEF5F9955 /* feedbackActivity~ipad.png */; };
+		C85AFF2A306954D5E3251771FBE8989D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		CA429684C062D627BD4239F4F74AE4C3 /* Rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA3C9AAB1FD13EC70766CF9A3BC2DE0 /* Rectangle.png */; };
+		CDF21F9F96B7D14DD7F73199EF484EA9 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F0F69AB2E6C09F3C3A42BD45741EF87C /* bg.png */; };
+		D340645D3564E495BDFEEB32478E73CC /* Rectangle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD3595DA2683CC3B02B3D6B2B7F1077C /* Rectangle@2x.png */; };
+		DAC8D0830A9B26871A17F6630C3DD3C6 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = AF26952144EA04E7B9C975227D0FBB6D /* es.lproj */; };
+		DAFF40B101D705B6BA0FDB35B56BF663 /* feedbackActivity.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E62490E6CFAF7AD2A8AFCB75D51A12 /* feedbackActivity.png */; };
+		DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = A3001C6A09E93D5A1E4D8E80BCE5FE68 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF0A0830E12D8C4025EF318F98894DA8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911539118A73FBE3FB34B8057C36BE5A /* SwiftyJSON.swift */; };
+		EAD3ECED19E7921D5A57CE22DBC3012A /* Ok@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B71FEF442A08DDC0286F9F4FAE92B3 /* Ok@3x.png */; };
+		EB0B8AA351506D4D41EC2E345C038FC1 /* authorize_denied@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CF519CD3DD2C929A1F21DA7C7D983A0 /* authorize_denied@2x.png */; };
+		ED15728B0D40CFD9F907255D452B7096 /* AppIconPlaceHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA4EBAA4C64F3E29466321222FCE511 /* AppIconPlaceHolder.png */; };
+		EEAE77C75A562B78C6B78B4C698FEA03 /* Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC1B529A672128AEDA42C932E674723 /* Cancel.png */; };
+		F78044E2725BF22D2B5C2B085C7ECB63 /* buttonRoundedRegularHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D749E643A04D641B8EF0F115A30B3 /* buttonRoundedRegularHighlighted@2x.png */; };
+		F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826971C35C0B2D52DA344D33296AF25 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 41848A6CA448A38D7543EB2F6FE6F896 /* GoogleToolboxForMac-dummy.m */; };
+		FAD58A6671C4C4BFDD02A23D4D610DAA /* buttonRoundedRegular@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6522461FD0C1AE51E76D428CB433BDB1 /* buttonRoundedRegular@2x.png */; };
+		FD79F5A859BD2756ECD071A73897548B /* Ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D422AC8B35A1B405A0F08F2EAA2AFAE4 /* Ok@2x.png */; };
+		FE70D8166088A8EE483BAB0ADF3CA837 /* buttonRoundedDelete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8158C43334EA6154A2D99FD091E3D /* buttonRoundedDelete@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A77037102133AA71CF7CC31F3050D661 /* PBXContainerItemProxy */ = {
+		5A03A805399BC9CA3C8A006ECA01BD03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAFB7D08D9239DE5F58C0E2FE53D1A67;
+			remoteInfo = "HockeySDK-HockeySDKResources";
+		};
+		BA56D201A9B987F6F955DEFFD26FF87C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D853A92A98657EDD8C5C05DD560EDC55;
+			remoteInfo = SwiftyJSON;
+		};
+		C9A8D6B042F37A6CA8C109061DAB5146 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -29,61 +98,138 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04F8795511CB414EB0AF76A0FB1FC90D /* GAIFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = Sources/GAIFields.h; sourceTree = "<group>"; };
-		052BA672F9AB720D7937C0A0967BA8F4 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
-		059F958479C61A42C404F4EAD9BEB169 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceFields.h; path = Sources/GAIEcommerceFields.h; sourceTree = "<group>"; };
-		0C1CE9894E2A8E208A67A09A8DEA488E /* libGoogleAnalytics.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = Libraries/libGoogleAnalytics.a; sourceTree = "<group>"; };
+		0A87016FCC16B841301F8766E30A2384 /* Arrow@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "Arrow@3x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Arrow@3x.png"; sourceTree = "<group>"; };
+		0AB2ED5F207514BA2D91689AF7FFAC3C /* FeedbackPlaceholder.png */ = {isa = PBXFileReference; includeInIndex = 1; name = FeedbackPlaceholder.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/FeedbackPlaceholder.png"; sourceTree = "<group>"; };
+		0EB8158C43334EA6154A2D99FD091E3D /* buttonRoundedDelete@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "buttonRoundedDelete@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedDelete@2x.png"; sourceTree = "<group>"; };
+		0F0D749E643A04D641B8EF0F115A30B3 /* buttonRoundedRegularHighlighted@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "buttonRoundedRegularHighlighted@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedRegularHighlighted@2x.png"; sourceTree = "<group>"; };
+		128DF221CF193B38956C7B103712BF1F /* IconGradient.png */ = {isa = PBXFileReference; includeInIndex = 1; name = IconGradient.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/IconGradient.png"; sourceTree = "<group>"; };
+		1664B3B6155D8DAEAF9801867CF1B66B /* hu.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = hu.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/hu.lproj"; sourceTree = "<group>"; };
+		1826971C35C0B2D52DA344D33296AF25 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
 		19CA6D9F4C39FCF1C7B3C5BC4580CD41 /* Pods-loreal-lashes_bar-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-loreal-lashes_bar-ios.release.xcconfig"; sourceTree = "<group>"; };
+		1B5CB987D1E10EB19BAC0B27E5D1DAE8 /* Cancel@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "Cancel@3x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Cancel@3x.png"; sourceTree = "<group>"; };
+		1DA15B2939EDBD9FB2C7C52F9A624BC5 /* Analytics-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Analytics-Module.h"; path = "Headers/ModuleHeaders/Analytics-Module.h"; sourceTree = "<group>"; };
 		225C0D1A773B7C24526BC1D193473BA4 /* Pods-loreal-lashes_bar-ios-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-loreal-lashes_bar-ios-dummy.m"; sourceTree = "<group>"; };
-		25BB725B070CDFDC68CD4AE04195AA1F /* GGLCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GGLCore.framework; path = Frameworks/GGLCore.framework; sourceTree = "<group>"; };
-		25E2024E722470F2F291A998FA738DE6 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		29FA7929828F2FB05D345A8E73203084 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		2C6292C357ECDB195D31149C00219826 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
-		2DE2BECB5DD6C1DB186BA80000ED4C9F /* GAILogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = Sources/GAILogger.h; sourceTree = "<group>"; };
-		3AD7668E0E6BA4B7C310CF1589AC4336 /* Core-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Core-Module.h"; path = "Headers/ModuleHeaders/Core-Module.h"; sourceTree = "<group>"; };
+		2AABE7426B74A0C8DF89A537DB5E6021 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ACDFEFED5DC15B34F099C35F82DE05F /* feedbackActivity@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "feedbackActivity@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/feedbackActivity@2x.png"; sourceTree = "<group>"; };
+		2B17B5153EEF16B13A845B19072BA2E0 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		3102A9CF8216F5BF7B93385B9461CCF3 /* buttonRoundedDelete.png */ = {isa = PBXFileReference; includeInIndex = 1; name = buttonRoundedDelete.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedDelete.png"; sourceTree = "<group>"; };
+		33086646716302A47D4CC2478732874D /* pt-PT.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "pt-PT.lproj"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/pt-PT.lproj"; sourceTree = "<group>"; };
+		3451DA5D9AE5246812423C2907CE652F /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
+		3564D91A8A6D600224EEFAF8E7AE085B /* feedbackActivity@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "feedbackActivity@3x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/feedbackActivity@3x.png"; sourceTree = "<group>"; };
+		377D3A7C456D68A6BF0D22FEEF9252E1 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HockeySDKResources.bundle; path = HockeySDKResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		37874279540C68FBF1A4B99AFFB042C2 /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ru.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/ru.lproj"; sourceTree = "<group>"; };
+		3973FE4ABCE7CBF1954CF567C55A0B8E /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommercePromotion.h; path = Sources/GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		3F20D4BD0423C8D5534331C6CD29971B /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-Hans.lproj"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/zh-Hans.lproj"; sourceTree = "<group>"; };
+		41848A6CA448A38D7543EB2F6FE6F896 /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
+		424BC48D791DBD9D45EFF0B6ECA5159D /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework"; sourceTree = "<group>"; };
+		4381FA5C9EC2B5CE0683084197F6CD71 /* iconCamera.png */ = {isa = PBXFileReference; includeInIndex = 1; name = iconCamera.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/iconCamera.png"; sourceTree = "<group>"; };
+		484F22424252C05AF67420CA909E8183 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		48BD26AF6B2DCC1F23FC3A71A779418A /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		4A0E00A5271ED34BFE3D6F98C73F899B /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
+		4CA3C9AAB1FD13EC70766CF9A3BC2DE0 /* Rectangle.png */ = {isa = PBXFileReference; includeInIndex = 1; name = Rectangle.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Rectangle.png"; sourceTree = "<group>"; };
+		4D9480F79B25294712A390236CA6E284 /* buttonRoundedDeleteHighlighted@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "buttonRoundedDeleteHighlighted@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedDeleteHighlighted@2x.png"; sourceTree = "<group>"; };
+		4FC1B529A672128AEDA42C932E674723 /* Cancel.png */ = {isa = PBXFileReference; includeInIndex = 1; name = Cancel.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Cancel.png"; sourceTree = "<group>"; };
 		50B839129332FFD4662A32840A007162 /* Pods-loreal-lashes_bar-ios.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-loreal-lashes_bar-ios.modulemap"; sourceTree = "<group>"; };
+		5135E297187CCFDA6FB47A0C09A3D0FB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53105479D8CF741966D5F2241A50FF93 /* GAIFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = Sources/GAIFields.h; sourceTree = "<group>"; };
+		56413A96175073FCA31D72AF729DBDE9 /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = pt.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/pt.lproj"; sourceTree = "<group>"; };
+		5A2C19095FBDA61A636DB3EC0015DA60 /* buttonRoundedRegular.png */ = {isa = PBXFileReference; includeInIndex = 1; name = buttonRoundedRegular.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedRegular.png"; sourceTree = "<group>"; };
+		5B76EAAA904C6CE47C3562B85C21F422 /* Blur@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "Blur@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Blur@2x.png"; sourceTree = "<group>"; };
 		5EC2DAD223FCAF75BF95334744C5ABDA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6531846345A57841FB09CB0E40E53423 /* Analytics-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Analytics-Module.h"; path = "Headers/ModuleHeaders/Analytics-Module.h"; sourceTree = "<group>"; };
-		66EE4B0EBD92D74F07818B7B5B3E4E0F /* Analytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Analytics.h; path = Headers/Analytics.h; sourceTree = "<group>"; };
-		6C7382F5FE10C1CB23B4D7B020B884DD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71BD45A19805B1FFA3AA5E7F4E6A967A /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = Sources/GAIDictionaryBuilder.h; sourceTree = "<group>"; };
-		7A4F7EAE6C1852F3540E5D58FA6D41C4 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProduct.h; path = Sources/GAIEcommerceProduct.h; sourceTree = "<group>"; };
-		7CD59DAD9169113D27EA0B88B5B261BF /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
-		82F370B70818D5AF2F17813F8CFAE132 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
-		86775A1258261F64AA78B11B0CD4FCBB /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
+		6522461FD0C1AE51E76D428CB433BDB1 /* buttonRoundedRegular@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "buttonRoundedRegular@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedRegular@2x.png"; sourceTree = "<group>"; };
+		6558AFB5C4EF2299336BA6180C353FFD /* libGoogleAnalytics.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = Libraries/libGoogleAnalytics.a; sourceTree = "<group>"; };
+		66508A1ECEC381721F131FC0CFA8C800 /* Arrow@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "Arrow@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Arrow@2x.png"; sourceTree = "<group>"; };
+		6CE000F560E66E0058ECA78EA656C7DB /* GGLCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GGLCore.framework; path = Frameworks/GGLCore.framework; sourceTree = "<group>"; };
+		6CF519CD3DD2C929A1F21DA7C7D983A0 /* authorize_denied@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "authorize_denied@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/authorize_denied@2x.png"; sourceTree = "<group>"; };
+		6D2F1CCCDD737C49BDBD0F7B82E0B474 /* Arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; name = Arrow.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Arrow.png"; sourceTree = "<group>"; };
+		6DDB8A8F068FF469AC9423DF0FC4E92E /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		71744A0B3A77DD22ADCF78FFB240E694 /* Blur.png */ = {isa = PBXFileReference; includeInIndex = 1; name = Blur.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Blur.png"; sourceTree = "<group>"; };
+		79664D8F46211C01F2390DDEA33A0879 /* Pods_loreal_lashes_bar_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_loreal_lashes_bar_ios.framework; path = "Pods-loreal-lashes_bar-ios.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A61E99A0EF4E7F58DC86434BB720F17 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ja.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/ja.lproj"; sourceTree = "<group>"; };
+		7FA4EBAA4C64F3E29466321222FCE511 /* AppIconPlaceHolder.png */ = {isa = PBXFileReference; includeInIndex = 1; name = AppIconPlaceHolder.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/AppIconPlaceHolder.png"; sourceTree = "<group>"; };
+		801B750273FA5D63D7B50356F19F123F /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = fr.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/fr.lproj"; sourceTree = "<group>"; };
+		809117ACA98ADB9BADAB382BD32A49AD /* feedbackActivity@2x~ipad.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "feedbackActivity@2x~ipad.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/feedbackActivity@2x~ipad.png"; sourceTree = "<group>"; };
+		82C6367B16771AADBB3C1159EF01A979 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProduct.h; path = Sources/GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		82D2E0A7A6FA4E9555D240729FD839C2 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProductAction.h; path = Sources/GAIEcommerceProductAction.h; sourceTree = "<group>"; };
 		86DA86AA24AFEAEA7CC3270B4C17A027 /* Pods-loreal-lashes_bar-ios-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-loreal-lashes_bar-ios-umbrella.h"; sourceTree = "<group>"; };
-		8F840740D06DEA1DB7CEDEACECE77BA6 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
+		8B1A20F731E28EF640CDC8F75E1065E8 /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = it.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/it.lproj"; sourceTree = "<group>"; };
+		8B96A926F96FF3DB1EABE51F690EF653 /* Ok.png */ = {isa = PBXFileReference; includeInIndex = 1; name = Ok.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Ok.png"; sourceTree = "<group>"; };
+		9003EF08223D3623D44BD4D7091450EE /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
+		911539118A73FBE3FB34B8057C36BE5A /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		91F7AF98897F97CA6D2D71B4D4FD701E /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		92DFCCABBCD91C1C7F458D5AEF5F9955 /* feedbackActivity~ipad.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "feedbackActivity~ipad.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/feedbackActivity~ipad.png"; sourceTree = "<group>"; };
+		92E62490E6CFAF7AD2A8AFCB75D51A12 /* feedbackActivity.png */ = {isa = PBXFileReference; includeInIndex = 1; name = feedbackActivity.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/feedbackActivity.png"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9A451E33247024842D7AD3967B7BAC44 /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
-		9F77541A839EF4267BDAA4D7F3F17B2C /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		93E544D301956C1B058DED0A66E2F592 /* buttonRoundedDeleteHighlighted.png */ = {isa = PBXFileReference; includeInIndex = 1; name = buttonRoundedDeleteHighlighted.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedDeleteHighlighted.png"; sourceTree = "<group>"; };
+		94D13ADB7BA06EAFD4E3F5E45D1D2F8E /* IconGradient@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "IconGradient@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/IconGradient@2x.png"; sourceTree = "<group>"; };
+		95EB95518F2E3DF2DEB2DFE8DF5AF190 /* Rectangle@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "Rectangle@3x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Rectangle@3x.png"; sourceTree = "<group>"; };
+		A292F96BC9FBCE9CDCB455184EC8A882 /* hr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = hr.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/hr.lproj"; sourceTree = "<group>"; };
+		A3001C6A09E93D5A1E4D8E80BCE5FE68 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
+		A300B9C909A1649453548084B2F4A9EA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A446C82305AABF2E6173C8B6722F1D2C /* Pods-loreal-lashes_bar-ios-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-loreal-lashes_bar-ios-frameworks.sh"; sourceTree = "<group>"; };
-		AD26AF959C756A7321A6EF68B70BACFA /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommercePromotion.h; path = Sources/GAIEcommercePromotion.h; sourceTree = "<group>"; };
-		B2B7EA9B1B8880085A7C7B29203F9C32 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProductAction.h; path = Sources/GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		A4A533C909219A556C4E1C182F57D888 /* GGLAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GGLAnalytics.framework; path = Frameworks/GGLAnalytics.framework; sourceTree = "<group>"; };
+		A6CA4286B7C36BF2B0B4672892C5BECF /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
+		AACBDFF5F80A0F7057E9A3FA5D631E66 /* Analytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Analytics.h; path = Headers/Analytics.h; sourceTree = "<group>"; };
+		AE6B8210A4D8039925F77876B9F89D0B /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = Sources/GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		AF26952144EA04E7B9C975227D0FBB6D /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = es.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/es.lproj"; sourceTree = "<group>"; };
 		B5BF692F82A7F3368E732E3AE449A09A /* Pods-loreal-lashes_bar-ios-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-loreal-lashes_bar-ios-resources.sh"; sourceTree = "<group>"; };
-		B72868B16F52DB83866551D10D433225 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		BC48165744D640BA81EE39DF16BFC357 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
-		C31B2A63D6C73854FC6A8C1DB27E8B28 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		BCFD97EB310E4FCDE3CC82B8E4AE41A8 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceFields.h; path = Sources/GAIEcommerceFields.h; sourceTree = "<group>"; };
+		BD3595DA2683CC3B02B3D6B2B7F1077C /* Rectangle@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "Rectangle@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Rectangle@2x.png"; sourceTree = "<group>"; };
+		BE17BAC62ACDC36712789947C10D9EC6 /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = nl.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/nl.lproj"; sourceTree = "<group>"; };
+		C335F24D4FAB1D322E1EF942CDA0184D /* SignIn-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SignIn-Module.h"; path = "Headers/ModuleHeaders/SignIn-Module.h"; sourceTree = "<group>"; };
+		C3969B0ABE3344486AED1CEDC9B51A66 /* GAI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = Sources/GAI.h; sourceTree = "<group>"; };
+		C40833761A0B77C20DBE975A547C5060 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
 		C49347DFF7DEEDF11BA81D08EB9735F8 /* Pods-loreal-lashes_bar-ios-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-loreal-lashes_bar-ios-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C51CE205DC85AD72069BE1032B4711D2 /* Pods_loreal_lashes_bar_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_loreal_lashes_bar_ios.framework; path = "Pods-loreal-lashes_bar-ios.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7BBBD5313543975E61308BB44B6B89D /* Core.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Core.h; path = Headers/Core.h; sourceTree = "<group>"; };
+		C74A2466A5E177C1DDFD7A116B92F45C /* iconCamera@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "iconCamera@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/iconCamera@2x.png"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CDCB00A6D5DF92C97B19A2BA118D191B /* GAITracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = Sources/GAITracker.h; sourceTree = "<group>"; };
+		CF04E1D505E19C13DBDDBA0C35C9EF90 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		CF9990CCB4F74895F72168A1942A54B5 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = de.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/de.lproj"; sourceTree = "<group>"; };
 		D053EAD6B14CEDACC4E6CAD8BA29205E /* Pods-loreal-lashes_bar-ios-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-loreal-lashes_bar-ios-acknowledgements.plist"; sourceTree = "<group>"; };
-		D9A7DCE10B135D99FB056390302DE49B /* GAI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = Sources/GAI.h; sourceTree = "<group>"; };
-		DC8B991E4A7C96A72D6C42DFC1736B82 /* GGLAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GGLAnalytics.framework; path = Frameworks/GGLAnalytics.framework; sourceTree = "<group>"; };
-		DCF1B7221FB33DB5653BB0839A09DA3C /* GAITrackedViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = Sources/GAITrackedViewController.h; sourceTree = "<group>"; };
-		EB1198C894150AB3E261F1606B899D04 /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
-		F06002948B14A0191C381D53A0D43514 /* SignIn-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SignIn-Module.h"; path = "Headers/ModuleHeaders/SignIn-Module.h"; sourceTree = "<group>"; };
-		F298AA5386972A6D6A6AB5BC8DE7DCB6 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		D330259D495B87417D2A99FDF0D53CEA /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		D422AC8B35A1B405A0F08F2EAA2AFAE4 /* Ok@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "Ok@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Ok@2x.png"; sourceTree = "<group>"; };
+		D59B1F9AFFB0B4D659F2FB0AF1E626EB /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		D5D066F9226A849EA9DB2AACA1994076 /* GAILogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = Sources/GAILogger.h; sourceTree = "<group>"; };
+		D84855B874A3F828CEDE9B6FB152A964 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/en.lproj"; sourceTree = "<group>"; };
+		DC0EAF2263C009FF582DDAAEB599909F /* buttonRoundedRegularHighlighted.png */ = {isa = PBXFileReference; includeInIndex = 1; name = buttonRoundedRegularHighlighted.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/buttonRoundedRegularHighlighted.png"; sourceTree = "<group>"; };
+		DEBE219D4714C542574BA84D47A6B140 /* GAITrackedViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = Sources/GAITrackedViewController.h; sourceTree = "<group>"; };
+		E4827EED52879ABD645A8B9519A3112F /* GAITracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = Sources/GAITracker.h; sourceTree = "<group>"; };
+		E60D40F606D92F698C4BC27D2FF8C8AA /* Core.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Core.h; path = Headers/Core.h; sourceTree = "<group>"; };
+		E6B71FEF442A08DDC0286F9F4FAE92B3 /* Ok@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "Ok@3x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Ok@3x.png"; sourceTree = "<group>"; };
+		E87D36B341B26557F3A0355C3AE831B4 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC79E338A2470A41AD4B3E593B0D0605 /* Core-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Core-Module.h"; path = "Headers/ModuleHeaders/Core-Module.h"; sourceTree = "<group>"; };
+		EDEB22E15010F3180DD2FA43E51A94D8 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
+		F0F69AB2E6C09F3C3A42BD45741EF87C /* bg.png */ = {isa = PBXFileReference; includeInIndex = 1; name = bg.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/bg.png"; sourceTree = "<group>"; };
+		F4082424F37CD81FF3839437CAE4B2C7 /* authorize_denied@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "authorize_denied@3x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/authorize_denied@3x.png"; sourceTree = "<group>"; };
 		F40D2B9841CF7F108B6E2E75E30A5FCD /* Pods-loreal-lashes_bar-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-loreal-lashes_bar-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		F414A9DE8B3515D677F6E98457BF83C6 /* ResourceBundle-HockeySDKResources-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-HockeySDKResources-Info.plist"; sourceTree = "<group>"; };
+		F63A08D28D4CEA31AB295756CAE0A06B /* authorize_denied.png */ = {isa = PBXFileReference; includeInIndex = 1; name = authorize_denied.png; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/authorize_denied.png"; sourceTree = "<group>"; };
+		F7EFFCFAC665E2619B59B59EE168A9B0 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
+		F8C08A99D612EF956E40E20B105F55A2 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
+		FD5A6FF3888C4B527F50B90F35110449 /* Cancel@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "Cancel@2x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Cancel@2x.png"; sourceTree = "<group>"; };
+		FD7F5EB015691CCABCD6AEB8AEAEDE20 /* Blur@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "Blur@3x.png"; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDKResources.bundle/Blur@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6012618248E6691F618B7AF7C4FF97B7 /* Frameworks */ = {
+		40D95D5B414C706B1AD552AB5EA57278 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				073F65460A31DE4979A0A774BD43FF3D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78A8ECED28EEE6AD6D77806A18C3A23D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2586546B5FE3E0319C540A923034ECAE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B299F53D8AD4B3221AD63D9E9FCCE36D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C85AFF2A306954D5E3251771FBE8989D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,76 +244,123 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		058E5324B2B1B9E4344BCF03B94CDADF /* Frameworks */ = {
+		0240E319191EAE12B9A2AF6FA199C0F4 /* FirebaseAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				B72868B16F52DB83866551D10D433225 /* GoogleSymbolUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0620D14295BF924CDA6D17C638089939 /* Google */ = {
-			isa = PBXGroup;
-			children = (
-				A06097A2D00DD242301E07BBF4676B88 /* Analytics */,
-				9B0EA966CF1B93DBFB3EB115E1F5B512 /* Core */,
-			);
-			name = Google;
-			path = Google;
-			sourceTree = "<group>";
-		};
-		16F79569E0F416C545855482F0DEE53F /* FirebaseInstanceID */ = {
-			isa = PBXGroup;
-			children = (
-				2C6292C357ECDB195D31149C00219826 /* FIRInstanceID.h */,
-				AFCD05032A78A1F053D4DCD9191B7030 /* Frameworks */,
-			);
-			name = FirebaseInstanceID;
-			path = FirebaseInstanceID;
-			sourceTree = "<group>";
-		};
-		1C0CFADEEF708EC1C94919993C171821 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7CD59DAD9169113D27EA0B88B5B261BF /* FirebaseCore.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3C688BAF10F26E26E729A5F9B90D0AB4 /* FirebaseAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				79BBD7C316E689E5584BBAB5BE70F259 /* Frameworks */,
+				A19B531EEB5A49E2DF83A05E714C772C /* Frameworks */,
 			);
 			name = FirebaseAnalytics;
 			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
-		42CB8412DECADF05688C74C32DAAE45D /* FirebaseCore */ = {
+		04DF866B5777EE784AD631AF59D88A7D /* HockeySDK */ = {
 			isa = PBXGroup;
 			children = (
-				1C0CFADEEF708EC1C94919993C171821 /* Frameworks */,
+				70C6F59E6A226B886301F72CB402D7B4 /* DefaultLib */,
+				44C4C01C65303532B2883310D4C061DF /* Support Files */,
 			);
-			name = FirebaseCore;
-			path = FirebaseCore;
+			name = HockeySDK;
+			path = HockeySDK;
 			sourceTree = "<group>";
 		};
-		5FEC3681DAC1E152126538FB72DF7D1C /* GoogleSymbolUtilities */ = {
+		20CBE8655DC420218C2CC1C3D6AC03D8 /* GoogleInterchangeUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				058E5324B2B1B9E4344BCF03B94CDADF /* Frameworks */,
+				8CE80E2BA55D4E96DE514C9B482E149A /* Frameworks */,
 			);
-			name = GoogleSymbolUtilities;
-			path = GoogleSymbolUtilities;
+			name = GoogleInterchangeUtilities;
+			path = GoogleInterchangeUtilities;
 			sourceTree = "<group>";
 		};
-		72FE396B412DD0318C835AF6B5072E8C /* Products */ = {
+		20F4BC60287FE7E75DBB18CC6A027191 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				25E2024E722470F2F291A998FA738DE6 /* GoogleToolboxForMac.framework */,
-				C51CE205DC85AD72069BE1032B4711D2 /* Pods_loreal_lashes_bar_ios.framework */,
+				0240E319191EAE12B9A2AF6FA199C0F4 /* FirebaseAnalytics */,
+				8870E96078061095AC41E2D491EF990B /* FirebaseCore */,
+				40F224D4C8D268D46C54701C73A8E28C /* FirebaseInstanceID */,
+				8F22A979EC5AC5696D44C6F6062BF8EF /* Google */,
+				EF2E061BF653ECFC95B6F0605B532B42 /* GoogleAnalytics */,
+				20CBE8655DC420218C2CC1C3D6AC03D8 /* GoogleInterchangeUtilities */,
+				B563B07ECD311CB8DC28CDD081FF3DBB /* GoogleSymbolUtilities */,
+				D04EBE002A4364A3DD71412E36683C9C /* GoogleToolboxForMac */,
+				04DF866B5777EE784AD631AF59D88A7D /* HockeySDK */,
+				C7E101E4F50415480A9C4727DFF921CF /* SwiftyJSON */,
 			);
-			name = Products;
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2AFB5B1CD5EC4EA59FCCB7E949B5820A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1DA15B2939EDBD9FB2C7C52F9A624BC5 /* Analytics-Module.h */,
+				E60D40F606D92F698C4BC27D2FF8C8AA /* Core.h */,
+				EC79E338A2470A41AD4B3E593B0D0605 /* Core-Module.h */,
+				C335F24D4FAB1D322E1EF942CDA0184D /* SignIn-Module.h */,
+				D6E0C7C71CEEA2870BAB38F5B5457EBB /* Frameworks */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		361CCABD3D533EED40C6A42D39ED8F46 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				AACBDFF5F80A0F7057E9A3FA5D631E66 /* Analytics.h */,
+				B323532C8EF4EBCB059460F57835B9FC /* Frameworks */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		3F5688F717AAADF4F0DB4B152CE0AA8C /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				484F22424252C05AF67420CA909E8183 /* GTMDefines.h */,
+			);
+			name = Defines;
+			sourceTree = "<group>";
+		};
+		40F224D4C8D268D46C54701C73A8E28C /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				9003EF08223D3623D44BD4D7091450EE /* FIRInstanceID.h */,
+				914A0ABEC4E2DFDC632596B9727DF308 /* Frameworks */,
+			);
+			name = FirebaseInstanceID;
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		44C4C01C65303532B2883310D4C061DF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F414A9DE8B3515D677F6E98457BF83C6 /* ResourceBundle-HockeySDKResources-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/HockeySDK";
+			sourceTree = "<group>";
+		};
+		492883C4A82660D8B5FEE795969D7DD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6558AFB5C4EF2299336BA6180C353FFD /* libGoogleAnalytics.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70C6F59E6A226B886301F72CB402D7B4 /* DefaultLib */ = {
+			isa = PBXGroup;
+			children = (
+				DE29CD84EC1D60A452469D719D5E3CDB /* Frameworks */,
+				E5EFCC7547264FA949FC831822BC2521 /* Resources */,
+			);
+			name = DefaultLib;
+			sourceTree = "<group>";
+		};
+		7132A8E998F41079F055DA33AF880F7E /* NSData+zlib */ = {
+			isa = PBXGroup;
+			children = (
+				A3001C6A09E93D5A1E4D8E80BCE5FE68 /* GTMNSData+zlib.h */,
+				1826971C35C0B2D52DA344D33296AF25 /* GTMNSData+zlib.m */,
+			);
+			name = "NSData+zlib";
 			sourceTree = "<group>";
 		};
 		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
@@ -178,89 +371,77 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		79BBD7C316E689E5584BBAB5BE70F259 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				29FA7929828F2FB05D345A8E73203084 /* FirebaseAnalytics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				82530F1B63D2647E0675BE3887E8C1D1 /* Pods */,
-				72FE396B412DD0318C835AF6B5072E8C /* Products */,
+				20F4BC60287FE7E75DBB18CC6A027191 /* Pods */,
+				A5B55FF7C63E2F30BBBEFF9646D1E1E8 /* Products */,
 				EC864FB69A127FC6928461C3EB2B667E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		82530F1B63D2647E0675BE3887E8C1D1 /* Pods */ = {
+		8870E96078061095AC41E2D491EF990B /* FirebaseCore */ = {
 			isa = PBXGroup;
 			children = (
-				3C688BAF10F26E26E729A5F9B90D0AB4 /* FirebaseAnalytics */,
-				42CB8412DECADF05688C74C32DAAE45D /* FirebaseCore */,
-				16F79569E0F416C545855482F0DEE53F /* FirebaseInstanceID */,
-				0620D14295BF924CDA6D17C638089939 /* Google */,
-				C444D15F5F742AA8660DC4A705CEDCFD /* GoogleAnalytics */,
-				E874B8F32E4314D035A827577671A979 /* GoogleInterchangeUtilities */,
-				5FEC3681DAC1E152126538FB72DF7D1C /* GoogleSymbolUtilities */,
-				E334083D9ABF1289E9DFD82A3B577420 /* GoogleToolboxForMac */,
+				E73ECC9A8BF726E7F115CECAF81E00C4 /* Frameworks */,
 			);
-			name = Pods;
+			name = FirebaseCore;
+			path = FirebaseCore;
 			sourceTree = "<group>";
 		};
-		9B0EA966CF1B93DBFB3EB115E1F5B512 /* Core */ = {
+		8CE80E2BA55D4E96DE514C9B482E149A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6531846345A57841FB09CB0E40E53423 /* Analytics-Module.h */,
-				C7BBBD5313543975E61308BB44B6B89D /* Core.h */,
-				3AD7668E0E6BA4B7C310CF1589AC4336 /* Core-Module.h */,
-				F06002948B14A0191C381D53A0D43514 /* SignIn-Module.h */,
-				B6F7DEDB6020369AD3BCC0226B6E5743 /* Frameworks */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		A06097A2D00DD242301E07BBF4676B88 /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				66EE4B0EBD92D74F07818B7B5B3E4E0F /* Analytics.h */,
-				A08651CA55425FC042A16742F531B3E3 /* Frameworks */,
-			);
-			name = Analytics;
-			sourceTree = "<group>";
-		};
-		A08651CA55425FC042A16742F531B3E3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DC8B991E4A7C96A72D6C42DFC1736B82 /* GGLAnalytics.framework */,
+				2B17B5153EEF16B13A845B19072BA2E0 /* GoogleInterchangeUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A387612373AE03C606BD2077B7A0BAA0 /* Support Files */ = {
+		8F22A979EC5AC5696D44C6F6062BF8EF /* Google */ = {
 			isa = PBXGroup;
 			children = (
-				8F840740D06DEA1DB7CEDEACECE77BA6 /* GoogleToolboxForMac.modulemap */,
-				BC48165744D640BA81EE39DF16BFC357 /* GoogleToolboxForMac.xcconfig */,
-				9A451E33247024842D7AD3967B7BAC44 /* GoogleToolboxForMac-dummy.m */,
-				EB1198C894150AB3E261F1606B899D04 /* GoogleToolboxForMac-prefix.pch */,
-				86775A1258261F64AA78B11B0CD4FCBB /* GoogleToolboxForMac-umbrella.h */,
-				6C7382F5FE10C1CB23B4D7B020B884DD /* Info.plist */,
+				361CCABD3D533EED40C6A42D39ED8F46 /* Analytics */,
+				2AFB5B1CD5EC4EA59FCCB7E949B5820A /* Core */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GoogleToolboxForMac";
+			name = Google;
+			path = Google;
 			sourceTree = "<group>";
 		};
-		AEF4210308A196D438EBD0691A82A3C7 /* Frameworks */ = {
+		914A0ABEC4E2DFDC632596B9727DF308 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0C1CE9894E2A8E208A67A09A8DEA488E /* libGoogleAnalytics.a */,
+				D59B1F9AFFB0B4D659F2FB0AF1E626EB /* FirebaseInstanceID.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91A259D85E8D26AD3CFDBD41CAD9344C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6DDB8A8F068FF469AC9423DF0FC4E92E /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A19B531EEB5A49E2DF83A05E714C772C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF04E1D505E19C13DBDDBA0C35C9EF90 /* FirebaseAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5B55FF7C63E2F30BBBEFF9646D1E1E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E87D36B341B26557F3A0355C3AE831B4 /* GoogleToolboxForMac.framework */,
+				377D3A7C456D68A6BF0D22FEEF9252E1 /* HockeySDKResources.bundle */,
+				79664D8F46211C01F2390DDEA33A0879 /* Pods_loreal_lashes_bar_ios.framework */,
+				2AABE7426B74A0C8DF89A537DB5E6021 /* SwiftyJSON.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		AFA8EB1A101BAE88B43FF38915A2C42B /* Pods-loreal-lashes_bar-ios */ = {
@@ -281,29 +462,35 @@
 			path = "Target Support Files/Pods-loreal-lashes_bar-ios";
 			sourceTree = "<group>";
 		};
-		AFCD05032A78A1F053D4DCD9191B7030 /* Frameworks */ = {
+		B323532C8EF4EBCB059460F57835B9FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9F77541A839EF4267BDAA4D7F3F17B2C /* FirebaseInstanceID.framework */,
+				A4A533C909219A556C4E1C182F57D888 /* GGLAnalytics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B6F7DEDB6020369AD3BCC0226B6E5743 /* Frameworks */ = {
+		B481BDCFF7B65A81FBDC305FDD24B281 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				25BB725B070CDFDC68CD4AE04195AA1F /* GGLCore.framework */,
+				EDEB22E15010F3180DD2FA43E51A94D8 /* GoogleToolboxForMac.modulemap */,
+				F8C08A99D612EF956E40E20B105F55A2 /* GoogleToolboxForMac.xcconfig */,
+				41848A6CA448A38D7543EB2F6FE6F896 /* GoogleToolboxForMac-dummy.m */,
+				A6CA4286B7C36BF2B0B4672892C5BECF /* GoogleToolboxForMac-prefix.pch */,
+				4A0E00A5271ED34BFE3D6F98C73F899B /* GoogleToolboxForMac-umbrella.h */,
+				A300B9C909A1649453548084B2F4A9EA /* Info.plist */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/GoogleToolboxForMac";
 			sourceTree = "<group>";
 		};
-		BA615BB2311DC604AF38FB238C69964D /* NSData+zlib */ = {
+		B563B07ECD311CB8DC28CDD081FF3DBB /* GoogleSymbolUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				052BA672F9AB720D7937C0A0967BA8F4 /* GTMNSData+zlib.h */,
-				82F370B70818D5AF2F17813F8CFAE132 /* GTMNSData+zlib.m */,
+				91A259D85E8D26AD3CFDBD41CAD9344C /* Frameworks */,
 			);
-			name = "NSData+zlib";
+			name = GoogleSymbolUtilities;
+			path = GoogleSymbolUtilities;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -314,51 +501,107 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C444D15F5F742AA8660DC4A705CEDCFD /* GoogleAnalytics */ = {
+		C7E101E4F50415480A9C4727DFF921CF /* SwiftyJSON */ = {
 			isa = PBXGroup;
 			children = (
-				D9A7DCE10B135D99FB056390302DE49B /* GAI.h */,
-				71BD45A19805B1FFA3AA5E7F4E6A967A /* GAIDictionaryBuilder.h */,
-				059F958479C61A42C404F4EAD9BEB169 /* GAIEcommerceFields.h */,
-				7A4F7EAE6C1852F3540E5D58FA6D41C4 /* GAIEcommerceProduct.h */,
-				B2B7EA9B1B8880085A7C7B29203F9C32 /* GAIEcommerceProductAction.h */,
-				AD26AF959C756A7321A6EF68B70BACFA /* GAIEcommercePromotion.h */,
-				04F8795511CB414EB0AF76A0FB1FC90D /* GAIFields.h */,
-				2DE2BECB5DD6C1DB186BA80000ED4C9F /* GAILogger.h */,
-				DCF1B7221FB33DB5653BB0839A09DA3C /* GAITrackedViewController.h */,
-				CDCB00A6D5DF92C97B19A2BA118D191B /* GAITracker.h */,
-				AEF4210308A196D438EBD0691A82A3C7 /* Frameworks */,
+				911539118A73FBE3FB34B8057C36BE5A /* SwiftyJSON.swift */,
+				FDD5E64D21F4FC9CD6C83C76E7FD7D2E /* Support Files */,
 			);
-			name = GoogleAnalytics;
-			path = GoogleAnalytics;
+			name = SwiftyJSON;
+			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
-		D132F3B3B1A7872010A2C108C05B3891 /* Frameworks */ = {
+		D04EBE002A4364A3DD71412E36683C9C /* GoogleToolboxForMac */ = {
 			isa = PBXGroup;
 			children = (
-				F298AA5386972A6D6A6AB5BC8DE7DCB6 /* GoogleInterchangeUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E334083D9ABF1289E9DFD82A3B577420 /* GoogleToolboxForMac */ = {
-			isa = PBXGroup;
-			children = (
-				FB435A2FB02A0CFB9DBA7116BA1B2F61 /* Defines */,
-				BA615BB2311DC604AF38FB238C69964D /* NSData+zlib */,
-				A387612373AE03C606BD2077B7A0BAA0 /* Support Files */,
+				3F5688F717AAADF4F0DB4B152CE0AA8C /* Defines */,
+				7132A8E998F41079F055DA33AF880F7E /* NSData+zlib */,
+				B481BDCFF7B65A81FBDC305FDD24B281 /* Support Files */,
 			);
 			name = GoogleToolboxForMac;
 			path = GoogleToolboxForMac;
 			sourceTree = "<group>";
 		};
-		E874B8F32E4314D035A827577671A979 /* GoogleInterchangeUtilities */ = {
+		D6E0C7C71CEEA2870BAB38F5B5457EBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D132F3B3B1A7872010A2C108C05B3891 /* Frameworks */,
+				6CE000F560E66E0058ECA78EA656C7DB /* GGLCore.framework */,
 			);
-			name = GoogleInterchangeUtilities;
-			path = GoogleInterchangeUtilities;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE29CD84EC1D60A452469D719D5E3CDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				424BC48D791DBD9D45EFF0B6ECA5159D /* HockeySDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5EFCC7547264FA949FC831822BC2521 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7FA4EBAA4C64F3E29466321222FCE511 /* AppIconPlaceHolder.png */,
+				6D2F1CCCDD737C49BDBD0F7B82E0B474 /* Arrow.png */,
+				66508A1ECEC381721F131FC0CFA8C800 /* Arrow@2x.png */,
+				0A87016FCC16B841301F8766E30A2384 /* Arrow@3x.png */,
+				F63A08D28D4CEA31AB295756CAE0A06B /* authorize_denied.png */,
+				6CF519CD3DD2C929A1F21DA7C7D983A0 /* authorize_denied@2x.png */,
+				F4082424F37CD81FF3839437CAE4B2C7 /* authorize_denied@3x.png */,
+				F0F69AB2E6C09F3C3A42BD45741EF87C /* bg.png */,
+				71744A0B3A77DD22ADCF78FFB240E694 /* Blur.png */,
+				5B76EAAA904C6CE47C3562B85C21F422 /* Blur@2x.png */,
+				FD7F5EB015691CCABCD6AEB8AEAEDE20 /* Blur@3x.png */,
+				3102A9CF8216F5BF7B93385B9461CCF3 /* buttonRoundedDelete.png */,
+				0EB8158C43334EA6154A2D99FD091E3D /* buttonRoundedDelete@2x.png */,
+				93E544D301956C1B058DED0A66E2F592 /* buttonRoundedDeleteHighlighted.png */,
+				4D9480F79B25294712A390236CA6E284 /* buttonRoundedDeleteHighlighted@2x.png */,
+				5A2C19095FBDA61A636DB3EC0015DA60 /* buttonRoundedRegular.png */,
+				6522461FD0C1AE51E76D428CB433BDB1 /* buttonRoundedRegular@2x.png */,
+				DC0EAF2263C009FF582DDAAEB599909F /* buttonRoundedRegularHighlighted.png */,
+				0F0D749E643A04D641B8EF0F115A30B3 /* buttonRoundedRegularHighlighted@2x.png */,
+				4FC1B529A672128AEDA42C932E674723 /* Cancel.png */,
+				FD5A6FF3888C4B527F50B90F35110449 /* Cancel@2x.png */,
+				1B5CB987D1E10EB19BAC0B27E5D1DAE8 /* Cancel@3x.png */,
+				CF9990CCB4F74895F72168A1942A54B5 /* de.lproj */,
+				D84855B874A3F828CEDE9B6FB152A964 /* en.lproj */,
+				AF26952144EA04E7B9C975227D0FBB6D /* es.lproj */,
+				92E62490E6CFAF7AD2A8AFCB75D51A12 /* feedbackActivity.png */,
+				2ACDFEFED5DC15B34F099C35F82DE05F /* feedbackActivity@2x.png */,
+				809117ACA98ADB9BADAB382BD32A49AD /* feedbackActivity@2x~ipad.png */,
+				3564D91A8A6D600224EEFAF8E7AE085B /* feedbackActivity@3x.png */,
+				92DFCCABBCD91C1C7F458D5AEF5F9955 /* feedbackActivity~ipad.png */,
+				0AB2ED5F207514BA2D91689AF7FFAC3C /* FeedbackPlaceholder.png */,
+				801B750273FA5D63D7B50356F19F123F /* fr.lproj */,
+				A292F96BC9FBCE9CDCB455184EC8A882 /* hr.lproj */,
+				1664B3B6155D8DAEAF9801867CF1B66B /* hu.lproj */,
+				4381FA5C9EC2B5CE0683084197F6CD71 /* iconCamera.png */,
+				C74A2466A5E177C1DDFD7A116B92F45C /* iconCamera@2x.png */,
+				128DF221CF193B38956C7B103712BF1F /* IconGradient.png */,
+				94D13ADB7BA06EAFD4E3F5E45D1D2F8E /* IconGradient@2x.png */,
+				8B1A20F731E28EF640CDC8F75E1065E8 /* it.lproj */,
+				7A61E99A0EF4E7F58DC86434BB720F17 /* ja.lproj */,
+				BE17BAC62ACDC36712789947C10D9EC6 /* nl.lproj */,
+				8B96A926F96FF3DB1EABE51F690EF653 /* Ok.png */,
+				D422AC8B35A1B405A0F08F2EAA2AFAE4 /* Ok@2x.png */,
+				E6B71FEF442A08DDC0286F9F4FAE92B3 /* Ok@3x.png */,
+				56413A96175073FCA31D72AF729DBDE9 /* pt.lproj */,
+				33086646716302A47D4CC2478732874D /* pt-PT.lproj */,
+				4CA3C9AAB1FD13EC70766CF9A3BC2DE0 /* Rectangle.png */,
+				BD3595DA2683CC3B02B3D6B2B7F1077C /* Rectangle@2x.png */,
+				95EB95518F2E3DF2DEB2DFE8DF5AF190 /* Rectangle@3x.png */,
+				37874279540C68FBF1A4B99AFFB042C2 /* ru.lproj */,
+				3F20D4BD0423C8D5534331C6CD29971B /* zh-Hans.lproj */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E73ECC9A8BF726E7F115CECAF81E00C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7EFFCFAC665E2619B59B59EE168A9B0 /* FirebaseCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EC864FB69A127FC6928461C3EB2B667E /* Targets Support Files */ = {
@@ -369,22 +612,55 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		FB435A2FB02A0CFB9DBA7116BA1B2F61 /* Defines */ = {
+		EF2E061BF653ECFC95B6F0605B532B42 /* GoogleAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				C31B2A63D6C73854FC6A8C1DB27E8B28 /* GTMDefines.h */,
+				C3969B0ABE3344486AED1CEDC9B51A66 /* GAI.h */,
+				AE6B8210A4D8039925F77876B9F89D0B /* GAIDictionaryBuilder.h */,
+				BCFD97EB310E4FCDE3CC82B8E4AE41A8 /* GAIEcommerceFields.h */,
+				82C6367B16771AADBB3C1159EF01A979 /* GAIEcommerceProduct.h */,
+				82D2E0A7A6FA4E9555D240729FD839C2 /* GAIEcommerceProductAction.h */,
+				3973FE4ABCE7CBF1954CF567C55A0B8E /* GAIEcommercePromotion.h */,
+				53105479D8CF741966D5F2241A50FF93 /* GAIFields.h */,
+				D5D066F9226A849EA9DB2AACA1994076 /* GAILogger.h */,
+				DEBE219D4714C542574BA84D47A6B140 /* GAITrackedViewController.h */,
+				E4827EED52879ABD645A8B9519A3112F /* GAITracker.h */,
+				492883C4A82660D8B5FEE795969D7DD3 /* Frameworks */,
 			);
-			name = Defines;
+			name = GoogleAnalytics;
+			path = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		FDD5E64D21F4FC9CD6C83C76E7FD7D2E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5135E297187CCFDA6FB47A0C09A3D0FB /* Info.plist */,
+				D330259D495B87417D2A99FDF0D53CEA /* SwiftyJSON.modulemap */,
+				3451DA5D9AE5246812423C2907CE652F /* SwiftyJSON.xcconfig */,
+				48BD26AF6B2DCC1F23FC3A71A779418A /* SwiftyJSON-dummy.m */,
+				C40833761A0B77C20DBE975A547C5060 /* SwiftyJSON-prefix.pch */,
+				91F7AF98897F97CA6D2D71B4D4FD701E /* SwiftyJSON-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyJSON";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		049A4B0464EEED61387F636FC1A0FD1D /* Headers */ = {
+		A67D68561C8D64CDBCA538C56EC5994D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79148F2D88179AD0450A6C303E9A3437 /* Pods-loreal-lashes_bar-ios-umbrella.h in Headers */,
+				4433676858B373028A01EE14DF4D6226 /* SwiftyJSON-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4362327FA6BBE120E10753E82BACF2C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C2326872F126DBFA899D7CBF08739E /* Pods-loreal-lashes_bar-ios-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,26 +691,62 @@
 			);
 			name = GoogleToolboxForMac;
 			productName = GoogleToolboxForMac;
-			productReference = 25E2024E722470F2F291A998FA738DE6 /* GoogleToolboxForMac.framework */;
+			productReference = E87D36B341B26557F3A0355C3AE831B4 /* GoogleToolboxForMac.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5FE0DAAE54F0E46937B566F2341C9205 /* Pods-loreal-lashes_bar-ios */ = {
+		D853A92A98657EDD8C5C05DD560EDC55 /* SwiftyJSON */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2DB3464223E7D2E78B025C5C819A7581 /* Build configuration list for PBXNativeTarget "Pods-loreal-lashes_bar-ios" */;
+			buildConfigurationList = D168109BA6A9DA233200F3A33E45BE92 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
 			buildPhases = (
-				46BB1D190AA01F78776C235A2F2BED70 /* Sources */,
-				6012618248E6691F618B7AF7C4FF97B7 /* Frameworks */,
-				049A4B0464EEED61387F636FC1A0FD1D /* Headers */,
+				4B236D00792B05FB2CF4BE8C2E2B7612 /* Sources */,
+				B299F53D8AD4B3221AD63D9E9FCCE36D /* Frameworks */,
+				A67D68561C8D64CDBCA538C56EC5994D /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				53A96C37E7E55B902375B3A891BE1113 /* PBXTargetDependency */,
+			);
+			name = SwiftyJSON;
+			productName = SwiftyJSON;
+			productReference = 2AABE7426B74A0C8DF89A537DB5E6021 /* SwiftyJSON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EAF33E6DD3D30212960AD36EB49CD691 /* Pods-loreal-lashes_bar-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BC68DF5FD456B3F64908DFBC1884ABF /* Build configuration list for PBXNativeTarget "Pods-loreal-lashes_bar-ios" */;
+			buildPhases = (
+				2EFF82E9A185EE09C66E8CD3C38D1E58 /* Sources */,
+				78A8ECED28EEE6AD6D77806A18C3A23D /* Frameworks */,
+				C4362327FA6BBE120E10753E82BACF2C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C27A008F883AF6F8148DE7D0E3AADB83 /* PBXTargetDependency */,
+				A9D766D8EE8C6204CA0ACFD93CA8EAB1 /* PBXTargetDependency */,
+				6749875BCEE8D1A95E081E0E50D4B8CE /* PBXTargetDependency */,
 			);
 			name = "Pods-loreal-lashes_bar-ios";
 			productName = "Pods-loreal-lashes_bar-ios";
-			productReference = C51CE205DC85AD72069BE1032B4711D2 /* Pods_loreal_lashes_bar_ios.framework */;
+			productReference = 79664D8F46211C01F2390DDEA33A0879 /* Pods_loreal_lashes_bar_ios.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		FAFB7D08D9239DE5F58C0E2FE53D1A67 /* HockeySDK-HockeySDKResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5FE76B32D573762E6BF7381470E2BCF /* Build configuration list for PBXNativeTarget "HockeySDK-HockeySDKResources" */;
+			buildPhases = (
+				36DD907C6B3A5D323D50589948B291B2 /* Sources */,
+				40D95D5B414C706B1AD552AB5EA57278 /* Frameworks */,
+				8ABF77FC747508D1D361554C14F9E0DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HockeySDK-HockeySDKResources";
+			productName = "HockeySDK-HockeySDKResources";
+			productReference = 377D3A7C456D68A6BF0D22FEEF9252E1 /* HockeySDKResources.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -453,22 +765,101 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 72FE396B412DD0318C835AF6B5072E8C /* Products */;
+			productRefGroup = A5B55FF7C63E2F30BBBEFF9646D1E1E8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */,
-				5FE0DAAE54F0E46937B566F2341C9205 /* Pods-loreal-lashes_bar-ios */,
+				FAFB7D08D9239DE5F58C0E2FE53D1A67 /* HockeySDK-HockeySDKResources */,
+				EAF33E6DD3D30212960AD36EB49CD691 /* Pods-loreal-lashes_bar-ios */,
+				D853A92A98657EDD8C5C05DD560EDC55 /* SwiftyJSON */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		8ABF77FC747508D1D361554C14F9E0DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED15728B0D40CFD9F907255D452B7096 /* AppIconPlaceHolder.png in Resources */,
+				C18918180C7F2F8CB85E7A51810564A7 /* Arrow.png in Resources */,
+				3F5CE914C5764EB66E25C7B3D078C586 /* Arrow@2x.png in Resources */,
+				0FBB11F2B81A09AA09E34425AE8F26C6 /* Arrow@3x.png in Resources */,
+				A9AAC0011FCCC972E7EB113BDE4DA61F /* authorize_denied.png in Resources */,
+				EB0B8AA351506D4D41EC2E345C038FC1 /* authorize_denied@2x.png in Resources */,
+				3B788FE1AB0E5B70D2CDBC0D659406BB /* authorize_denied@3x.png in Resources */,
+				CDF21F9F96B7D14DD7F73199EF484EA9 /* bg.png in Resources */,
+				9B35DF95D9A943F451E656C18D706147 /* Blur.png in Resources */,
+				8AE50E482ECAA86F8E165A96C8549880 /* Blur@2x.png in Resources */,
+				3CF84D3185ACDCE0708C487268D8756E /* Blur@3x.png in Resources */,
+				012574A34934758CA36667207368C7D3 /* buttonRoundedDelete.png in Resources */,
+				FE70D8166088A8EE483BAB0ADF3CA837 /* buttonRoundedDelete@2x.png in Resources */,
+				595BD133D480DFB8E913C9D3A4C44E40 /* buttonRoundedDeleteHighlighted.png in Resources */,
+				96D891B67B6A11CFBD6E674756641A85 /* buttonRoundedDeleteHighlighted@2x.png in Resources */,
+				50699F7280571D81491F5809986B194C /* buttonRoundedRegular.png in Resources */,
+				FAD58A6671C4C4BFDD02A23D4D610DAA /* buttonRoundedRegular@2x.png in Resources */,
+				56FFE03D1297AC8CF3773E64160E1F1F /* buttonRoundedRegularHighlighted.png in Resources */,
+				F78044E2725BF22D2B5C2B085C7ECB63 /* buttonRoundedRegularHighlighted@2x.png in Resources */,
+				EEAE77C75A562B78C6B78B4C698FEA03 /* Cancel.png in Resources */,
+				5F5259B9495E6ACCE15A4BA37F98ACAF /* Cancel@2x.png in Resources */,
+				24D26F28A357297C515EC4C0534CCED3 /* Cancel@3x.png in Resources */,
+				5B21881EE3D7A6CCB986A1B5AB0589EC /* de.lproj in Resources */,
+				81E681CD655DDE888B13F12F14BD394D /* en.lproj in Resources */,
+				DAC8D0830A9B26871A17F6630C3DD3C6 /* es.lproj in Resources */,
+				DAFF40B101D705B6BA0FDB35B56BF663 /* feedbackActivity.png in Resources */,
+				6B6B5666653F3E571F520D55C5EA5A5A /* feedbackActivity@2x.png in Resources */,
+				7DDAC14D4BAB142F83295AED4E6106DF /* feedbackActivity@2x~ipad.png in Resources */,
+				B56FAE79A717F5F7AD9D2EFEB542C5B4 /* feedbackActivity@3x.png in Resources */,
+				C259EDE6F7496CC3DD4B08CCADB8E3E9 /* feedbackActivity~ipad.png in Resources */,
+				40D6208CE0DFAE1763D6F6993A2839BD /* FeedbackPlaceholder.png in Resources */,
+				7F9C783356390B1E73318FA81F9E32B4 /* fr.lproj in Resources */,
+				08004F0F8AA5A69563740F44B0E71466 /* hr.lproj in Resources */,
+				723711496ABB053DC09570B629C7A9A8 /* hu.lproj in Resources */,
+				4FFB8BDF4139D773D1077CE61EDECAAF /* iconCamera.png in Resources */,
+				597BA3A316DD95CD5E3A89D6BB6DBAD8 /* iconCamera@2x.png in Resources */,
+				6DC66302C64DFD2DD27320496A42E097 /* IconGradient.png in Resources */,
+				2263FEB26F2B68D3BB06DC739822F443 /* IconGradient@2x.png in Resources */,
+				1F264474B1D23914C14F7E268B72813A /* it.lproj in Resources */,
+				A6913C013AF0CD0ABC8D722C3F2DF4E4 /* ja.lproj in Resources */,
+				7AC05E45B51F53EB89C7BE365C37B167 /* nl.lproj in Resources */,
+				29A7F90400AA19ADA66D3B4D1C87627A /* Ok.png in Resources */,
+				FD79F5A859BD2756ECD071A73897548B /* Ok@2x.png in Resources */,
+				EAD3ECED19E7921D5A57CE22DBC3012A /* Ok@3x.png in Resources */,
+				2B87ABC53C1DE65EBD4503D75E9CC767 /* pt-PT.lproj in Resources */,
+				7FE006CE21EB9439E3A3BE536392E4DC /* pt.lproj in Resources */,
+				CA429684C062D627BD4239F4F74AE4C3 /* Rectangle.png in Resources */,
+				D340645D3564E495BDFEEB32478E73CC /* Rectangle@2x.png in Resources */,
+				086FB3FF466ABDBB532F9C3D6B045F4B /* Rectangle@3x.png in Resources */,
+				167292D131070088C969BA32B8E6B9DC /* ru.lproj in Resources */,
+				824CDDD5EE9C511C3B329A268DCF2397 /* zh-Hans.lproj in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		46BB1D190AA01F78776C235A2F2BED70 /* Sources */ = {
+		2EFF82E9A185EE09C66E8CD3C38D1E58 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07E864677E8B257973A9C4615AB853D2 /* Pods-loreal-lashes_bar-ios-dummy.m in Sources */,
+				2A222B5F8AA639E2C6C7A7AD12F2CBAC /* Pods-loreal-lashes_bar-ios-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36DD907C6B3A5D323D50589948B291B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B236D00792B05FB2CF4BE8C2E2B7612 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2FAE6F799DB26C6E97C921FD63849 /* SwiftyJSON-dummy.m in Sources */,
+				DF0A0830E12D8C4025EF318F98894DA8 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,15 +875,59 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		53A96C37E7E55B902375B3A891BE1113 /* PBXTargetDependency */ = {
+		6749875BCEE8D1A95E081E0E50D4B8CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyJSON;
+			target = D853A92A98657EDD8C5C05DD560EDC55 /* SwiftyJSON */;
+			targetProxy = BA56D201A9B987F6F955DEFFD26FF87C /* PBXContainerItemProxy */;
+		};
+		A9D766D8EE8C6204CA0ACFD93CA8EAB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "HockeySDK-HockeySDKResources";
+			target = FAFB7D08D9239DE5F58C0E2FE53D1A67 /* HockeySDK-HockeySDKResources */;
+			targetProxy = 5A03A805399BC9CA3C8A006ECA01BD03 /* PBXContainerItemProxy */;
+		};
+		C27A008F883AF6F8148DE7D0E3AADB83 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GoogleToolboxForMac;
 			target = 00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */;
-			targetProxy = A77037102133AA71CF7CC31F3050D661 /* PBXContainerItemProxy */;
+			targetProxy = C9A8D6B042F37A6CA8C109061DAB5146 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1EB4A994E0FF5953AE08BE30D182C775 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3451DA5D9AE5246812423C2907CE652F /* SwiftyJSON.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -537,40 +972,21 @@
 			};
 			name = Debug;
 		};
-		893944151AACF562709482F80976D478 /* Debug */ = {
+		B1734EE118C15283FACE1E5834974BAE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F40D2B9841CF7F108B6E2E75E30A5FCD /* Pods-loreal-lashes_bar-ios.debug.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/HockeySDK";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-loreal-lashes_bar-ios/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-loreal-lashes_bar-ios/Pods-loreal-lashes_bar-ios.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_loreal_lashes_bar_ios;
+				INFOPLIST_FILE = "Target Support Files/HockeySDK/ResourceBundle-HockeySDKResources-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = HockeySDKResources;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
 		};
 		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -612,7 +1028,91 @@
 			};
 			name = Release;
 		};
-		BE10B71C4A206BED26C23A4FC76ECAA9 /* Release */ = {
+		C5B3B80E34A16D31B6AB94EF45EDEE1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F40D2B9841CF7F108B6E2E75E30A5FCD /* Pods-loreal-lashes_bar-ios.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-loreal-lashes_bar-ios/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-loreal-lashes_bar-ios/Pods-loreal-lashes_bar-ios.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_loreal_lashes_bar_ios;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D60CD877A708870E2BE96B83BA32F883 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8C08A99D612EF956E40E20B105F55A2 /* GoogleToolboxForMac.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GoogleToolboxForMac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = GoogleToolboxForMac;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DA73FE8316BEED4DDB630EDFDF08300E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/HockeySDK";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/HockeySDK/ResourceBundle-HockeySDKResources-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = HockeySDKResources;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		ED412BCC838553E53D11B021DAD24F93 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 19CA6D9F4C39FCF1C7B3C5BC4580CD41 /* Pods-loreal-lashes_bar-ios.release.xcconfig */;
 			buildSettings = {
@@ -647,41 +1147,9 @@
 			};
 			name = Release;
 		};
-		D60CD877A708870E2BE96B83BA32F883 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC48165744D640BA81EE39DF16BFC357 /* GoogleToolboxForMac.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GoogleToolboxForMac/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = GoogleToolboxForMac;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		F066921CBDBDB5F45795E50FBC5AC972 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC48165744D640BA81EE39DF16BFC357 /* GoogleToolboxForMac.xcconfig */;
+			baseConfigurationReference = F8C08A99D612EF956E40E20B105F55A2 /* GoogleToolboxForMac.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -711,9 +1179,51 @@
 			};
 			name = Release;
 		};
+		F2D9D7D152E9AB25247F2EDD97BB8D3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3451DA5D9AE5246812423C2907CE652F /* SwiftyJSON.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1BC68DF5FD456B3F64908DFBC1884ABF /* Build configuration list for PBXNativeTarget "Pods-loreal-lashes_bar-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5B3B80E34A16D31B6AB94EF45EDEE1F /* Debug */,
+				ED412BCC838553E53D11B021DAD24F93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -723,11 +1233,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2DB3464223E7D2E78B025C5C819A7581 /* Build configuration list for PBXNativeTarget "Pods-loreal-lashes_bar-ios" */ = {
+		B5FE76B32D573762E6BF7381470E2BCF /* Build configuration list for PBXNativeTarget "HockeySDK-HockeySDKResources" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				893944151AACF562709482F80976D478 /* Debug */,
-				BE10B71C4A206BED26C23A4FC76ECAA9 /* Release */,
+				DA73FE8316BEED4DDB630EDFDF08300E /* Debug */,
+				B1734EE118C15283FACE1E5834974BAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -737,6 +1247,15 @@
 			buildConfigurations = (
 				D60CD877A708870E2BE96B83BA32F883 /* Debug */,
 				F066921CBDBDB5F45795E50FBC5AC972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D168109BA6A9DA233200F3A33E45BE92 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2D9D7D152E9AB25247F2EDD97BB8D3E /* Debug */,
+				1EB4A994E0FF5953AE08BE30D182C775 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

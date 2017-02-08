@@ -5,7 +5,7 @@
     "uses_pods":false,
     "builds":[
               {
-              "xcode":"7.3",
+              "xcode":"8.0",
               "scheme":"loreal-lashes_bar-ios",
               "configuration":"Release",
               "app_store":false,
