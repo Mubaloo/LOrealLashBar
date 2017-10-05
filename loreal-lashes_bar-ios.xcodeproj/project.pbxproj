@@ -1261,7 +1261,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NYXStoreKiosk.ipglab.lashbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a4c17c26-24d7-4fa2-bab2-6ab86ae38b96";
+				PROVISIONING_PROFILE = "af365ce3-358c-4925-8ef3-aa0b95b736a1";
 				PROVISIONING_PROFILE_SPECIFIER = com.NYXStoreKiosk.ipglab.lashbar;
 				SWIFT_OBJC_BRIDGING_HEADER = "loreal-lashes_bar-ios/Application Core/Header-loreal-lash_bar-ios.h";
 				SWIFT_VERSION = 3.0;
